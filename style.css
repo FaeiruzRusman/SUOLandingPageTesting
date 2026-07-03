@@ -50,7 +50,7 @@ body {
   padding: 140px 8% 80px;
   display: flex;
   align-items: center;
-  background: linear-gradient(90deg, hsla(29, 80%, 51%, 1) 0%, hsla(52, 93%, 74%, 1) 100%);
+  background: linear-gradient(135deg, #0f766e, #064e3b);
   color: white;
 }
 
