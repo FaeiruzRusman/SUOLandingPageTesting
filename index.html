@@ -10,7 +10,7 @@
     content="Selangor Urban Observatory ialah platform kecerdasan bandar bersepadu bagi menyokong perancangan, analitik dan keputusan berasaskan data di Negeri Selangor."
   />
 
-  <title>Selangor Urban Observatory</title>
+  <title>Selangor Urban Observatory | Executive Edition</title>
 
   <link rel="stylesheet" href="css/style.css" />
 </head>
@@ -37,7 +37,19 @@
       <a href="#contact" data-i18n="nav.contact">Hubungi Kami</a>
     </nav>
 
-    <div class="language-switcher">
+    <div class="navbar-actions">
+      <button
+        id="themeToggle"
+        class="theme-toggle"
+        type="button"
+        aria-label="Aktifkan mod gelap"
+        title="Light / Dark mode"
+      >
+        <span class="theme-icon theme-sun" aria-hidden="true">☀</span>
+        <span class="theme-icon theme-moon" aria-hidden="true">☾</span>
+      </button>
+
+      <div class="language-switcher">
       <button
         id="languageButton"
         class="language-button"
@@ -60,6 +72,7 @@
           <span class="language-code">EN</span>
           <span>English</span>
         </button>
+      </div>
       </div>
     </div>
   </header>
@@ -91,6 +104,19 @@
             Ketahui Lebih Lanjut
           </a>
         </div>
+      </div>
+    </section>
+
+    <section class="intelligence-ribbon" aria-label="Urban intelligence status">
+      <div class="ribbon-track">
+        <div class="ribbon-item">
+          <span class="ribbon-pulse"></span>
+          <div><strong>Urban Intelligence</strong><small>Integrated State Platform</small></div>
+        </div>
+        <div class="ribbon-item"><strong>12</strong><small data-i18n="metrics.localAuthorities">Pihak Berkuasa Tempatan</small></div>
+        <div class="ribbon-item"><strong>53</strong><small data-i18n="metrics.datasets">Set Data Bersepadu</small></div>
+        <div class="ribbon-item"><strong>150+</strong><small data-i18n="applications.indicators">Indikator Bandar</small></div>
+        <div class="ribbon-item"><strong>2027–2029</strong><small>SUO Implementation Roadmap</small></div>
       </div>
     </section>
 
@@ -236,26 +262,32 @@
 
       <div class="cards reveal">
         <article class="card">
+          <span class="platform-icon" aria-hidden="true">◫</span>
           <h3 data-i18n="platform.card1Title">Hab Data Bandar</h3>
           <p data-i18n="platform.card1Text">Integrasi data spatial dan bukan spatial daripada agensi, PBT serta Pejabat Daerah dan Tanah.</p>
         </article>
         <article class="card">
+          <span class="platform-icon" aria-hidden="true">▦</span>
           <h3 data-i18n="platform.card2Title">Dashboard Eksekutif</h3>
           <p data-i18n="platform.card2Text">Pemantauan indikator, status pembangunan dan prestasi perancangan melalui dashboard interaktif.</p>
         </article>
         <article class="card">
+          <span class="platform-icon" aria-hidden="true">◇</span>
           <h3 data-i18n="platform.card3Title">StoryMaps Interaktif</h3>
           <p data-i18n="platform.card3Text">Penyampaian naratif perancangan melalui peta, multimedia dan kandungan interaktif.</p>
         </article>
         <article class="card">
+          <span class="platform-icon" aria-hidden="true">⌁</span>
           <h3 data-i18n="platform.card4Title">Analitik Bandar</h3>
           <p data-i18n="platform.card4Text">Analisis trend bandar, perubahan guna tanah, kepadatan, aksesibiliti dan corak pembangunan.</p>
         </article>
         <article class="card">
+          <span class="platform-icon" aria-hidden="true">◉</span>
           <h3>Digital Twin</h3>
           <p data-i18n="platform.card5Text">Asas simulasi persekitaran bandar 3D bagi menyokong penilaian senario dan keputusan perancangan.</p>
         </article>
         <article class="card">
+          <span class="platform-icon" aria-hidden="true">↗</span>
           <h3 data-i18n="platform.card6Title">Portal Data Terbuka</h3>
           <p data-i18n="platform.card6Text">Perkongsian set data terpilih, metadata dan sumber maklumat kepada agensi serta pemegang taruh.</p>
         </article>
@@ -277,6 +309,13 @@
         </div>
 
         <div class="applications-showcase">
+          <div class="dashboard-mode-switch reveal" role="tablist" aria-label="Dashboard preview">
+            <button class="dashboard-mode active" type="button" data-mode="landuse">Guna Tanah</button>
+            <button class="dashboard-mode" type="button" data-mode="ksas">KSAS</button>
+            <button class="dashboard-mode" type="button" data-mode="murninet">MURNInets</button>
+            <button class="dashboard-mode" type="button" data-mode="development">Pembangunan</button>
+          </div>
+
           <article class="featured-application reveal">
             <div class="featured-content">
               <span class="featured-label" data-i18n="applications.featuredLabel">Aplikasi Bandar Pilihan</span>
@@ -313,9 +352,9 @@
                     <div class="dashboard-topbar">
                       <div>
                         <small>Selangor Urban Observatory</small>
-                        <strong data-i18n="applications.dashboardTitle">Dashboard Kecerdasan Bandar</strong>
+                        <strong id="previewDashboardTitle" data-i18n="applications.dashboardTitle">Dashboard Kecerdasan Bandar</strong>
                       </div>
-                      <div class="dashboard-filter">Selangor</div>
+                      <div id="previewDashboardFilter" class="dashboard-filter">Selangor</div>
                     </div>
 
                     <div class="dashboard-kpis">
@@ -329,11 +368,11 @@
                         <span class="map-marker marker-one"></span>
                         <span class="map-marker marker-two"></span>
                         <span class="map-marker marker-three"></span>
-                        <div class="map-label" data-i18n="applications.mapLabel">Kecerdasan Spatial Selangor</div>
+                        <div id="previewMapLabel" class="map-label" data-i18n="applications.mapLabel">Kecerdasan Spatial Selangor</div>
                       </div>
 
                       <div class="dashboard-chart">
-                        <div class="chart-title" data-i18n="applications.chartTitle">Trend Indikator Bandar</div>
+                        <div id="previewChartTitle" class="chart-title" data-i18n="applications.chartTitle">Trend Indikator Bandar</div>
                         <div class="chart-bars">
                           <span style="height:42%"></span>
                           <span style="height:65%"></span>
@@ -557,6 +596,8 @@
       </div>
     </div>
   </footer>
+
+  <button id="backToTop" class="back-to-top" type="button" aria-label="Kembali ke atas">↑</button>
 
   <script src="js/script.js"></script>
 </body>
