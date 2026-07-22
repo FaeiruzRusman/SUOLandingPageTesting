@@ -399,6 +399,11 @@ if (themeToggle) {
 
 const dashboardModes = {
   landuse: {
+    featuredTitle: "Dashboard Guna Tanah Negeri Selangor",
+    featuredText: "Paparan interaktif guna tanah semasa dan maklumat spatial bagi menyokong pemantauan serta keputusan perancangan Negeri Selangor.",
+    buttonText: "Buka Dashboard",
+    url: "https://sismaps.jpbdselangor.gov.my/dashboard",
+    address: "sismaps.jpbdselangor.gov.my/dashboard",
     title: "Dashboard Guna Tanah Negeri Selangor",
     filter: "Guna Tanah",
     mapLabel: "Taburan Guna Tanah Semasa",
@@ -406,29 +411,44 @@ const dashboardModes = {
     kpis: ["9", "12", "150+"],
     bars: [42, 65, 54, 82, 70]
   },
-  ksas: {
-    title: "Dashboard Pemantauan KSAS",
-    filter: "KSAS",
-    mapLabel: "Kawasan Sensitif Alam Sekitar",
-    chartTitle: "Status Pemantauan KSAS",
-    kpis: ["9", "12", "87"],
-    bars: [76, 52, 68, 61, 88]
+  smartdesa: {
+    featuredTitle: "SMARTDesa Negeri Selangor",
+    featuredText: "Dashboard skrin besar yang memaparkan maklumat dan indikator berkaitan pembangunan serta pemantauan kawasan desa Negeri Selangor.",
+    buttonText: "Buka Dashboard",
+    url: "https://sismaps.jpbdselangor.gov.my/sdbigscreen",
+    address: "sismaps.jpbdselangor.gov.my/sdbigscreen",
+    title: "Dashboard SMARTDesa Negeri Selangor",
+    filter: "SMARTDesa",
+    mapLabel: "Pemantauan Kawasan Desa",
+    chartTitle: "Indikator Pembangunan Desa",
+    kpis: ["9", "12", "Live"],
+    bars: [68, 54, 72, 63, 84]
   },
-  murninet: {
-    title: "Dashboard MURNInets Selangor",
-    filter: "MURNInets",
-    mapLabel: "Prestasi Bandar Mampan",
-    chartTitle: "Trend Indikator MURNInets",
-    kpis: ["9", "12", "39"],
-    bars: [55, 63, 72, 79, 86]
+  rsn2035: {
+    featuredTitle: "Rancangan Struktur Negeri Selangor 2035 (Pengubahan)",
+    featuredText: "StoryMaps interaktif yang menerangkan dasar, strategi dan hala tuju spatial pembangunan Negeri Selangor sehingga tahun 2035.",
+    buttonText: "Lihat StoryMaps",
+    url: "https://arcg.is/11Sbea",
+    address: "arcg.is/11Sbea",
+    title: "RS Negeri Selangor 2035",
+    filter: "StoryMaps",
+    mapLabel: "Hala Tuju Spatial Negeri",
+    chartTitle: "Strategi Pembangunan 2035",
+    kpis: ["9", "12", "2035"],
+    bars: [56, 66, 74, 81, 90]
   },
-  development: {
-    title: "Dashboard Pemantauan Pembangunan",
-    filter: "Pembangunan",
-    mapLabel: "Status Projek dan Permohonan",
-    chartTitle: "Prestasi Pemprosesan Permohonan",
-    kpis: ["9", "12", "120+"],
-    bars: [38, 58, 74, 69, 91]
+  tourism: {
+    featuredTitle: "Panduan Pelaksanaan Pelancongan Negeri Selangor",
+    featuredText: "StoryMaps interaktif yang menghimpunkan panduan dan rujukan spatial bagi pelaksanaan pembangunan pelancongan Negeri Selangor.",
+    buttonText: "Lihat StoryMaps",
+    url: "https://arcg.is/1WiD0n2",
+    address: "arcg.is/1WiD0n2",
+    title: "Panduan Pelaksanaan Pelancongan",
+    filter: "StoryMaps",
+    mapLabel: "Destinasi dan Zon Pelancongan",
+    chartTitle: "Komponen Pelaksanaan Pelancongan",
+    kpis: ["9", "12", "Live"],
+    bars: [48, 61, 70, 77, 86]
   }
 };
 
@@ -439,6 +459,11 @@ const previewMapLabel = document.getElementById("previewMapLabel");
 const previewChartTitle = document.getElementById("previewChartTitle");
 const previewKpis = document.querySelectorAll(".dashboard-kpis strong");
 const previewBars = document.querySelectorAll(".chart-bars span");
+const featuredAppTitle = document.getElementById("featuredAppTitle");
+const featuredAppText = document.getElementById("featuredAppText");
+const featuredAppLink = document.getElementById("featuredAppLink");
+const featuredAppButtonText = document.getElementById("featuredAppButtonText");
+const previewBrowserAddress = document.getElementById("previewBrowserAddress");
 
 modeButtons.forEach((button) => {
   button.addEventListener("click", () => {
@@ -451,6 +476,11 @@ modeButtons.forEach((button) => {
       if (item !== button) item.setAttribute("aria-selected", "false");
     });
 
+    if (featuredAppTitle) featuredAppTitle.textContent = data.featuredTitle;
+    if (featuredAppText) featuredAppText.textContent = data.featuredText;
+    if (featuredAppLink) featuredAppLink.href = data.url;
+    if (featuredAppButtonText) featuredAppButtonText.textContent = data.buttonText;
+    if (previewBrowserAddress) previewBrowserAddress.textContent = data.address;
     if (previewTitle) previewTitle.textContent = data.title;
     if (previewFilter) previewFilter.textContent = data.filter;
     if (previewMapLabel) previewMapLabel.textContent = data.mapLabel;
