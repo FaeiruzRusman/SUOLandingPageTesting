@@ -332,118 +332,108 @@ footer {
   }
 }
 
-/*=============================
- Urban Intelligence Ecosystem
-==============================*/
+/* =============================
+   Urban Intelligence Ecosystem
+============================= */
 
-.ecosystem{
-
-padding:120px 8%;
-
-background:#ffffff;
-
-text-align:center;
-
+.ecosystem {
+  padding: 110px 8%;
+  background: #fffaf5;
+  text-align: center;
 }
 
-.section-badge{
-
-display:inline-block;
-
-padding:8px 18px;
-
-border-radius:30px;
-
-background:#FFF3D6;
-
-color:#d97706;
-
-font-weight:600;
-
-margin-bottom:25px;
-
+.section-title {
+  max-width: 950px;
+  margin: 0 auto;
 }
 
-.section-title h2{
-
-font-size:52px;
-
-line-height:1.2;
-
-margin-bottom:25px;
-
-color:#222;
-
+.section-badge {
+  display: inline-block;
+  padding: 9px 18px;
+  margin-bottom: 25px;
+  border: 1px solid #f4b45f;
+  border-radius: 30px;
+  background: #fff1dc;
+  color: #c9570a;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
 }
 
-.section-title h2 span{
-
-color:#E67E22;
-
+.section-title h2 {
+  margin-bottom: 25px;
+  color: #242424;
+  font-size: clamp(38px, 5vw, 58px);
+  line-height: 1.15;
 }
 
-.section-title p{
-
-max-width:900px;
-
-margin:auto;
-
-font-size:18px;
-
-line-height:1.9;
-
-color:#666;
-
-margin-bottom:70px;
-
+.section-title h2 span {
+  color: #d85d0b;
 }
 
-.kpi-grid{
-
-display:grid;
-
-grid-template-columns:repeat(4,1fr);
-
-gap:25px;
-
+.section-title p {
+  max-width: 850px;
+  margin: 0 auto 65px;
+  color: #666;
+  font-size: 18px;
+  line-height: 1.8;
 }
 
-.kpi-card{
-
-background:white;
-
-padding:40px;
-
-border-radius:18px;
-
-box-shadow:0 15px 40px rgba(0,0,0,.08);
-
-transition:.35s;
-
+.kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-.kpi-card:hover{
-
-transform:translateY(-12px);
-
-box-shadow:0 25px 55px rgba(0,0,0,.12);
-
+.kpi-card {
+  padding: 38px 24px;
+  border: 1px solid rgba(217, 119, 6, 0.15);
+  border-radius: 18px;
+  background: #ffffff;
+  box-shadow: 0 12px 35px rgba(128, 57, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.kpi-card h3{
-
-font-size:56px;
-
-color:#d97706;
-
-margin-bottom:10px;
-
+.kpi-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 22px 45px rgba(128, 57, 0, 0.15);
 }
 
-.kpi-card span{
+.kpi-card h3 {
+  margin-bottom: 8px;
+  color: #d85d0b;
+  font-size: 54px;
+  line-height: 1;
+}
 
-font-size:16px;
+.kpi-card span {
+  color: #555;
+  font-size: 16px;
+  font-weight: 600;
+}
 
-color:#555;
 
+/* Mobile responsive — mesti berada selepas CSS di atas */
+
+@media (max-width: 900px) {
+  .kpi-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .ecosystem {
+    padding: 80px 6%;
+  }
+}
+
+@media (max-width: 600px) {
+  .kpi-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .section-title p {
+    font-size: 16px;
+  }
 }
