@@ -5,8 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <meta
+    id="meta-description"
     name="description"
-    content="Selangor Urban Observatory ialah platform urban intelligence bersepadu bagi menyokong perancangan, analitik dan keputusan berasaskan data di Negeri Selangor."
+    content="Selangor Urban Observatory ialah platform kecerdasan bandar bersepadu bagi menyokong perancangan, analitik dan keputusan berasaskan data di Negeri Selangor."
   />
 
   <title>Selangor Urban Observatory</title>
@@ -16,1016 +17,547 @@
 
 <body>
 
-  <!-- NAVIGATION -->
   <header class="navbar">
-
-    <a href="#home" class="logo" aria-label="Selangor Urban Observatory Home">
+    <a href="#home" class="logo" aria-label="Selangor Urban Observatory">
       <img
         src="assets/logos/Logo SUO-01.png"
         alt="Logo Selangor Urban Observatory"
         class="logo-img"
       />
-
       <span>SELANGOR URBAN OBSERVATORY</span>
     </a>
 
-<nav class="nav-links">
-    <a href="#home" class="active">Home</a>
-    <a href="#ecosystem">Ecosystem</a>
-    <a href="#about">About SUO</a>
-    <a href="#solutions">Platform</a>
-    <a href="#applications">Applications</a>
-    <a href="#roadmap">Roadmap</a>
-    <a href="#contact">Contact</a>
-</nav>
+    <nav class="nav-links" aria-label="Primary navigation">
+      <a href="#home" class="active" data-i18n="nav.home">Laman Utama</a>
+      <a href="#ecosystem" data-i18n="nav.ecosystem">Ekosistem</a>
+      <a href="#about" data-i18n="nav.about">Tentang SUO</a>
+      <a href="#platform" data-i18n="nav.platform">Platform</a>
+      <a href="#applications" data-i18n="nav.applications">Aplikasi</a>
+      <a href="#roadmap" data-i18n="nav.roadmap">Pelan Hala Tuju</a>
+      <a href="#contact" data-i18n="nav.contact">Hubungi Kami</a>
+    </nav>
 
+    <div class="language-switcher">
+      <button
+        id="languageButton"
+        class="language-button"
+        type="button"
+        aria-haspopup="true"
+        aria-expanded="false"
+        aria-controls="languageMenu"
+      >
+        <span class="language-icon" aria-hidden="true">🌐</span>
+        <span id="currentLanguageLabel">BM</span>
+        <span class="language-chevron" aria-hidden="true">⌄</span>
+      </button>
+
+      <div id="languageMenu" class="language-menu" role="menu">
+        <button class="language-option active" type="button" data-language="ms" role="menuitem">
+          <span class="language-code">BM</span>
+          <span>Bahasa Melayu</span>
+        </button>
+        <button class="language-option" type="button" data-language="en" role="menuitem">
+          <span class="language-code">EN</span>
+          <span>English</span>
+        </button>
+      </div>
+    </div>
   </header>
 
-
-  <!-- HERO -->
   <main>
 
     <section class="hero" id="home">
-
       <div class="hero-overlay"></div>
 
-      <div class="hero-content">
-
-        <span class="hero-badge">
-          Selangor Urban Observatory
-        </span>
+      <div class="hero-content reveal">
+        <span class="hero-badge">Selangor Urban Observatory</span>
 
         <h1>
-          Urban Intelligence<br />
-          <span>for Sustainable Selangor</span>
+          <span data-i18n="hero.title1">Kecerdasan Bandar</span><br />
+          <span data-i18n="hero.title2">untuk Selangor Mampan</span>
         </h1>
 
-        <p>
-          Platform bersepadu untuk pemantauan, analitik dan visualisasi
-          data bandar bagi menyokong perancangan spatial, pembangunan mampan
-          dan keputusan berasaskan data di Negeri Selangor.
+        <p data-i18n="hero.description">
+          Platform bersepadu untuk pemantauan, analitik dan visualisasi data bandar
+          bagi menyokong perancangan spatial, pembangunan mampan dan keputusan
+          berasaskan data di Negeri Selangor.
         </p>
 
         <div class="hero-buttons">
-          <a href="#applications" class="btn primary">
-            Terokai Dashboard
+          <a href="#applications" class="btn primary" data-i18n="hero.primaryButton">
+            Terokai Aplikasi
           </a>
-
-          <a href="#about" class="btn outline">
+          <a href="#about" class="btn outline" data-i18n="hero.secondaryButton">
             Ketahui Lebih Lanjut
           </a>
         </div>
-
       </div>
-
     </section>
 
-
-    <!-- URBAN INTELLIGENCE ECOSYSTEM -->
     <section class="ecosystem" id="ecosystem">
-
-      <div class="section-title">
-
-        <span class="section-badge">
-          Urban Intelligence Ecosystem
+      <div class="section-title reveal">
+        <span class="section-badge" data-i18n="ecosystem.badge">
+          Ekosistem Kecerdasan Bandar
         </span>
 
         <h2>
-          Integrating Data.
-          <br />
-          Empowering Decisions.
-          <br />
-          <span>Transforming Selangor.</span>
+          <span data-i18n="ecosystem.title1">Mengintegrasikan Data.</span><br />
+          <span data-i18n="ecosystem.title2">Memperkasa Keputusan.</span><br />
+          <span data-i18n="ecosystem.title3">Mentransformasi Selangor.</span>
         </h2>
 
-        <p>
-          Selangor Urban Observatory connects Local Authorities,
-          District and Land Offices, State Agencies and Federal
-          Agencies into a unified urban intelligence ecosystem
-          supporting evidence-based planning and sustainable development.
+        <p data-i18n="ecosystem.description">
+          Selangor Urban Observatory menghubungkan Pihak Berkuasa Tempatan,
+          Pejabat Daerah dan Tanah serta agensi negeri dan persekutuan dalam
+          satu ekosistem kecerdasan bandar bersepadu.
         </p>
-
       </div>
 
-
-      <div class="kpi-grid">
-
+      <div class="kpi-grid reveal">
         <div class="kpi-card">
-          <h3>12</h3>
-          <span>Local Authorities</span>
+          <h3 class="counter" data-target="12">0</h3>
+          <span data-i18n="metrics.localAuthorities">Pihak Berkuasa Tempatan</span>
         </div>
-
         <div class="kpi-card">
-          <h3>9</h3>
-          <span>District &amp; Land Offices</span>
+          <h3 class="counter" data-target="9">0</h3>
+          <span data-i18n="metrics.districtOffices">Pejabat Daerah &amp; Tanah</span>
         </div>
-
         <div class="kpi-card">
-          <h3>32</h3>
-          <span>State &amp; Federal Agencies</span>
+          <h3 class="counter" data-target="32">0</h3>
+          <span data-i18n="metrics.agencies">Agensi Negeri &amp; Persekutuan</span>
         </div>
-
         <div class="kpi-card">
-          <h3>53</h3>
-          <span>Integrated Datasets</span>
+          <h3 class="counter" data-target="53">0</h3>
+          <span data-i18n="metrics.datasets">Set Data Bersepadu</span>
         </div>
-
       </div>
-
     </section>
 
+    <section id="about" class="about-section">
+      <div class="about-container">
+        <div class="about-visual reveal">
+          <div class="intelligence-orbit">
+            <div class="orbit-ring orbit-one"></div>
+            <div class="orbit-ring orbit-two"></div>
 
-    <!-- ABOUT SUO -->
-   <!-- ABOUT SUO -->
-<section id="about" class="about-section">
+            <div class="orbit-node node-data" data-i18n="about.orbitData">Data Bandar</div>
+            <div class="orbit-node node-gis">Enterprise GIS</div>
+            <div class="orbit-node node-dashboard" data-i18n="about.orbitDashboard">Dashboard</div>
+            <div class="orbit-node node-analytics" data-i18n="about.orbitAnalytics">Analitik</div>
 
-  <div class="about-container">
-
-    <div class="about-visual">
-
-      <div class="intelligence-orbit">
-
-        <div class="orbit-ring orbit-one"></div>
-        <div class="orbit-ring orbit-two"></div>
-
-        <div class="orbit-node node-data">
-          Urban Data
+            <div class="orbit-core">
+              <span>SUO</span>
+              <small data-i18n="about.orbitCore">Kecerdasan Bandar</small>
+            </div>
+          </div>
         </div>
 
-        <div class="orbit-node node-gis">
-          Enterprise GIS
-        </div>
+        <div class="about-content reveal">
+          <span class="section-badge" data-i18n="about.badge">Tentang SUO</span>
 
-        <div class="orbit-node node-dashboard">
-          Dashboards
-        </div>
+          <h2>
+            <span data-i18n="about.title1">Mentransformasi Perancangan Melalui</span>
+            <span data-i18n="about.title2">Kecerdasan Bandar Bersepadu.</span>
+          </h2>
 
-        <div class="orbit-node node-analytics">
-          Analytics
-        </div>
+          <p class="about-lead" data-i18n="about.lead">
+            Selangor Urban Observatory merupakan platform kecerdasan bandar
+            bersepadu yang dibangunkan oleh PLANMalaysia Selangor.
+          </p>
 
-        <div class="orbit-core">
-          <span>SUO</span>
-          <small>Urban Intelligence</small>
-        </div>
+          <p class="about-description" data-i18n="about.description">
+            SUO menghubungkan data spatial dan bukan spatial daripada Pihak Berkuasa
+            Tempatan, Pejabat Daerah dan Tanah serta agensi negeri dan persekutuan
+            ke dalam satu ekosistem maklumat bandar bersepadu.
+          </p>
 
+          <div class="about-features">
+            <div class="about-feature">
+              <span class="feature-icon">✓</span>
+              <div>
+                <h3 data-i18n="about.feature1Title">Data Bandar Bersepadu</h3>
+                <p data-i18n="about.feature1Text">Pengurusan data spatial dan bukan spatial secara bersepadu.</p>
+              </div>
+            </div>
+
+            <div class="about-feature">
+              <span class="feature-icon">✓</span>
+              <div>
+                <h3 data-i18n="about.feature2Title">Perancangan Berasaskan Bukti</h3>
+                <p data-i18n="about.feature2Text">Menyokong keputusan perancangan berdasarkan data dan analitik.</p>
+              </div>
+            </div>
+
+            <div class="about-feature">
+              <span class="feature-icon">✓</span>
+              <div>
+                <h3 data-i18n="about.feature3Title">Kecerdasan Eksekutif</h3>
+                <p data-i18n="about.feature3Text">Pemantauan indikator strategik melalui dashboard dan StoryMaps.</p>
+              </div>
+            </div>
+
+            <div class="about-feature">
+              <span class="feature-icon">✓</span>
+              <div>
+                <h3 data-i18n="about.feature4Title">Bersedia untuk Digital Twin</h3>
+                <p data-i18n="about.feature4Text">Asas kepada simulasi bandar, analitik lanjutan dan AI.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="about-actions">
+            <a href="#platform" class="btn primary" data-i18n="about.primaryButton">
+              Terokai Platform
+            </a>
+            <a href="#roadmap" class="about-text-link" data-i18n="about.secondaryButton">
+              Lihat Pelan Hala Tuju SUO →
+            </a>
+          </div>
+        </div>
       </div>
 
-    </div>
-
-
-    <div class="about-content">
-
-      <span class="section-badge">
-        About SUO
-      </span>
-
-      <h2>
-        Transforming Planning Through
-        <span>Integrated Urban Intelligence.</span>
-      </h2>
-
-      <p class="about-lead">
-        Selangor Urban Observatory merupakan platform urban intelligence
-        bersepadu yang dibangunkan oleh PLANMalaysia Selangor bagi menyokong
-        perancangan berasaskan bukti, analitik spatial dan transformasi digital
-        di seluruh Negeri Selangor.
-      </p>
-
-      <p class="about-description">
-        SUO menghubungkan data spatial dan bukan spatial daripada Pihak Berkuasa
-        Tempatan, Pejabat Daerah dan Tanah serta agensi negeri dan persekutuan
-        ke dalam satu ekosistem maklumat bandar yang menyokong pemantauan,
-        analisis dan keputusan perancangan secara lebih pantas dan bersepadu.
-      </p>
-
-      <div class="about-features">
-
-        <div class="about-feature">
-          <span class="feature-icon">✓</span>
-          <div>
-            <h3>Integrated Urban Data</h3>
-            <p>Pengurusan data spatial dan bukan spatial secara bersepadu.</p>
-          </div>
-        </div>
-
-        <div class="about-feature">
-          <span class="feature-icon">✓</span>
-          <div>
-            <h3>Evidence-Based Planning</h3>
-            <p>Menyokong keputusan perancangan berdasarkan data dan analitik.</p>
-          </div>
-        </div>
-
-        <div class="about-feature">
-          <span class="feature-icon">✓</span>
-          <div>
-            <h3>Executive Intelligence</h3>
-            <p>Pemantauan indikator strategik melalui dashboard dan StoryMaps.</p>
-          </div>
-        </div>
-
-        <div class="about-feature">
-          <span class="feature-icon">✓</span>
-          <div>
-            <h3>Digital Twin Ready</h3>
-            <p>Asas kepada simulasi bandar, analitik lanjutan dan AI pada masa hadapan.</p>
-          </div>
-        </div>
-
+      <div class="about-metrics reveal">
+        <div class="about-metric"><strong>12</strong><span data-i18n="metrics.localAuthorities">Pihak Berkuasa Tempatan</span></div>
+        <div class="about-metric"><strong>9</strong><span data-i18n="metrics.districtOffices">Pejabat Daerah &amp; Tanah</span></div>
+        <div class="about-metric"><strong>32</strong><span data-i18n="metrics.partnerAgencies">Agensi Rakan Strategik</span></div>
+        <div class="about-metric"><strong>53</strong><span data-i18n="metrics.datasets">Set Data Bersepadu</span></div>
       </div>
+    </section>
 
-      <div class="about-actions">
-
-        <a href="#solutions" class="btn primary">
-          Explore the Platform
-        </a>
-
-        <a href="#roadmap" class="about-text-link">
-          View SUO Roadmap →
-        </a>
-
-      </div>
-
-    </div>
-
-  </div>
-
-
-  <div class="about-metrics">
-
-    <div class="about-metric">
-      <strong>12</strong>
-      <span>Local Authorities</span>
-    </div>
-
-    <div class="about-metric">
-      <strong>9</strong>
-      <span>District &amp; Land Offices</span>
-    </div>
-
-    <div class="about-metric">
-      <strong>32</strong>
-      <span>Partner Agencies</span>
-    </div>
-
-    <div class="about-metric">
-      <strong>53</strong>
-      <span>Integrated Datasets</span>
-    </div>
-
-  </div>
-
-</section>
-
-
-    <!-- URBAN INTELLIGENCE SOLUTIONS -->
-    <section id="solutions" class="section grey">
-
-      <div class="section-heading">
-
-        <span class="section-badge">
-          Urban Intelligence Solutions
-        </span>
-
-        <h2>Digital Solutions for Smarter Planning and Better Decisions</h2>
-
-        <p class="section-desc">
-          Explore a growing ecosystem of digital solutions that transform
-          planning data into actionable insights for decision-makers across
-          the State of Selangor.
+    <section id="platform" class="section grey">
+      <div class="section-heading reveal">
+        <span class="section-badge" data-i18n="platform.badge">Penyelesaian Kecerdasan Bandar</span>
+        <h2 data-i18n="platform.title">Penyelesaian Digital untuk Perancangan Lebih Pintar dan Keputusan Lebih Baik</h2>
+        <p class="section-desc" data-i18n="platform.description">
+          Terokai ekosistem penyelesaian digital yang menukarkan data perancangan
+          kepada maklumat yang boleh ditindak.
         </p>
-
       </div>
 
-
-      <div class="cards">
-
+      <div class="cards reveal">
         <article class="card">
-          <h3>Urban Data Hub</h3>
-          <p>
-            Integrasi data spatial dan bukan spatial daripada agensi,
-            PBT dan Pejabat Daerah dan Tanah.
-          </p>
+          <h3 data-i18n="platform.card1Title">Hab Data Bandar</h3>
+          <p data-i18n="platform.card1Text">Integrasi data spatial dan bukan spatial daripada agensi, PBT serta Pejabat Daerah dan Tanah.</p>
         </article>
-
         <article class="card">
-          <h3>Executive Dashboards</h3>
-          <p>
-            Pemantauan indikator, status pembangunan dan prestasi perancangan
-            melalui dashboard interaktif.
-          </p>
+          <h3 data-i18n="platform.card2Title">Dashboard Eksekutif</h3>
+          <p data-i18n="platform.card2Text">Pemantauan indikator, status pembangunan dan prestasi perancangan melalui dashboard interaktif.</p>
         </article>
-
         <article class="card">
-          <h3>Interactive StoryMaps</h3>
-          <p>
-            Penyampaian naratif perancangan melalui peta, multimedia dan
-            kandungan interaktif ArcGIS StoryMaps.
-          </p>
+          <h3 data-i18n="platform.card3Title">StoryMaps Interaktif</h3>
+          <p data-i18n="platform.card3Text">Penyampaian naratif perancangan melalui peta, multimedia dan kandungan interaktif.</p>
         </article>
-
         <article class="card">
-          <h3>Urban Analytics</h3>
-          <p>
-            Analisis trend bandar, perubahan guna tanah, kepadatan,
-            aksesibiliti dan corak pembangunan.
-          </p>
+          <h3 data-i18n="platform.card4Title">Analitik Bandar</h3>
+          <p data-i18n="platform.card4Text">Analisis trend bandar, perubahan guna tanah, kepadatan, aksesibiliti dan corak pembangunan.</p>
         </article>
-
         <article class="card">
           <h3>Digital Twin</h3>
-          <p>
-            Asas simulasi persekitaran bandar 3D bagi menyokong penilaian
-            senario dan keputusan perancangan.
-          </p>
+          <p data-i18n="platform.card5Text">Asas simulasi persekitaran bandar 3D bagi menyokong penilaian senario dan keputusan perancangan.</p>
         </article>
-
         <article class="card">
-          <h3>Open Data Portal</h3>
-          <p>
-            Perkongsian dataset terpilih, metadata dan sumber maklumat
-            kepada agensi serta pemegang taruh.
-          </p>
+          <h3 data-i18n="platform.card6Title">Portal Data Terbuka</h3>
+          <p data-i18n="platform.card6Text">Perkongsian set data terpilih, metadata dan sumber maklumat kepada agensi serta pemegang taruh.</p>
         </article>
-
       </div>
-
     </section>
 
-
-<!-- FEATURED APPLICATIONS -->
-<!-- ==================================================
-     FEATURED APPLICATIONS
-================================================== -->
-
-<section class="applications-section" id="applications">
-
-  <div class="applications-container">
-
-    <div class="applications-heading">
-
-      <span class="section-badge">
-        Featured Applications
-      </span>
-
-      <h2>
-        Explore Selangor Through
-        <span>Urban Intelligence</span>
-      </h2>
-
-      <p>
-        Access interactive StoryMaps, executive dashboards,
-        spatial applications and planning intelligence developed
-        under the Selangor Urban Observatory.
-      </p>
-
-    </div>
-
-
-    <div class="applications-showcase">
-
-      <!-- Featured Application -->
-
-      <article class="featured-application">
-
-        <div class="featured-content">
-
-          <span class="featured-label">
-            Featured Urban Application
-          </span>
-
-          <h3>
-            Selangor Urban Intelligence Portal
-          </h3>
-
-          <p>
-            Explore integrated spatial information, planning indicators,
-            development trends and urban insights across the State of Selangor.
+    <section class="applications-section" id="applications">
+      <div class="applications-container">
+        <div class="applications-heading reveal">
+          <span class="section-badge" data-i18n="applications.badge">Aplikasi Pilihan</span>
+          <h2>
+            <span data-i18n="applications.title1">Terokai Selangor Melalui</span>
+            <span data-i18n="applications.title2">Kecerdasan Bandar</span>
+          </h2>
+          <p data-i18n="applications.description">
+            Akses StoryMaps interaktif, dashboard eksekutif, aplikasi spatial
+            dan maklumat perancangan yang dibangunkan di bawah SUO.
           </p>
-
-          <div class="featured-tags">
-
-            <span>Interactive Map</span>
-            <span>Spatial Analytics</span>
-            <span>Planning Intelligence</span>
-
-          </div>
-
-          <a href="#" class="featured-button">
-            Explore Application
-            <span>→</span>
-          </a>
-
         </div>
 
-
-        <div class="featured-visual">
-
-          <div class="browser-window">
-
-            <div class="browser-toolbar">
-
-              <div class="browser-dots">
-                <span></span>
-                <span></span>
-                <span></span>
+        <div class="applications-showcase">
+          <article class="featured-application reveal">
+            <div class="featured-content">
+              <span class="featured-label" data-i18n="applications.featuredLabel">Aplikasi Bandar Pilihan</span>
+              <h3 data-i18n="applications.featuredTitle">Portal Kecerdasan Bandar Selangor</h3>
+              <p data-i18n="applications.featuredText">
+                Terokai maklumat spatial bersepadu, indikator perancangan,
+                trend pembangunan dan cerapan bandar di seluruh Negeri Selangor.
+              </p>
+              <div class="featured-tags">
+                <span data-i18n="applications.tag1">Peta Interaktif</span>
+                <span data-i18n="applications.tag2">Analitik Spatial</span>
+                <span data-i18n="applications.tag3">Kecerdasan Perancangan</span>
               </div>
-
-              <div class="browser-address">
-                suo.selangor.gov.my
-              </div>
-
+              <a href="#" class="featured-button">
+                <span data-i18n="applications.exploreApplication">Terokai Aplikasi</span>
+                <span>→</span>
+              </a>
             </div>
 
-
-            <div class="dashboard-screen">
-
-              <div class="dashboard-sidebar">
-
-                <div class="sidebar-logo">
-                  SUO
+            <div class="featured-visual">
+              <div class="browser-window">
+                <div class="browser-toolbar">
+                  <div class="browser-dots"><span></span><span></span><span></span></div>
+                  <div class="browser-address">suo.selangor.gov.my</div>
                 </div>
 
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
+                <div class="dashboard-screen">
+                  <div class="dashboard-sidebar">
+                    <div class="sidebar-logo">SUO</div>
+                    <span></span><span></span><span></span><span></span>
+                  </div>
 
+                  <div class="dashboard-content">
+                    <div class="dashboard-topbar">
+                      <div>
+                        <small>Selangor Urban Observatory</small>
+                        <strong data-i18n="applications.dashboardTitle">Dashboard Kecerdasan Bandar</strong>
+                      </div>
+                      <div class="dashboard-filter">Selangor</div>
+                    </div>
+
+                    <div class="dashboard-kpis">
+                      <div><small data-i18n="applications.districts">Daerah</small><strong>9</strong></div>
+                      <div><small data-i18n="applications.localAuthorities">PBT</small><strong>12</strong></div>
+                      <div><small data-i18n="applications.indicators">Indikator Bandar</small><strong>150+</strong></div>
+                    </div>
+
+                    <div class="dashboard-main">
+                      <div class="dashboard-map">
+                        <span class="map-marker marker-one"></span>
+                        <span class="map-marker marker-two"></span>
+                        <span class="map-marker marker-three"></span>
+                        <div class="map-label" data-i18n="applications.mapLabel">Kecerdasan Spatial Selangor</div>
+                      </div>
+
+                      <div class="dashboard-chart">
+                        <div class="chart-title" data-i18n="applications.chartTitle">Trend Indikator Bandar</div>
+                        <div class="chart-bars">
+                          <span style="height:42%"></span>
+                          <span style="height:65%"></span>
+                          <span style="height:54%"></span>
+                          <span style="height:82%"></span>
+                          <span style="height:70%"></span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
-
-
-              <div class="dashboard-content">
-
-                <div class="dashboard-topbar">
-
-                  <div>
-                    <small>Selangor Urban Observatory</small>
-                    <strong>Urban Intelligence Dashboard</strong>
-                  </div>
-
-                  <div class="dashboard-filter">
-                    Selangor
-                  </div>
-
-                </div>
-
-
-                <div class="dashboard-kpis">
-
-                  <div>
-                    <small>Districts</small>
-                    <strong>9</strong>
-                  </div>
-
-                  <div>
-                    <small>Local Authorities</small>
-                    <strong>12</strong>
-                  </div>
-
-                  <div>
-                    <small>Urban Indicators</small>
-                    <strong>150+</strong>
-                  </div>
-
-                </div>
-
-
-                <div class="dashboard-main">
-
-                  <div class="dashboard-map">
-
-                    <span class="map-marker marker-one"></span>
-                    <span class="map-marker marker-two"></span>
-                    <span class="map-marker marker-three"></span>
-
-                    <div class="map-label">
-                      Selangor Spatial Intelligence
-                    </div>
-
-                  </div>
-
-
-                  <div class="dashboard-chart">
-
-                    <div class="chart-title">
-                      Urban Indicator Trends
-                    </div>
-
-                    <div class="chart-bars">
-                      <span style="height: 42%;"></span>
-                      <span style="height: 65%;"></span>
-                      <span style="height: 54%;"></span>
-                      <span style="height: 82%;"></span>
-                      <span style="height: 70%;"></span>
-                    </div>
-
-                  </div>
-
-                </div>
-
-              </div>
-
             </div>
+          </article>
 
+          <div class="application-grid reveal">
+            <article class="application-card">
+              <div class="application-icon">01</div>
+              <div class="application-card-content">
+                <span class="application-type">ArcGIS StoryMaps</span>
+                <h3 data-i18n="applications.card1Title">Rancangan Struktur Negeri Selangor</h3>
+                <p data-i18n="applications.card1Text">Terokai dasar, strategi dan hala tuju spatial Selangor melalui pengalaman naratif interaktif.</p>
+                <a href="#"><span data-i18n="applications.viewStoryMap">Lihat StoryMap</span><span>→</span></a>
+              </div>
+            </article>
+
+            <article class="application-card">
+              <div class="application-icon">02</div>
+              <div class="application-card-content">
+                <span class="application-type" data-i18n="applications.executiveDashboard">Dashboard Eksekutif</span>
+                <h3 data-i18n="applications.card2Title">Dashboard Guna Tanah Selangor</h3>
+                <p data-i18n="applications.card2Text">Pantau taburan guna tanah semasa, corak pembangunan dan trend perancangan mengikut kawasan PBT.</p>
+                <a href="#"><span data-i18n="applications.openDashboard">Buka Dashboard</span><span>→</span></a>
+              </div>
+            </article>
+
+            <article class="application-card">
+              <div class="application-icon">03</div>
+              <div class="application-card-content">
+                <span class="application-type" data-i18n="applications.monitoringDashboard">Dashboard Pemantauan</span>
+                <h3 data-i18n="applications.card3Title">Pemantauan Alam Sekitar dan KSAS</h3>
+                <p data-i18n="applications.card3Text">Visualisasikan kawasan sensitif alam sekitar, kekangan perancangan dan indikator alam sekitar strategik.</p>
+                <a href="#"><span data-i18n="applications.openDashboard">Buka Dashboard</span><span>→</span></a>
+              </div>
+            </article>
+
+            <article class="application-card">
+              <div class="application-icon">04</div>
+              <div class="application-card-content">
+                <span class="application-type" data-i18n="applications.urbanAnalytics">Analitik Bandar</span>
+                <h3 data-i18n="applications.card4Title">Dashboard MURNInets Selangor</h3>
+                <p data-i18n="applications.card4Text">Pantau indikator bandar mampan dan prestasi pihak berkuasa tempatan melalui analitik bandar bersepadu.</p>
+                <a href="#"><span data-i18n="applications.viewAnalytics">Lihat Analitik</span><span>→</span></a>
+              </div>
+            </article>
+
+            <article class="application-card">
+              <div class="application-icon">05</div>
+              <div class="application-card-content">
+                <span class="application-type">Digital Twin</span>
+                <h3 data-i18n="applications.card5Title">Digital Twin Selangor</h3>
+                <p data-i18n="applications.card5Text">Alami simulasi bandar tiga dimensi, pemantauan infrastruktur dan perancangan senario pada masa hadapan.</p>
+                <a href="#"><span data-i18n="applications.comingSoon">Akan Datang</span><span>→</span></a>
+              </div>
+            </article>
+
+            <article class="application-card">
+              <div class="application-icon">06</div>
+              <div class="application-card-content">
+                <span class="application-type" data-i18n="applications.openData">Data Terbuka</span>
+                <h3 data-i18n="applications.card6Title">Katalog Data Bandar Selangor</h3>
+                <p data-i18n="applications.card6Text">Temui set data spatial, indikator bandar dan sumber data terbuka terpilih daripada agensi yang mengambil bahagian.</p>
+                <a href="#"><span data-i18n="applications.exploreData">Terokai Data</span><span>→</span></a>
+              </div>
+            </article>
           </div>
-
         </div>
-
-      </article>
-
-
-      <!-- Application Cards -->
-
-      <div class="application-grid">
-
-        <article class="application-card">
-
-          <div class="application-icon">
-            01
-          </div>
-
-          <div class="application-card-content">
-
-            <span class="application-type">
-              ArcGIS StoryMaps
-            </span>
-
-            <h3>
-              Selangor State Structure Plan
-            </h3>
-
-            <p>
-              Explore the policies, strategies and spatial direction
-              of Selangor through an interactive narrative experience.
-            </p>
-
-            <a href="#">
-              View StoryMap
-              <span>→</span>
-            </a>
-
-          </div>
-
-        </article>
-
-
-        <article class="application-card">
-
-          <div class="application-icon">
-            02
-          </div>
-
-          <div class="application-card-content">
-
-            <span class="application-type">
-              Executive Dashboard
-            </span>
-
-            <h3>
-              Selangor Land Use Dashboard
-            </h3>
-
-            <p>
-              Monitor current land-use distribution, development patterns
-              and planning trends across local authority areas.
-            </p>
-
-            <a href="#">
-              Open Dashboard
-              <span>→</span>
-            </a>
-
-          </div>
-
-        </article>
-
-
-        <article class="application-card">
-
-          <div class="application-icon">
-            03
-          </div>
-
-          <div class="application-card-content">
-
-            <span class="application-type">
-              Monitoring Dashboard
-            </span>
-
-            <h3>
-              Environment and KSAS Monitoring
-            </h3>
-
-            <p>
-              Visualise environmentally sensitive areas, planning constraints
-              and strategic environmental indicators.
-            </p>
-
-            <a href="#">
-              Open Dashboard
-              <span>→</span>
-            </a>
-
-          </div>
-
-        </article>
-
-
-        <article class="application-card">
-
-          <div class="application-icon">
-            04
-          </div>
-
-          <div class="application-card-content">
-
-            <span class="application-type">
-              Urban Analytics
-            </span>
-
-            <h3>
-              MURNInets Selangor Dashboard
-            </h3>
-
-            <p>
-              Monitor sustainable-city indicators and local authority
-              performance through integrated urban analytics.
-            </p>
-
-            <a href="#">
-              View Analytics
-              <span>→</span>
-            </a>
-
-          </div>
-
-        </article>
-
-
-        <article class="application-card">
-
-          <div class="application-icon">
-            05
-          </div>
-
-          <div class="application-card-content">
-
-            <span class="application-type">
-              Digital Twin
-            </span>
-
-            <h3>
-              Selangor Digital Twin</h3>
-
-            <p>
-              Experience future three-dimensional urban simulations,
-              infrastructure monitoring and scenario planning.
-            </p>
-
-            <a href="#">
-              Coming Soon
-              <span>→</span>
-            </a>
-
-          </div>
-
-        </article>
-
-
-        <article class="application-card">
-
-          <div class="application-icon">
-            06
-          </div>
-
-          <div class="application-card-content">
-
-            <span class="application-type">
-              Open Data
-            </span>
-
-            <h3>
-              Selangor Urban Data Catalogue
-            </h3>
-
-            <p>
-              Discover spatial datasets, urban indicators and selected
-              open-data resources from participating agencies.
-            </p>
-
-            <a href="#">
-              Explore Data
-              <span>→</span>
-            </a>
-
-          </div>
-
-        </article>
-
       </div>
+    </section>
 
-    </div>
-
-  </div>
-
-</section>
-
-
-    <!-- ROADMAP -->
     <section id="roadmap" class="section">
-
-      <div class="section-heading">
-
-        <span class="section-badge">
-          SUO Roadmap
-        </span>
-
-        <h2>Building Selangor’s Urban Intelligence Platform</h2>
-
+      <div class="section-heading reveal">
+        <span class="section-badge" data-i18n="roadmap.badge">Pelan Hala Tuju SUO</span>
+        <h2 data-i18n="roadmap.title">Membangunkan Platform Kecerdasan Bandar Selangor</h2>
       </div>
 
-
-      <div class="timeline">
-
+      <div class="timeline reveal">
         <div class="timeline-item">
           <h3>2027</h3>
-          <p>
-            Fasa 1: Kajian semasa, pembangunan kerangka SUO,
-            reka bentuk sistem dan pelan pengurusan data.
-          </p>
+          <p data-i18n="roadmap.phase1">Fasa 1: Kajian semasa, pembangunan kerangka SUO, reka bentuk sistem dan pelan pengurusan data.</p>
         </div>
-
         <div class="timeline-item">
           <h3>2028</h3>
-          <p>
-            Fasa 2: Pembangunan platform, dashboard,
-            pangkalan data dan integrasi sistem.
-          </p>
+          <p data-i18n="roadmap.phase2">Fasa 2: Pembangunan platform, dashboard, pangkalan data dan integrasi sistem.</p>
         </div>
-
         <div class="timeline-item">
           <h3>2029</h3>
-          <p>
-            Fasa 3: Pengoperasian SUO, analitik lanjutan,
-            pemantauan masa nyata dan pembangunan asas Digital Twin.
+          <p data-i18n="roadmap.phase3">Fasa 3: Pengoperasian SUO, analitik lanjutan, pemantauan masa nyata dan pembangunan asas Digital Twin.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-section" id="contact">
+      <div class="contact-container">
+        <div class="contact-heading reveal">
+          <span class="section-badge" data-i18n="contact.badge">Hubungi Kami</span>
+          <h2>
+            <span data-i18n="contact.title1">Berhubung Dengan</span>
+            <span>PLANMalaysia Selangor</span>
+          </h2>
+          <p data-i18n="contact.description">
+            Hubungi kami untuk maklumat lanjut berkaitan Selangor Urban Observatory,
+            perkongsian data, dashboard, aplikasi geospatial dan inisiatif kecerdasan bandar.
           </p>
         </div>
 
-      </div>
+        <div class="contact-grid reveal">
+          <div class="contact-map-card">
+            <div class="contact-map-header">
+              <div>
+                <span class="contact-eyebrow" data-i18n="contact.location">Lokasi</span>
+                <h3>PLANMalaysia Selangor</h3>
+              </div>
+              <a href="https://www.google.com/maps/search/?api=1&query=Menara+PPNS+Shah+Alam"
+                 target="_blank" rel="noopener noreferrer" class="map-link">
+                <span data-i18n="contact.openMaps">Buka dalam Maps</span> →
+              </a>
+            </div>
 
+            <div class="map-frame">
+              <iframe
+                src="https://www.google.com/maps?q=Menara%20PPNS%20Shah%20Alam&output=embed"
+                width="100%" height="100%" style="border:0;" allowfullscreen=""
+                loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                title="Lokasi PLANMalaysia Selangor">
+              </iframe>
+            </div>
+          </div>
+
+          <div class="contact-info-card">
+            <span class="contact-eyebrow" data-i18n="contact.address">Alamat</span>
+            <h3>Jabatan Perancangan Bandar dan Desa Negeri Selangor</h3>
+            <p class="agency-name">PLANMalaysia Selangor</p>
+
+            <address>
+              Menara Pertubuhan Peladang Negeri Selangor,<br />
+              Tingkat 2–4 &amp; 9, Menara PPNS,<br />
+              Persiaran Damai, Seksyen 11,<br />
+              40000 Shah Alam,<br />
+              Selangor Darul Ehsan, Malaysia.
+            </address>
+
+            <div class="contact-meta">
+              <div><span data-i18n="contact.office">Pejabat</span><strong>PLANMalaysia Selangor</strong></div>
+              <div><span data-i18n="contact.state">Negeri</span><strong>Selangor Darul Ehsan</strong></div>
+            </div>
+          </div>
+
+          <div class="contact-info-card">
+            <span class="contact-eyebrow" data-i18n="contact.details">Maklumat Perhubungan</span>
+            <h3 data-i18n="contact.contactUs">Hubungi Kami</h3>
+
+            <div class="contact-list">
+              <div class="contact-item">
+                <span class="contact-item-label">Email</span>
+                <a href="mailto:webmaster@jpbdselangor.gov.my">webmaster@jpbdselangor.gov.my</a>
+              </div>
+
+              <div class="contact-item">
+                <span class="contact-item-label" data-i18n="contact.telephone">Telefon</span>
+                <a href="tel:+60356501800">03-5650 1800</a>
+              </div>
+
+              <div class="contact-item">
+                <span class="contact-item-label" data-i18n="contact.fax">Faks</span>
+                <span>03-5650 1855</span>
+              </div>
+            </div>
+
+            <a href="mailto:webmaster@jpbdselangor.gov.my"
+               class="btn btn-primary contact-button"
+               data-i18n="contact.emailButton">
+              Hantar E-mel
+            </a>
+          </div>
+        </div>
+      </div>
     </section>
 
+  </main>
 
-    <!-- CONTACT -->
-<!-- ==================================================
-     CONTACT & FOOTER
-================================================== -->
-
-<section class="contact-section" id="contact">
-
-  <div class="contact-container">
-
-    <div class="contact-heading">
-
-      <span class="section-badge">
-        Contact
-      </span>
-
-      <h2>
-        Connect With
-        <span>PLANMalaysia Selangor</span>
-      </h2>
-
-      <p>
-        Hubungi kami untuk maklumat lanjut berkaitan Selangor Urban Observatory,
-        perkongsian data, dashboard, aplikasi geospatial dan inisiatif urban intelligence.
-      </p>
-
-    </div>
-
-
-    <div class="contact-grid">
-
-      <!-- MAP -->
-
-      <div class="contact-map-card">
-
-        <div class="contact-map-header">
-
-          <div>
-            <span class="contact-eyebrow">
-              Location
-            </span>
-
-            <h3>
-              PLANMalaysia Selangor
-            </h3>
-          </div>
-
-          <a
-            href="https://www.google.com/maps/search/?api=1&query=Menara+PPNS+Shah+Alam"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="map-link"
-          >
-            Open in Maps →
-          </a>
-
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <img src="assets/logos/Logo SUO-01.png"
+             alt="Logo Selangor Urban Observatory"
+             class="footer-logo" />
+        <div>
+          <h3>Selangor Urban Observatory</h3>
+          <p data-i18n="footer.slogan">
+            Mengintegrasikan Data. Memperkasa Keputusan. Mentransformasi Selangor.
+          </p>
         </div>
-
-
-        <div class="map-frame">
-
-          <iframe
-            src="https://www.google.com/maps?q=Menara%20PPNS%20Shah%20Alam&output=embed"
-            width="100%"
-            height="100%"
-            style="border:0;"
-            allowfullscreen=""
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-            title="Lokasi PLANMalaysia Selangor"
-          >
-          </iframe>
-
-        </div>
-
       </div>
 
-
-      <!-- ADDRESS -->
-
-      <div class="contact-info-card">
-
-        <span class="contact-eyebrow">
-          Address
-        </span>
-
-        <h3>
-          Jabatan Perancangan Bandar dan Desa Negeri Selangor
-        </h3>
-
-        <p class="agency-name">
-          PLANMalaysia Selangor
-        </p>
-
-        <address>
-          Menara Pertubuhan Peladang Negeri Selangor,<br />
-          Tingkat 2–4 &amp; 9, Menara PPNS,<br />
-          Persiaran Damai, Seksyen 11,<br />
-          40000 Shah Alam,<br />
-          Selangor Darul Ehsan, Malaysia.
-        </address>
-
-        <div class="contact-meta">
-
-          <div>
-            <span>Office</span>
-            <strong>PLANMalaysia Selangor</strong>
-          </div>
-
-          <div>
-            <span>State</span>
-            <strong>Selangor Darul Ehsan</strong>
-          </div>
-
-        </div>
-
+      <div class="footer-links">
+        <a href="#home" data-i18n="nav.home">Laman Utama</a>
+        <a href="#ecosystem" data-i18n="nav.ecosystem">Ekosistem</a>
+        <a href="#about" data-i18n="nav.about">Tentang SUO</a>
+        <a href="#platform" data-i18n="nav.platform">Platform</a>
+        <a href="#applications" data-i18n="nav.applications">Aplikasi</a>
+        <a href="#roadmap" data-i18n="nav.roadmap">Pelan Hala Tuju</a>
+        <a href="#contact" data-i18n="nav.contact">Hubungi Kami</a>
       </div>
 
+      <div class="footer-divider"></div>
 
-      <!-- CONTACT -->
-
-      <div class="contact-info-card">
-
-        <span class="contact-eyebrow">
-          Contact Details
-        </span>
-
-        <h3>
-          Hubungi Kami
-        </h3>
-
-        <div class="contact-list">
-
-          <div class="contact-item">
-
-            <span class="contact-item-label">
-              Email
-            </span>
-
-            <a href="mailto:webmaster@jpbdselangor.gov.my">
-              webmaster@jpbdselangor.gov.my
-            </a>
-
-          </div>
-
-
-          <div class="contact-item">
-
-            <span class="contact-item-label">
-              Telephone
-            </span>
-
-            <a href="tel:+60356501800">
-              03-5650 1800
-            </a>
-
-          </div>
-
-
-          <div class="contact-item">
-
-            <span class="contact-item-label">
-              Fax
-            </span>
-
-            <span>
-              03-5650 1855
-            </span>
-
-          </div>
-
-        </div>
-
-
-        <a
-          href="mailto:webmaster@jpbdselangor.gov.my"
-          class="btn btn-primary contact-button"
-        >
-          Send an Email
-        </a>
-
+      <div class="footer-bottom">
+        <p data-i18n="footer.copyright">© 2026 Selangor Urban Observatory. Hak cipta terpelihara.</p>
+        <p class="footer-credit" data-i18n="footer.credit">Dibangunkan oleh Unit Geospatial, PLANMalaysia Selangor</p>
       </div>
-
     </div>
+  </footer>
 
-  </div>
-
-</section>
-
-
-<footer class="site-footer">
-
-  <div class="footer-container">
-
-    <div class="footer-brand">
-
-      <img
-        src="assets/logos/Logo SUO-01.png"
-        alt="Logo Selangor Urban Observatory"
-        class="footer-logo"
-      />
-
-      <div>
-
-        <h3>
-          Selangor Urban Observatory
-        </h3>
-
-        <p>
-          Integrating Data. Empowering Decisions. Transforming Selangor.
-        </p>
-
-      </div>
-
-    </div>
-
-
-    <div class="footer-links">
-
-      <a href="#home">Home</a>
-      <a href="#ecosystem">Ecosystem</a>
-      <a href="#about">About SUO</a>
-      <a href="#platform">Platform</a>
-      <a href="#applications">Applications</a>
-      <a href="#roadmap">Roadmap</a>
-
-    </div>
-
-
-    <div class="footer-divider"></div>
-
-
-    <div class="footer-bottom">
-
-      <p>
-        © 2026 Selangor Urban Observatory. All rights reserved.
-      </p>
-
-      <p class="footer-credit">
-        Developed by Geospatial Unit, PLANMalaysia Selangor
-      </p>
-
-    </div>
-
-  </div>
-
-</footer>
-
-  <!-- JAVASCRIPT -->
   <script src="js/script.js"></script>
-
 </body>
 </html>
