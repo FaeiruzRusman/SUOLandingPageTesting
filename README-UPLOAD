@@ -1,0 +1,25 @@
+SUO v3.0 EXECUTIVE EDITION
+
+FAIL YANG PERLU DIGANTI DI GITHUB:
+1. index.html
+2. css/style.css
+3. js/script.js
+
+JANGAN PADAM:
+- folder assets
+- logo dan gambar sedia ada
+
+PENAMBAHBAIKAN v3.0:
+- Executive urban intelligence ribbon selepas Hero.
+- Light / Dark Mode dengan tetapan disimpan.
+- Interactive dashboard preview: Guna Tanah, KSAS, MURNInets dan Pembangunan.
+- Platform cards dengan visual hierarchy dan ikon baharu.
+- Back-to-top button.
+- Hover, pulse dan motion yang lebih premium.
+- Responsive desktop, tablet dan telefon.
+
+CARA UPLOAD MELALUI WEBSITE GITHUB:
+- Buka setiap fail sedia ada.
+- Klik ikon pensel.
+- Ctrl+A dan gantikan dengan kandungan fail baharu.
+- Commit changes.
