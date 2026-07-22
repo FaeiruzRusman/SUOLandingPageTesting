@@ -365,3 +365,116 @@ const counterObserver = new IntersectionObserver((entries) => {
 }, { threshold: 0.6 });
 
 document.querySelectorAll(".counter").forEach((counter) => counterObserver.observe(counter));
+
+
+// ==================================================
+// SUO V3.0 EXECUTIVE INTERACTIONS
+// ==================================================
+
+const themeToggle = document.getElementById("themeToggle");
+
+function setTheme(theme) {
+  const isDark = theme === "dark";
+  document.body.classList.toggle("dark-mode", isDark);
+  if (themeToggle) {
+    themeToggle.setAttribute(
+      "aria-label",
+      isDark ? "Aktifkan mod cerah" : "Aktifkan mod gelap"
+    );
+  }
+  localStorage.setItem("suoTheme", isDark ? "dark" : "light");
+}
+
+const savedTheme = localStorage.getItem("suoTheme");
+const preferredDark = window.matchMedia &&
+  window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+setTheme(savedTheme || (preferredDark ? "dark" : "light"));
+
+if (themeToggle) {
+  themeToggle.addEventListener("click", () => {
+    setTheme(document.body.classList.contains("dark-mode") ? "light" : "dark");
+  });
+}
+
+const dashboardModes = {
+  landuse: {
+    title: "Dashboard Guna Tanah Negeri Selangor",
+    filter: "Guna Tanah",
+    mapLabel: "Taburan Guna Tanah Semasa",
+    chartTitle: "Trend Perubahan Guna Tanah",
+    kpis: ["9", "12", "150+"],
+    bars: [42, 65, 54, 82, 70]
+  },
+  ksas: {
+    title: "Dashboard Pemantauan KSAS",
+    filter: "KSAS",
+    mapLabel: "Kawasan Sensitif Alam Sekitar",
+    chartTitle: "Status Pemantauan KSAS",
+    kpis: ["9", "12", "87"],
+    bars: [76, 52, 68, 61, 88]
+  },
+  murninet: {
+    title: "Dashboard MURNInets Selangor",
+    filter: "MURNInets",
+    mapLabel: "Prestasi Bandar Mampan",
+    chartTitle: "Trend Indikator MURNInets",
+    kpis: ["9", "12", "39"],
+    bars: [55, 63, 72, 79, 86]
+  },
+  development: {
+    title: "Dashboard Pemantauan Pembangunan",
+    filter: "Pembangunan",
+    mapLabel: "Status Projek dan Permohonan",
+    chartTitle: "Prestasi Pemprosesan Permohonan",
+    kpis: ["9", "12", "120+"],
+    bars: [38, 58, 74, 69, 91]
+  }
+};
+
+const modeButtons = document.querySelectorAll(".dashboard-mode");
+const previewTitle = document.getElementById("previewDashboardTitle");
+const previewFilter = document.getElementById("previewDashboardFilter");
+const previewMapLabel = document.getElementById("previewMapLabel");
+const previewChartTitle = document.getElementById("previewChartTitle");
+const previewKpis = document.querySelectorAll(".dashboard-kpis strong");
+const previewBars = document.querySelectorAll(".chart-bars span");
+
+modeButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    const data = dashboardModes[button.dataset.mode];
+    if (!data) return;
+
+    modeButtons.forEach((item) => item.classList.toggle("active", item === button));
+    button.setAttribute("aria-selected", "true");
+    modeButtons.forEach((item) => {
+      if (item !== button) item.setAttribute("aria-selected", "false");
+    });
+
+    if (previewTitle) previewTitle.textContent = data.title;
+    if (previewFilter) previewFilter.textContent = data.filter;
+    if (previewMapLabel) previewMapLabel.textContent = data.mapLabel;
+    if (previewChartTitle) previewChartTitle.textContent = data.chartTitle;
+
+    previewKpis.forEach((item, index) => {
+      if (data.kpis[index] !== undefined) item.textContent = data.kpis[index];
+    });
+
+    previewBars.forEach((bar, index) => {
+      if (data.bars[index] !== undefined) bar.style.height = `${data.bars[index]}%`;
+    });
+  });
+});
+
+const backToTop = document.getElementById("backToTop");
+
+window.addEventListener("scroll", () => {
+  if (!backToTop) return;
+  backToTop.classList.toggle("visible", window.scrollY > 700);
+}, { passive: true });
+
+if (backToTop) {
+  backToTop.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+}
