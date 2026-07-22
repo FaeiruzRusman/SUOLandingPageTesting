@@ -331,3 +331,119 @@ footer {
     margin: 0 8px;
   }
 }
+
+/*=============================
+ Urban Intelligence Ecosystem
+==============================*/
+
+.ecosystem{
+
+padding:120px 8%;
+
+background:#ffffff;
+
+text-align:center;
+
+}
+
+.section-badge{
+
+display:inline-block;
+
+padding:8px 18px;
+
+border-radius:30px;
+
+background:#FFF3D6;
+
+color:#d97706;
+
+font-weight:600;
+
+margin-bottom:25px;
+
+}
+
+.section-title h2{
+
+font-size:52px;
+
+line-height:1.2;
+
+margin-bottom:25px;
+
+color:#222;
+
+}
+
+.section-title h2 span{
+
+color:#E67E22;
+
+}
+
+.section-title p{
+
+max-width:900px;
+
+margin:auto;
+
+font-size:18px;
+
+line-height:1.9;
+
+color:#666;
+
+margin-bottom:70px;
+
+}
+
+.kpi-grid{
+
+display:grid;
+
+grid-template-columns:repeat(4,1fr);
+
+gap:25px;
+
+}
+
+.kpi-card{
+
+background:white;
+
+padding:40px;
+
+border-radius:18px;
+
+box-shadow:0 15px 40px rgba(0,0,0,.08);
+
+transition:.35s;
+
+}
+
+.kpi-card:hover{
+
+transform:translateY(-12px);
+
+box-shadow:0 25px 55px rgba(0,0,0,.12);
+
+}
+
+.kpi-card h3{
+
+font-size:56px;
+
+color:#d97706;
+
+margin-bottom:10px;
+
+}
+
+.kpi-card span{
+
+font-size:16px;
+
+color:#555;
+
+}
