@@ -692,7 +692,7 @@ img {
 ================================================== */
 
 .applications-section {
-  scroll-margin-top: 90px;
+  scroll-margin-top: 50px;
    position: relative;
   padding: 115px 7%;
   overflow: hidden;
