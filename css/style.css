@@ -1977,3 +1977,209 @@ img {
     border-bottom: none;
   }
 }
+
+/* SUO v2.2 bilingual, navigation and animation enhancements */
+
+.language-switcher {
+  position: relative;
+  flex-shrink: 0;
+  margin-left: 18px;
+}
+
+.language-button {
+  min-width: 92px;
+  height: 42px;
+  padding: 0 14px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: 1px solid rgba(215, 93, 11, 0.25);
+  border-radius: 999px;
+  background: rgba(255,255,255,0.94);
+  color: #3d2c20;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 0 8px 22px rgba(65,31,8,0.08);
+  transition: 0.25s ease;
+}
+
+.language-button:hover {
+  transform: translateY(-1px);
+  color: #d75d0b;
+  border-color: rgba(215,93,11,0.55);
+  box-shadow: 0 12px 28px rgba(65,31,8,0.13);
+}
+
+.language-chevron {
+  transition: transform 0.2s ease;
+}
+
+.language-button[aria-expanded="true"] .language-chevron {
+  transform: rotate(180deg);
+}
+
+.language-menu {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  z-index: 1500;
+  width: 215px;
+  padding: 8px;
+  border: 1px solid rgba(80,45,20,0.12);
+  border-radius: 16px;
+  background: rgba(255,255,255,0.98);
+  box-shadow: 0 20px 48px rgba(52,26,8,0.18);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-8px) scale(0.98);
+  transform-origin: top right;
+  transition: 0.2s ease;
+}
+
+.language-menu.open {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0) scale(1);
+}
+
+.language-option {
+  width: 100%;
+  padding: 12px 13px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border: 0;
+  border-radius: 11px;
+  background: transparent;
+  color: #35302c;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 700;
+  text-align: left;
+  cursor: pointer;
+}
+
+.language-option:hover,
+.language-option.active {
+  background: linear-gradient(135deg, #fff1e3, #fff8f1);
+  color: #d75d0b;
+}
+
+.language-code {
+  width: 38px;
+  height: 28px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(215,93,11,0.22);
+  border-radius: 8px;
+  background: #fff;
+  color: #d75d0b;
+  font-size: 11px;
+  font-weight: 900;
+}
+
+section[id] {
+  scroll-margin-top: 96px;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.75s ease, transform 0.75s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+@media (max-width: 1180px) {
+  .nav-links { gap: 14px; }
+  .nav-links a { font-size: 12px; }
+  .language-switcher { margin-left: 10px; }
+}
+
+@media (max-width: 900px) {
+  .navbar {
+    flex-wrap: wrap;
+    row-gap: 12px;
+  }
+
+  .nav-links {
+    order: 3;
+    width: 100%;
+    padding-top: 10px;
+    display: flex;
+    overflow-x: auto;
+    border-top: 1px solid rgba(80,48,25,0.1);
+    scrollbar-width: none;
+  }
+
+  .nav-links::-webkit-scrollbar { display: none; }
+  .nav-links a { flex: 0 0 auto; white-space: nowrap; }
+  .language-switcher { margin-left: auto; }
+}
+
+@media (max-width: 560px) {
+  .logo span { display: none; }
+  .language-button { min-width: 82px; height: 39px; }
+  .language-menu {
+    position: fixed;
+    top: 78px;
+    left: 18px;
+    right: 18px;
+    width: auto;
+  }
+}
+
+/* ==================================================
+   SUO V2.2 FINAL — CONSISTENT SECTION SPACING
+   Platform and Featured Applications now begin at
+   the same vertical spacing from the previous section.
+================================================== */
+
+.section,
+.ecosystem,
+.about-section,
+.applications-section,
+.contact-section {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+.applications-heading {
+  margin-bottom: 50px;
+}
+
+.applications-showcase {
+  gap: 24px;
+}
+
+/* Keep mobile spacing compact and consistent. */
+@media (max-width: 760px) {
+  .section,
+  .ecosystem,
+  .about-section,
+  .applications-section,
+  .contact-section {
+    padding-top: 85px;
+    padding-bottom: 85px;
+  }
+
+  .applications-heading {
+    margin-bottom: 42px;
+  }
+}
