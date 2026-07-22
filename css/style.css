@@ -2565,3 +2565,142 @@ body.dark-mode .contact-meta div {
     animation: none;
   }
 }
+
+
+/* ==================================================
+   SUO V3.5 — LIVE APPLICATIONS DIRECTORY
+================================================== */
+
+.live-dot {
+  width: 8px;
+  height: 8px;
+  display: inline-block;
+  margin-right: 7px;
+  border-radius: 50%;
+  background: #28b66f;
+  box-shadow: 0 0 0 5px rgba(40,182,111,.13);
+}
+
+.application-gallery-heading {
+  margin: 54px 0 24px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.application-gallery-heading h3 {
+  max-width: 720px;
+  margin: 13px 0 0;
+  color: #22252a;
+  font-size: clamp(24px, 3vw, 38px);
+  line-height: 1.15;
+  letter-spacing: -1px;
+}
+
+.gallery-count {
+  flex: 0 0 auto;
+  padding: 10px 15px;
+  border: 1px solid rgba(40,182,111,.24);
+  border-radius: 999px;
+  background: rgba(40,182,111,.09);
+  color: #168451;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.application-meta {
+  margin-bottom: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.status-badge {
+  flex: 0 0 auto;
+  padding: 6px 9px;
+  border-radius: 999px;
+  font-size: 9px;
+  font-weight: 900;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.status-badge.live {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(40,182,111,.11);
+  color: #168451;
+}
+
+.status-badge.live span {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #28b66f;
+}
+
+.status-badge.coming {
+  background: rgba(216,93,11,.10);
+  color: #b64a08;
+}
+
+.live-application {
+  border-color: rgba(40,182,111,.18);
+}
+
+.live-application:hover {
+  border-color: rgba(40,182,111,.46);
+  box-shadow: 0 22px 48px rgba(33,98,68,.12);
+}
+
+.live-application a span:last-child {
+  transition: transform .25s ease;
+}
+
+.live-application a:hover span:last-child {
+  transform: translate(3px, -3px);
+}
+
+.coming-application {
+  background: linear-gradient(145deg, #fff, #fafafa);
+}
+
+.disabled-application-link {
+  display: inline-flex;
+  margin-top: auto;
+  color: #9a9fa6;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+body.dark-mode .application-gallery-heading h3 {
+  color: #f3f4f6;
+}
+
+body.dark-mode .coming-application {
+  background: #171b20;
+}
+
+body.dark-mode .gallery-count {
+  border-color: rgba(40,182,111,.28);
+  background: rgba(40,182,111,.10);
+  color: #61d49a;
+}
+
+body.dark-mode .status-badge.live {
+  color: #61d49a;
+}
+
+body.dark-mode .status-badge.coming {
+  color: #ff9d61;
+}
+
+@media (max-width: 700px) {
+  .application-gallery-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
