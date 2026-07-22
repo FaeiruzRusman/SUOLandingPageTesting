@@ -91,7 +91,7 @@ body {
       rgba(211, 94, 8, 0.78) 45%,
       rgba(255, 174, 31, 0.62) 100%
     ),
-    url("assets/images/hero-selangor.jpg") center / cover no-repeat;
+    url("../assets/images/hero-selangor.jpg") center / cover no-repeat;
 }
 
 .hero::after {
