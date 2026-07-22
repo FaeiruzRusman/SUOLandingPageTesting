@@ -10,7 +10,7 @@
     content="Selangor Urban Observatory ialah platform kecerdasan bandar bersepadu bagi menyokong perancangan, analitik dan keputusan berasaskan data di Negeri Selangor."
   />
 
-  <title>Selangor Urban Observatory | Executive Edition</title>
+  <title>Selangor Urban Observatory | Live Applications</title>
 
   <link rel="stylesheet" href="css/style.css" />
 </head>
@@ -309,29 +309,35 @@
         </div>
 
         <div class="applications-showcase">
-          <div class="dashboard-mode-switch reveal" role="tablist" aria-label="Dashboard preview">
+          <div class="dashboard-mode-switch reveal" role="tablist" aria-label="Aplikasi langsung SUO">
             <button class="dashboard-mode active" type="button" data-mode="landuse">Guna Tanah</button>
-            <button class="dashboard-mode" type="button" data-mode="ksas">KSAS</button>
-            <button class="dashboard-mode" type="button" data-mode="murninet">MURNInets</button>
-            <button class="dashboard-mode" type="button" data-mode="development">Pembangunan</button>
+            <button class="dashboard-mode" type="button" data-mode="smartdesa">SMARTDesa</button>
+            <button class="dashboard-mode" type="button" data-mode="rsn2035">RSN 2035</button>
+            <button class="dashboard-mode" type="button" data-mode="tourism">Pelancongan</button>
           </div>
 
           <article class="featured-application reveal">
             <div class="featured-content">
-              <span class="featured-label" data-i18n="applications.featuredLabel">Aplikasi Bandar Pilihan</span>
-              <h3 data-i18n="applications.featuredTitle">Portal Kecerdasan Bandar Selangor</h3>
-              <p data-i18n="applications.featuredText">
-                Terokai maklumat spatial bersepadu, indikator perancangan,
-                trend pembangunan dan cerapan bandar di seluruh Negeri Selangor.
+              <span class="featured-label"><span class="live-dot"></span> Aplikasi Langsung</span>
+              <h3 id="featuredAppTitle">Dashboard Guna Tanah Negeri Selangor</h3>
+              <p id="featuredAppText">
+                Paparan interaktif guna tanah semasa dan maklumat spatial bagi
+                menyokong pemantauan serta keputusan perancangan Negeri Selangor.
               </p>
               <div class="featured-tags">
                 <span data-i18n="applications.tag1">Peta Interaktif</span>
                 <span data-i18n="applications.tag2">Analitik Spatial</span>
                 <span data-i18n="applications.tag3">Kecerdasan Perancangan</span>
               </div>
-              <a href="#" class="featured-button">
-                <span data-i18n="applications.exploreApplication">Terokai Aplikasi</span>
-                <span>→</span>
+              <a
+                id="featuredAppLink"
+                href="https://sismaps.jpbdselangor.gov.my/dashboard"
+                class="featured-button"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span id="featuredAppButtonText">Buka Dashboard</span>
+                <span>↗</span>
               </a>
             </div>
 
@@ -339,7 +345,7 @@
               <div class="browser-window">
                 <div class="browser-toolbar">
                   <div class="browser-dots"><span></span><span></span><span></span></div>
-                  <div class="browser-address">suo.selangor.gov.my</div>
+                  <div id="previewBrowserAddress" class="browser-address">sismaps.jpbdselangor.gov.my/dashboard</div>
                 </div>
 
                 <div class="dashboard-screen">
@@ -388,66 +394,101 @@
             </div>
           </article>
 
+          <div class="application-gallery-heading reveal">
+            <div>
+              <span class="section-badge">Direktori Aplikasi</span>
+              <h3>Akses Dashboard dan StoryMaps Negeri Selangor</h3>
+            </div>
+            <span class="gallery-count">4 Aplikasi Live</span>
+          </div>
+
           <div class="application-grid reveal">
-            <article class="application-card">
+            <article class="application-card live-application">
               <div class="application-icon">01</div>
               <div class="application-card-content">
-                <span class="application-type">ArcGIS StoryMaps</span>
-                <h3 data-i18n="applications.card1Title">Rancangan Struktur Negeri Selangor</h3>
-                <p data-i18n="applications.card1Text">Terokai dasar, strategi dan hala tuju spatial Selangor melalui pengalaman naratif interaktif.</p>
-                <a href="#"><span data-i18n="applications.viewStoryMap">Lihat StoryMap</span><span>→</span></a>
+                <div class="application-meta">
+                  <span class="application-type">Dashboard Eksekutif</span>
+                  <span class="status-badge live"><span></span>Live</span>
+                </div>
+                <h3>Dashboard Guna Tanah Negeri Selangor</h3>
+                <p>Paparan interaktif guna tanah semasa dan maklumat spatial bagi menyokong pemantauan serta keputusan perancangan negeri.</p>
+                <a href="https://sismaps.jpbdselangor.gov.my/dashboard" target="_blank" rel="noopener noreferrer">
+                  <span>Buka Dashboard</span><span>↗</span>
+                </a>
               </div>
             </article>
 
-            <article class="application-card">
+            <article class="application-card live-application">
               <div class="application-icon">02</div>
               <div class="application-card-content">
-                <span class="application-type" data-i18n="applications.executiveDashboard">Dashboard Eksekutif</span>
-                <h3 data-i18n="applications.card2Title">Dashboard Guna Tanah Selangor</h3>
-                <p data-i18n="applications.card2Text">Pantau taburan guna tanah semasa, corak pembangunan dan trend perancangan mengikut kawasan PBT.</p>
-                <a href="#"><span data-i18n="applications.openDashboard">Buka Dashboard</span><span>→</span></a>
+                <div class="application-meta">
+                  <span class="application-type">Dashboard Pemantauan</span>
+                  <span class="status-badge live"><span></span>Live</span>
+                </div>
+                <h3>SMARTDesa Negeri Selangor</h3>
+                <p>Dashboard skrin besar yang memaparkan maklumat dan indikator berkaitan pembangunan serta pemantauan kawasan desa Negeri Selangor.</p>
+                <a href="https://sismaps.jpbdselangor.gov.my/sdbigscreen" target="_blank" rel="noopener noreferrer">
+                  <span>Buka Dashboard</span><span>↗</span>
+                </a>
               </div>
             </article>
 
-            <article class="application-card">
+            <article class="application-card live-application">
               <div class="application-icon">03</div>
               <div class="application-card-content">
-                <span class="application-type" data-i18n="applications.monitoringDashboard">Dashboard Pemantauan</span>
-                <h3 data-i18n="applications.card3Title">Pemantauan Alam Sekitar dan KSAS</h3>
-                <p data-i18n="applications.card3Text">Visualisasikan kawasan sensitif alam sekitar, kekangan perancangan dan indikator alam sekitar strategik.</p>
-                <a href="#"><span data-i18n="applications.openDashboard">Buka Dashboard</span><span>→</span></a>
+                <div class="application-meta">
+                  <span class="application-type">ArcGIS StoryMaps</span>
+                  <span class="status-badge live"><span></span>Live</span>
+                </div>
+                <h3>Rancangan Struktur Negeri Selangor 2035 (Pengubahan)</h3>
+                <p>StoryMaps interaktif yang menerangkan dasar, strategi dan hala tuju spatial pembangunan Negeri Selangor sehingga tahun 2035.</p>
+                <a href="https://arcg.is/11Sbea" target="_blank" rel="noopener noreferrer">
+                  <span>Lihat StoryMaps</span><span>↗</span>
+                </a>
               </div>
             </article>
 
-            <article class="application-card">
+            <article class="application-card live-application">
               <div class="application-icon">04</div>
               <div class="application-card-content">
-                <span class="application-type" data-i18n="applications.urbanAnalytics">Analitik Bandar</span>
-                <h3 data-i18n="applications.card4Title">Dashboard MURNInets Selangor</h3>
-                <p data-i18n="applications.card4Text">Pantau indikator bandar mampan dan prestasi pihak berkuasa tempatan melalui analitik bandar bersepadu.</p>
-                <a href="#"><span data-i18n="applications.viewAnalytics">Lihat Analitik</span><span>→</span></a>
+                <div class="application-meta">
+                  <span class="application-type">ArcGIS StoryMaps</span>
+                  <span class="status-badge live"><span></span>Live</span>
+                </div>
+                <h3>Panduan Pelaksanaan Pelancongan Negeri Selangor</h3>
+                <p>StoryMaps interaktif yang menghimpunkan panduan dan rujukan spatial bagi pelaksanaan pembangunan pelancongan Negeri Selangor.</p>
+                <a href="https://arcg.is/1WiD0n2" target="_blank" rel="noopener noreferrer">
+                  <span>Lihat StoryMaps</span><span>↗</span>
+                </a>
               </div>
             </article>
 
-            <article class="application-card">
+            <article class="application-card coming-application">
               <div class="application-icon">05</div>
               <div class="application-card-content">
-                <span class="application-type">Digital Twin</span>
-                <h3 data-i18n="applications.card5Title">Digital Twin Selangor</h3>
-                <p data-i18n="applications.card5Text">Alami simulasi bandar tiga dimensi, pemantauan infrastruktur dan perancangan senario pada masa hadapan.</p>
-                <a href="#"><span data-i18n="applications.comingSoon">Akan Datang</span><span>→</span></a>
+                <div class="application-meta">
+                  <span class="application-type">Urban Analytics</span>
+                  <span class="status-badge coming">Akan Datang</span>
+                </div>
+                <h3>Dashboard MURNInets Selangor</h3>
+                <p>Pemantauan indikator bandar mampan dan prestasi pihak berkuasa tempatan melalui analitik bandar bersepadu.</p>
+                <span class="disabled-application-link">Dalam Pembangunan</span>
               </div>
             </article>
 
-            <article class="application-card">
+            <article class="application-card coming-application">
               <div class="application-icon">06</div>
               <div class="application-card-content">
-                <span class="application-type" data-i18n="applications.openData">Data Terbuka</span>
-                <h3 data-i18n="applications.card6Title">Katalog Data Bandar Selangor</h3>
-                <p data-i18n="applications.card6Text">Temui set data spatial, indikator bandar dan sumber data terbuka terpilih daripada agensi yang mengambil bahagian.</p>
-                <a href="#"><span data-i18n="applications.exploreData">Terokai Data</span><span>→</span></a>
+                <div class="application-meta">
+                  <span class="application-type">Dashboard Pemantauan</span>
+                  <span class="status-badge coming">Akan Datang</span>
+                </div>
+                <h3>Pemantauan Alam Sekitar dan KSAS</h3>
+                <p>Visualisasi kawasan sensitif alam sekitar, kekangan perancangan dan indikator alam sekitar strategik.</p>
+                <span class="disabled-application-link">Dalam Pembangunan</span>
               </div>
             </article>
+          </div>
           </div>
         </div>
       </div>
