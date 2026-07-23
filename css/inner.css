@@ -1,0 +1,51 @@
+
+.page-hero{
+  padding:156px 0 84px;
+  background:
+    radial-gradient(circle at 88% 20%,rgba(246,168,0,.17),transparent 27%),
+    linear-gradient(180deg,var(--surface),var(--bg));
+}
+.page-hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:50px;align-items:center}
+.page-mark{
+  min-height:310px;border-radius:34px;padding:30px;display:grid;place-items:center;position:relative;overflow:hidden;
+  background:linear-gradient(135deg,#1a1f25,#373039);box-shadow:var(--shadow-lg)
+}
+.page-mark img{width:min(72%,360px);position:relative;z-index:3}
+.page-mark::before,.page-mark::after{
+  content:"";position:absolute;border-radius:50%;border:1px solid rgba(255,255,255,.14)
+}
+.page-mark::before{width:390px;height:390px}.page-mark::after{width:270px;height:270px}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.content-card{padding:30px}
+.content-card h3{margin-top:0}
+.content-card p,.content-card li{color:var(--muted);line-height:1.75}
+.value-grid,.objective-grid,.news-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.value-card,.objective-card,.news-card{padding:26px}
+.value-card h3,.objective-card h3,.news-card h3{margin:17px 0 10px}
+.value-card p,.objective-card p,.news-card p{color:var(--muted);line-height:1.7}
+.framework{
+  padding:38px;display:grid;grid-template-columns:repeat(3,1fr);gap:16px;
+}
+.framework div{padding:22px;border-radius:18px;background:var(--surface-2)}
+.contact-layout{display:grid;grid-template-columns:.85fr 1.15fr;gap:24px}
+.contact-info,.contact-form{padding:32px}
+.contact-list{display:grid;gap:14px;margin-top:24px}
+.contact-item{padding:16px;border-radius:16px;background:var(--surface-2)}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.form-field{display:grid;gap:7px}
+.form-field.full{grid-column:1/-1}
+.form-field label{font-size:12px;font-weight:850}
+.form-field input,.form-field textarea{
+  width:100%;border:1px solid var(--line);background:var(--bg);color:var(--text);
+  border-radius:14px;padding:13px 14px;outline:none
+}
+.form-field input:focus,.form-field textarea:focus{border-color:var(--orange-500);box-shadow:0 0 0 3px rgba(235,107,19,.10)}
+.notice{padding:14px 16px;border-radius:14px;background:rgba(235,107,19,.09);color:var(--muted);font-size:13px}
+@media(max-width:900px){
+  .page-hero-grid,.two-col,.contact-layout{grid-template-columns:1fr}
+  .value-grid,.objective-grid,.news-grid,.framework{grid-template-columns:1fr 1fr}
+}
+@media(max-width:620px){
+  .value-grid,.objective-grid,.news-grid,.framework,.form-grid{grid-template-columns:1fr}
+  .form-field.full{grid-column:auto}
+}
