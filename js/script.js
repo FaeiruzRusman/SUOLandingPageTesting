@@ -508,3 +508,24 @@ if (backToTop) {
     window.scrollTo({ top: 0, behavior: "smooth" });
   });
 }
+
+
+// V3.6: subtle pointer parallax for the hero data network.
+const heroSection = document.querySelector('.hero');
+const heroNetwork = document.querySelector('.hero-network');
+const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+if (heroSection && heroNetwork && !reducedMotion.matches && window.matchMedia('(pointer: fine)').matches) {
+  heroSection.addEventListener('pointermove', (event) => {
+    const rect = heroSection.getBoundingClientRect();
+    const x = ((event.clientX - rect.left) / rect.width - 0.5) * 14;
+    const y = ((event.clientY - rect.top) / rect.height - 0.5) * 10;
+    heroNetwork.style.setProperty('--network-x', `${x}px`);
+    heroNetwork.style.setProperty('--network-y', `${y}px`);
+  }, { passive: true });
+
+  heroSection.addEventListener('pointerleave', () => {
+    heroNetwork.style.setProperty('--network-x', '0px');
+    heroNetwork.style.setProperty('--network-y', '0px');
+  });
+}
