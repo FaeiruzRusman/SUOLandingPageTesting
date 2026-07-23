@@ -596,3 +596,123 @@ document.addEventListener("keydown", (event) => {
 });
 
 updateApplicationsDirectory();
+
+
+// ==================================================
+// SUO V3.7.1 — APPLICATIONS BILINGUAL SYNC
+// ==================================================
+
+const applicationsTranslations = {
+  ms: {
+    "apps.nav.home": "Laman Utama",
+    "apps.nav.featured": "Pilihan",
+    "apps.nav.directory": "Direktori",
+    "apps.nav.coming": "Akan Datang",
+    "apps.nav.back": "← Kembali",
+    "apps.hero.eyebrow": "SUO Applications Hub",
+    "apps.hero.title": "Terokai Ekosistem Digital<br />Perancangan Negeri Selangor.",
+    "apps.hero.description": "Satu direktori bersepadu untuk dashboard, StoryMaps, aplikasi spatial dan sumber kecerdasan bandar yang dibangunkan oleh PLANMalaysia Selangor.",
+    "apps.search.placeholder": "Cari aplikasi, dashboard atau StoryMaps...",
+    "apps.filters.all": "Semua",
+    "apps.filters.dashboard": "Dashboard",
+    "apps.filters.storymaps": "StoryMaps",
+    "apps.filters.coming": "Akan Datang",
+    "apps.featured.badge": "Aplikasi Pilihan",
+    "apps.featured.title": "Platform Utama SUO",
+    "apps.featured.count": "4 Aplikasi Live",
+    "apps.directory.badge": "Direktori Aplikasi",
+    "apps.directory.title": "Dashboard dan StoryMaps",
+    "apps.empty.title": "Tiada aplikasi ditemui.",
+    "apps.empty.description": "Cuba gunakan kata kunci atau kategori yang berbeza.",
+    "apps.cta.badge": "Platform Berkembang",
+    "apps.cta.title": "Lebih Banyak Aplikasi Akan Ditambah Secara Berperingkat.",
+    "apps.cta.description": "Direktori ini akan berkembang seiring pembangunan dashboard dan modul baharu SUO.",
+    "apps.cta.button": "Lihat Pelan Hala Tuju",
+    "apps.count.single": "aplikasi dipaparkan",
+    "apps.count.plural": "aplikasi dipaparkan"
+  },
+  en: {
+    "apps.nav.home": "Home",
+    "apps.nav.featured": "Featured",
+    "apps.nav.directory": "Directory",
+    "apps.nav.coming": "Coming Soon",
+    "apps.nav.back": "← Back",
+    "apps.hero.eyebrow": "SUO Applications Hub",
+    "apps.hero.title": "Explore Selangor's Digital<br />Planning Ecosystem.",
+    "apps.hero.description": "An integrated directory for dashboards, StoryMaps, spatial applications and urban intelligence resources developed by PLANMalaysia Selangor.",
+    "apps.search.placeholder": "Search applications, dashboards or StoryMaps...",
+    "apps.filters.all": "All",
+    "apps.filters.dashboard": "Dashboards",
+    "apps.filters.storymaps": "StoryMaps",
+    "apps.filters.coming": "Coming Soon",
+    "apps.featured.badge": "Featured Application",
+    "apps.featured.title": "SUO Flagship Platform",
+    "apps.featured.count": "4 Live Applications",
+    "apps.directory.badge": "Application Directory",
+    "apps.directory.title": "Dashboards and StoryMaps",
+    "apps.empty.title": "No applications found.",
+    "apps.empty.description": "Try a different keyword or category.",
+    "apps.cta.badge": "Growing Platform",
+    "apps.cta.title": "More Applications Will Be Added Progressively.",
+    "apps.cta.description": "This directory will continue to grow alongside new SUO dashboards and modules.",
+    "apps.cta.button": "View Roadmap",
+    "apps.count.single": "application displayed",
+    "apps.count.plural": "applications displayed"
+  }
+};
+
+function getStoredLanguage() {
+  return localStorage.getItem("suoLanguage")
+    || localStorage.getItem("language")
+    || document.documentElement.lang
+    || "ms";
+}
+
+function applyApplicationsLanguage(language) {
+  const lang = applicationsTranslations[language] ? language : "ms";
+  const dictionary = applicationsTranslations[lang];
+
+  document.documentElement.lang = lang;
+  localStorage.setItem("suoLanguage", lang);
+  localStorage.setItem("language", lang);
+
+  document.querySelectorAll("[data-i18n]").forEach((element) => {
+    const key = element.dataset.i18n;
+    if (dictionary[key]) element.textContent = dictionary[key];
+  });
+
+  document.querySelectorAll("[data-i18n-html]").forEach((element) => {
+    const key = element.dataset.i18nHtml;
+    if (dictionary[key]) element.innerHTML = dictionary[key];
+  });
+
+  document.querySelectorAll("[data-i18n-placeholder]").forEach((element) => {
+    const key = element.dataset.i18nPlaceholder;
+    if (dictionary[key]) element.placeholder = dictionary[key];
+  });
+
+  document.querySelectorAll("[data-lang-label]").forEach((label) => {
+    label.classList.toggle("active", label.dataset.langLabel === lang);
+  });
+
+  updateApplicationsDirectory();
+}
+
+document.getElementById("languageToggle")?.addEventListener("click", () => {
+  const current = getStoredLanguage() === "en" ? "en" : "ms";
+  applyApplicationsLanguage(current === "ms" ? "en" : "ms");
+});
+
+const originalUpdateApplicationsDirectoryV371 = updateApplicationsDirectory;
+updateApplicationsDirectory = function () {
+  originalUpdateApplicationsDirectoryV371();
+  if (!visibleAppCount) return;
+
+  const visible = [...document.querySelectorAll("#appsDirectory .app-directory-item")]
+    .filter((item) => !item.classList.contains("is-hidden")).length;
+  const lang = getStoredLanguage() === "en" ? "en" : "ms";
+  const dictionary = applicationsTranslations[lang];
+  visibleAppCount.textContent = `${visible} ${visible === 1 ? dictionary["apps.count.single"] : dictionary["apps.count.plural"]}`;
+};
+
+applyApplicationsLanguage(getStoredLanguage());
