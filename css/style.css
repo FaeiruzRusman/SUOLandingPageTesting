@@ -3588,3 +3588,121 @@ body.dark-mode .hub-card-footer {
     display: none;
   }
 }
+
+
+/* ==================================================
+   SUO V3.7.1 — APPLICATIONS LIGHT MODE + LANGUAGE
+================================================== */
+
+.applications-page {
+  --apps-page-bg: #f4f6f8;
+  --apps-surface: #ffffff;
+  --apps-surface-soft: #f8fafb;
+  --apps-border: #e1e5e9;
+  --apps-text: #25282e;
+  --apps-muted: #69707a;
+  --apps-header-bg: rgba(255,255,255,.92);
+  --apps-header-text: #25282e;
+  background: var(--apps-page-bg);
+  color: var(--apps-text);
+}
+
+.applications-page .applications-navbar {
+  background: var(--apps-header-bg);
+  border-bottom: 1px solid rgba(20,24,29,.08);
+  box-shadow: 0 8px 30px rgba(30,35,42,.06);
+  backdrop-filter: blur(18px);
+}
+
+.applications-page .applications-navbar .logo span,
+.applications-page .applications-navbar .nav-links a,
+.applications-page .applications-home-button {
+  color: var(--apps-header-text);
+}
+
+.applications-page .applications-home-button,
+.applications-page .language-toggle,
+.applications-page .theme-toggle {
+  border-color: rgba(20,24,29,.12);
+  background: rgba(20,24,29,.04);
+}
+
+.applications-page .apps-featured-card,
+.applications-page .hub-app-card {
+  background: var(--apps-surface);
+  border-color: var(--apps-border);
+}
+
+.applications-page .apps-section-heading h2,
+.applications-page .apps-featured-copy h3,
+.applications-page .hub-app-card h3,
+.applications-page .no-app-results strong {
+  color: var(--apps-text);
+}
+
+.applications-page .apps-featured-copy p,
+.applications-page .hub-app-card p,
+.applications-page .apps-live-count,
+.applications-page .directory-count,
+.applications-page .hub-card-footer {
+  color: var(--apps-muted);
+}
+
+.language-toggle {
+  min-width: 68px;
+  height: 38px;
+  padding: 0 11px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  border: 1px solid rgba(255,255,255,.14);
+  border-radius: 999px;
+  background: rgba(255,255,255,.07);
+  color: inherit;
+  cursor: pointer;
+  font: inherit;
+  font-size: 11px;
+  font-weight: 900;
+}
+
+.lang-label {
+  opacity: .42;
+}
+
+.lang-label.active {
+  opacity: 1;
+  color: #d85d0b;
+}
+
+.lang-divider {
+  opacity: .28;
+}
+
+/* Explicit dark mode overrides */
+body.dark-mode.applications-page {
+  --apps-page-bg: #111419;
+  --apps-surface: #1b1f25;
+  --apps-surface-soft: #171b20;
+  --apps-border: rgba(255,255,255,.1);
+  --apps-text: #f4f5f7;
+  --apps-muted: #a3a9b1;
+  --apps-header-bg: rgba(20,23,28,.94);
+  --apps-header-text: #ffffff;
+}
+
+body.dark-mode.applications-page .applications-navbar {
+  border-bottom-color: rgba(255,255,255,.08);
+  box-shadow: none;
+}
+
+body.dark-mode.applications-page .applications-home-button,
+body.dark-mode.applications-page .language-toggle,
+body.dark-mode.applications-page .theme-toggle {
+  border-color: rgba(255,255,255,.15);
+  background: rgba(255,255,255,.07);
+}
+
+body.dark-mode.applications-page .lang-label.active {
+  color: #ffd21f;
+}
