@@ -10,7 +10,7 @@
     content="Selangor Urban Observatory ialah platform kecerdasan bandar bersepadu bagi menyokong perancangan, analitik dan keputusan berasaskan data di Negeri Selangor."
   />
 
-  <title>Selangor Urban Observatory | Live Applications</title>
+  <title>Selangor Urban Observatory | Intelligent Network</title>
 
   <link rel="stylesheet" href="css/style.css" />
 </head>
@@ -81,6 +81,58 @@
 
     <section class="hero" id="home">
       <div class="hero-overlay"></div>
+      <div class="hero-network" aria-hidden="true">
+        <svg class="network-svg" viewBox="0 0 1000 700" preserveAspectRatio="xMidYMid slice">
+          <defs>
+            <linearGradient id="networkStroke" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#ffffff" stop-opacity="0.08" />
+              <stop offset="45%" stop-color="#ffd21f" stop-opacity="0.55" />
+              <stop offset="100%" stop-color="#76e6dc" stop-opacity="0.18" />
+            </linearGradient>
+            <filter id="nodeGlow" x="-100%" y="-100%" width="300%" height="300%">
+              <feGaussianBlur stdDeviation="4" result="blur" />
+              <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+          </defs>
+
+          <g class="network-grid">
+            <path d="M445 66 H615 V160 H760 V270 H920" />
+            <path d="M520 0 V115 H680 V230 H835 V400 H995" />
+            <path d="M400 190 H545 V315 H700 V445 H885 V610" />
+            <path d="M570 700 V575 H735 V490 H930 V355" />
+            <path d="M690 0 V82 H825 V175 H1000" />
+            <path d="M470 520 H600 V420 H760 V555 H1000" />
+            <path d="M620 700 V625 H795 V680" />
+          </g>
+
+          <g class="network-pulses">
+            <path class="pulse pulse-a" pathLength="1" d="M445 66 H615 V160 H760 V270 H920" />
+            <path class="pulse pulse-b" pathLength="1" d="M520 0 V115 H680 V230 H835 V400 H995" />
+            <path class="pulse pulse-c" pathLength="1" d="M400 190 H545 V315 H700 V445 H885 V610" />
+            <path class="pulse pulse-d" pathLength="1" d="M470 520 H600 V420 H760 V555 H1000" />
+          </g>
+
+          <g class="network-nodes" filter="url(#nodeGlow)">
+            <circle class="node node-1" cx="615" cy="160" r="4" />
+            <circle class="node node-2" cx="760" cy="270" r="5" />
+            <circle class="node node-3" cx="680" cy="230" r="4" />
+            <circle class="node node-4" cx="835" cy="400" r="5" />
+            <circle class="node node-5" cx="545" cy="315" r="4" />
+            <circle class="node node-6" cx="700" cy="445" r="5" />
+            <circle class="node node-7" cx="735" cy="490" r="4" />
+            <circle class="node node-8" cx="825" cy="175" r="4" />
+            <circle class="node node-9" cx="600" cy="420" r="4" />
+            <circle class="node node-10" cx="760" cy="555" r="5" />
+          </g>
+
+          <g class="data-rings">
+            <circle cx="835" cy="400" r="18" />
+            <circle cx="700" cy="445" r="14" />
+            <circle cx="760" cy="270" r="20" />
+          </g>
+        </svg>
+        <div class="network-haze"></div>
+      </div>
 
       <div class="hero-content reveal">
         <span class="hero-badge">Selangor Urban Observatory</span>
