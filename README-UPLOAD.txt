@@ -1,45 +1,15 @@
-SUO v5.0 — CORPORATE EDITION
+SUO v5.1 — LOGO & VISUAL POLISH
 
-FULL REPLACEMENT PACKAGE
+This is a FULL REPLACEMENT package based on SUO v5.0.
 
-UPLOAD EVERYTHING IN THIS FOLDER TO THE ROOT OF:
-FaeiruzRusman/SUOLandingPageTesting
+Improvements:
+- Transparent SUO logo
+- Larger and sharper navbar logo
+- Floating logo treatment on hero and inner pages
+- Refined glow and urban-intelligence visual treatment
+- Dashboard-style preview in Featured Application
+- Existing BM/English, light/dark mode, search and filters retained
 
-Main files:
-- index.html
-- about.html
-- applications.html
-- news.html
-- contact.html
-- 404.html
-- .nojekyll
-
-Folders:
-- css/
-- js/
-- assets/
-
-IMPORTANT:
-1. Delete the old repository files first.
-2. Upload all v5.0 files while preserving the folder structure.
-3. Commit the changes.
-4. Wait for GitHub Pages deployment to complete.
-5. Open the site and refresh with Ctrl + F5.
-
-Do not keep:
-- css/style.css
-- js/script.js
-- old duplicate HTML/CSS/JS files
-
-Features included:
-- Corporate landing page
-- About SUO page
-- Applications Hub
-- News & Updates page
-- Contact page
-- Shared design system
-- BM / English switch
-- Light / dark mode
-- Responsive desktop, tablet and mobile layout
-- Search and category filters
-- Relative paths compatible with GitHub Pages
+Upload all files to the repository root and replace existing files.
+Preserve folder structure.
+After deployment, refresh using Ctrl + F5.
