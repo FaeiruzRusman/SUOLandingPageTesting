@@ -529,3 +529,70 @@ if (heroSection && heroNetwork && !reducedMotion.matches && window.matchMedia('(
     heroNetwork.style.setProperty('--network-y', '0px');
   });
 }
+
+
+// ==================================================
+// SUO V3.7 — APPLICATIONS HUB SEARCH & FILTER
+// ==================================================
+
+const appSearch = document.getElementById("appSearch");
+const appFilterButtons = document.querySelectorAll(".app-filter");
+const appDirectoryItems = document.querySelectorAll(".app-directory-item");
+const visibleAppCount = document.getElementById("visibleAppCount");
+const noAppResults = document.getElementById("noAppResults");
+
+let activeAppFilter = "all";
+
+function updateApplicationsDirectory() {
+  if (!appDirectoryItems.length) return;
+
+  const query = (appSearch?.value || "").trim().toLowerCase();
+  let visibleCount = 0;
+
+  appDirectoryItems.forEach((item) => {
+    const category = item.dataset.category || "";
+    const searchText = `${item.dataset.search || ""} ${item.textContent || ""}`.toLowerCase();
+    const categoryMatch = activeAppFilter === "all" || category === activeAppFilter;
+    const searchMatch = !query || searchText.includes(query);
+    const isVisible = categoryMatch && searchMatch;
+
+    item.classList.toggle("is-hidden", !isVisible);
+
+    // Count only directory cards, not the separate featured application.
+    if (isVisible && item.closest("#appsDirectory")) visibleCount += 1;
+  });
+
+  if (visibleAppCount) {
+    visibleAppCount.textContent = `${visibleCount} aplikasi dipaparkan`;
+  }
+
+  if (noAppResults) {
+    noAppResults.hidden = visibleCount !== 0;
+  }
+}
+
+appFilterButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    activeAppFilter = button.dataset.filter || "all";
+    appFilterButtons.forEach((item) => item.classList.remove("active"));
+    button.classList.add("active");
+    updateApplicationsDirectory();
+  });
+});
+
+appSearch?.addEventListener("input", updateApplicationsDirectory);
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "/" && appSearch && document.activeElement !== appSearch) {
+    event.preventDefault();
+    appSearch.focus();
+  }
+
+  if (event.key === "Escape" && appSearch) {
+    appSearch.value = "";
+    appSearch.blur();
+    updateApplicationsDirectory();
+  }
+});
+
+updateApplicationsDirectory();
