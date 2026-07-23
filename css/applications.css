@@ -43,3 +43,58 @@
   .app-grid{grid-template-columns:1fr 1fr}
 }
 @media(max-width:620px){.app-grid{grid-template-columns:1fr}}
+
+
+/* v5.1 featured dashboard preview */
+.featured-visual{
+  position:relative;
+  overflow:hidden;
+  min-height:310px;
+  background:
+    radial-gradient(circle at 85% 15%,rgba(255,255,255,.22),transparent 26%),
+    linear-gradient(135deg,#bc4305,#ef8f00);
+}
+.featured-visual::before{
+  content:"";
+  position:absolute;inset:24px;
+  border:1px solid rgba(255,255,255,.18);
+  border-radius:20px;
+  background:rgba(18,22,27,.20);
+  backdrop-filter:blur(8px);
+}
+.dashboard-preview{
+  position:absolute;inset:42px;
+  display:grid;grid-template-columns:1.25fr .75fr;
+  gap:12px;z-index:2;
+}
+.preview-map,.preview-panel,.preview-kpi{
+  border:1px solid rgba(255,255,255,.18);
+  background:rgba(255,255,255,.11);
+  border-radius:14px;
+}
+.preview-map{
+  position:relative;overflow:hidden;
+  background:
+    linear-gradient(30deg,transparent 46%,rgba(255,255,255,.15) 47% 49%,transparent 50%),
+    linear-gradient(120deg,transparent 48%,rgba(255,255,255,.13) 49% 51%,transparent 52%),
+    rgba(255,255,255,.09);
+}
+.preview-map::after{
+  content:"SELANGOR";
+  position:absolute;left:18px;bottom:16px;
+  font-size:12px;font-weight:900;letter-spacing:.14em;
+}
+.preview-side{display:grid;grid-template-rows:repeat(3,1fr);gap:10px}
+.preview-kpi{padding:12px}
+.preview-kpi strong{display:block;font-size:21px}
+.preview-kpi span{font-size:9px;opacity:.74;text-transform:uppercase;letter-spacing:.08em}
+.preview-chart{
+  margin-top:8px;height:18px;display:flex;align-items:end;gap:4px
+}
+.preview-chart i{display:block;width:12%;background:rgba(255,255,255,.80);border-radius:3px 3px 0 0}
+.preview-chart i:nth-child(1){height:35%}.preview-chart i:nth-child(2){height:72%}.preview-chart i:nth-child(3){height:52%}.preview-chart i:nth-child(4){height:88%}.preview-chart i:nth-child(5){height:64%}
+.featured-visual>small,.featured-visual>h2{display:none}
+@media(max-width:620px){
+  .dashboard-preview{inset:28px;grid-template-columns:1fr}
+  .preview-side{grid-template-columns:repeat(3,1fr);grid-template-rows:1fr}
+}

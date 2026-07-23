@@ -38,7 +38,7 @@ button{color:inherit}
 .brand{
   display:flex;align-items:center;gap:13px;text-decoration:none;min-width:260px;
 }
-.brand img{width:54px;height:54px;object-fit:contain}
+.brand img{width:62px;height:62px;object-fit:contain;filter:drop-shadow(0 6px 14px rgba(0,0,0,.10))}
 .brand-copy{display:grid;gap:1px}
 .brand-copy strong{font-size:13px;letter-spacing:.045em}
 .brand-copy span{font-size:10px;color:var(--muted);letter-spacing:.10em;text-transform:uppercase}
@@ -158,4 +158,15 @@ button{color:inherit}
   .section{padding:76px 0}
   .footer-grid{grid-template-columns:1fr}
   .footer-bottom{flex-direction:column}
+}
+
+
+/* v5.1 visual polish */
+.brand{min-width:292px}
+.site-header.scrolled .brand img{width:56px;height:56px}
+.site-header .brand img{transition:width var(--transition),height var(--transition),filter var(--transition)}
+body.dark .brand img{filter:drop-shadow(0 8px 16px rgba(0,0,0,.32))}
+@media(max-width:680px){
+  .brand{min-width:0}
+  .brand img{width:54px;height:54px}
 }

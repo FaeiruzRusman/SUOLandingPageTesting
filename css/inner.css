@@ -49,3 +49,22 @@
   .value-grid,.objective-grid,.news-grid,.framework,.form-grid{grid-template-columns:1fr}
   .form-field.full{grid-column:auto}
 }
+
+
+/* v5.1 transparent-logo page mark */
+.page-mark{
+  background:
+    radial-gradient(circle at 50% 50%,rgba(246,168,0,.15),transparent 34%),
+    linear-gradient(145deg,#171c22,#2d2730);
+}
+.page-mark img{
+  width:min(82%,430px);
+  filter:drop-shadow(0 24px 38px rgba(0,0,0,.28));
+  animation:pageLogoFloat 6s ease-in-out infinite;
+}
+.page-mark::before{border-color:rgba(246,168,0,.24)}
+.page-mark::after{border-color:rgba(235,107,19,.22)}
+@keyframes pageLogoFloat{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-8px)}
+}
