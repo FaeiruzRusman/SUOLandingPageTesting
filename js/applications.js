@@ -1,32 +1,3 @@
 
 "use strict";
-document.addEventListener("DOMContentLoaded",()=>{
-  const cards=[...document.querySelectorAll(".app-card")];
-  const input=document.getElementById("appSearch");
-  const filters=[...document.querySelectorAll(".side-filter")];
-  const empty=document.getElementById("emptyState");
-  const count=document.getElementById("resultCount");
-  let active="all";
-
-  function refresh(){
-    const q=(input?.value||"").trim().toLowerCase();
-    let visible=0;
-    cards.forEach(card=>{
-      const category=card.dataset.category;
-      const hay=(card.dataset.search+" "+card.textContent).toLowerCase();
-      const show=(active==="all"||active===category)&&(!q||hay.includes(q));
-      card.classList.toggle("hidden",!show);
-      if(show) visible++;
-    });
-    if(empty) empty.classList.toggle("show",visible===0);
-    if(count) count.textContent=SUO.lang==="ms"?`${visible} aplikasi`:`${visible} applications`;
-  }
-  filters.forEach(btn=>btn.addEventListener("click",()=>{
-    active=btn.dataset.filter;
-    filters.forEach(b=>b.classList.toggle("active",b===btn));
-    refresh();
-  }));
-  if(input) input.addEventListener("input",refresh);
-  document.addEventListener("suo:language",refresh);
-  refresh();
-});
+document.addEventListener("DOMContentLoaded",()=>{const s=document.getElementById("appSearch"),f=[...document.querySelectorAll(".filter")],c=[...document.querySelectorAll(".app-card")],e=document.getElementById("empty");let a="all";function r(){const q=(s?.value||"").toLowerCase();let n=0;c.forEach(x=>{const ok=(a==="all"||x.dataset.category===a)&&(!q||(x.dataset.search+" "+x.textContent).toLowerCase().includes(q));x.classList.toggle("hidden",!ok);if(ok)n++});e?.classList.toggle("show",n===0)}s?.addEventListener("input",r);f.forEach(b=>b.addEventListener("click",()=>{a=b.dataset.filter||"all";f.forEach(z=>z.classList.toggle("active",z===b));r()}));r()});
