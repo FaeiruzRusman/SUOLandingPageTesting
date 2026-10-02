@@ -25,17 +25,14 @@
   };
   let code = localStorage.getItem('suo-lang') || 'ms';
   applyLang(code);
-  lang?.addEventListener('click',()=>{code = code === 'ms' ? 'en' : 'ms'; applyLang(code); window.setTimeout(()=>{ if(typeof renderSearch === "function" && searchPanel && !searchPanel.hidden) renderSearch(searchInput?.value || ""); },0)});
+  lang?.addEventListener('click',()=>{code = code === 'ms' ? 'en' : 'ms'; applyLang(code); window.setTimeout(()=>{ if(typeof renderSearch === "function" && searchPanel && !searchPanel.hidden) renderSearch(searchInput?.value || ""); if(typeof applyTheme === "function") applyTheme(localStorage.getItem("suo-theme") || "housing"); },0)});
 
   const io = new IntersectionObserver(entries => entries.forEach(e => {
     if(e.isIntersecting){ e.target.classList.add('visible'); io.unobserve(e.target); }
   }), {threshold:.12});
   document.querySelectorAll('.v7-reveal').forEach(el=>io.observe(el));
 
-  document.querySelectorAll('.v7-theme').forEach(btn => btn.addEventListener('click',()=>{
-    document.querySelectorAll('.v7-theme').forEach(x=>x.classList.remove('active'));
-    btn.classList.add('active');
-  }));
+  // Theme controls are wired below with real spatial overlays and linked applications.
 
   const ask = document.querySelector('#v7AskBtn');
   const input = document.querySelector('#v7AskInput');
@@ -47,6 +44,159 @@
   input?.addEventListener('keydown',e=>{if(e.key==='Enter')go()});
 
 
+
+
+  const themeCatalog = {
+    housing:{
+      eyebrow:{ms:"PERUMAHAN",en:"HOUSING"},
+      title:{ms:"Dashboard Perumahan Negeri Selangor",en:"Selangor Housing Dashboard"},
+      desc:{ms:"Terokai taburan dan maklumat perumahan melalui aplikasi tematik SUO.",en:"Explore housing distribution and related information through SUO's thematic application."},
+      primary:{ms:"Buka Dashboard ↗",en:"Open Dashboard ↗",url:"https://geospatialpms-glitch.github.io/Dashboard-Perumahan-Negeri-Selangor/"},
+      secondary:{ms:"Lihat Aplikasi SUO →",en:"View SUO Applications →",url:"applications.html"},
+      overlay:null
+    },
+    industry:{
+      eyebrow:{ms:"PERINDUSTRIAN",en:"INDUSTRY"},
+      title:{ms:"Perindustrian Negeri Selangor",en:"Selangor Industry Dashboard"},
+      desc:{ms:"Terokai lokasi, taburan dan maklumat kawasan perindustrian Negeri Selangor.",en:"Explore the location, distribution and information of industrial areas across Selangor."},
+      primary:{ms:"Buka Dashboard ↗",en:"Open Dashboard ↗",url:"https://geospatialpms-glitch.github.io/Perindustrian-Negeri-Selangor/"},
+      secondary:{ms:"Lihat Aplikasi SUO →",en:"View SUO Applications →",url:"applications.html"},
+      overlay:null
+    },
+    health:{
+      eyebrow:{ms:"KESIHATAN",en:"HEALTH"},
+      title:{ms:"Kemudahan Kesihatan Negeri Selangor",en:"Selangor Health Facilities"},
+      desc:{ms:"Paparan titik menggunakan data kemudahan kesihatan sebenar daripada SUO GeoPortal.",en:"Point locations use the actual health facilities dataset from the SUO GeoPortal."},
+      primary:{ms:"Buka Dashboard ↗",en:"Open Dashboard ↗",url:"https://geospatialpms-glitch.github.io/Kemudahan-Kesihatan-Negeri-Selangor/"},
+      secondary:{ms:"Buka 3D GeoPortal ↗",en:"Open 3D GeoPortal ↗",url:"https://faeiruzrusman.github.io/selangor-3d-map/"},
+      overlay:"health"
+    },
+    mobility:{
+      eyebrow:{ms:"MOBILITI",en:"MOBILITY"},
+      title:{ms:"Rangkaian Rel & Ketersambungan",en:"Rail Network & Connectivity"},
+      desc:{ms:"Paparan menggunakan rangkaian rel dan stesen sebenar daripada dataset pengangkutan SUO GeoPortal.",en:"The preview uses the actual rail network and station datasets from the SUO GeoPortal."},
+      primary:{ms:"Buka 3D GeoPortal ↗",en:"Open 3D GeoPortal ↗",url:"https://faeiruzrusman.github.io/selangor-3d-map/"},
+      secondary:{ms:"Analitik Spatial ↗",en:"Spatial Analytics ↗",url:"https://faeiruzrusman.github.io/spatial-analytics/"},
+      overlay:"mobility"
+    },
+    environment:{
+      eyebrow:{ms:"ALAM SEKITAR",en:"ENVIRONMENT"},
+      title:{ms:"Alam Sekitar & Tanah Lapang",en:"Environment & Open Space"},
+      desc:{ms:"Terokai maklumat tanah lapang awam serta intelligence cuaca dan banjir melalui aplikasi SUO berkaitan.",en:"Explore public open space information together with weather and flood intelligence through related SUO applications."},
+      primary:{ms:"Buka Tanah Lapang ↗",en:"Open Public Open Space ↗",url:"https://geospatialpms-glitch.github.io/TANAH-LAPANG-AWAM-NEGERI-SELANGOR/"},
+      secondary:{ms:"Buka 3D GeoPortal ↗",en:"Open 3D GeoPortal ↗",url:"https://faeiruzrusman.github.io/selangor-3d-map/"},
+      overlay:null
+    },
+    planning:{
+      eyebrow:{ms:"PERANCANGAN",en:"PLANNING"},
+      title:{ms:"Perancangan Negeri & Guna Tanah",en:"State Planning & Land Use"},
+      desc:{ms:"Gunakan sempadan pentadbiran sebenar Selangor bersama Dashboard Guna Tanah dan RSN Selangor 2035.",en:"Use Selangor's actual administrative boundaries together with the Land Use Dashboard and Selangor State Structure Plan 2035."},
+      primary:{ms:"Buka Dashboard Guna Tanah ↗",en:"Open Land Use Dashboard ↗",url:"https://sismaps.jpbdselangor.gov.my/dashboard"},
+      secondary:{ms:"Buka RSN Selangor 2035 ↗",en:"Open RSN Selangor 2035 ↗",url:"https://arcg.is/11Sbea"},
+      overlay:null
+    }
+  };
+
+  const themeSpatialSources = {
+    health:"https://faeiruzrusman.github.io/selangor-3d-map/data/kesihatan/kemudahan_kesihatan_selangor.geojson",
+    rail:"https://faeiruzrusman.github.io/selangor-3d-map/data/transport/rail_network_final.geojson",
+    stations:"https://faeiruzrusman.github.io/selangor-3d-map/data/transport/rail_stations_final.geojson"
+  };
+
+  const themeMapProjector = {project:null};
+  const themeDataCache = new Map();
+
+  const loadThemeGeoJSON = async (url) => {
+    if(themeDataCache.has(url)) return themeDataCache.get(url);
+    const p=fetch(url,{cache:"force-cache"}).then(r=>{if(!r.ok)throw new Error("GeoJSON "+r.status);return r.json()});
+    themeDataCache.set(url,p); return p;
+  };
+
+  const getSpatialProjector = async () => {
+    if(themeMapProjector.project) return themeMapProjector.project;
+    const data=await loadThemeGeoJSON("https://faeiruzrusman.github.io/selangor-3d-map/data/pentadbiran/sempadan_daerah_selangor.geojson");
+    const all=data.features.flatMap(f=>collectPoints(f.geometry));
+    const xs=all.map(p=>p[0]), ys=all.map(p=>p[1]);
+    const minX=Math.min(...xs),maxX=Math.max(...xs),minY=Math.min(...ys),maxY=Math.max(...ys);
+    const W=480,H=520,pad=30,s=Math.min((W-pad*2)/(maxX-minX),(H-pad*2)/(maxY-minY));
+    const contentW=(maxX-minX)*s,contentH=(maxY-minY)*s,ox=(W-contentW)/2,oy=(H-contentH)/2;
+    themeMapProjector.project=([x,y])=>[ox+(x-minX)*s,H-(oy+(y-minY)*s)];
+    return themeMapProjector.project;
+  };
+
+  const ensureThemeOverlay = () => {
+    const map=document.getElementById("v7SpatialMap");
+    if(!map) return null;
+    let overlay=document.getElementById("v7ThemeOverlay");
+    if(!overlay){
+      overlay=document.createElementNS("http://www.w3.org/2000/svg","svg");
+      overlay.setAttribute("id","v7ThemeOverlay");
+      overlay.setAttribute("class","v7-theme-overlay");
+      overlay.setAttribute("viewBox","0 0 480 520");
+      map.parentElement.appendChild(overlay);
+    }
+    return overlay;
+  };
+
+  const renderThemeOverlay = async (kind) => {
+    const overlay=ensureThemeOverlay();
+    if(!overlay) return;
+    overlay.replaceChildren();
+    if(!kind) return;
+    const NS="http://www.w3.org/2000/svg", project=await getSpatialProjector();
+
+    if(kind==="health"){
+      const data=await loadThemeGeoJSON(themeSpatialSources.health);
+      data.features.forEach(f=>{
+        if(f.geometry?.type!=="Point") return;
+        const [x,y]=project(f.geometry.coordinates);
+        const c=document.createElementNS(NS,"circle");
+        c.setAttribute("cx",x);c.setAttribute("cy",y);c.setAttribute("r","3.2");c.setAttribute("class","theme-point");
+        overlay.appendChild(c);
+      });
+    }
+
+    if(kind==="mobility"){
+      const rail=await loadThemeGeoJSON(themeSpatialSources.rail);
+      const stations=await loadThemeGeoJSON(themeSpatialSources.stations);
+      const drawLine=(coords,cls)=>{
+        const p=document.createElementNS(NS,"path");
+        const d=coords.map((pt,i)=>{const [x,y]=project(pt);return(i?"L":"M")+x.toFixed(2)+" "+y.toFixed(2)}).join(" ");
+        p.setAttribute("d",d);p.setAttribute("class",cls);overlay.appendChild(p);
+      };
+      rail.features.forEach(f=>{
+        const g=f.geometry;if(!g)return;
+        if(g.type==="LineString"){drawLine(g.coordinates,"theme-line-casing");drawLine(g.coordinates,"theme-line")}
+        if(g.type==="MultiLineString")g.coordinates.forEach(line=>{drawLine(line,"theme-line-casing");drawLine(line,"theme-line")});
+      });
+      stations.features.forEach(f=>{
+        if(f.geometry?.type!=="Point")return;
+        const [x,y]=project(f.geometry.coordinates);
+        const c=document.createElementNS(NS,"circle");c.setAttribute("cx",x);c.setAttribute("cy",y);c.setAttribute("r","2.6");c.setAttribute("class","theme-point");overlay.appendChild(c);
+      });
+    }
+  };
+
+  const applyTheme = async (key) => {
+    const item=themeCatalog[key] || themeCatalog.housing;
+    const langCode=document.documentElement.lang==="en"?"en":"ms";
+    document.querySelectorAll(".v7-theme").forEach(x=>x.classList.toggle("active",x.dataset.theme===key));
+    const eyebrow=document.getElementById("v7ThemeEyebrow");
+    const title=document.getElementById("v7ThemeTitle");
+    const desc=document.getElementById("v7ThemeDesc");
+    const primary=document.getElementById("v7ThemePrimary");
+    const secondary=document.getElementById("v7ThemeSecondary");
+    if(eyebrow)eyebrow.textContent=item.eyebrow[langCode];
+    if(title)title.textContent=item.title[langCode];
+    if(desc)desc.textContent=item.desc[langCode];
+    if(primary){primary.textContent=item.primary[langCode];primary.href=item.primary.url;primary.target=item.primary.url.startsWith("http")?"_blank":"_self"}
+    if(secondary){secondary.textContent=item.secondary[langCode];secondary.href=item.secondary.url;secondary.target=item.secondary.url.startsWith("http")?"_blank":"_self"}
+    try{await renderThemeOverlay(item.overlay)}catch(err){console.warn("SUO theme overlay:",err)}
+    localStorage.setItem("suo-theme",key);
+  };
+
+  document.querySelectorAll(".v7-theme[data-theme]").forEach(btn=>btn.addEventListener("click",()=>applyTheme(btn.dataset.theme)));
+  window.setTimeout(()=>applyTheme(localStorage.getItem("suo-theme") || "housing"),0);
 
   const suoSearchIndex = [
     {
