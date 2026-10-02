@@ -283,7 +283,7 @@
    v7.6.0 Production pass: responsive + performance
    ========================================================= */
 html,body{max-width:100%;overflow-x:hidden}
-img,svg,iframe{max-width:100%}
+img,svg{max-width:100%}
 .v7-shell{width:min(1180px,calc(100% - 40px))}
 .v7-section,.v7-resources,.v7-eco-road{scroll-margin-top:84px}
 
@@ -540,3 +540,21 @@ iframe[data-src]:not([src]){
 .v7-status-note{margin:14px 0 0;color:#80746a;font-size:10px;line-height:1.55;max-width:940px}
 @media(max-width:900px){.v7-status-grid{grid-template-columns:1fr 1fr}.v7-status-head{align-items:start;flex-direction:column}.v7-audit-date{white-space:normal}}
 @media(max-width:560px){.v7-system-status{padding:44px 0}.v7-status-grid{grid-template-columns:1fr}}
+
+
+/* v7.8.3 restore live preview rendering exactly as pre-production */
+.v7-geo,.v7-apps{
+  content-visibility:visible!important;
+  contain-intrinsic-size:auto!important;
+}
+.v7-geo-live-frame,
+.v7-live-preview iframe{
+  max-width:none!important;
+  display:block!important;
+  visibility:visible!important;
+  opacity:1!important;
+}
+.v7-live-preview{
+  display:block!important;
+  visibility:visible!important;
+}
