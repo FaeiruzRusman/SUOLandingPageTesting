@@ -133,9 +133,51 @@
       overlay.setAttribute("id","v7ThemeOverlay");
       overlay.setAttribute("class","v7-theme-overlay");
       overlay.setAttribute("viewBox","0 0 480 520");
+      overlay.setAttribute("preserveAspectRatio","xMidYMid meet");
       map.parentElement.appendChild(overlay);
     }
     return overlay;
+  };
+
+  const createSelangorClip = async (overlay, project) => {
+    const NS="http://www.w3.org/2000/svg";
+    const districtData=await loadThemeGeoJSON(
+      "https://faeiruzrusman.github.io/selangor-3d-map/data/pentadbiran/sempadan_daerah_selangor.geojson"
+    );
+
+    const defs=document.createElementNS(NS,"defs");
+    const clip=document.createElementNS(NS,"clipPath");
+    clip.setAttribute("id","v7SelangorThemeClip");
+
+    const geometryRings=(geom)=>{
+      if(!geom) return [];
+      if(geom.type==="Polygon") return [geom.coordinates];
+      if(geom.type==="MultiPolygon") return geom.coordinates;
+      return [];
+    };
+
+    districtData.features.forEach(f=>{
+      geometryRings(f.geometry).forEach(poly=>{
+        const path=document.createElementNS(NS,"path");
+        const d=poly.map(ring=>ring.map((pt,i)=>{
+          const [x,y]=project(pt);
+          return (i?"L":"M")+x.toFixed(2)+" "+y.toFixed(2);
+        }).join(" ")+" Z").join(" ");
+        path.setAttribute("d",d);
+        path.setAttribute("fill-rule","evenodd");
+        path.setAttribute("clip-rule","evenodd");
+        clip.appendChild(path);
+      });
+    });
+
+    defs.appendChild(clip);
+    overlay.appendChild(defs);
+
+    const group=document.createElementNS(NS,"g");
+    group.setAttribute("clip-path","url(#v7SelangorThemeClip)");
+    group.setAttribute("class","v7-theme-overlay-data");
+    overlay.appendChild(group);
+    return group;
   };
 
   const renderThemeOverlay = async (kind) => {
@@ -143,7 +185,10 @@
     if(!overlay) return;
     overlay.replaceChildren();
     if(!kind) return;
-    const NS="http://www.w3.org/2000/svg", project=await getSpatialProjector();
+
+    const NS="http://www.w3.org/2000/svg";
+    const project=await getSpatialProjector();
+    const layerGroup=await createSelangorClip(overlay,project);
 
     if(kind==="health"){
       const data=await loadThemeGeoJSON(themeSpatialSources.health);
@@ -151,28 +196,53 @@
         if(f.geometry?.type!=="Point") return;
         const [x,y]=project(f.geometry.coordinates);
         const c=document.createElementNS(NS,"circle");
-        c.setAttribute("cx",x);c.setAttribute("cy",y);c.setAttribute("r","3.2");c.setAttribute("class","theme-point");
-        overlay.appendChild(c);
+        c.setAttribute("cx",x);
+        c.setAttribute("cy",y);
+        c.setAttribute("r","3.2");
+        c.setAttribute("class","theme-point");
+        layerGroup.appendChild(c);
       });
     }
 
     if(kind==="mobility"){
       const rail=await loadThemeGeoJSON(themeSpatialSources.rail);
       const stations=await loadThemeGeoJSON(themeSpatialSources.stations);
+
       const drawLine=(coords,cls)=>{
         const p=document.createElementNS(NS,"path");
-        const d=coords.map((pt,i)=>{const [x,y]=project(pt);return(i?"L":"M")+x.toFixed(2)+" "+y.toFixed(2)}).join(" ");
-        p.setAttribute("d",d);p.setAttribute("class",cls);overlay.appendChild(p);
+        const d=coords.map((pt,i)=>{
+          const [x,y]=project(pt);
+          return (i?"L":"M")+x.toFixed(2)+" "+y.toFixed(2);
+        }).join(" ");
+        p.setAttribute("d",d);
+        p.setAttribute("class",cls);
+        layerGroup.appendChild(p);
       };
+
       rail.features.forEach(f=>{
-        const g=f.geometry;if(!g)return;
-        if(g.type==="LineString"){drawLine(g.coordinates,"theme-line-casing");drawLine(g.coordinates,"theme-line")}
-        if(g.type==="MultiLineString")g.coordinates.forEach(line=>{drawLine(line,"theme-line-casing");drawLine(line,"theme-line")});
+        const g=f.geometry;
+        if(!g) return;
+        if(g.type==="LineString"){
+          drawLine(g.coordinates,"theme-line-casing");
+          drawLine(g.coordinates,"theme-line");
+        }
+        if(g.type==="MultiLineString"){
+          g.coordinates.forEach(line=>{
+            drawLine(line,"theme-line-casing");
+            drawLine(line,"theme-line");
+          });
+        }
       });
+
       stations.features.forEach(f=>{
-        if(f.geometry?.type!=="Point")return;
+        if(f.geometry?.type!=="Point") return;
         const [x,y]=project(f.geometry.coordinates);
-        const c=document.createElementNS(NS,"circle");c.setAttribute("cx",x);c.setAttribute("cy",y);c.setAttribute("r","2.6");c.setAttribute("class","theme-point");overlay.appendChild(c);
+        const c=document.createElementNS(NS,"circle");
+        c.setAttribute("cx",x);
+        c.setAttribute("cy",y);
+        c.setAttribute("r","2.6");
+        c.setAttribute("class","theme-point");
+        layerGroup.appendChild(c);
       });
     }
   };
