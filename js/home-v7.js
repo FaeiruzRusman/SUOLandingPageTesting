@@ -377,12 +377,6 @@
       keywords:["perumahan","housing","rumah mampu milik","rsku","lphs"]
     },
     {
-      titleMs:"Dashboard Perumahan Mampu Milik Negeri Selangor", titleEn:"Selangor Affordable Housing Dashboard",
-      type:"Dashboard", icon:"⌂",
-      url:"https://faeiruzrusman.github.io/Selangor-Affordable-Housing/",
-      keywords:["perumahan mampu milik","affordable housing","rumah selangorku","rsku","rumah idaman","lphs"]
-    },
-    {
       titleMs:"Dashboard Kemudahan Keselamatan Negeri Selangor", titleEn:"Selangor Safety Facilities Dashboard",
       type:"Dashboard", icon:"◈",
       url:"https://faeiruzrusman.github.io/Dashboard-Kemudahan-Keselamatan/",
