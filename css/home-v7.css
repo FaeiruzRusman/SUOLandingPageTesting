@@ -238,3 +238,26 @@
   .v7-theme-detail{grid-template-columns:1fr}
   .v7-theme-actions{justify-content:flex-start}
 }
+
+
+/* v7.4.3 register thematic overlay exactly to the district map SVG */
+.v7-spatial-map .v7-theme-overlay{
+  position:absolute!important;
+  left:50%!important;
+  right:auto!important;
+  top:0!important;
+  bottom:auto!important;
+  inset:auto!important;
+  transform:translateX(-50%)!important;
+  width:390px!important;
+  height:420px!important;
+  z-index:2!important;
+  pointer-events:none!important;
+  overflow:visible!important;
+}
+@media(max-width:680px){
+  .v7-spatial-map .v7-theme-overlay{
+    width:300px!important;
+    height:330px!important;
+  }
+}
