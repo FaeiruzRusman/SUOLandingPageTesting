@@ -188,26 +188,20 @@
     return parts;
   };
 
-  const ensureThemeOverlay = () => {
-    const map=document.getElementById("v7SpatialMap");
-    if(!map) return null;
-    let overlay=document.getElementById("v7ThemeOverlay");
-    if(!overlay){
-      overlay=document.createElementNS("http://www.w3.org/2000/svg","svg");
-      overlay.setAttribute("id","v7ThemeOverlay");
-      overlay.setAttribute("class","v7-theme-overlay");
-      overlay.setAttribute("viewBox","0 0 480 520");
-      map.parentElement.appendChild(overlay);
-    }
-    return overlay;
-  };
-
   const renderThemeOverlay = async (kind) => {
-    const overlay=ensureThemeOverlay();
-    if(!overlay) return;
-    overlay.replaceChildren();
+    document.getElementById("v7ThemeOverlay")?.remove();
+    const svg=document.getElementById("v7SpatialMap");
+    if(!svg) return;
+
+    svg.querySelector("#v7ThemeLayer")?.remove();
     if(!kind) return;
-    const NS="http://www.w3.org/2000/svg", project=await getSpatialProjector();
+
+    const NS="http://www.w3.org/2000/svg";
+    const project=svg.__suoProject || await getSpatialProjector();
+    const layer=document.createElementNS(NS,"g");
+    layer.setAttribute("id","v7ThemeLayer");
+    layer.setAttribute("class","v7-theme-layer");
+    svg.appendChild(layer);
 
     if(kind==="health"){
       const [data,districtData]=await Promise.all([
@@ -220,8 +214,11 @@
         if(!insideSelangor(coord,districtData)) return;
         const [x,y]=project(coord);
         const c=document.createElementNS(NS,"circle");
-        c.setAttribute("cx",x);c.setAttribute("cy",y);c.setAttribute("r","3.2");c.setAttribute("class","theme-point");
-        overlay.appendChild(c);
+        c.setAttribute("cx",x);
+        c.setAttribute("cy",y);
+        c.setAttribute("r","3.2");
+        c.setAttribute("class","theme-point");
+        layer.appendChild(c);
       });
     }
 
@@ -231,28 +228,44 @@
         loadThemeGeoJSON(themeSpatialSources.stations),
         getSelangorDistrictData()
       ]);
+
       const drawLine=(coords,cls)=>{
+        if(!coords || coords.length<2) return;
         const p=document.createElementNS(NS,"path");
-        const d=coords.map((pt,i)=>{const [x,y]=project(pt);return(i?"L":"M")+x.toFixed(2)+" "+y.toFixed(2)}).join(" ");
-        p.setAttribute("d",d);p.setAttribute("class",cls);overlay.appendChild(p);
+        const d=coords.map((pt,i)=>{
+          const [x,y]=project(pt);
+          return (i?"L":"M")+x.toFixed(2)+" "+y.toFixed(2);
+        }).join(" ");
+        p.setAttribute("d",d);
+        p.setAttribute("class",cls);
+        layer.appendChild(p);
       };
+
       const drawFilteredLine=(coords)=>{
         splitLineInsideSelangor(coords,districtData).forEach(segment=>{
           drawLine(segment,"theme-line-casing");
           drawLine(segment,"theme-line");
         });
       };
+
       rail.features.forEach(f=>{
-        const g=f.geometry;if(!g)return;
+        const g=f.geometry;
+        if(!g) return;
         if(g.type==="LineString") drawFilteredLine(g.coordinates);
         if(g.type==="MultiLineString") g.coordinates.forEach(drawFilteredLine);
       });
+
       stations.features.forEach(f=>{
-        if(f.geometry?.type!=="Point")return;
+        if(f.geometry?.type!=="Point") return;
         const coord=f.geometry.coordinates;
         if(!insideSelangor(coord,districtData)) return;
         const [x,y]=project(coord);
-        const c=document.createElementNS(NS,"circle");c.setAttribute("cx",x);c.setAttribute("cy",y);c.setAttribute("r","2.6");c.setAttribute("class","theme-point");overlay.appendChild(c);
+        const c=document.createElementNS(NS,"circle");
+        c.setAttribute("cx",x);
+        c.setAttribute("cy",y);
+        c.setAttribute("r","2.45");
+        c.setAttribute("class","theme-point");
+        layer.appendChild(c);
       });
     }
   };
@@ -472,6 +485,7 @@
       const contentW=(maxX-minX)*s, contentH=(maxY-minY)*s;
       const ox=(W-contentW)/2, oy=(H-contentH)/2;
       const project=([x,y])=>[ox+(x-minX)*s, H-(oy+(y-minY)*s)];
+      if(svgId==="v7SpatialMap") svg.__suoProject=project;
       const NS="http://www.w3.org/2000/svg";
       svg.replaceChildren();
 
@@ -503,6 +517,9 @@
           }
         }
       });
+      if(svgId==="v7SpatialMap" && typeof applyTheme==="function"){
+        window.setTimeout(()=>applyTheme(localStorage.getItem("suo-theme") || "housing"),0);
+      }
     } catch(err) {
       console.warn("SUO real map preview fallback:",err);
       svg.innerHTML='<text x="240" y="260" text-anchor="middle" fill="#8F0D23" font-size="13">Peta Selangor sedang dimuatkan</text>';
