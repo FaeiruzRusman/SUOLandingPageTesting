@@ -390,6 +390,66 @@
       type:"Platform", icon:"⌁",
       url:"https://faeiruzrusman.github.io/spatial-analytics/",
       keywords:["analitik spatial","spatial analytics","nearest facility","coverage analysis","buffer"]
+    },
+    {
+      titleMs:"Kemudahan Kesihatan — GeoPortal", titleEn:"Health Facilities — GeoPortal",
+      typeMs:"Layer GeoPortal", typeEn:"GeoPortal Layer", icon:"✚",
+      url:"https://faeiruzrusman.github.io/selangor-3d-map/?focus=health",
+      keywords:["hospital","klinik","kesihatan","health","healthcare"]
+    },
+    {
+      titleMs:"Pendidikan — GeoPortal", titleEn:"Schools — GeoPortal",
+      typeMs:"Layer GeoPortal", typeEn:"GeoPortal Layer", icon:"⌂",
+      url:"https://faeiruzrusman.github.io/selangor-3d-map/?focus=schools",
+      keywords:["sekolah","pendidikan","school","education","ppd"]
+    },
+    {
+      titleMs:"Polis Diraja Malaysia — GeoPortal", titleEn:"Police Facilities — GeoPortal",
+      typeMs:"Layer GeoPortal", typeEn:"GeoPortal Layer", icon:"◆",
+      url:"https://faeiruzrusman.github.io/selangor-3d-map/?focus=police",
+      keywords:["polis","pdrm","ipk","ipd","police"]
+    },
+    {
+      titleMs:"Balai Bomba & Penyelamat — GeoPortal", titleEn:"Fire & Rescue Stations — GeoPortal",
+      typeMs:"Layer GeoPortal", typeEn:"GeoPortal Layer", icon:"▲",
+      url:"https://faeiruzrusman.github.io/selangor-3d-map/?focus=fire",
+      keywords:["bomba","balai bomba","fire station","fire rescue","jbpm"]
+    },
+    {
+      titleMs:"Rangkaian Rel & Stesen — GeoPortal", titleEn:"Rail Network & Stations — GeoPortal",
+      typeMs:"Layer GeoPortal", typeEn:"GeoPortal Layer", icon:"═",
+      url:"https://faeiruzrusman.github.io/selangor-3d-map/?focus=mobility",
+      keywords:["rel","rail","stesen","station","mrt","lrt","ktm"]
+    },
+    {
+      titleMs:"Lot Kadaster — GeoPortal", titleEn:"Cadastral Lots — GeoPortal",
+      typeMs:"Layer GeoPortal", typeEn:"GeoPortal Layer", icon:"▦",
+      url:"https://faeiruzrusman.github.io/selangor-3d-map/?focus=cadastral",
+      keywords:["kadaster","cadastral","lot","lot tanah","parcel"]
+    },
+    {
+      titleMs:"Sempadan PBT — GeoPortal", titleEn:"Local Authority Boundaries — GeoPortal",
+      typeMs:"Layer GeoPortal", typeEn:"GeoPortal Layer", icon:"◇",
+      url:"https://faeiruzrusman.github.io/selangor-3d-map/?focus=pbt",
+      keywords:["pbt","sempadan pbt","local authority","mbsa","mbpj","mpkj"]
+    },
+    {
+      titleMs:"Sempadan Daerah — GeoPortal", titleEn:"District Boundaries — GeoPortal",
+      typeMs:"Layer GeoPortal", typeEn:"GeoPortal Layer", icon:"▱",
+      url:"https://faeiruzrusman.github.io/selangor-3d-map/?focus=districts",
+      keywords:["daerah","district","sempadan daerah","klang","gombak","petaling"]
+    },
+    {
+      titleMs:"Flood Intelligence — GeoPortal", titleEn:"Flood Intelligence — GeoPortal",
+      typeMs:"Layer GeoPortal", typeEn:"GeoPortal Layer", icon:"≈",
+      url:"https://faeiruzrusman.github.io/selangor-3d-map/?focus=environment",
+      keywords:["banjir","flood","hujan","rainfall","flood intelligence"]
+    },
+    {
+      titleMs:"Trafik Langsung — GeoPortal", titleEn:"Live Traffic — GeoPortal",
+      typeMs:"Layer GeoPortal", typeEn:"GeoPortal Layer", icon:"↝",
+      url:"https://faeiruzrusman.github.io/selangor-3d-map/?focus=traffic",
+      keywords:["trafik","traffic","live traffic","jalan","kesesakan","congestion"]
     }
   ];
 
@@ -406,11 +466,11 @@
   const searchResults = document.getElementById("v7SearchResults");
 
   const currentLang = () => document.documentElement.lang === "en" ? "en" : "ms";
-  const popularKeywords = ["perumahan","hospital","industri","guna tanah","RSN","pelancongan"];
+  const popularKeywords = ["hospital","sekolah","bomba","kadaster","rel","banjir"];
 
   const scoreItem = (item, q) => {
     const hay = [
-      item.titleMs,item.titleEn,item.type,...item.keywords
+      item.titleMs,item.titleEn,item.type,item.typeMs,item.typeEn,...item.keywords
     ].map(normalizeSearch);
     let score = 0;
     for(const text of hay){
@@ -451,11 +511,12 @@
 
     searchResults.innerHTML=found.map(({item})=>{
       const title=langCode==="en"?item.titleEn:item.titleMs;
+      const type=langCode==="en"?(item.typeEn||item.type||""):(item.typeMs||item.type||"");
       const kw=item.keywords.slice(0,5).join(" · ");
       return '<a class="v7-search-result" href="'+item.url+'" target="_blank" rel="noopener">'+
         '<span class="v7-search-result-icon">'+item.icon+'</span>'+
         '<span class="v7-search-result-copy"><b>'+title+'</b><span>'+kw+'</span></span>'+
-        '<span class="v7-search-result-type">'+item.type+'</span></a>';
+        '<span class="v7-search-result-type">'+type+'</span></a>';
     }).join("");
   };
 
