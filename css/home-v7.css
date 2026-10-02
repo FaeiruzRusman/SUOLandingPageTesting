@@ -76,3 +76,47 @@
   .v7-real-map{right:50%;transform:translateX(50%);width:320px;height:350px;top:5px}
   .v7-spatial-map .v7-spatial-real-map{width:300px;height:330px}
 }
+
+
+/* v7.1.1 avatar hard sizing */
+.v7-assistant-grid{grid-template-columns:160px minmax(0,1fr)}
+.v7-avatar{
+  width:132px!important;
+  height:132px!important;
+  min-width:132px!important;
+  min-height:132px!important;
+  max-width:132px!important;
+  max-height:132px!important;
+  flex:0 0 132px!important;
+  overflow:hidden!important;
+  border-radius:50%!important;
+  padding:0!important;
+  margin:0 auto!important;
+  position:relative!important;
+}
+.v7-avatar img{
+  display:block!important;
+  width:132px!important;
+  height:132px!important;
+  min-width:132px!important;
+  min-height:132px!important;
+  max-width:132px!important;
+  max-height:132px!important;
+  object-fit:cover!important;
+  object-position:center!important;
+  border-radius:50%!important;
+}
+@media(max-width:680px){
+  .v7-assistant-grid{grid-template-columns:1fr}
+  .v7-avatar{
+    width:104px!important;height:104px!important;
+    min-width:104px!important;min-height:104px!important;
+    max-width:104px!important;max-height:104px!important;
+    flex-basis:104px!important;
+  }
+  .v7-avatar img{
+    width:104px!important;height:104px!important;
+    min-width:104px!important;min-height:104px!important;
+    max-width:104px!important;max-height:104px!important;
+  }
+}
