@@ -25,7 +25,7 @@
   };
   let code = localStorage.getItem('suo-lang') || 'ms';
   applyLang(code);
-  lang?.addEventListener('click',()=>{code = code === 'ms' ? 'en' : 'ms'; applyLang(code)});
+  lang?.addEventListener('click',()=>{code = code === 'ms' ? 'en' : 'ms'; applyLang(code); window.setTimeout(()=>{ if(typeof renderSearch === "function" && searchPanel && !searchPanel.hidden) renderSearch(searchInput?.value || ""); },0)});
 
   const io = new IntersectionObserver(entries => entries.forEach(e => {
     if(e.isIntersecting){ e.target.classList.add('visible'); io.unobserve(e.target); }
@@ -46,6 +46,162 @@
   ask?.addEventListener('click',go);
   input?.addEventListener('keydown',e=>{if(e.key==='Enter')go()});
 
+
+
+  const suoSearchIndex = [
+    {
+      titleMs:"Dashboard Perumahan Negeri Selangor", titleEn:"Selangor Housing Dashboard",
+      type:"Dashboard", icon:"⌂",
+      url:"https://geospatialpms-glitch.github.io/Dashboard-Perumahan-Negeri-Selangor/",
+      keywords:["perumahan","housing","rumah mampu milik","rsku","lphs"]
+    },
+    {
+      titleMs:"Perindustrian Negeri Selangor", titleEn:"Selangor Industry Dashboard",
+      type:"Dashboard", icon:"▥",
+      url:"https://geospatialpms-glitch.github.io/Perindustrian-Negeri-Selangor/",
+      keywords:["perindustrian","industry","kawasan industri","industrial park","ekonomi"]
+    },
+    {
+      titleMs:"Kemudahan Kesihatan Negeri Selangor", titleEn:"Selangor Health Facilities",
+      type:"Dashboard", icon:"✚",
+      url:"https://geospatialpms-glitch.github.io/Kemudahan-Kesihatan-Negeri-Selangor/",
+      keywords:["kesihatan","health","hospital","klinik","healthcare"]
+    },
+    {
+      titleMs:"Tanah Lapang Awam Negeri Selangor", titleEn:"Selangor Public Open Space",
+      type:"Dashboard", icon:"♧",
+      url:"https://geospatialpms-glitch.github.io/TANAH-LAPANG-AWAM-NEGERI-SELANGOR/",
+      keywords:["tanah lapang","open space","taman","rekreasi","public open space"]
+    },
+    {
+      titleMs:"Tapak Perkuburan Negeri Selangor", titleEn:"Selangor Cemetery Sites",
+      type:"Dashboard", icon:"◆",
+      url:"https://geospatialpms-glitch.github.io/Tapak-Perkuburan-Negeri-Selangor/",
+      keywords:["perkuburan","cemetery","kubur","burial","tanah perkuburan"]
+    },
+    {
+      titleMs:"Dashboard Guna Tanah Negeri Selangor", titleEn:"Selangor Land Use Dashboard",
+      type:"Dashboard", icon:"▦",
+      url:"https://sismaps.jpbdselangor.gov.my/dashboard",
+      keywords:["guna tanah","land use","zoning","tepu bina","sismaps"]
+    },
+    {
+      titleMs:"SMARTDesa Negeri Selangor", titleEn:"Selangor SMARTDesa",
+      type:"Dashboard", icon:"⌘",
+      url:"https://sismaps.jpbdselangor.gov.my/sdbigscreen",
+      keywords:["smartdesa","desa","rural","kampung","pembangunan desa"]
+    },
+    {
+      titleMs:"RSN Selangor 2035", titleEn:"Selangor State Structure Plan 2035",
+      type:"StoryMap", icon:"▤",
+      url:"https://arcg.is/11Sbea",
+      keywords:["rsn","rancangan struktur","struktur negeri","selangor 2035","planning policy"]
+    },
+    {
+      titleMs:"Panduan Pelaksanaan Pelancongan Negeri Selangor", titleEn:"Selangor Tourism Implementation Guide",
+      type:"StoryMap", icon:"◉",
+      url:"https://arcg.is/1WiD0n2",
+      keywords:["pelancongan","tourism","destinasi","tarikan","travel"]
+    },
+    {
+      titleMs:"SUO 3D GeoPortal", titleEn:"SUO 3D GeoPortal",
+      type:"Platform", icon:"3D",
+      url:"https://faeiruzrusman.github.io/selangor-3d-map/",
+      keywords:["geoportal","3d map","peta selangor","layer spatial","map"]
+    },
+    {
+      titleMs:"Analitik Spatial SUO", titleEn:"SUO Spatial Analytics",
+      type:"Platform", icon:"⌁",
+      url:"https://faeiruzrusman.github.io/spatial-analytics/",
+      keywords:["analitik spatial","spatial analytics","nearest facility","coverage analysis","buffer"]
+    }
+  ];
+
+  const normalizeSearch = (s) => (s || "")
+    .toLowerCase()
+    .normalize("NFD").replace(/[\u0300-\u036f]/g,"")
+    .replace(/[^a-z0-9\s]/g," ")
+    .replace(/\s+/g," ").trim();
+
+  const searchToggle = document.getElementById("v7SearchToggle");
+  const searchPanel = document.getElementById("v7SearchPanel");
+  const searchClose = document.getElementById("v7SearchClose");
+  const searchInput = document.getElementById("v7SmartSearchInput");
+  const searchResults = document.getElementById("v7SearchResults");
+
+  const currentLang = () => document.documentElement.lang === "en" ? "en" : "ms";
+  const popularKeywords = ["perumahan","hospital","industri","guna tanah","RSN","pelancongan"];
+
+  const scoreItem = (item, q) => {
+    const hay = [
+      item.titleMs,item.titleEn,item.type,...item.keywords
+    ].map(normalizeSearch);
+    let score = 0;
+    for(const text of hay){
+      if(text === q) score = Math.max(score,100);
+      else if(text.startsWith(q)) score = Math.max(score,75);
+      else if(text.includes(q)) score = Math.max(score,50);
+      const words=q.split(" ").filter(Boolean);
+      if(words.length>1 && words.every(w=>text.includes(w))) score=Math.max(score,65);
+    }
+    return score;
+  };
+
+  const renderSearch = (query="") => {
+    if(!searchResults) return;
+    const langCode=currentLang();
+    const q=normalizeSearch(query);
+    if(!q){
+      searchResults.innerHTML =
+        '<div class="v7-search-popular">' +
+        popularKeywords.map(k=>'<button type="button" class="v7-search-chip" data-search-chip="'+k+'">'+k+'</button>').join("") +
+        '</div>';
+      searchResults.querySelectorAll("[data-search-chip]").forEach(btn=>{
+        btn.addEventListener("click",()=>{searchInput.value=btn.dataset.searchChip;renderSearch(searchInput.value);searchInput.focus();});
+      });
+      return;
+    }
+
+    const found=suoSearchIndex
+      .map(item=>({item,score:scoreItem(item,q)}))
+      .filter(x=>x.score>0)
+      .sort((a,b)=>b.score-a.score)
+      .slice(0,8);
+
+    if(!found.length){
+      searchResults.innerHTML='<div class="v7-search-empty">'+(langCode==="en"?"No matching SUO application found.":"Tiada aplikasi SUO yang sepadan ditemui.")+'</div>';
+      return;
+    }
+
+    searchResults.innerHTML=found.map(({item})=>{
+      const title=langCode==="en"?item.titleEn:item.titleMs;
+      const kw=item.keywords.slice(0,5).join(" · ");
+      return '<a class="v7-search-result" href="'+item.url+'" target="_blank" rel="noopener">'+
+        '<span class="v7-search-result-icon">'+item.icon+'</span>'+
+        '<span class="v7-search-result-copy"><b>'+title+'</b><span>'+kw+'</span></span>'+
+        '<span class="v7-search-result-type">'+item.type+'</span></a>';
+    }).join("");
+  };
+
+  const openSearch=()=>{
+    if(!searchPanel) return;
+    searchPanel.hidden=false;
+    renderSearch(searchInput?.value || "");
+    window.setTimeout(()=>searchInput?.focus(),30);
+  };
+  const closeSearch=()=>{if(searchPanel)searchPanel.hidden=true};
+
+  searchToggle?.addEventListener("click",()=>searchPanel?.hidden?openSearch():closeSearch());
+  searchClose?.addEventListener("click",closeSearch);
+  searchInput?.addEventListener("input",()=>renderSearch(searchInput.value));
+  document.addEventListener("keydown",e=>{
+    if((e.metaKey||e.ctrlKey)&&e.key.toLowerCase()==="k"){e.preventDefault();openSearch()}
+    if(e.key==="Escape") closeSearch();
+  });
+  document.addEventListener("click",e=>{
+    if(searchPanel?.hidden) return;
+    if(!e.target.closest(".v7-smart-search")) closeSearch();
+  });
 
   const mapSources = {
     hero: "https://faeiruzrusman.github.io/selangor-3d-map/data/pentadbiran/sempadan_pbt_selangor_2024.geojson",
