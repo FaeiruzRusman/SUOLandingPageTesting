@@ -47,14 +47,7 @@
     </div>
     <div class="v7-map-wrap v7-reveal" aria-label="Stylised Selangor spatial canvas">
       <div class="v7-map-orb"></div>
-      <svg class="v7-map-svg" viewBox="0 0 480 520" role="img" aria-label="Stylised Selangor map">
-        <defs><linearGradient id="stateGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#8F0D23"/><stop offset="1" stop-color="#D81E3F"/></linearGradient></defs>
-        <path class="state" d="M223 22 L275 44 L315 83 L347 124 L354 171 L395 208 L374 246 L399 288 L376 332 L338 351 L329 400 L292 438 L247 468 L205 446 L168 461 L140 421 L106 398 L115 353 L84 320 L106 280 L90 239 L126 208 L124 162 L156 136 L165 93 L193 68 Z"/>
-        <path class="boundary" d="M170 94 L221 133 L203 191 L126 207M221 133 L291 112 L344 171M203 191 L278 213 L291 112M203 191 L182 268 L108 280M278 213 L350 247 L376 332M182 268 L249 300 L205 446M249 300 L329 400M249 300 L350 247"/>
-        <path class="road" d="M136 369 C170 330 181 287 214 251 S287 201 327 157M150 170 C201 210 245 230 313 269M188 416 C231 385 279 360 347 343"/>
-        <circle cx="206" cy="252" r="7"/><circle cx="270" cy="213" r="6"/><circle cx="308" cy="299" r="5"/><circle cx="164" cy="340" r="5"/><circle cx="297" cy="138" r="5"/>
-        <text x="196" y="258" fill="white" font-size="13" font-family="Arial" font-weight="700">SELANGOR</text>
-      </svg>
+      <svg class="v7-real-map v7-hero-map" id="v7HeroMap" viewBox="0 0 480 520" role="img" aria-label="Peta sebenar sempadan PBT Negeri Selangor"></svg>
       <div class="v7-float f1"><b>Housing</b><span>Spatial Distribution</span></div>
       <div class="v7-float f2"><b>Health</b><span>Facility Intelligence</span></div>
       <div class="v7-float f3"><b>Industry</b><span>Economic Geography</span></div>
@@ -90,7 +83,7 @@
   <div class="v7-shell v7-geo-grid">
     <div class="v7-browser v7-reveal">
       <div class="v7-browser-top"><span class="v7-dot"></span><span class="v7-dot"></span><span class="v7-dot"></span></div>
-      <div class="v7-browser-screen"><div class="v7-browser-panel"><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="v7-browser-toolbar"><i></i><i></i><i></i><i></i><i></i></div></div>
+      <div class="v7-browser-screen"><iframe class="v7-geo-live-frame" src="https://faeiruzrusman.github.io/selangor-3d-map/" title="Live preview SUO 3D GeoPortal" loading="lazy" tabindex="-1" aria-hidden="true"></iframe><span class="v7-live-badge">LIVE PREVIEW</span></div>
     </div>
     <div class="v7-reveal">
       <div class="v7-kicker">Flagship Application</div>
@@ -120,11 +113,11 @@
   <div class="v7-shell">
     <div class="v7-section-head v7-reveal"><div><div class="v7-kicker">Digital Applications</div><h2 class="v7-title">Explore SUO Applications</h2></div><a class="v7-btn ghost" href="applications.html">View All Applications →</a></div>
     <div class="v7-apps-grid">
-      <a class="v7-app featured v7-reveal" href="https://geospatialpms-glitch.github.io/Dashboard-Perumahan-Negeri-Selangor/" target="_blank" rel="noopener"><span class="v7-tag">Housing</span><h3>Dashboard Perumahan Negeri Selangor</h3><p>Maklumat dan intelligence spatial berkaitan perumahan Negeri Selangor.</p><span class="v7-app-link">Open Application →</span></a>
-      <a class="v7-app industry v7-reveal" href="https://geospatialpms-glitch.github.io/Perindustrian-Negeri-Selangor/" target="_blank" rel="noopener"><span class="v7-tag">Industry</span><h3>Perindustrian Negeri Selangor</h3><p>Taburan industri dan kawasan perindustrian.</p><span class="v7-app-link">Open →</span></a>
-      <a class="v7-app health v7-reveal" href="https://geospatialpms-glitch.github.io/Kemudahan-Kesihatan-Negeri-Selangor/" target="_blank" rel="noopener"><span class="v7-tag">Health</span><h3>Kemudahan Kesihatan</h3><p>Taburan dan capaian kemudahan kesihatan.</p><span class="v7-app-link">Open →</span></a>
-      <a class="v7-app open v7-reveal" href="https://geospatialpms-glitch.github.io/TANAH-LAPANG-AWAM-NEGERI-SELANGOR/" target="_blank" rel="noopener"><span class="v7-tag">Open Space</span><h3>Tanah Lapang Awam</h3><span class="v7-app-link">Open →</span></a>
-      <a class="v7-app cemetery v7-reveal" href="https://geospatialpms-glitch.github.io/Tapak-Perkuburan-Negeri-Selangor/" target="_blank" rel="noopener"><span class="v7-tag">Cemetery</span><h3>Tapak Perkuburan</h3><span class="v7-app-link">Open →</span></a>
+      <a class="v7-app featured v7-reveal" href="https://geospatialpms-glitch.github.io/Dashboard-Perumahan-Negeri-Selangor/" target="_blank" rel="noopener"><div class="v7-live-preview"><iframe src="https://geospatialpms-glitch.github.io/Dashboard-Perumahan-Negeri-Selangor/" title="Live preview Dashboard Perumahan Negeri Selangor" loading="lazy" tabindex="-1" aria-hidden="true"></iframe></div><span class="v7-tag">Housing</span><h3>Dashboard Perumahan Negeri Selangor</h3><p>Maklumat dan intelligence spatial berkaitan perumahan Negeri Selangor.</p><span class="v7-app-link">Open Application →</span></a>
+      <a class="v7-app industry v7-reveal" href="https://geospatialpms-glitch.github.io/Perindustrian-Negeri-Selangor/" target="_blank" rel="noopener"><div class="v7-live-preview"><iframe src="https://geospatialpms-glitch.github.io/Perindustrian-Negeri-Selangor/" title="Live preview Perindustrian Negeri Selangor" loading="lazy" tabindex="-1" aria-hidden="true"></iframe></div><span class="v7-tag">Industry</span><h3>Perindustrian Negeri Selangor</h3><p>Taburan industri dan kawasan perindustrian.</p><span class="v7-app-link">Open →</span></a>
+      <a class="v7-app health v7-reveal" href="https://geospatialpms-glitch.github.io/Kemudahan-Kesihatan-Negeri-Selangor/" target="_blank" rel="noopener"><div class="v7-live-preview"><iframe src="https://geospatialpms-glitch.github.io/Kemudahan-Kesihatan-Negeri-Selangor/" title="Live preview Kemudahan Kesihatan Negeri Selangor" loading="lazy" tabindex="-1" aria-hidden="true"></iframe></div><span class="v7-tag">Health</span><h3>Kemudahan Kesihatan</h3><p>Taburan dan capaian kemudahan kesihatan.</p><span class="v7-app-link">Open →</span></a>
+      <a class="v7-app open v7-reveal" href="https://geospatialpms-glitch.github.io/TANAH-LAPANG-AWAM-NEGERI-SELANGOR/" target="_blank" rel="noopener"><div class="v7-live-preview"><iframe src="https://geospatialpms-glitch.github.io/TANAH-LAPANG-AWAM-NEGERI-SELANGOR/" title="Live preview Tanah Lapang Awam Negeri Selangor" loading="lazy" tabindex="-1" aria-hidden="true"></iframe></div><span class="v7-tag">Open Space</span><h3>Tanah Lapang Awam</h3><span class="v7-app-link">Open →</span></a>
+      <a class="v7-app cemetery v7-reveal" href="https://geospatialpms-glitch.github.io/Tapak-Perkuburan-Negeri-Selangor/" target="_blank" rel="noopener"><div class="v7-live-preview"><iframe src="https://geospatialpms-glitch.github.io/Tapak-Perkuburan-Negeri-Selangor/" title="Live preview Tapak Perkuburan Negeri Selangor" loading="lazy" tabindex="-1" aria-hidden="true"></iframe></div><span class="v7-tag">Cemetery</span><h3>Tapak Perkuburan</h3><span class="v7-app-link">Open →</span></a>
     </div>
     <div class="v7-mini-apps v7-reveal">
       <a class="v7-mini" href="https://sismaps.jpbdselangor.gov.my/dashboard" target="_blank" rel="noopener"><b>Dashboard Guna Tanah</b><span>Open ↗</span></a>
@@ -138,7 +131,7 @@
 <section class="v7-section v7-spatial">
   <div class="v7-shell v7-spatial-grid">
     <div class="v7-spatial-map v7-reveal">
-      <svg class="v7-map-svg" viewBox="0 0 480 520" aria-hidden="true"><defs><linearGradient id="stateGrad2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#e9a8b3"/><stop offset="1" stop-color="#c8102e"/></linearGradient></defs><path class="state" fill="url(#stateGrad2)" stroke="#8f0d23" stroke-width="2" d="M223 22 L275 44 L315 83 L347 124 L354 171 L395 208 L374 246 L399 288 L376 332 L338 351 L329 400 L292 438 L247 468 L205 446 L168 461 L140 421 L106 398 L115 353 L84 320 L106 280 L90 239 L126 208 L124 162 L156 136 L165 93 L193 68 Z"/><path class="boundary" d="M170 94 L221 133 L203 191 L126 207M221 133 L291 112 L344 171M203 191 L278 213 L291 112M203 191 L182 268 L108 280M278 213 L350 247 L376 332M182 268 L249 300 L205 446M249 300 L329 400M249 300 L350 247"/><circle cx="206" cy="252" r="7"/><circle cx="270" cy="213" r="6"/><circle cx="308" cy="299" r="5"/><circle cx="164" cy="340" r="5"/></svg>
+      <svg class="v7-real-map v7-spatial-real-map" id="v7SpatialMap" viewBox="0 0 480 520" role="img" aria-label="Peta sebenar sempadan daerah Negeri Selangor"></svg>
     </div>
     <div class="v7-reveal"><div class="v7-kicker">Selangor Spatial Canvas</div><h2 class="v7-title">One State. Many Urban Systems.<br>One Connected Observatory.</h2><p class="v7-sub">Menghubungkan pelbagai sistem bandar merentas daerah dan PBT untuk perancangan yang lebih terangkum dan responsif.</p><div class="v7-theme-list"><button class="v7-theme active">Housing</button><button class="v7-theme">Industry</button><button class="v7-theme">Health</button><button class="v7-theme">Mobility</button><button class="v7-theme">Environment</button><button class="v7-theme">Planning</button></div></div>
   </div>
@@ -182,7 +175,7 @@
 
 <section class="v7-section v7-assistant">
   <div class="v7-shell v7-assistant-grid">
-    <div class="v7-avatar" aria-label="Mr. TPr. SUO"></div>
+    <div class="v7-avatar" aria-label="Mr. TPr. SUO"><img src="https://faeiruzrusman.github.io/selangor-3d-map/assets/avatar/mr-tpr-suo.png" alt="Mr. TPr. SUO"></div>
     <div><div class="v7-kicker">AI Urban Assistant</div><h2 class="v7-title">Ask Mr. TPr. SUO</h2><p style="color:#f2dfe3;max-width:700px">Discover SUO applications, data and urban planning information through an intelligent assistant.</p><div class="v7-ask"><input id="v7AskInput" placeholder="Ask about housing, land use, facilities or planning..."><button id="v7AskBtn" class="v7-btn gold">Ask SUO →</button></div></div>
   </div>
 </section>
