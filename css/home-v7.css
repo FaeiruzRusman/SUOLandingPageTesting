@@ -447,3 +447,26 @@ iframe[data-src]:not([src]){
     transition-duration:.01ms!important;
   }
 }
+
+
+/* v7.6.1 mobile navigation safeguard */
+@media(max-width:1100px){
+  .v7-mobile-open .v7-links{
+    display:flex!important;
+    z-index:120;
+  }
+}
+@media(max-width:760px){
+  .v7-actions .v7-lang{
+    display:inline-flex!important;
+    align-items:center;
+    justify-content:center;
+  }
+  .v7-mobile-open .v7-links{
+    top:68px!important;
+    left:12px!important;
+    right:12px!important;
+    max-height:calc(100dvh - 84px);
+    overflow:auto;
+  }
+}
