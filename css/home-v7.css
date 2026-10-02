@@ -151,3 +151,29 @@
   .v7-hero h1{font-size:clamp(40px,11vw,58px)}
   .v7-title-line{white-space:normal}
 }
+
+
+/* v7.1.5 hero headline containment + bilingual card sizing */
+.v7-hero-grid > div:first-child{min-width:0;max-width:100%}
+.v7-hero h1{
+  font-size:clamp(40px,4vw,64px)!important;
+  line-height:1.01!important;
+  letter-spacing:-.052em!important;
+  max-width:100%!important;
+  overflow:visible;
+}
+.v7-title-line{
+  display:block;
+  white-space:nowrap;
+  max-width:100%;
+}
+.v7-float{max-width:190px}
+.v7-float b,.v7-float span{white-space:normal}
+.v7-stat b[data-ms][data-en]{font-size:clamp(19px,1.8vw,28px)}
+@media(max-width:1180px){
+  .v7-hero h1{font-size:clamp(38px,5vw,58px)!important}
+}
+@media(max-width:760px){
+  .v7-title-line{white-space:normal}
+  .v7-hero h1{font-size:clamp(39px,10vw,54px)!important}
+}
