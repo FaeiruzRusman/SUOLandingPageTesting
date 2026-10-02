@@ -82,7 +82,7 @@
     environment:{
       eyebrow:{ms:"ALAM SEKITAR",en:"ENVIRONMENT"},
       title:{ms:"Alam Sekitar & Tanah Lapang",en:"Environment & Open Space"},
-      desc:{ms:"Terokai maklumat tanah lapang awam serta intelligence cuaca dan banjir melalui aplikasi SUO berkaitan.",en:"Explore public open space information together with weather and flood intelligence through related SUO applications."},
+      desc:{ms:"Terokai maklumat tanah lapang awam serta kecerdasan cuaca dan banjir melalui aplikasi SUO berkaitan.",en:"Explore public open space information together with weather and flood intelligence through related SUO applications."},
       primary:{ms:"Buka Tanah Lapang ↗",en:"Open Public Open Space ↗",url:"https://geospatialpms-glitch.github.io/TANAH-LAPANG-AWAM-NEGERI-SELANGOR/"},
       secondary:{ms:"Buka 3D GeoPortal ↗",en:"Open 3D GeoPortal ↗",url:"https://faeiruzrusman.github.io/selangor-3d-map/"},
       overlay:null
@@ -124,6 +124,70 @@
     return themeMapProjector.project;
   };
 
+  const pointOnSegment = (p,a,b,eps=1e-10) => {
+    const [x,y]=p,[x1,y1]=a,[x2,y2]=b;
+    const cross=(x-x1)*(y2-y1)-(y-y1)*(x2-x1);
+    if(Math.abs(cross)>eps) return false;
+    const dot=(x-x1)*(x2-x1)+(y-y1)*(y2-y1);
+    if(dot < -eps) return false;
+    const len2=(x2-x1)*(x2-x1)+(y2-y1)*(y2-y1);
+    return dot <= len2 + eps;
+  };
+
+  const pointInRing = (point, ring) => {
+    if(!Array.isArray(ring) || ring.length<3) return false;
+    let inside=false;
+    for(let i=0,j=ring.length-1;i<ring.length;j=i++){
+      const a=ring[j], b=ring[i];
+      if(pointOnSegment(point,a,b)) return true;
+      const xi=b[0], yi=b[1], xj=a[0], yj=a[1];
+      const hit=((yi>point[1])!==(yj>point[1])) &&
+        (point[0] < (xj-xi)*(point[1]-yi)/((yj-yi)||Number.EPSILON)+xi);
+      if(hit) inside=!inside;
+    }
+    return inside;
+  };
+
+  const pointInPolygonCoords = (point, coords) => {
+    if(!coords?.length || !pointInRing(point,coords[0])) return false;
+    for(let i=1;i<coords.length;i++){
+      if(pointInRing(point,coords[i])) return false;
+    }
+    return true;
+  };
+
+  const pointInGeometry = (point, geom) => {
+    if(!geom) return false;
+    if(geom.type==="Polygon") return pointInPolygonCoords(point,geom.coordinates);
+    if(geom.type==="MultiPolygon") return geom.coordinates.some(poly=>pointInPolygonCoords(point,poly));
+    return false;
+  };
+
+  const getSelangorDistrictData = () => loadThemeGeoJSON(
+    "https://faeiruzrusman.github.io/selangor-3d-map/data/pentadbiran/sempadan_daerah_selangor.geojson"
+  );
+
+  const insideSelangor = (point, districtData) =>
+    Array.isArray(point) &&
+    Number.isFinite(point[0]) &&
+    Number.isFinite(point[1]) &&
+    districtData.features.some(f=>pointInGeometry(point,f.geometry));
+
+  const splitLineInsideSelangor = (coords,districtData) => {
+    const parts=[];
+    let current=[];
+    coords.forEach(pt=>{
+      if(insideSelangor(pt,districtData)){
+        current.push(pt);
+      }else{
+        if(current.length>=2) parts.push(current);
+        current=[];
+      }
+    });
+    if(current.length>=2) parts.push(current);
+    return parts;
+  };
+
   const ensureThemeOverlay = () => {
     const map=document.getElementById("v7SpatialMap");
     if(!map) return null;
@@ -146,10 +210,15 @@
     const NS="http://www.w3.org/2000/svg", project=await getSpatialProjector();
 
     if(kind==="health"){
-      const data=await loadThemeGeoJSON(themeSpatialSources.health);
+      const [data,districtData]=await Promise.all([
+        loadThemeGeoJSON(themeSpatialSources.health),
+        getSelangorDistrictData()
+      ]);
       data.features.forEach(f=>{
         if(f.geometry?.type!=="Point") return;
-        const [x,y]=project(f.geometry.coordinates);
+        const coord=f.geometry.coordinates;
+        if(!insideSelangor(coord,districtData)) return;
+        const [x,y]=project(coord);
         const c=document.createElementNS(NS,"circle");
         c.setAttribute("cx",x);c.setAttribute("cy",y);c.setAttribute("r","3.2");c.setAttribute("class","theme-point");
         overlay.appendChild(c);
@@ -157,21 +226,32 @@
     }
 
     if(kind==="mobility"){
-      const rail=await loadThemeGeoJSON(themeSpatialSources.rail);
-      const stations=await loadThemeGeoJSON(themeSpatialSources.stations);
+      const [rail,stations,districtData]=await Promise.all([
+        loadThemeGeoJSON(themeSpatialSources.rail),
+        loadThemeGeoJSON(themeSpatialSources.stations),
+        getSelangorDistrictData()
+      ]);
       const drawLine=(coords,cls)=>{
         const p=document.createElementNS(NS,"path");
         const d=coords.map((pt,i)=>{const [x,y]=project(pt);return(i?"L":"M")+x.toFixed(2)+" "+y.toFixed(2)}).join(" ");
         p.setAttribute("d",d);p.setAttribute("class",cls);overlay.appendChild(p);
       };
+      const drawFilteredLine=(coords)=>{
+        splitLineInsideSelangor(coords,districtData).forEach(segment=>{
+          drawLine(segment,"theme-line-casing");
+          drawLine(segment,"theme-line");
+        });
+      };
       rail.features.forEach(f=>{
         const g=f.geometry;if(!g)return;
-        if(g.type==="LineString"){drawLine(g.coordinates,"theme-line-casing");drawLine(g.coordinates,"theme-line")}
-        if(g.type==="MultiLineString")g.coordinates.forEach(line=>{drawLine(line,"theme-line-casing");drawLine(line,"theme-line")});
+        if(g.type==="LineString") drawFilteredLine(g.coordinates);
+        if(g.type==="MultiLineString") g.coordinates.forEach(drawFilteredLine);
       });
       stations.features.forEach(f=>{
         if(f.geometry?.type!=="Point")return;
-        const [x,y]=project(f.geometry.coordinates);
+        const coord=f.geometry.coordinates;
+        if(!insideSelangor(coord,districtData)) return;
+        const [x,y]=project(coord);
         const c=document.createElementNS(NS,"circle");c.setAttribute("cx",x);c.setAttribute("cy",y);c.setAttribute("r","2.6");c.setAttribute("class","theme-point");overlay.appendChild(c);
       });
     }
