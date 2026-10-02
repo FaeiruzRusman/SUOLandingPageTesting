@@ -120,3 +120,17 @@
     max-width:104px!important;max-height:104px!important;
   }
 }
+
+
+/* v7.1.2 hero spacing cleanup */
+.v7-hero-grid{padding-bottom:34px}
+.v7-stats{
+  margin-top:18px!important;
+  position:relative;
+  clear:both;
+}
+.v7-hero p{margin-bottom:0}
+@media(max-width:1000px){
+  .v7-hero-grid{padding-bottom:24px}
+  .v7-stats{margin-top:10px!important}
+}
