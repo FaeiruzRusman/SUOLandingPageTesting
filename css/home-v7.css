@@ -134,3 +134,20 @@
   .v7-hero-grid{padding-bottom:24px}
   .v7-stats{margin-top:10px!important}
 }
+
+
+/* v7.1.3 hero title lock to two lines */
+.v7-hero h1{
+  font-size:clamp(46px,5.7vw,76px);
+  line-height:.98;
+  letter-spacing:-.055em;
+}
+.v7-title-line{
+  display:block;
+  white-space:nowrap;
+}
+.v7-title-line-red{color:var(--suo-red)}
+@media(max-width:760px){
+  .v7-hero h1{font-size:clamp(40px,11vw,58px)}
+  .v7-title-line{white-space:normal}
+}
