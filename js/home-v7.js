@@ -5,18 +5,77 @@
   const body = document.body;
   const onScroll = () => header?.classList.toggle('scrolled', window.scrollY > 24);
   onScroll(); window.addEventListener('scroll', onScroll, {passive:true});
-  menu?.addEventListener('click', () => body.classList.toggle('v7-mobile-open'));
+  menu?.addEventListener('click', () => {
+    const open = body.classList.toggle('v7-mobile-open');
+    menu.setAttribute('aria-expanded', String(open));
+  });
 
-  document.querySelectorAll('.v7-links a').forEach(a => a.addEventListener('click',()=>body.classList.remove('v7-mobile-open')));
+  document.querySelectorAll('.v7-links a').forEach(a => a.addEventListener('click',()=>{
+    body.classList.remove('v7-mobile-open');
+    menu?.setAttribute('aria-expanded','false');
+  }));
 
 
   // Production lazy-loader: external dashboards/GeoPortal only boot near viewport.
   const lazyFrames = Array.from(document.querySelectorAll('iframe[data-src]'));
+  const previewText = (state) => {
+    const en = document.documentElement.lang === "en";
+    if (state === "slow") return en
+      ? ["Preview is taking longer to load","You can still open the application from its card or launch button."]
+      : ["Pratonton mengambil masa untuk dimuatkan","Aplikasi masih boleh dibuka melalui kad atau butang pelancaran."];
+    return en
+      ? ["Preview is temporarily unavailable","Open the application directly to continue."]
+      : ["Pratonton tidak tersedia buat sementara","Buka aplikasi secara terus untuk meneruskan."];
+  };
+
+  const ensurePreviewState = (frame) => {
+    const host = frame?.parentElement;
+    if (!host) return null;
+    let state = host.querySelector(":scope > .v7-preview-state");
+    if (!state) {
+      state = document.createElement("div");
+      state.className = "v7-preview-state";
+      state.hidden = true;
+      state.setAttribute("role","status");
+      state.setAttribute("aria-live","polite");
+      host.appendChild(state);
+    }
+    return state;
+  };
+
+  const showPreviewState = (frame, kind) => {
+    const state = ensurePreviewState(frame);
+    if (!state) return;
+    const [title,copy] = previewText(kind);
+    state.className = "v7-preview-state " + (kind === "slow" ? "is-warning" : "is-error");
+    state.innerHTML = "<div><strong>"+title+"</strong><span>"+copy+"</span><span class=\"v7-preview-mini\">SUO</span></div>";
+    state.hidden = false;
+  };
+
   const loadFrame = (frame) => {
     if (!frame || frame.dataset.loaded === "1") return;
     const src = frame.dataset.src;
     if (!src) return;
     frame.dataset.loaded = "1";
+
+    let settled = false;
+    const slowTimer = window.setTimeout(() => {
+      if (!settled) showPreviewState(frame,"slow");
+    }, 12000);
+
+    frame.addEventListener("load", () => {
+      settled = true;
+      window.clearTimeout(slowTimer);
+      const state = ensurePreviewState(frame);
+      if (state) state.hidden = true;
+    }, { once:true });
+
+    frame.addEventListener("error", () => {
+      settled = true;
+      window.clearTimeout(slowTimer);
+      showPreviewState(frame,"error");
+    }, { once:true });
+
     frame.src = src;
   };
 
@@ -53,6 +112,10 @@
     document.title = code === 'en'
       ? 'Selangor Urban Observatory | Urban Intelligence for a Smarter Selangor'
       : 'Selangor Urban Observatory | Kecerdasan Bandar untuk Selangor Lebih Pintar';
+    const metaDescription=document.querySelector('meta[name="description"]');
+    if(metaDescription) metaDescription.content = code === 'en'
+      ? "Selangor Urban Observatory — an integrated platform for urban data, spatial analytics and digital applications in Selangor."
+      : "Selangor Urban Observatory — platform bersepadu data bandar, analitik spatial dan aplikasi digital Negeri Selangor.";
     if(lang) lang.textContent = code === 'en' ? 'EN | BM' : 'BM | EN';
     localStorage.setItem('suo-lang',code);
   };
@@ -306,7 +369,11 @@
   const applyTheme = async (key) => {
     const item=themeCatalog[key] || themeCatalog.housing;
     const langCode=document.documentElement.lang==="en"?"en":"ms";
-    document.querySelectorAll(".v7-theme").forEach(x=>x.classList.toggle("active",x.dataset.theme===key));
+    document.querySelectorAll(".v7-theme").forEach(x=>{
+      const active=x.dataset.theme===key;
+      x.classList.toggle("active",active);
+      x.setAttribute("aria-pressed",String(active));
+    });
     const eyebrow=document.getElementById("v7ThemeEyebrow");
     const title=document.getElementById("v7ThemeTitle");
     const desc=document.getElementById("v7ThemeDesc");
@@ -523,10 +590,14 @@
   const openSearch=()=>{
     if(!searchPanel) return;
     searchPanel.hidden=false;
+    searchToggle?.setAttribute("aria-expanded","true");
     renderSearch(searchInput?.value || "");
     window.setTimeout(()=>searchInput?.focus(),30);
   };
-  const closeSearch=()=>{if(searchPanel)searchPanel.hidden=true};
+  const closeSearch=()=>{
+    if(searchPanel) searchPanel.hidden=true;
+    searchToggle?.setAttribute("aria-expanded","false");
+  };
 
   searchToggle?.addEventListener("click",()=>searchPanel?.hidden?openSearch():closeSearch());
   searchClose?.addEventListener("click",closeSearch);
