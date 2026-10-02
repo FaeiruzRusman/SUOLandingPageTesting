@@ -14,6 +14,12 @@
     document.querySelectorAll('[data-ms][data-en]').forEach(el => {
       el.textContent = el.dataset[code] || el.textContent;
     });
+    document.querySelectorAll('[data-placeholder-ms][data-placeholder-en]').forEach(el => {
+      el.placeholder = code === 'en' ? el.dataset.placeholderEn : el.dataset.placeholderMs;
+    });
+    document.title = code === 'en'
+      ? 'Selangor Urban Observatory | Urban Intelligence for a Smarter Selangor'
+      : 'Selangor Urban Observatory | Kecerdasan Bandar untuk Selangor Lebih Pintar';
     if(lang) lang.textContent = code === 'en' ? 'EN | BM' : 'BM | EN';
     localStorage.setItem('suo-lang',code);
   };
