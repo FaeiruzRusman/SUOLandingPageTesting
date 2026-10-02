@@ -7,7 +7,7 @@
   <meta name="description" content="Selangor Urban Observatory — platform bersepadu data bandar, analitik spatial dan aplikasi digital Negeri Selangor.">
   <title>Selangor Urban Observatory | Urban Intelligence for a Smarter Selangor</title>
   <link rel="icon" href="assets/logos/logo-suo.png">
-  <link rel="stylesheet" href="css/home-v7.css?v=7.2.1">
+  <link rel="stylesheet" href="css/home-v7.css?v=7.3.0">
 </head>
 <body>
 <header class="v7-header">
@@ -26,6 +26,23 @@
       <a href="contact.html" data-ms="Hubungi" data-en="Contact">Hubungi</a>
     </nav>
     <div class="v7-actions">
+      <div class="v7-smart-search">
+        <button id="v7SearchToggle" class="v7-search-toggle" type="button" aria-label="Smart Search" title="Smart Search">⌕</button>
+        <div id="v7SearchPanel" class="v7-search-panel" hidden>
+          <div class="v7-search-box">
+            <span class="v7-search-icon">⌕</span>
+            <input id="v7SmartSearchInput"
+              type="search"
+              autocomplete="off"
+              data-placeholder-ms="Cari dashboard, StoryMap, topik atau kata kunci..."
+              data-placeholder-en="Search dashboards, StoryMaps, topics or keywords..."
+              placeholder="Cari dashboard, StoryMap, topik atau kata kunci...">
+            <button id="v7SearchClose" type="button" aria-label="Close search">×</button>
+          </div>
+          <div class="v7-search-hint" data-ms="Contoh: hospital, perumahan, industri, guna tanah, RSN, pelancongan" data-en="Examples: hospital, housing, industry, land use, RSN, tourism">Contoh: hospital, perumahan, industri, guna tanah, RSN, pelancongan</div>
+          <div id="v7SearchResults" class="v7-search-results"></div>
+        </div>
+      </div>
       <button class="v7-lang" type="button">BM | EN</button>
       <a class="v7-btn primary" href="https://faeiruzrusman.github.io/selangor-3d-map/" target="_blank" rel="noopener" data-ms="Lancarkan 3D GeoPortal ↗" data-en="Launch 3D GeoPortal ↗">Lancarkan 3D GeoPortal ↗</a>
       <button class="v7-menu" type="button" aria-label="Menu">☰</button>
@@ -188,6 +205,6 @@
     <div class="v7-footer-bottom"><span>© 2026 Selangor Urban Observatory · PLANMalaysia Selangor</span><span data-ms="Privasi · Penafian" data-en="Privacy · Disclaimer">Privasi · Penafian</span></div>
   </div>
 </footer>
-<script src="js/home-v7.js?v=7.2.1"></script>
+<script src="js/home-v7.js?v=7.3.0"></script>
 </body>
 </html>
