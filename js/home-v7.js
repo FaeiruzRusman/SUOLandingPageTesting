@@ -68,14 +68,14 @@
       title:{ms:"Kemudahan Kesihatan Negeri Selangor",en:"Selangor Health Facilities"},
       desc:{ms:"Paparan titik menggunakan data kemudahan kesihatan sebenar daripada SUO GeoPortal.",en:"Point locations use the actual health facilities dataset from the SUO GeoPortal."},
       primary:{ms:"Buka Dashboard ↗",en:"Open Dashboard ↗",url:"https://geospatialpms-glitch.github.io/Kemudahan-Kesihatan-Negeri-Selangor/"},
-      secondary:{ms:"Buka 3D GeoPortal ↗",en:"Open 3D GeoPortal ↗",url:"https://faeiruzrusman.github.io/selangor-3d-map/"},
+      secondary:{ms:"Buka 3D GeoPortal ↗",en:"Open 3D GeoPortal ↗",url:"https://faeiruzrusman.github.io/selangor-3d-map/?focus=health"},
       overlay:"health"
     },
     mobility:{
       eyebrow:{ms:"MOBILITI",en:"MOBILITY"},
       title:{ms:"Rangkaian Rel & Ketersambungan",en:"Rail Network & Connectivity"},
       desc:{ms:"Paparan menggunakan rangkaian rel dan stesen sebenar daripada dataset pengangkutan SUO GeoPortal.",en:"The preview uses the actual rail network and station datasets from the SUO GeoPortal."},
-      primary:{ms:"Buka 3D GeoPortal ↗",en:"Open 3D GeoPortal ↗",url:"https://faeiruzrusman.github.io/selangor-3d-map/"},
+      primary:{ms:"Buka 3D GeoPortal ↗",en:"Open 3D GeoPortal ↗",url:"https://faeiruzrusman.github.io/selangor-3d-map/?focus=mobility"},
       secondary:{ms:"Analitik Spatial ↗",en:"Spatial Analytics ↗",url:"https://faeiruzrusman.github.io/spatial-analytics/"},
       overlay:"mobility"
     },
@@ -84,7 +84,7 @@
       title:{ms:"Alam Sekitar & Tanah Lapang",en:"Environment & Open Space"},
       desc:{ms:"Terokai maklumat tanah lapang awam serta kecerdasan cuaca dan banjir melalui aplikasi SUO berkaitan.",en:"Explore public open space information together with weather and flood intelligence through related SUO applications."},
       primary:{ms:"Buka Tanah Lapang ↗",en:"Open Public Open Space ↗",url:"https://geospatialpms-glitch.github.io/TANAH-LAPANG-AWAM-NEGERI-SELANGOR/"},
-      secondary:{ms:"Buka 3D GeoPortal ↗",en:"Open 3D GeoPortal ↗",url:"https://faeiruzrusman.github.io/selangor-3d-map/"},
+      secondary:{ms:"Buka 3D GeoPortal ↗",en:"Open 3D GeoPortal ↗",url:"https://faeiruzrusman.github.io/selangor-3d-map/?focus=environment"},
       overlay:null
     },
     planning:{
