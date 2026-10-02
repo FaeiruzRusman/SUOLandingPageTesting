@@ -9,6 +9,39 @@
 
   document.querySelectorAll('.v7-links a').forEach(a => a.addEventListener('click',()=>body.classList.remove('v7-mobile-open')));
 
+
+  // Production lazy-loader: external dashboards/GeoPortal only boot near viewport.
+  const lazyFrames = Array.from(document.querySelectorAll('iframe[data-src]'));
+  const loadFrame = (frame) => {
+    if (!frame || frame.dataset.loaded === "1") return;
+    const src = frame.dataset.src;
+    if (!src) return;
+    frame.dataset.loaded = "1";
+    frame.src = src;
+  };
+
+  if ("IntersectionObserver" in window) {
+    const frameObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        loadFrame(entry.target);
+        observer.unobserve(entry.target);
+      });
+    }, { rootMargin: "500px 0px", threshold: 0.01 });
+
+    lazyFrames.forEach(frame => frameObserver.observe(frame));
+  } else {
+    // Conservative fallback for older browsers.
+    window.setTimeout(() => lazyFrames.forEach(loadFrame), 1200);
+  }
+
+  // Avoid keeping heavy off-screen previews active after back-forward cache restores.
+  window.addEventListener("pageshow", () => {
+    lazyFrames.forEach(frame => {
+      if (frame.getBoundingClientRect().top < window.innerHeight + 500) loadFrame(frame);
+    });
+  });
+
   const applyLang = (code) => {
     document.documentElement.lang = code === 'en' ? 'en' : 'ms';
     document.querySelectorAll('[data-ms][data-en]').forEach(el => {
@@ -289,7 +322,7 @@
   };
 
   document.querySelectorAll(".v7-theme[data-theme]").forEach(btn=>btn.addEventListener("click",()=>applyTheme(btn.dataset.theme)));
-  window.setTimeout(()=>applyTheme(localStorage.getItem("suo-theme") || "housing"),0);
+  window.setTimeout(()=>applyTheme("housing"),0);
 
   const suoSearchIndex = [
     {
@@ -518,7 +551,7 @@
         }
       });
       if(svgId==="v7SpatialMap" && typeof applyTheme==="function"){
-        window.setTimeout(()=>applyTheme(localStorage.getItem("suo-theme") || "housing"),0);
+        window.setTimeout(()=>applyTheme("housing"),0);
       }
     } catch(err) {
       console.warn("SUO real map preview fallback:",err);
