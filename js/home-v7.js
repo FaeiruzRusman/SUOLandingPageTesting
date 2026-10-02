@@ -16,8 +16,11 @@
   }));
 
 
-  // Production lazy-loader: external dashboards/GeoPortal only boot near viewport.
-  const lazyFrames = Array.from(document.querySelectorAll('iframe[data-src]'));
+  // v7.8.2: use browser-native iframe lazy loading for reliable previews.
+  // We no longer defer src via IntersectionObserver because it can fail to
+  // initialize previews inside complex card layouts.
+  const previewFrames = Array.from(document.querySelectorAll('iframe[loading="lazy"]'));
+
   const previewText = (state) => {
     const en = document.documentElement.lang === "en";
     if (state === "slow") return en
@@ -52,16 +55,15 @@
     state.hidden = false;
   };
 
-  const loadFrame = (frame) => {
-    if (!frame || frame.dataset.loaded === "1") return;
-    const src = frame.dataset.src;
-    if (!src) return;
-    frame.dataset.loaded = "1";
-
+  previewFrames.forEach(frame => {
     let settled = false;
     const slowTimer = window.setTimeout(() => {
-      if (!settled) showPreviewState(frame,"slow");
-    }, 12000);
+      // Only warn if the frame has entered/approached the viewport.
+      const rect = frame.getBoundingClientRect();
+      if (!settled && rect.top < window.innerHeight + 300 && rect.bottom > -300) {
+        showPreviewState(frame,"slow");
+      }
+    }, 15000);
 
     frame.addEventListener("load", () => {
       settled = true;
@@ -75,30 +77,6 @@
       window.clearTimeout(slowTimer);
       showPreviewState(frame,"error");
     }, { once:true });
-
-    frame.src = src;
-  };
-
-  if ("IntersectionObserver" in window) {
-    const frameObserver = new IntersectionObserver((entries, observer) => {
-      entries.forEach(entry => {
-        if (!entry.isIntersecting) return;
-        loadFrame(entry.target);
-        observer.unobserve(entry.target);
-      });
-    }, { rootMargin: "500px 0px", threshold: 0.01 });
-
-    lazyFrames.forEach(frame => frameObserver.observe(frame));
-  } else {
-    // Conservative fallback for older browsers.
-    window.setTimeout(() => lazyFrames.forEach(loadFrame), 1200);
-  }
-
-  // Avoid keeping heavy off-screen previews active after back-forward cache restores.
-  window.addEventListener("pageshow", () => {
-    lazyFrames.forEach(frame => {
-      if (frame.getBoundingClientRect().top < window.innerHeight + 500) loadFrame(frame);
-    });
   });
 
   const applyLang = (code) => {
