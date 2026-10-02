@@ -493,7 +493,8 @@ iframe[data-src]:not([src]){
   outline-color:rgba(244,195,0,.65);
 }
 
-.v7-browser-screen,.v7-live-preview{position:relative}
+.v7-browser-screen{position:relative}
+.v7-live-preview{position:absolute!important;inset:0!important}
 .v7-preview-state{
   position:absolute;inset:0;z-index:4;
   display:grid;place-items:center;text-align:center;
@@ -557,4 +558,21 @@ iframe[data-src]:not([src]){
 .v7-live-preview{
   display:block!important;
   visibility:visible!important;
+}
+
+
+/* v7.8.4 exact live-preview regression fix */
+.v7-app > .v7-live-preview{
+  position:absolute!important;
+  inset:0!important;
+  width:100%!important;
+  height:100%!important;
+  z-index:0!important;
+  overflow:hidden!important;
+  display:block!important;
+}
+.v7-app > .v7-live-preview > iframe{
+  display:block!important;
+  visibility:visible!important;
+  opacity:1!important;
 }
