@@ -383,6 +383,12 @@
       keywords:["keselamatan","safety","polis","pdrm","ipk","ipd","bomba","jbpm","apm","coverage analysis","nearest facility"]
     },
     {
+      titleMs:"Dashboard Geopark Gombak-Hulu Langat", titleEn:"Gombak-Hulu Langat Geopark Dashboard",
+      type:"Dashboard", icon:"◉",
+      url:"https://geospatialpms-glitch.github.io/Dashboard-Geopark-Gombak-Hulu-Langat/",
+      keywords:["geopark","gombak","hulu langat","warisan geologi","geoheritage","geological heritage","geotourism","geopelancongan","konservasi","geologi"]
+    },
+    {
       titleMs:"Perindustrian Negeri Selangor", titleEn:"Selangor Industry Dashboard",
       type:"Dashboard", icon:"▥",
       url:"https://geospatialpms-glitch.github.io/Perindustrian-Negeri-Selangor/",
