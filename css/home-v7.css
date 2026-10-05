@@ -760,3 +760,44 @@ iframe[data-src]:not([src]){
     overflow:visible!important;
   }
 }
+
+
+/* v7.11.6 FINAL hero-title containment fix */
+@media(min-width:761px){
+  .v7-hero-grid{
+    grid-template-columns:minmax(0,1.18fr) minmax(360px,.82fr)!important;
+    gap:28px!important;
+  }
+  .v7-hero-grid > div:first-child{
+    min-width:0!important;
+    width:100%!important;
+    overflow:visible!important;
+  }
+  .v7-suo-main-title{
+    display:block!important;
+    width:100%!important;
+    max-width:100%!important;
+    white-space:nowrap!important;
+    overflow:visible!important;
+    text-overflow:clip!important;
+    font-size:clamp(30px,3.05vw,44px)!important;
+    line-height:1!important;
+    letter-spacing:-.045em!important;
+  }
+}
+@media(min-width:761px) and (max-width:1100px){
+  .v7-hero-grid{
+    grid-template-columns:minmax(0,1fr) minmax(330px,.75fr)!important;
+    gap:22px!important;
+  }
+  .v7-suo-main-title{
+    font-size:clamp(29px,3.15vw,34px)!important;
+  }
+}
+@media(max-width:760px){
+  .v7-suo-main-title{
+    white-space:normal!important;
+    overflow:visible!important;
+    font-size:clamp(38px,11vw,50px)!important;
+  }
+}
