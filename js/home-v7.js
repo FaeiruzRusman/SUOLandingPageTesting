@@ -743,9 +743,9 @@
         path.style.setProperty("--district-i",i);
         path.setAttribute("fill",
           opts.heroDistrict
-            ? (i%4===0?"#6F1D2A":i%4===1?"#812735":i%4===2?"#933344":"#A44352")
+            ? (i%4===0?"#7E2030":i%4===1?"#963044":i%4===2?"#AA3B51":"#BB4D60")
             : opts.spatialPbt
-              ? (i%3===0?"#D9ADB4":i%3===1?"#CFA0AA":"#E3BCC1")
+              ? (i%3===0?"#E8BEC5":i%3===1?"#DFADB7":"#F0CED3")
               : opts.district
                 ? (i%2 ? "#E9A8B3":"#F2C4CB")
                 : (i%3===0?"#8F0D23":i%3===1?"#B51230":"#D22442")
@@ -754,7 +754,7 @@
           opts.heroDistrict
             ? "rgba(255,255,255,.86)"
             : opts.spatialPbt
-              ? "#9B2C3D"
+              ? "#B83246"
               : opts.district
                 ? "#C8102E"
                 : "rgba(255,255,255,.78)"
