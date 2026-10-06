@@ -1008,3 +1008,118 @@ iframe[data-src]:not([src]){
   background:linear-gradient(90deg,transparent,rgba(200,16,46,.16),transparent);
   pointer-events:none;
 }
+
+
+/* =========================================================
+   v7.13.1 — Roadmap left + Ask Mr. TPr. SUO right
+   ========================================================= */
+.v7-road-assistant{
+  grid-template-columns:1fr 1fr!important;
+  background:#f4e4bd!important;
+  color:#29231c!important;
+}
+.v7-road-left{
+  padding:70px 48px 70px max(30px,calc((100vw - 1180px)/2));
+  background:
+    radial-gradient(circle at 10% 10%,rgba(244,195,0,.17),transparent 27%),
+    linear-gradient(145deg,#fff3d4,#f1dfb8);
+  color:#29231c;
+}
+.v7-road-left .v7-kicker{
+  color:var(--suo-red)!important;
+}
+.v7-road-left .v7-timeline{
+  margin-top:28px;
+}
+.v7-road-left .v7-year{
+  border-left-color:#dcae00;
+}
+.v7-road-left .v7-year span{
+  color:#6f6251;
+}
+
+.v7-assistant-side{
+  padding:70px max(30px,calc((100vw - 1180px)/2)) 70px 48px;
+  display:flex;
+  align-items:center;
+  background:
+    radial-gradient(circle at 88% 12%,rgba(244,195,0,.15),transparent 27%),
+    linear-gradient(125deg,#720a1d 0%,#a30e2a 52%,#c8102e 100%);
+  color:#fff;
+}
+.v7-assistant-inline{
+  width:100%;
+  display:grid;
+  grid-template-columns:132px minmax(0,1fr);
+  gap:28px;
+  align-items:center;
+}
+.v7-assistant-side .v7-avatar{
+  border:8px solid rgba(255,255,255,.13)!important;
+  box-shadow:0 18px 45px rgba(50,0,10,.22);
+}
+.v7-assistant-side .v7-kicker{
+  color:var(--suo-soft-gold)!important;
+}
+.v7-assistant-side .v7-title{
+  color:#fff!important;
+  font-size:36px!important;
+  margin:5px 0 10px!important;
+}
+.v7-assistant-side p{
+  color:#f5dde3;
+  max-width:560px;
+  font-size:12px;
+  line-height:1.65;
+  margin:0;
+}
+.v7-assistant-side .v7-ask{
+  margin-top:20px;
+}
+.v7-assistant-side .v7-ask input{
+  min-width:0;
+}
+
+@media(max-width:1100px){
+  .v7-road-assistant{
+    grid-template-columns:1fr!important;
+  }
+  .v7-road-left,
+  .v7-assistant-side{
+    padding:58px max(24px,calc((100vw - 960px)/2))!important;
+  }
+  .v7-assistant-inline{
+    grid-template-columns:132px minmax(0,1fr);
+  }
+}
+@media(max-width:760px){
+  .v7-road-left,
+  .v7-assistant-side{
+    padding:48px 20px!important;
+  }
+  .v7-road-left .v7-timeline{
+    grid-template-columns:1fr!important;
+  }
+  .v7-assistant-inline{
+    grid-template-columns:1fr!important;
+    text-align:center;
+    gap:18px;
+  }
+  .v7-assistant-side .v7-avatar{
+    margin:0 auto!important;
+  }
+  .v7-assistant-side .v7-title{
+    font-size:32px!important;
+  }
+  .v7-assistant-side p{
+    margin-inline:auto;
+  }
+  .v7-assistant-side .v7-ask{
+    display:grid!important;
+    grid-template-columns:1fr!important;
+  }
+  .v7-assistant-side .v7-ask input,
+  .v7-assistant-side .v7-ask button{
+    width:100%!important;
+  }
+}
