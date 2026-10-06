@@ -1,0 +1,771 @@
+{
+  "meta": {
+    "name": "SUO Urban Observatory Data Catalog",
+    "version": "1.0.0",
+    "updated": "2026-10-06",
+    "note": "Inventori ini menghimpunkan dataset dan perkhidmatan data yang digunakan, diterbitkan atau disediakan sepanjang pembangunan SUO. Status 'Staging' bermaksud dataset kerja belum diterbitkan sebagai sumber awam penuh."
+  },
+  "datasets": [
+    {
+      "id": "UODC-001",
+      "title": "Hierarki Bandar Selangor — DPN2",
+      "theme": "Perancangan",
+      "owner": "PLANMalaysia / PLANMalaysia Selangor",
+      "type": "Spatial",
+      "formats": [
+        "GeoJSON",
+        "JSON"
+      ],
+      "status": "Aktif",
+      "year": "DPN2",
+      "access": "Awam",
+      "description": "Lokasi bandar dan klasifikasi hierarki bandar yang digunakan dalam 3D GeoPortal.",
+      "repository": "FaeiruzRusman/selangor-3d-map",
+      "paths": [
+        "data/hierarki_bandar_selangor_dpn2.geojson",
+        "config/urban-hierarchy.json"
+      ],
+      "applications": [
+        "3D GeoPortal",
+        "Smart Search"
+      ],
+      "open_url": "https://faeiruzrusman.github.io/selangor-3d-map/"
+    },
+    {
+      "id": "UODC-002",
+      "title": "Sempadan PBT Negeri Selangor 2024",
+      "theme": "Pentadbiran",
+      "owner": "PLANMalaysia Selangor",
+      "type": "Spatial",
+      "formats": [
+        "GeoJSON"
+      ],
+      "status": "Aktif",
+      "year": "2024",
+      "access": "Awam",
+      "description": "Sempadan 12 Pihak Berkuasa Tempatan Negeri Selangor dan label PBT untuk pemetaan portal.",
+      "repository": "FaeiruzRusman/selangor-3d-map",
+      "paths": [
+        "data/pentadbiran/sempadan_pbt_selangor_2024.geojson",
+        "data/pentadbiran/label_pbt_selangor_2024.geojson"
+      ],
+      "applications": [
+        "3D GeoPortal",
+        "Kanvas Spatial",
+        "Spatial Analytics",
+        "Dashboard Tanah Lapang"
+      ],
+      "open_url": "https://faeiruzrusman.github.io/selangor-3d-map/?focus=pbt"
+    },
+    {
+      "id": "UODC-003",
+      "title": "Sempadan Daerah Negeri Selangor",
+      "theme": "Pentadbiran",
+      "owner": "PLANMalaysia Selangor",
+      "type": "Spatial",
+      "formats": [
+        "GeoJSON"
+      ],
+      "status": "Aktif",
+      "year": "Semasa",
+      "access": "Awam",
+      "description": "Sempadan sembilan daerah pentadbiran Selangor serta label daerah.",
+      "repository": "FaeiruzRusman/selangor-3d-map",
+      "paths": [
+        "data/pentadbiran/sempadan_daerah_selangor.geojson",
+        "data/pentadbiran/label_daerah_selangor.geojson"
+      ],
+      "applications": [
+        "3D GeoPortal",
+        "Hero Map SUO",
+        "Spatial Analytics",
+        "Dashboard Tanah Lapang"
+      ],
+      "open_url": "https://faeiruzrusman.github.io/selangor-3d-map/?focus=districts"
+    },
+    {
+      "id": "UODC-004",
+      "title": "Kemudahan Kesihatan Negeri Selangor",
+      "theme": "Kesihatan",
+      "owner": "KKM / PLANMalaysia Selangor",
+      "type": "Spatial",
+      "formats": [
+        "GeoJSON",
+        "CSV"
+      ],
+      "status": "Aktif",
+      "year": "Semasa",
+      "access": "Awam",
+      "description": "Lokasi kemudahan kesihatan yang digunakan dalam GeoPortal, Kanvas Spatial, dashboard dan Spatial Analytics.",
+      "repository": "FaeiruzRusman/selangor-3d-map",
+      "paths": [
+        "data/kesihatan/kemudahan_kesihatan_selangor.geojson"
+      ],
+      "related_repositories": [
+        "geospatialpms-glitch/Kemudahan-Kesihatan-Negeri-Selangor",
+        "FaeiruzRusman/spatial-analytics"
+      ],
+      "applications": [
+        "3D GeoPortal",
+        "Dashboard Kesihatan",
+        "Kanvas Spatial",
+        "Spatial Analytics"
+      ],
+      "open_url": "https://geospatialpms-glitch.github.io/Kemudahan-Kesihatan-Negeri-Selangor/"
+    },
+    {
+      "id": "UODC-005",
+      "title": "IPK & IPD Negeri Selangor",
+      "theme": "Keselamatan",
+      "owner": "PDRM / PLANMalaysia Selangor",
+      "type": "Spatial",
+      "formats": [
+        "GeoJSON"
+      ],
+      "status": "Aktif",
+      "year": "Semasa",
+      "access": "Awam",
+      "description": "Lokasi Ibu Pejabat Polis Kontinjen dan Ibu Pejabat Polis Daerah untuk pemetaan keselamatan.",
+      "repository": "FaeiruzRusman/selangor-3d-map",
+      "paths": [
+        "data/keselamatan/ipk_ipd_selangor.geojson"
+      ],
+      "applications": [
+        "3D GeoPortal",
+        "Dashboard Keselamatan",
+        "Spatial Analytics"
+      ],
+      "open_url": "https://faeiruzrusman.github.io/selangor-3d-map/?focus=police"
+    },
+    {
+      "id": "UODC-006",
+      "title": "Balai Bomba Negeri Selangor",
+      "theme": "Keselamatan",
+      "owner": "JBPM / PLANMalaysia Selangor",
+      "type": "Spatial",
+      "formats": [
+        "GeoJSON"
+      ],
+      "status": "Aktif",
+      "year": "Semasa",
+      "access": "Awam",
+      "description": "Lokasi balai bomba Negeri Selangor yang telah disemak untuk lapisan kemudahan keselamatan.",
+      "repository": "FaeiruzRusman/selangor-3d-map",
+      "paths": [
+        "data/balai_bomba_negeri_selangor_final.geojson"
+      ],
+      "applications": [
+        "3D GeoPortal",
+        "Dashboard Keselamatan"
+      ],
+      "open_url": "https://faeiruzrusman.github.io/selangor-3d-map/?focus=fire"
+    },
+    {
+      "id": "UODC-007",
+      "title": "Kemudahan Keselamatan Selangor — Master",
+      "theme": "Keselamatan",
+      "owner": "PDRM / JBPM / APM / PLANMalaysia Selangor",
+      "type": "Spatial",
+      "formats": [
+        "CSV",
+        "GeoJSON",
+        "GeoPackage",
+        "Shapefile"
+      ],
+      "status": "Aktif",
+      "year": "2026",
+      "access": "Awam",
+      "description": "Dataset induk kemudahan keselamatan yang menyokong dashboard keselamatan, termasuk format point dan polygon.",
+      "repository": "FaeiruzRusman/Dashboard-Kemudahan-Keselamatan",
+      "paths": [
+        "data/master_kemudahan_keselamatan.csv",
+        "data/keselamatan_point_wgs84.geojson",
+        "data/keselamatan_polygon_wgs84.geojson",
+        "gis/Kemudahan_Keselamatan_Selangor_Master.gpkg"
+      ],
+      "applications": [
+        "Dashboard Keselamatan",
+        "Nearest Facility",
+        "Coverage Analysis"
+      ],
+      "open_url": "https://faeiruzrusman.github.io/Dashboard-Kemudahan-Keselamatan/"
+    },
+    {
+      "id": "UODC-008",
+      "title": "Sekolah Negeri Selangor",
+      "theme": "Pendidikan",
+      "owner": "KPM / PLANMalaysia Selangor",
+      "type": "Spatial",
+      "formats": [
+        "GeoJSON"
+      ],
+      "status": "Aktif",
+      "year": "Semasa",
+      "access": "Awam",
+      "description": "Lokasi sekolah Negeri Selangor untuk paparan kemudahan masyarakat dan analitik spatial.",
+      "repository": "FaeiruzRusman/selangor-3d-map",
+      "paths": [
+        "data/pendidikan/sekolah_negeri_selangor.geojson"
+      ],
+      "applications": [
+        "3D GeoPortal",
+        "Spatial Analytics"
+      ],
+      "open_url": "https://faeiruzrusman.github.io/selangor-3d-map/?focus=schools"
+    },
+    {
+      "id": "UODC-009",
+      "title": "Rangkaian Rel Selangor, Kuala Lumpur & Putrajaya",
+      "theme": "Mobiliti",
+      "owner": "Kompilasi SUO / sumber operator pengangkutan",
+      "type": "Spatial",
+      "formats": [
+        "GeoJSON",
+        "JSON Metadata"
+      ],
+      "status": "Aktif",
+      "year": "2026",
+      "access": "Awam",
+      "description": "Geometri rangkaian rel yang telah disemak dan digunakan untuk paparan serta network intelligence.",
+      "repository": "FaeiruzRusman/selangor-3d-map",
+      "paths": [
+        "data/transport/rail_network_final.geojson",
+        "data/transport/rail_network_final_metadata.json",
+        "data/transport/rail_transportation_selangor.geojson"
+      ],
+      "applications": [
+        "3D GeoPortal",
+        "Spatial Analytics",
+        "Network Intelligence"
+      ],
+      "open_url": "https://faeiruzrusman.github.io/selangor-3d-map/?focus=mobility"
+    },
+    {
+      "id": "UODC-010",
+      "title": "Stesen Rel Selangor, Kuala Lumpur & Putrajaya",
+      "theme": "Mobiliti",
+      "owner": "Kompilasi SUO / sumber operator pengangkutan",
+      "type": "Spatial",
+      "formats": [
+        "GeoJSON"
+      ],
+      "status": "Aktif",
+      "year": "2026",
+      "access": "Awam",
+      "description": "Lokasi stesen rel aktif termasuk data yang telah melalui semakan duplicate.",
+      "repository": "FaeiruzRusman/selangor-3d-map",
+      "paths": [
+        "data/transport/rail_stations_final.geojson"
+      ],
+      "applications": [
+        "3D GeoPortal",
+        "Spatial Analytics",
+        "Network Intelligence"
+      ],
+      "open_url": "https://faeiruzrusman.github.io/selangor-3d-map/?focus=mobility"
+    },
+    {
+      "id": "UODC-011",
+      "title": "Lot Kadaster Selangor 2023 — NDCDB",
+      "theme": "Tanah & Kadaster",
+      "owner": "Sumber kadaster / PLANMalaysia Selangor",
+      "type": "Spatial",
+      "formats": [
+        "Vector Tiles",
+        "JSON Metadata"
+      ],
+      "status": "Konfigurasi",
+      "year": "2023",
+      "access": "Metadata sahaja",
+      "description": "Lapisan lot kadaster yang dikonfigurasi untuk GeoPortal. Sumber data penuh tidak diterbitkan melalui katalog awam.",
+      "repository": "FaeiruzRusman/selangor-3d-map",
+      "paths": [
+        "data/kadaster/ndcdb_selangor_2023_metadata.json",
+        "config/cadastral-layer.json"
+      ],
+      "applications": [
+        "3D GeoPortal"
+      ],
+      "open_url": "https://faeiruzrusman.github.io/selangor-3d-map/?focus=cadastral"
+    },
+    {
+      "id": "UODC-012",
+      "title": "Ringkasan Guna Tanah Negeri Selangor 2024",
+      "theme": "Guna Tanah",
+      "owner": "PLANMalaysia Selangor",
+      "type": "Non-Spatial",
+      "formats": [
+        "JSON"
+      ],
+      "status": "Aktif",
+      "year": "2024",
+      "access": "Awam",
+      "description": "Ringkasan keluasan guna tanah binaan, bukan binaan dan kategori dominan untuk Land Use Intelligence.",
+      "repository": "FaeiruzRusman/selangor-3d-map",
+      "paths": [
+        "data/landuse/landuse_summary_2024.json",
+        "config/landuse-intelligence.json"
+      ],
+      "applications": [
+        "3D GeoPortal",
+        "Land Use Intelligence",
+        "Dashboard Guna Tanah"
+      ],
+      "open_url": "https://sismaps.jpbdselangor.gov.my/dashboard"
+    },
+    {
+      "id": "UODC-013",
+      "title": "Penduduk Mengikut Daerah Selangor 2020–2025",
+      "theme": "Demografi",
+      "owner": "Jabatan Perangkaan Malaysia (DOSM)",
+      "type": "Non-Spatial",
+      "formats": [
+        "CSV"
+      ],
+      "status": "Aktif",
+      "year": "2020–2025",
+      "access": "Awam",
+      "description": "Siri penduduk daerah Selangor yang digunakan dalam prototaip Spatial Analytics.",
+      "repository": "FaeiruzRusman/spatial-analytics",
+      "paths": [
+        "dosm_selangor_district_population_2020_2025.csv"
+      ],
+      "applications": [
+        "Spatial Analytics",
+        "Population & Socioeconomic Intelligence"
+      ],
+      "source_url": "https://open.dosm.gov.my/"
+    },
+    {
+      "id": "UODC-014",
+      "title": "Perumahan Negeri Selangor",
+      "theme": "Perumahan",
+      "owner": "PLANMalaysia Selangor / sumber perumahan berkaitan",
+      "type": "Spatial",
+      "formats": [
+        "GeoJSON",
+        "JSON",
+        "ZIP"
+      ],
+      "status": "Aktif",
+      "year": "Pelbagai",
+      "access": "Awam",
+      "description": "Pakej data yang menyokong Dashboard Perumahan Negeri Selangor.",
+      "repository": "geospatialpms-glitch/Dashboard-Perumahan-Negeri-Selangor",
+      "paths": [
+        "housing_sample.geojson",
+        "manifest.json",
+        "summary.json",
+        "data-pack-1.zip",
+        "data-pack-2.zip"
+      ],
+      "applications": [
+        "Dashboard Perumahan",
+        "Kanvas Spatial"
+      ],
+      "open_url": "https://geospatialpms-glitch.github.io/Dashboard-Perumahan-Negeri-Selangor/"
+    },
+    {
+      "id": "UODC-015",
+      "title": "Perumahan Mampu Milik Selangor / LPHS",
+      "theme": "Perumahan",
+      "owner": "LPHS / PLANMalaysia Selangor",
+      "type": "Spatial + Non-Spatial",
+      "formats": [
+        "CSV",
+        "JSON"
+      ],
+      "status": "Aktif",
+      "year": "Sehingga 2025",
+      "access": "Awam",
+      "description": "Rekod projek perumahan mampu milik, statistik daerah, ringkasan negeri, data dictionary dan QA.",
+      "repository": "geospatialpms-glitch/Dashboard-Selangor-Affordable-Housing",
+      "paths": [
+        "projects.csv",
+        "projects.json",
+        "lphs_district_stats_2025.json",
+        "district_stats.json",
+        "state_summary.json",
+        "data_dictionary.csv",
+        "qa_report_v1.3.json"
+      ],
+      "applications": [
+        "Dashboard Perumahan Mampu Milik"
+      ],
+      "open_url": "https://geospatialpms-glitch.github.io/Dashboard-Selangor-Affordable-Housing/"
+    },
+    {
+      "id": "UODC-016",
+      "title": "Kawasan Perindustrian Negeri Selangor",
+      "theme": "Perindustrian",
+      "owner": "Kompilasi SUO / PLANMalaysia Selangor",
+      "type": "Spatial",
+      "formats": [
+        "GeoJSON"
+      ],
+      "status": "Aktif",
+      "year": "2026",
+      "access": "Awam",
+      "description": "Taburan kawasan perindustrian yang digunakan dalam dashboard tematik Perindustrian.",
+      "repository": "geospatialpms-glitch/Perindustrian-Negeri-Selangor",
+      "paths": [
+        "data/perindustrian.geojson",
+        "data/perindustrian_selangor.geojson"
+      ],
+      "applications": [
+        "Dashboard Perindustrian",
+        "Kanvas Spatial"
+      ],
+      "open_url": "https://geospatialpms-glitch.github.io/Perindustrian-Negeri-Selangor/"
+    },
+    {
+      "id": "UODC-017",
+      "title": "Tanah Lapang Awam Negeri Selangor 2022–2025",
+      "theme": "Tanah Lapang",
+      "owner": "PLANMalaysia Selangor / PBT",
+      "type": "Spatial",
+      "formats": [
+        "GeoJSON",
+        "JSON"
+      ],
+      "status": "Aktif",
+      "year": "2022–2025",
+      "access": "Awam",
+      "description": "Siri tahunan tanah lapang awam serta ringkasan kumulatif rasmi.",
+      "repository": "geospatialpms-glitch/TANAH-LAPANG-AWAM-NEGERI-SELANGOR",
+      "paths": [
+        "data/kawasan_lapang_2022.geojson",
+        "data/kawasan_lapang_2023.geojson",
+        "data/kawasan_lapang_2024.geojson",
+        "data/kawasan_lapang_2025.geojson",
+        "data/kumulatif_rasmi_2022_2025.json"
+      ],
+      "applications": [
+        "Dashboard Tanah Lapang Awam"
+      ],
+      "open_url": "https://geospatialpms-glitch.github.io/TANAH-LAPANG-AWAM-NEGERI-SELANGOR/"
+    },
+    {
+      "id": "UODC-018",
+      "title": "Tapak Perkuburan Negeri Selangor",
+      "theme": "Perkuburan",
+      "owner": "Kompilasi SUO / agensi berkaitan",
+      "type": "Spatial",
+      "formats": [
+        "GeoJSON",
+        "Shapefile"
+      ],
+      "status": "Aktif",
+      "year": "2026",
+      "access": "Awam",
+      "description": "Inventori spatial tapak perkuburan untuk dashboard tematik.",
+      "repository": "geospatialpms-glitch/Tapak-Perkuburan-Negeri-Selangor",
+      "paths": [
+        "cemeteries.geojson",
+        "Tanah_Perkuburan_Selangor_2026.shp"
+      ],
+      "applications": [
+        "Dashboard Tapak Perkuburan"
+      ],
+      "open_url": "https://geospatialpms-glitch.github.io/Tapak-Perkuburan-Negeri-Selangor/"
+    },
+    {
+      "id": "UODC-019",
+      "title": "Ramalan Cuaca Selangor",
+      "theme": "Cuaca & Risiko",
+      "owner": "Open-Meteo",
+      "type": "Live API",
+      "formats": [
+        "REST API / JSON"
+      ],
+      "status": "Live",
+      "year": "Masa nyata",
+      "access": "Awam",
+      "description": "Data ramalan cuaca yang digunakan oleh Weather Intelligence dalam GeoPortal.",
+      "applications": [
+        "3D GeoPortal",
+        "Weather Intelligence"
+      ],
+      "source_url": "https://api.open-meteo.com/v1/forecast"
+    },
+    {
+      "id": "UODC-020",
+      "title": "Amaran Cuaca Malaysia",
+      "theme": "Cuaca & Risiko",
+      "owner": "MET Malaysia / data.gov.my",
+      "type": "Live API",
+      "formats": [
+        "REST API / JSON"
+      ],
+      "status": "Live",
+      "year": "Masa nyata",
+      "access": "Awam",
+      "description": "Perkhidmatan amaran cuaca yang digunakan sebagai lapisan maklumat risiko.",
+      "applications": [
+        "3D GeoPortal",
+        "Weather Intelligence"
+      ],
+      "source_url": "https://api.data.gov.my/weather/warning"
+    },
+    {
+      "id": "UODC-021",
+      "title": "Amaran Banjir",
+      "theme": "Cuaca & Risiko",
+      "owner": "data.gov.my / agensi sumber",
+      "type": "Live API",
+      "formats": [
+        "REST API / JSON"
+      ],
+      "status": "Live",
+      "year": "Masa nyata",
+      "access": "Awam",
+      "description": "Perkhidmatan amaran banjir yang digunakan oleh Flood Intelligence.",
+      "applications": [
+        "3D GeoPortal",
+        "Flood Intelligence"
+      ],
+      "source_url": "https://api.data.gov.my/flood-warning"
+    },
+    {
+      "id": "UODC-022",
+      "title": "Live Traffic",
+      "theme": "Mobiliti",
+      "owner": "Mapbox",
+      "type": "Live Vector Service",
+      "formats": [
+        "Vector Tiles"
+      ],
+      "status": "Live",
+      "year": "Masa nyata",
+      "access": "Perkhidmatan",
+      "description": "Aliran trafik masa nyata Mapbox yang digunakan sebagai overlay pengangkutan GeoPortal.",
+      "applications": [
+        "3D GeoPortal"
+      ],
+      "source_url": "https://www.mapbox.com/traffic-data/"
+    },
+    {
+      "id": "UODC-023",
+      "title": "OpenStreetMap Basemap",
+      "theme": "Peta Asas",
+      "owner": "OpenStreetMap contributors",
+      "type": "Map Service",
+      "formats": [
+        "Raster Tiles"
+      ],
+      "status": "Live",
+      "year": "Semasa",
+      "access": "Awam",
+      "description": "Peta asas alternatif untuk konteks geografi GeoPortal.",
+      "applications": [
+        "3D GeoPortal"
+      ],
+      "source_url": "https://www.openstreetmap.org/"
+    },
+    {
+      "id": "UODC-024",
+      "title": "Selangor Basic Facts",
+      "theme": "Rujukan Negeri",
+      "owner": "DOSM / Kerajaan Negeri / PLANMalaysia Selangor",
+      "type": "Non-Spatial",
+      "formats": [
+        "JSON"
+      ],
+      "status": "Aktif",
+      "year": "2020–2026",
+      "access": "Awam",
+      "description": "Angka asas Selangor, senarai daerah, PBT, demografi, logic rules dan sumber autoritatif untuk Knowledge Base.",
+      "repository": "FaeiruzRusman/SUOLandingPageTesting",
+      "paths": [
+        "data/selangor-basics.json"
+      ],
+      "applications": [
+        "SUO Knowledge Base",
+        "Mr. TPr SUO"
+      ],
+      "open_url": "https://faeiruzrusman.github.io/SUOLandingPageTesting/knowledge.html"
+    },
+    {
+      "id": "UODC-025",
+      "title": "SUO Facts Knowledge Base",
+      "theme": "Knowledge Base",
+      "owner": "PLANMalaysia Selangor / SUO",
+      "type": "Non-Spatial",
+      "formats": [
+        "JSON"
+      ],
+      "status": "Aktif",
+      "year": "2026",
+      "access": "Awam",
+      "description": "170 fakta berkaitan identiti, data, analitik, aplikasi, governance, pelaksanaan dan hala tuju SUO.",
+      "repository": "FaeiruzRusman/SUOLandingPageTesting",
+      "paths": [
+        "data/suo-facts.json"
+      ],
+      "applications": [
+        "SUO Knowledge Base",
+        "Mr. TPr SUO"
+      ],
+      "open_url": "https://faeiruzrusman.github.io/SUOLandingPageTesting/knowledge.html"
+    },
+    {
+      "id": "UODC-026",
+      "title": "SUO Glossary",
+      "theme": "Knowledge Base",
+      "owner": "PLANMalaysia Selangor / SUO",
+      "type": "Non-Spatial",
+      "formats": [
+        "JSON"
+      ],
+      "status": "Aktif",
+      "year": "2026",
+      "access": "Awam",
+      "description": "50 istilah teknikal dan operasi berkaitan SUO.",
+      "repository": "FaeiruzRusman/SUOLandingPageTesting",
+      "paths": [
+        "data/suo-glossary.json"
+      ],
+      "applications": [
+        "SUO Knowledge Base",
+        "Mr. TPr SUO"
+      ],
+      "open_url": "https://faeiruzrusman.github.io/SUOLandingPageTesting/knowledge.html"
+    },
+    {
+      "id": "UODC-027",
+      "title": "SUO FAQ",
+      "theme": "Knowledge Base",
+      "owner": "PLANMalaysia Selangor / SUO",
+      "type": "Non-Spatial",
+      "formats": [
+        "JSON"
+      ],
+      "status": "Aktif",
+      "year": "2026",
+      "access": "Awam",
+      "description": "50 soalan lazim dan jawapan konsisten untuk rujukan portal dan pembantu digital.",
+      "repository": "FaeiruzRusman/SUOLandingPageTesting",
+      "paths": [
+        "data/suo-faq.json"
+      ],
+      "applications": [
+        "SUO Knowledge Base",
+        "Mr. TPr SUO"
+      ],
+      "open_url": "https://faeiruzrusman.github.io/SUOLandingPageTesting/knowledge.html"
+    },
+    {
+      "id": "UODC-028",
+      "title": "Sekolah Agama JAIS Negeri Selangor",
+      "theme": "Pendidikan & Agama",
+      "owner": "JAIS / kompilasi kerja SUO",
+      "type": "Spatial",
+      "formats": [
+        "Masterlist",
+        "Shapefile"
+      ],
+      "status": "Staging",
+      "year": "2026",
+      "access": "Dalaman / belum diterbitkan",
+      "description": "Masterlist sekolah agama JAIS yang telah melalui kerja pencarian alamat dan koordinat untuk pembangunan dataset SUO.",
+      "applications": [
+        "Staging UODC",
+        "Kemudahan Masyarakat"
+      ],
+      "note": "Fail kerja belum diterbitkan dalam repo portal awam."
+    },
+    {
+      "id": "UODC-029",
+      "title": "Masjid Negeri Selangor",
+      "theme": "Agama & Komuniti",
+      "owner": "JAIS / kompilasi kerja SUO",
+      "type": "Spatial",
+      "formats": [
+        "Masterlist",
+        "Shapefile"
+      ],
+      "status": "Staging",
+      "year": "2026",
+      "access": "Dalaman / belum diterbitkan",
+      "description": "Inventori masjid beserta alamat dan koordinat yang disediakan untuk peluasan data kemudahan masyarakat.",
+      "applications": [
+        "Staging UODC",
+        "Kemudahan Masyarakat"
+      ],
+      "note": "Fail kerja belum diterbitkan dalam repo portal awam."
+    },
+    {
+      "id": "UODC-030",
+      "title": "Menara Telekomunikasi Selangor",
+      "theme": "Infrastruktur Digital",
+      "owner": "Kompilasi kerja SUO / sumber berkaitan",
+      "type": "Spatial",
+      "formats": [
+        "GIS Working Dataset"
+      ],
+      "status": "Staging",
+      "year": "2026",
+      "access": "Dalaman / belum diterbitkan",
+      "description": "Dataset kerja lokasi menara telekomunikasi untuk analisis liputan dan infrastruktur digital.",
+      "applications": [
+        "Staging UODC"
+      ],
+      "note": "Perlu pengesahan sumber/pemilik sebelum penerbitan awam."
+    },
+    {
+      "id": "UODC-031",
+      "title": "Taburan APM Negeri Selangor",
+      "theme": "Keselamatan",
+      "owner": "APM / kompilasi kerja SUO",
+      "type": "Spatial",
+      "formats": [
+        "GIS Working Dataset"
+      ],
+      "status": "Staging",
+      "year": "2026",
+      "access": "Dalaman / belum diterbitkan",
+      "description": "Taburan lokasi APM yang disediakan untuk integrasi kemudahan keselamatan.",
+      "applications": [
+        "Dashboard Keselamatan",
+        "Staging UODC"
+      ],
+      "note": "Sebahagian konteks APM telah digunakan dalam pembangunan master keselamatan; dataset khusus masih staging."
+    },
+    {
+      "id": "UODC-032",
+      "title": "Data Centre Negeri Selangor",
+      "theme": "Infrastruktur Digital",
+      "owner": "Kompilasi kerja SUO / sumber awam",
+      "type": "Spatial + Non-Spatial",
+      "formats": [
+        "Masterlist"
+      ],
+      "status": "Staging",
+      "year": "2026",
+      "access": "Dalaman / belum diterbitkan",
+      "description": "Inventori pusat data berstatus siap, dalam pembinaan dan perancangan untuk analisis pembangunan negeri.",
+      "applications": [
+        "Staging UODC"
+      ],
+      "note": "Perlu semakan status dan sumber rasmi berkala sebelum penerbitan."
+    },
+    {
+      "id": "UODC-033",
+      "title": "Pasar Malam Lembah Klang",
+      "theme": "Ekonomi & Komuniti",
+      "owner": "Kompilasi kerja SUO / PBT",
+      "type": "Spatial + Non-Spatial",
+      "formats": [
+        "Masterlist"
+      ],
+      "status": "Staging",
+      "year": "2026",
+      "access": "Dalaman / belum diterbitkan",
+      "description": "Masterlist pasar malam mengikut hari yang disediakan untuk analisis kemudahan ekonomi komuniti.",
+      "applications": [
+        "Staging UODC"
+      ],
+      "note": "Koordinat dan jadual operasi perlu disahkan dengan PBT sebelum penerbitan awam."
+    }
+  ]
+}
