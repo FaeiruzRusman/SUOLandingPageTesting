@@ -1,17 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap');
 
 :root{
-  --suo-red:#9B2C3D;
-  --suo-deep:#6F1D2A;
-  --suo-gold:#B99A3D;
-  --suo-soft-gold:#E4D5A6;
-  --suo-ivory:#F7F3EC;
+  --suo-red:#B83246;
+  --suo-deep:#7E2030;
+  --suo-gold:#D2B34F;
+  --suo-soft-gold:#F0E2B3;
+  --suo-ivory:#FBF7EF;
   --suo-white:#FFFFFF;
   --suo-charcoal:#292725;
-  --suo-muted:#706A64;
-  --suo-line:#E4DDD4;
-  --suo-soft:#EEE9E2;
-  --shadow:0 18px 60px rgba(48,39,31,.08);
+  --suo-muted:#6C665F;
+  --suo-line:#E5DCCF;
+  --suo-soft:#F1EBE2;
+  --shadow:0 18px 60px rgba(55,40,28,.085);
 }
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--suo-ivory);color:var(--suo-charcoal);font-family:"DM Sans",system-ui,sans-serif;overflow-x:hidden}a{text-decoration:none;color:inherit}button,input{font:inherit}.v7-shell{width:min(1180px,calc(100% - 40px));margin:auto}.v7-section{padding:88px 0}.v7-kicker{font:700 11px/1.2 "Manrope",sans-serif;letter-spacing:.16em;text-transform:uppercase;color:var(--suo-red)}.v7-title{font:800 clamp(32px,4.4vw,58px)/1.02 "Manrope",sans-serif;letter-spacing:-.045em;margin:10px 0 18px}.v7-sub{font-size:16px;line-height:1.7;color:var(--suo-muted);max-width:720px}.v7-btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:13px 18px;border-radius:999px;font-weight:700;font-size:14px;transition:.25s ease;border:1px solid transparent}.v7-btn:hover{transform:translateY(-2px)}.v7-btn.primary{background:var(--suo-red);color:white;box-shadow:0 12px 28px rgba(200,16,46,.20)}.v7-btn.ghost{border-color:#D9CFC2;background:rgba(255,255,255,.55)}.v7-btn.gold{background:var(--suo-gold);color:#221900}.v7-btn.dark{background:#242424;color:white}.v7-arrow{font-size:16px}
 
@@ -2480,4 +2480,121 @@ iframe[data-src]:not([src]){
 .v7-tag,
 .v7-live-badge{
   filter:saturate(.78)!important;
+}
+
+
+/* =========================================================
+   v7.19.1 — brighter Selangor palette, still restrained
+   ========================================================= */
+body{
+  background:#FBF8F2!important;
+}
+
+/* Hero: lighter and more welcoming */
+.v7-hero{
+  background:
+    radial-gradient(circle at 80% 22%,rgba(210,179,79,.18),transparent 26%),
+    radial-gradient(circle at 12% 80%,rgba(184,50,70,.05),transparent 28%),
+    linear-gradient(120deg,#FCFAF6 0%,#F8F0E6 56%,#FBF5EC 100%)!important;
+}
+.v7-hero:before{
+  opacity:.24!important;
+}
+.v7-hero .v7-map-orb{
+  background:
+    linear-gradient(145deg,rgba(184,50,70,.12),rgba(210,179,79,.18))!important;
+}
+
+/* Spatial: warmer + cleaner */
+.v7-spatial{
+  background:
+    radial-gradient(circle at 14% 72%,rgba(210,179,79,.15),transparent 29%),
+    radial-gradient(circle at 88% 20%,rgba(184,50,70,.055),transparent 28%),
+    linear-gradient(120deg,#FCF9F2 0%,#F5EBDD 100%)!important;
+}
+.v7-spatial .v7-theme:not(.active){
+  background:rgba(255,255,255,.84)!important;
+  border-color:#E3D6C6!important;
+}
+.v7-theme.active{
+  background:#B83246!important;
+}
+
+/* Ecosystem: mostly white with a hint of warmth */
+.v7-ecosystem{
+  background:
+    radial-gradient(circle at 100% 0%,rgba(184,50,70,.035),transparent 32%),
+    linear-gradient(180deg,#FFFFFF 0%,#FCFAF6 100%)!important;
+}
+.v7-ecosystem .v7-card{
+  background:rgba(255,255,255,.96)!important;
+}
+.v7-ecosystem .v7-card:nth-child(3){
+  background:linear-gradient(145deg,#FFF,#FFF8E9)!important;
+}
+
+/* Applications: brighten gallery background */
+.v7-apps{
+  background:
+    radial-gradient(circle at 7% 12%,rgba(184,50,70,.035),transparent 24%),
+    radial-gradient(circle at 94% 78%,rgba(210,179,79,.095),transparent 26%),
+    linear-gradient(180deg,#FBF8F4 0%,#F4EEE7 100%)!important;
+}
+.v7-app-category-index{
+  background:#B83246!important;
+}
+.v7-app-category:nth-of-type(even) .v7-app-category-index{
+  background:#D2B34F!important;
+  color:#332A17!important;
+}
+
+/* Buttons and accents: richer but not loud */
+.v7-btn.primary{
+  background:#B83246!important;
+  box-shadow:0 10px 24px rgba(126,32,48,.16)!important;
+}
+.v7-btn.gold{
+  background:#D2B34F!important;
+  color:#342B18!important;
+}
+.v7-coming-badge{
+  background:rgba(184,50,70,.065)!important;
+  border-color:rgba(184,50,70,.14)!important;
+  color:#A52C40!important;
+}
+
+/* Roadmap: warm parchment, not beige-grey */
+.v7-road-left{
+  background:
+    radial-gradient(circle at 10% 10%,rgba(210,179,79,.15),transparent 29%),
+    linear-gradient(145deg,#FBF5E8,#F0E1C8)!important;
+}
+.v7-road-left .v7-year{
+  border-left-color:#C8A746!important;
+}
+
+/* Ask Mr TPr: richer maroon, slightly brighter */
+.v7-assistant-side{
+  background:
+    radial-gradient(circle at 88% 12%,rgba(210,179,79,.10),transparent 28%),
+    linear-gradient(125deg,#6D2230 0%,#842B3D 54%,#9A3448 100%)!important;
+}
+.v7-assistant-side .v7-kicker{
+  color:#E9D79C!important;
+}
+
+/* Footer remains dark but with warmer accents */
+.v7-footer-eyebrow,
+.v7-footer-label{
+  color:#D6BD6A!important;
+}
+.v7-footer-quicklinks a:first-child{
+  background:#D2B34F!important;
+  border-color:#D2B34F!important;
+}
+
+/* Map interaction accents */
+#v7HeroMap .hero-district:hover,
+#v7SpatialMap .spatial-pbt:hover{
+  stroke:#D8BD62!important;
 }
