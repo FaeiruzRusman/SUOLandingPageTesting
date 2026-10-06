@@ -836,10 +836,10 @@
       const nx=(px/r.width)-.5;
       const ny=(py/r.height)-.5;
 
-      spatialMap.style.setProperty("--spatial-rx",(-ny*5.2).toFixed(2)+"deg");
-      spatialMap.style.setProperty("--spatial-ry",(nx*6.8).toFixed(2)+"deg");
-      spatialMap.style.setProperty("--spatial-tx",(nx*12).toFixed(1)+"px");
-      spatialMap.style.setProperty("--spatial-ty",(ny*8).toFixed(1)+"px");
+      spatialMap.style.setProperty("--spatial-rx",(-ny*2.2).toFixed(2)+"deg");
+      spatialMap.style.setProperty("--spatial-ry",(nx*2.8).toFixed(2)+"deg");
+      spatialMap.style.setProperty("--spatial-tx",(nx*5).toFixed(1)+"px");
+      spatialMap.style.setProperty("--spatial-ty",(ny*3).toFixed(1)+"px");
 
       spatialMapWrap.style.setProperty("--spot-x",px.toFixed(1)+"px");
       spatialMapWrap.style.setProperty("--spot-y",py.toFixed(1)+"px");
