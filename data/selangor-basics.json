@@ -1,7 +1,7 @@
 {
   "meta": {
     "name": "Selangor Basic Facts",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "updated": "2026-10-06",
     "language": "ms",
     "purpose": "Authoritative baseline figures and interpretation rules for SUO Knowledge Base and Mr. TPr SUO.",
@@ -267,6 +267,54 @@
         "4858"
       ],
       "source_id": "SRC-DOSM-DISTRICT2025"
+    },
+    {
+      "id": "SGR-019",
+      "title": "Keluasan Daerah Sabak Bernam",
+      "value": 1004.33,
+      "unit": "km²",
+      "as_of": "Banci 2020",
+      "fact": "Menurut DOSM bagi Banci 2020, keluasan daerah pentadbiran Sabak Bernam ialah 1,004.33 km².",
+      "keywords": [
+        "sabak bernam",
+        "daerah sabak bernam",
+        "keluasan sabak bernam",
+        "luas sabak bernam",
+        "keluasan daerah",
+        "area sabak bernam"
+      ],
+      "source_id": "SRC-DOSM-SABAK2020",
+      "caveat": "Portal rasmi Pejabat Daerah dan Tanah Sabak Bernam turut memaparkan keluasan 1,056 km². Perbezaan angka antara sumber rasmi boleh berpunca daripada tahun, sempadan atau kaedah rujukan; SUO menggunakan 1,004.33 km² sebagai rujukan statistik DOSM Banci 2020."
+    },
+    {
+      "id": "SGR-020",
+      "title": "Penduduk Daerah Sabak Bernam — Banci 2020",
+      "value": 107057,
+      "unit": "orang",
+      "as_of": "2020",
+      "fact": "DOSM merekodkan 107,057 penduduk di daerah Sabak Bernam dalam Banci 2020.",
+      "keywords": [
+        "sabak bernam",
+        "penduduk sabak bernam",
+        "populasi sabak bernam",
+        "banci 2020 sabak bernam"
+      ],
+      "source_id": "SRC-DOSM-SABAK2020"
+    },
+    {
+      "id": "SGR-021",
+      "title": "Kepadatan Penduduk Daerah Sabak Bernam — Banci 2020",
+      "value": 107,
+      "unit": "orang/km²",
+      "as_of": "2020",
+      "fact": "Kepadatan penduduk daerah Sabak Bernam berdasarkan Banci 2020 ialah 107 orang bagi setiap km².",
+      "keywords": [
+        "sabak bernam",
+        "kepadatan sabak bernam",
+        "density sabak bernam",
+        "kepadatan penduduk sabak bernam"
+      ],
+      "source_id": "SRC-DOSM-SABAK2020"
     }
   ],
   "districts": [
@@ -437,6 +485,20 @@
       "agency": "Kerajaan Negeri Selangor / PLANMalaysia Selangor",
       "title": "Ringkasan Eksekutif Rancangan Struktur Negeri Selangor 2035",
       "url": "https://www.selangor.gov.my/sabakbernam/resources/RSN%202035/BM_RE_RSN_Selangor_2035_%28Pengubahan%29.pdf",
+      "accessed": "2026-10-06"
+    },
+    {
+      "id": "SRC-DOSM-SABAK2020",
+      "agency": "Jabatan Perangkaan Malaysia (DOSM)",
+      "title": "Key Findings Population and Housing Census of Malaysia 2020 — Administrative District: Sabak Bernam, Selangor",
+      "url": "https://www.dosm.gov.my/uploads/publications/20221018121033.pdf",
+      "accessed": "2026-10-06"
+    },
+    {
+      "id": "SRC-PDT-SABAK-CURRENT",
+      "agency": "Pejabat Daerah dan Tanah Sabak Bernam",
+      "title": "Mengenai Daerah Sabak Bernam",
+      "url": "https://sabakbernam.selangor.gov.my/index.php/pages/view/32?mid=76",
       "accessed": "2026-10-06"
     }
   ]
