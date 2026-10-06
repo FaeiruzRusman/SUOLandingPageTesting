@@ -1951,3 +1951,192 @@ iframe[data-src]:not([src]){
     transform:none!important;
   }
 }
+
+
+/* =========================================================
+   v7.18.1 — WOW interaction for Spatial Canvas PBT map
+   ========================================================= */
+.v7-spatial-map{
+  --spot-x:50%;
+  --spot-y:50%;
+  position:relative;
+  isolation:isolate;
+  overflow:visible;
+}
+.v7-spatial-map:before{
+  content:"";
+  position:absolute;
+  z-index:0;
+  left:50%;
+  top:50%;
+  width:430px;
+  height:430px;
+  transform:translate(-50%,-50%);
+  border-radius:50%;
+  pointer-events:none;
+  opacity:.58;
+  background:
+    radial-gradient(circle at var(--spot-x) var(--spot-y),
+      rgba(255,255,255,.72) 0,
+      rgba(244,195,0,.23) 11%,
+      rgba(200,16,46,.10) 28%,
+      transparent 58%);
+  filter:blur(7px);
+  transition:opacity .28s ease;
+}
+.v7-spatial-map:after{
+  content:"";
+  position:absolute;
+  z-index:3;
+  top:2%;
+  bottom:2%;
+  left:-34%;
+  width:27%;
+  pointer-events:none;
+  opacity:0;
+  transform:skewX(-13deg);
+  background:linear-gradient(
+    90deg,
+    transparent,
+    rgba(255,255,255,.05),
+    rgba(255,239,178,.40),
+    rgba(255,255,255,.08),
+    transparent
+  );
+  filter:blur(2px);
+}
+.v7-spatial-map.is-map-hover:before{
+  opacity:1;
+}
+.v7-spatial-map.is-map-hover:after{
+  opacity:1;
+  animation:v7SpatialLightSweep 2.8s cubic-bezier(.3,.68,.2,1) infinite;
+}
+
+.v7-spatial-map .v7-spatial-real-map{
+  z-index:2!important;
+  filter:
+    drop-shadow(0 20px 26px rgba(115,18,38,.10))
+    drop-shadow(0 0 0 rgba(244,195,0,0));
+  transition:
+    transform .13s cubic-bezier(.16,.8,.22,1),
+    filter .18s ease!important;
+}
+.v7-spatial-map.is-map-hover .v7-spatial-real-map{
+  filter:
+    drop-shadow(0 30px 38px rgba(115,18,38,.22))
+    drop-shadow(0 0 22px rgba(244,195,0,.12))!important;
+}
+
+/* Reveal as a wave rather than a basic fade */
+#v7SpatialMap .spatial-pbt{
+  animation:
+    v7SpatialPbtWowIn .88s cubic-bezier(.12,.78,.18,1.08) forwards,
+    v7SpatialPbtBreathe 6.5s ease-in-out infinite!important;
+  animation-delay:
+    calc(var(--district-i) * 42ms + 80ms),
+    calc(var(--district-i) * 42ms + 1.4s)!important;
+  transform-box:fill-box;
+  transform-origin:center;
+  transform-style:preserve-3d;
+  transition:
+    transform .20s cubic-bezier(.18,.75,.22,1),
+    filter .18s ease,
+    opacity .18s ease,
+    stroke .18s ease,
+    stroke-width .18s ease!important;
+}
+
+/* Spotlight focus: hovered PBT pops forward while others recede */
+#v7SpatialMap:has(.spatial-pbt:hover) .spatial-pbt:not(:hover){
+  opacity:.34!important;
+  filter:saturate(.55) brightness(.94);
+}
+#v7SpatialMap .spatial-pbt:hover{
+  opacity:1!important;
+  transform:scale(1.055) translateY(-4px)!important;
+  filter:
+    brightness(1.22)
+    saturate(1.18)
+    drop-shadow(0 0 5px rgba(255,232,122,.95))
+    drop-shadow(0 12px 14px rgba(143,13,35,.42))!important;
+  stroke:#FFE16A!important;
+  stroke-width:2.35!important;
+}
+
+/* gold halo around map while interacting */
+.v7-spatial-map.is-map-hover{
+  filter:drop-shadow(0 0 18px rgba(244,195,0,.06));
+}
+
+/* floating PBT name */
+.v7-spatial-tooltip{
+  position:absolute;
+  z-index:8;
+  pointer-events:none;
+  transform:translate(0,-100%) translateY(-12px) scale(.92);
+  opacity:0;
+  padding:9px 12px;
+  border-radius:999px;
+  background:rgba(28,24,21,.92);
+  border:1px solid rgba(255,225,106,.38);
+  color:#fff6d1;
+  box-shadow:
+    0 12px 30px rgba(35,20,12,.24),
+    0 0 18px rgba(244,195,0,.10);
+  backdrop-filter:blur(10px);
+  font:800 9px/1 "Manrope",sans-serif;
+  letter-spacing:.055em;
+  text-transform:uppercase;
+  white-space:nowrap;
+  transition:opacity .15s ease,transform .15s ease;
+}
+.v7-spatial-tooltip.show{
+  opacity:1;
+  transform:translate(0,-100%) translateY(-12px) scale(1);
+}
+
+@keyframes v7SpatialPbtWowIn{
+  0%{
+    opacity:0;
+    transform:translateY(22px) scale(.90) rotate(-1.5deg);
+    filter:blur(4px) brightness(1.18);
+  }
+  58%{
+    opacity:1;
+    transform:translateY(-4px) scale(1.025);
+    filter:blur(0) brightness(1.06);
+  }
+  100%{
+    opacity:1;
+    transform:translateY(0) scale(1);
+    filter:blur(0) brightness(1);
+  }
+}
+@keyframes v7SpatialLightSweep{
+  0%{left:-34%;opacity:0}
+  12%{opacity:.88}
+  70%{opacity:.48}
+  100%{left:112%;opacity:0}
+}
+
+@media(max-width:760px){
+  .v7-spatial-map:before{
+    width:330px;
+    height:330px;
+  }
+}
+@media(prefers-reduced-motion:reduce){
+  .v7-spatial-map:before,
+  .v7-spatial-map:after{
+    display:none!important;
+  }
+  #v7SpatialMap .spatial-pbt{
+    animation:none!important;
+    opacity:1!important;
+    transform:none!important;
+  }
+  .v7-spatial-tooltip{
+    transition:none!important;
+  }
+}
