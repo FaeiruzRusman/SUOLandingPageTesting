@@ -624,6 +624,43 @@
     return [];
   };
 
+  const ringAreaAbs = (ring=[]) => {
+    let a=0;
+    for(let i=0,j=ring.length-1;i<ring.length;j=i++){
+      a += (ring[j][0]*ring[i][1])-(ring[i][0]*ring[j][1]);
+    }
+    return Math.abs(a/2);
+  };
+
+  const mainOuterRing = (geom) => {
+    if(!geom) return [];
+    if(geom.type==="Polygon") return geom.coordinates?.[0] || [];
+    if(geom.type==="MultiPolygon"){
+      const rings=(geom.coordinates||[]).map(p=>p?.[0]||[]);
+      return rings.sort((a,b)=>ringAreaAbs(b)-ringAreaAbs(a))[0] || [];
+    }
+    return [];
+  };
+
+  const projectedRingCentroid = (ring,project) => {
+    const pts=(ring||[]).map(project);
+    if(pts.length<3) return pts[0] || [240,260];
+    let twiceArea=0,cx=0,cy=0;
+    for(let i=0,j=pts.length-1;i<pts.length;j=i++){
+      const cross=(pts[j][0]*pts[i][1])-(pts[i][0]*pts[j][1]);
+      twiceArea+=cross;
+      cx+=(pts[j][0]+pts[i][0])*cross;
+      cy+=(pts[j][1]+pts[i][1])*cross;
+    }
+    if(Math.abs(twiceArea)<.0001){
+      return [
+        pts.reduce((s,p)=>s+p[0],0)/pts.length,
+        pts.reduce((s,p)=>s+p[1],0)/pts.length
+      ];
+    }
+    return [cx/(3*twiceArea),cy/(3*twiceArea)];
+  };
+
   const renderRealSelangorMap = async (svgId, url, opts={}) => {
     const svg = document.getElementById(svgId);
     if (!svg) return;
@@ -672,11 +709,32 @@
           const cx=pts.reduce((a,p)=>a+p[0],0)/pts.length;
           const cy=pts.reduce((a,p)=>a+p[1],0)/pts.length;
           const [px,py]=project([cx,cy]);
-          if(!opts.district || opts.labels || opts.heroDistrict){
+
+          if(opts.heroDistrict){
+            const ring=mainOuterRing(f.geometry);
+            const [lx,ly]=projectedRingCentroid(ring,project);
+            const districtName=
+              f.properties?.DAERAH ||
+              f.properties?.NAMA_DAERAH ||
+              f.properties?.NAM_DAERAH ||
+              f.properties?.DISTRICT ||
+              f.properties?.web_name ||
+              "DAERAH";
+            const label=document.createElementNS(NS,"text");
+            label.setAttribute("x",lx);
+            label.setAttribute("y",ly);
+            label.setAttribute("class","hero-district-label");
+            label.setAttribute("text-anchor","middle");
+            label.setAttribute("dominant-baseline","middle");
+            label.style.setProperty("--district-i",i);
+            label.textContent=String(districtName).toUpperCase();
+            svg.appendChild(label);
+          } else if(!opts.district || opts.labels){
             const node=document.createElementNS(NS,"circle");
-            node.setAttribute("cx",px);node.setAttribute("cy",py);node.setAttribute("r",opts.heroDistrict?4.0:opts.district?3.1:4.2);
-            node.setAttribute("class",opts.heroDistrict?"real-node hero-district-node":"real-node");
-            node.style.setProperty("--district-i",i);
+            node.setAttribute("cx",px);
+            node.setAttribute("cy",py);
+            node.setAttribute("r",opts.district?3.1:4.2);
+            node.setAttribute("class","real-node");
             svg.appendChild(node);
           }
         }
