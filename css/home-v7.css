@@ -1,9 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap');
 
 :root{
-  --suo-red:#C8102E;--suo-deep:#8F0D23;--suo-gold:#F4C300;--suo-soft-gold:#F8E7A1;
-  --suo-ivory:#F7F4EE;--suo-white:#FFFFFF;--suo-charcoal:#232323;--suo-muted:#6D6861;
-  --suo-line:#E7E0D5;--suo-soft:#EEE9E0;--shadow:0 18px 60px rgba(49,33,20,.09);
+  --suo-red:#9B2C3D;
+  --suo-deep:#6F1D2A;
+  --suo-gold:#B99A3D;
+  --suo-soft-gold:#E4D5A6;
+  --suo-ivory:#F7F3EC;
+  --suo-white:#FFFFFF;
+  --suo-charcoal:#292725;
+  --suo-muted:#706A64;
+  --suo-line:#E4DDD4;
+  --suo-soft:#EEE9E2;
+  --shadow:0 18px 60px rgba(48,39,31,.08);
 }
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--suo-ivory);color:var(--suo-charcoal);font-family:"DM Sans",system-ui,sans-serif;overflow-x:hidden}a{text-decoration:none;color:inherit}button,input{font:inherit}.v7-shell{width:min(1180px,calc(100% - 40px));margin:auto}.v7-section{padding:88px 0}.v7-kicker{font:700 11px/1.2 "Manrope",sans-serif;letter-spacing:.16em;text-transform:uppercase;color:var(--suo-red)}.v7-title{font:800 clamp(32px,4.4vw,58px)/1.02 "Manrope",sans-serif;letter-spacing:-.045em;margin:10px 0 18px}.v7-sub{font-size:16px;line-height:1.7;color:var(--suo-muted);max-width:720px}.v7-btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:13px 18px;border-radius:999px;font-weight:700;font-size:14px;transition:.25s ease;border:1px solid transparent}.v7-btn:hover{transform:translateY(-2px)}.v7-btn.primary{background:var(--suo-red);color:white;box-shadow:0 12px 28px rgba(200,16,46,.20)}.v7-btn.ghost{border-color:#D9CFC2;background:rgba(255,255,255,.55)}.v7-btn.gold{background:var(--suo-gold);color:#221900}.v7-btn.dark{background:#242424;color:white}.v7-arrow{font-size:16px}
 
@@ -2240,4 +2248,236 @@ iframe[data-src]:not([src]){
 .v7-links a.active:hover:after{
   right:0!important;
   transform:scaleX(1)!important;
+}
+
+
+/* =========================================================
+   v7.19.0 — Muted Selangor flag palette audit
+   Red / Yellow / White interpreted in restrained premium tones
+   ========================================================= */
+
+/* Global interactive accents */
+.v7-kicker,
+.v7-links a:hover,
+.v7-app-category-kicker,
+.v7-card-link .v7-card-link-label,
+.v7-ecosystem-app-links a:hover,
+.v7-ecosystem-app-links a:after{
+  color:var(--suo-red)!important;
+}
+.v7-links a:after{
+  background:var(--suo-red)!important;
+}
+
+.v7-btn.primary{
+  background:var(--suo-red)!important;
+  box-shadow:0 10px 24px rgba(111,29,42,.16)!important;
+}
+.v7-btn.gold{
+  background:var(--suo-gold)!important;
+  color:#332B19!important;
+  box-shadow:none!important;
+}
+.v7-theme.active{
+  background:var(--suo-red)!important;
+  border-color:var(--suo-red)!important;
+}
+
+/* HERO — warm white with restrained Selangor accents */
+.v7-hero{
+  background:
+    radial-gradient(circle at 80% 23%,rgba(185,154,61,.12),transparent 25%),
+    radial-gradient(circle at 11% 80%,rgba(111,29,42,.035),transparent 28%),
+    linear-gradient(120deg,#FAF7F2 0%,#F4EEE6 58%,#F8F3EB 100%)!important;
+}
+.v7-hero:before{
+  opacity:.20!important;
+  background-image:
+    linear-gradient(rgba(111,29,42,.065) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(111,29,42,.065) 1px,transparent 1px)!important;
+}
+.v7-hero .v7-map-orb{
+  background:
+    linear-gradient(145deg,rgba(111,29,42,.09),rgba(185,154,61,.13))!important;
+}
+#v7HeroMap .hero-district:hover{
+  stroke:#D2B65E!important;
+  filter:
+    brightness(1.08)
+    saturate(.98)
+    drop-shadow(0 5px 8px rgba(111,29,42,.18))!important;
+}
+#v7HeroMap .hero-district-label{
+  fill:#F9F3E6!important;
+}
+
+/* SPATIAL CANVAS — ivory / soft ochre, no pink wash */
+.v7-spatial{
+  background:
+    radial-gradient(circle at 14% 72%,rgba(185,154,61,.10),transparent 29%),
+    radial-gradient(circle at 88% 20%,rgba(111,29,42,.045),transparent 28%),
+    linear-gradient(120deg,#FAF7F0 0%,#F1E9DC 100%)!important;
+}
+.v7-spatial:before{
+  opacity:.10!important;
+}
+.v7-spatial .v7-theme:not(.active){
+  background:rgba(255,255,255,.72)!important;
+  border-color:#DED4C7!important;
+}
+#v7SpatialMap .spatial-pbt:hover{
+  stroke:#B99A3D!important;
+  filter:
+    brightness(1.07)
+    saturate(.95)
+    drop-shadow(0 4px 7px rgba(111,29,42,.14))!important;
+}
+#v7SpatialMap:has(.spatial-pbt:hover) .spatial-pbt:not(:hover){
+  opacity:.82!important;
+  filter:saturate(.84) brightness(.99)!important;
+}
+.v7-spatial-map:before{
+  background:
+    radial-gradient(circle at var(--spot-x) var(--spot-y),
+      rgba(255,255,255,.28) 0,
+      rgba(185,154,61,.075) 14%,
+      rgba(111,29,42,.025) 31%,
+      transparent 58%)!important;
+}
+
+/* ECOSYSTEM — primarily white, red/gold only as accents */
+.v7-ecosystem{
+  background:
+    radial-gradient(circle at 100% 0%,rgba(111,29,42,.025),transparent 32%),
+    linear-gradient(180deg,#FFFFFF 0%,#FAF8F4 100%)!important;
+  border-color:rgba(111,29,42,.055)!important;
+}
+.v7-ecosystem .v7-card{
+  background:rgba(255,255,255,.92)!important;
+  border-color:#E3DDD5!important;
+}
+.v7-ecosystem .v7-card:nth-child(3){
+  background:linear-gradient(145deg,#FFF,#F9F5EC)!important;
+}
+.v7-ecosystem .v7-card-coming{
+  background:linear-gradient(145deg,#F8F6F2,#F0ECE6)!important;
+}
+.v7-icon{
+  background:var(--suo-red)!important;
+}
+.v7-card:nth-child(even) .v7-icon{
+  background:var(--suo-gold)!important;
+  color:#302A1B!important;
+}
+.v7-coming-badge{
+  background:rgba(111,29,42,.055)!important;
+  border-color:rgba(111,29,42,.13)!important;
+  color:var(--suo-red)!important;
+}
+
+/* APPLICATIONS — neutral warm white, remove rose tint */
+.v7-apps{
+  background:
+    radial-gradient(circle at 7% 12%,rgba(111,29,42,.025),transparent 24%),
+    radial-gradient(circle at 94% 78%,rgba(185,154,61,.065),transparent 26%),
+    linear-gradient(180deg,#F8F6F2 0%,#F1ECE5 100%)!important;
+  border-color:rgba(111,29,42,.045)!important;
+}
+.v7-app-category + .v7-app-category{
+  border-top-color:#DED6CD!important;
+}
+.v7-app-category-index{
+  background:var(--suo-red)!important;
+  box-shadow:0 7px 18px rgba(111,29,42,.10)!important;
+}
+.v7-app-category:nth-of-type(even) .v7-app-category-index{
+  background:var(--suo-gold)!important;
+  color:#342D1C!important;
+}
+.v7-app-count{
+  background:rgba(255,255,255,.68)!important;
+  border-color:#DDD4CA!important;
+  color:#6D655E!important;
+}
+.v7-platform-app{
+  background:#24211F!important;
+  border-color:rgba(255,255,255,.07)!important;
+}
+.v7-platform-copy{
+  background:
+    radial-gradient(circle at 100% 0%,rgba(111,29,42,.15),transparent 40%),
+    linear-gradient(135deg,#2A2522,#1F1D1B)!important;
+}
+.v7-platform-app-light{
+  background:#FFF!important;
+  border-color:#E1D9D0!important;
+}
+.v7-platform-app-light .v7-platform-copy{
+  background:
+    radial-gradient(circle at 100% 0%,rgba(185,154,61,.09),transparent 42%),
+    linear-gradient(135deg,#FFF,#F5F0E9)!important;
+}
+
+/* ROADMAP — soft gold becomes warm parchment */
+.v7-road-left{
+  background:
+    radial-gradient(circle at 10% 10%,rgba(185,154,61,.10),transparent 28%),
+    linear-gradient(145deg,#F8F2E7,#EDE2CF)!important;
+}
+.v7-road-left .v7-year{
+  border-left-color:#B99A3D!important;
+}
+.v7-road-left .v7-year b{
+  color:var(--suo-red)!important;
+}
+
+/* ASK MR TPR — muted maroon rather than bright red */
+.v7-assistant-side{
+  background:
+    radial-gradient(circle at 88% 12%,rgba(185,154,61,.08),transparent 28%),
+    linear-gradient(125deg,#5E1D27 0%,#712432 54%,#842D3B 100%)!important;
+}
+.v7-assistant-side .v7-kicker{
+  color:#DDCC9B!important;
+}
+.v7-assistant-side p{
+  color:#E5D9D8!important;
+}
+
+/* FOOTER — charcoal with very restrained Selangor accents */
+.v7-footer.v7-footer-contact{
+  background:
+    radial-gradient(circle at 84% 12%,rgba(111,29,42,.10),transparent 29%),
+    radial-gradient(circle at 13% 85%,rgba(185,154,61,.035),transparent 25%),
+    linear-gradient(135deg,#1C1B19 0%,#24211F 58%,#201D1C 100%)!important;
+}
+.v7-footer-eyebrow,
+.v7-footer-label{
+  color:#C9B472!important;
+}
+.v7-footer-quicklinks a:first-child{
+  background:#B99A3D!important;
+  border-color:#B99A3D!important;
+  color:#30291A!important;
+}
+.v7-map-pin{
+  background:var(--suo-red)!important;
+}
+.v7-connect-panel{
+  background:
+    radial-gradient(circle at 100% 0%,rgba(111,29,42,.09),transparent 36%),
+    rgba(255,255,255,.035)!important;
+}
+
+/* Tooltips / map feedback */
+.v7-spatial-tooltip{
+  border-color:rgba(185,154,61,.20)!important;
+  color:#F0E8D7!important;
+  box-shadow:0 8px 20px rgba(35,28,23,.14)!important;
+}
+
+/* Keep all yellows as accents, never large saturated surfaces */
+.v7-tag,
+.v7-live-badge{
+  filter:saturate(.78)!important;
 }
