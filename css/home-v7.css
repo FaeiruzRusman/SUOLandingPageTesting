@@ -876,3 +876,43 @@ iframe[data-src]:not([src]){
     white-space:normal!important;
   }
 }
+
+
+/* v7.11.9 align hero title and copy to one right edge */
+@media(min-width:1101px){
+  .v7-hero .v7-suo-main-title{
+    width:610px!important;
+    max-width:610px!important;
+    white-space:nowrap!important;
+    font-size:47px!important;
+    line-height:1!important;
+    letter-spacing:-.047em!important;
+    margin:0 0 20px!important;
+  }
+  .v7-hero p{
+    width:610px!important;
+    max-width:610px!important;
+    text-align:justify!important;
+    text-justify:inter-word;
+  }
+}
+@media(min-width:761px) and (max-width:1100px){
+  .v7-hero .v7-suo-main-title{
+    width:100%!important;
+    max-width:100%!important;
+    white-space:nowrap!important;
+    font-size:34px!important;
+  }
+  .v7-hero p{
+    width:100%!important;
+    max-width:100%!important;
+    text-align:justify!important;
+  }
+}
+@media(max-width:760px){
+  .v7-hero p{
+    width:auto!important;
+    max-width:100%!important;
+    text-align:left!important;
+  }
+}
