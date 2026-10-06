@@ -1677,3 +1677,37 @@ iframe[data-src]:not([src]){
     font-size:19px!important;
   }
 }
+
+
+/* v7.16.0 — ecosystem application links to application categories */
+.v7-ecosystem-app-links li{
+  position:relative;
+}
+.v7-ecosystem-app-links li:before{
+  vertical-align:middle;
+}
+.v7-ecosystem-app-links a{
+  display:inline-flex;
+  align-items:center;
+  gap:5px;
+  color:inherit;
+  text-decoration:none;
+  transition:color .18s ease,transform .18s ease;
+}
+.v7-ecosystem-app-links a:after{
+  content:"→";
+  color:var(--suo-red);
+  font-weight:800;
+  opacity:0;
+  transform:translateX(-3px);
+  transition:.18s ease;
+}
+.v7-ecosystem-app-links a:hover{
+  color:var(--suo-red);
+  transform:translateX(2px);
+}
+.v7-ecosystem-app-links a:hover:after,
+.v7-ecosystem-app-links a:focus-visible:after{
+  opacity:1;
+  transform:translateX(0);
+}
