@@ -93,6 +93,50 @@
   const sourceById=(state,id)=>
     (state?.selangor?.sources||[]).find(s=>s.id===id)||null;
 
+  const PBT_ALIASES={
+    mbsa:["mbsa","majlis bandaraya shah alam","shah alam"],
+    mbpj:["mbpj","majlis bandaraya petaling jaya","petaling jaya"],
+    mbdk:["mbdk","mpk","majlis bandaraya diraja klang","majlis perbandaran klang"],
+    mps:["mps","majlis perbandaran selayang","selayang"],
+    mbsj:["mbsj","mpsj","majlis bandaraya subang jaya","majlis perbandaran subang jaya"],
+    mpaj:["mpaj","majlis perbandaran ampang jaya","ampang jaya"],
+    mpkj:["mpkj","majlis perbandaran kajang","kajang"],
+    mpsepang:["mpsepang","mpsp","majlis perbandaran sepang"],
+    mpkl:["mpkl","mdkl","majlis perbandaran kuala langat"],
+    mpks:["mpks","mdks","majlis perbandaran kuala selangor"],
+    mphs:["mphs","mdhs","majlis perbandaran hulu selangor","majlis daerah hulu selangor"],
+    mdsb:["mdsb","majlis daerah sabak bernam"]
+  };
+
+  const resolvePbt=value=>{
+    const q=normaliseIntent(value);
+    for(const [key,aliases] of Object.entries(PBT_ALIASES)){
+      const hit=aliases.find(alias=>q.includes(normaliseIntent(alias)));
+      if(hit) return {key,alias:hit,aliases};
+    }
+    return null;
+  };
+
+  const findPbtArea=async value=>{
+    const state=await load();
+    const pbt=resolvePbt(value);
+    if(!pbt) return null;
+    const item=(state.selangor?.figures||[]).find(row=>
+      String(row.id||"").startsWith("PBT-AREA-") &&
+      (row.keywords||[]).some(k=>pbt.aliases.includes(normaliseIntent(k)))
+    );
+    if(!item) return null;
+    return {
+      type:"selangor",
+      id:item.id,
+      title:item.title,
+      text:item.fact,
+      category:"Selangor Asas",
+      source:sourceById(state,item.source_id),
+      raw:item
+    };
+  };
+
   const search=async(query,{limit=6,types=["facts","selangor","glossary","faq"]}={})=>{
     const state=await load();
     const results=[];
@@ -140,10 +184,25 @@
       });
     }
 
-    return results.sort((a,b)=>b.score-a.score).slice(0,limit);
+    const terms=meaningfulTerms(query);
+    const directLike=/\b(berapa|keluasan|luas|penduduk|populasi|kepadatan|density|jumlah|bilangan)\b/i.test(query);
+
+    const filtered=directLike && terms.length>1
+      ? results.filter(result=>{
+          const hay=normaliseIntent([
+            result.title,
+            result.text,
+            ...(result.keywords||[])
+          ].join(" "));
+          return terms.every(term=>hay.includes(term));
+        })
+      : results;
+
+    return filtered.sort((a,b)=>b.score-a.score).slice(0,limit);
   };
 
   window.SUOKnowledge={
-    PATHS,normalize,normaliseIntent,meaningfulTerms,load,search,sourceById
+    PATHS,normalize,normaliseIntent,meaningfulTerms,load,search,sourceById,
+    resolvePbt,findPbtArea
   };
 })();
