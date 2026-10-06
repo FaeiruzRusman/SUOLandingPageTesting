@@ -602,7 +602,7 @@
   });
 
   const mapSources = {
-    hero: "https://faeiruzrusman.github.io/selangor-3d-map/data/pentadbiran/sempadan_pbt_selangor_2024.geojson",
+    hero: "https://faeiruzrusman.github.io/selangor-3d-map/data/pentadbiran/sempadan_daerah_selangor.geojson",
     spatial: "https://faeiruzrusman.github.io/selangor-3d-map/data/pentadbiran/sempadan_daerah_selangor.geojson"
   };
 
@@ -651,10 +651,17 @@
         }).join(" ")+" Z").join(" ");
         path.setAttribute("d",d);
         path.setAttribute("fill-rule","evenodd");
-        path.setAttribute("class","real-polygon");
-        path.setAttribute("fill", opts.district ? (i%2 ? "#E9A8B3":"#F2C4CB") : (i%3===0?"#8F0D23":i%3===1?"#B51230":"#D22442"));
-        path.setAttribute("stroke",opts.district?"#C8102E":"rgba(255,255,255,.78)");
-        path.setAttribute("stroke-width",opts.district?"1.35":"1.1");
+        path.setAttribute("class",opts.heroDistrict?"real-polygon hero-district":"real-polygon");
+        path.style.setProperty("--district-i",i);
+        path.setAttribute("fill",
+          opts.heroDistrict
+            ? (i%4===0?"#8F0D23":i%4===1?"#B51230":i%4===2?"#C8102E":"#D62443")
+            : opts.district
+              ? (i%2 ? "#E9A8B3":"#F2C4CB")
+              : (i%3===0?"#8F0D23":i%3===1?"#B51230":"#D22442")
+        );
+        path.setAttribute("stroke",opts.heroDistrict?"rgba(255,255,255,.86)":opts.district?"#C8102E":"rgba(255,255,255,.78)");
+        path.setAttribute("stroke-width",opts.heroDistrict?"1.5":opts.district?"1.35":"1.1");
         const title=document.createElementNS(NS,"title");
         title.textContent=f.properties?.web_name || f.properties?.NAMA_PBT || f.properties?.DAERAH || "Selangor";
         path.appendChild(title);
@@ -665,9 +672,11 @@
           const cx=pts.reduce((a,p)=>a+p[0],0)/pts.length;
           const cy=pts.reduce((a,p)=>a+p[1],0)/pts.length;
           const [px,py]=project([cx,cy]);
-          if(!opts.district || opts.labels){
+          if(!opts.district || opts.labels || opts.heroDistrict){
             const node=document.createElementNS(NS,"circle");
-            node.setAttribute("cx",px);node.setAttribute("cy",py);node.setAttribute("r",opts.district?3.1:4.2);node.setAttribute("class","real-node");
+            node.setAttribute("cx",px);node.setAttribute("cy",py);node.setAttribute("r",opts.heroDistrict?4.0:opts.district?3.1:4.2);
+            node.setAttribute("class",opts.heroDistrict?"real-node hero-district-node":"real-node");
+            node.style.setProperty("--district-i",i);
             svg.appendChild(node);
           }
         }
@@ -681,6 +690,6 @@
     }
   };
 
-  renderRealSelangorMap("v7HeroMap",mapSources.hero,{district:false});
+  renderRealSelangorMap("v7HeroMap",mapSources.hero,{district:true,heroDistrict:true});
   renderRealSelangorMap("v7SpatialMap",mapSources.spatial,{district:true,labels:false});
 })();
