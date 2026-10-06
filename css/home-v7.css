@@ -1781,3 +1781,38 @@ iframe[data-src]:not([src]){
     transform:none!important;
   }
 }
+
+
+/* v7.17.1 — hero district names replace centroid points */
+#v7HeroMap .hero-district-node{
+  display:none!important;
+}
+#v7HeroMap .hero-district-label{
+  pointer-events:none;
+  fill:#fff8ed;
+  stroke:rgba(80,5,20,.42);
+  stroke-width:2.8px;
+  paint-order:stroke fill;
+  font:800 8.5px/1 "Manrope",sans-serif;
+  letter-spacing:.045em;
+  opacity:0;
+  animation:v7DistrictLabelIn .48s ease-out forwards;
+  animation-delay:calc(var(--district-i) * 85ms + .68s);
+}
+@keyframes v7DistrictLabelIn{
+  from{opacity:0;transform:translateY(3px)}
+  to{opacity:.96;transform:translateY(0)}
+}
+@media(max-width:760px){
+  #v7HeroMap .hero-district-label{
+    font-size:7.6px;
+    stroke-width:2.4px;
+  }
+}
+@media(prefers-reduced-motion:reduce){
+  #v7HeroMap .hero-district-label{
+    animation:none!important;
+    opacity:.96!important;
+    transform:none!important;
+  }
+}
