@@ -916,3 +916,12 @@ iframe[data-src]:not([src]){
     text-align:left!important;
   }
 }
+
+
+/* v7.11.10 fine-tune hero title to paragraph right edge */
+@media(min-width:1101px){
+  .v7-hero .v7-suo-main-title{
+    font-size:53px!important;
+    letter-spacing:-.047em!important;
+  }
+}
