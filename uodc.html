@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/uodc.css?v=7.21.1">
+  <link rel="stylesheet" href="css/uodc.css?v=7.22.0">
 </head>
 <body>
 <header class="uodc-header">
@@ -87,9 +87,9 @@
         <small>rekod spatial</small>
       </article>
       <article>
-        <span>Tema</span>
-        <strong id="statCategories">6</strong>
-        <small>kategori katalog</small>
+        <span>Pembekal / Pemilik</span>
+        <strong id="statProviders">—</strong>
+        <small>pemilik dan sumber data</small>
       </article>
       <article>
         <span>Status</span>
@@ -107,7 +107,7 @@
           <h2>Katalog Data SUO</h2>
           <p>Carian semasa menggunakan rekod yang telah didaftarkan pada halaman ini. Jumlah bukan inventori penuh SUO.</p>
         </div>
-        <div class="uodc-count"><b id="catalogCount">6</b><span>rekod ditemui</span></div>
+        <div class="uodc-count"><b id="catalogCount">—</b><span>rekod ditemui</span></div>
       </div>
 
       <div class="uodc-toolbar">
@@ -115,95 +115,13 @@
           <span>⌕</span>
           <input id="catalogSearch" type="search" placeholder="Cari dataset, pemilik atau tema...">
         </label>
-        <select id="catalogFilter" aria-label="Tapis kategori">
-          <option value="all">Semua kategori</option>
-          <option value="land-use">Guna Tanah</option>
-          <option value="environment">Alam Sekitar</option>
-          <option value="administrative">Pentadbiran</option>
-          <option value="social">Sosial & Kesihatan</option>
-          <option value="education">Pendidikan</option>
-          <option value="mobility">Mobiliti</option>
+        <select id="catalogFilter" aria-label="Tapis tema">
+          <option value="all">Semua tema</option>
         </select>
       </div>
 
-      <div class="uodc-dataset-list">
-        <article class="uodc-dataset" data-category="land-use" data-type="spatial" data-search="Guna Tanah Negeri Selangor 2025 PLANMalaysia Selangor land use spatial monthly verified">
-          <div class="uodc-dataset-index">01</div>
-          <div class="uodc-dataset-main">
-            <div class="uodc-tags"><span>Guna Tanah</span><span>Spatial</span><span class="verified">Verified</span></div>
-            <h3>Guna Tanah Negeri Selangor 2025</h3>
-            <p>PLANMalaysia Selangor · Kemas kini bulanan</p>
-          </div>
-          <div class="uodc-dataset-actions">
-            <button type="button" class="uodc-meta" data-title="Guna Tanah Negeri Selangor 2025" data-owner="PLANMalaysia Selangor" data-type="Spatial" data-update="Bulanan" data-status="Verified">Metadata</button>
-            <a href="https://sismaps.jpbdselangor.gov.my/dashboard" target="_blank" rel="noopener">Buka ↗</a>
-          </div>
-        </article>
-
-        <article class="uodc-dataset" data-category="environment" data-type="spatial" data-search="Kawasan Sensitif Alam Sekitar KSAS PLANMalaysia Selangor spatial quarterly verified">
-          <div class="uodc-dataset-index">02</div>
-          <div class="uodc-dataset-main">
-            <div class="uodc-tags"><span>Alam Sekitar</span><span>Spatial</span><span class="verified">Verified</span></div>
-            <h3>Kawasan Sensitif Alam Sekitar (KSAS)</h3>
-            <p>PLANMalaysia Selangor · Kemas kini suku tahunan</p>
-          </div>
-          <div class="uodc-dataset-actions">
-            <button type="button" class="uodc-meta" data-title="Kawasan Sensitif Alam Sekitar (KSAS)" data-owner="PLANMalaysia Selangor" data-type="Spatial" data-update="Suku Tahunan" data-status="Verified">Metadata</button>
-            <span class="uodc-disabled">Preview akan datang</span>
-          </div>
-        </article>
-
-        <article class="uodc-dataset" data-category="administrative" data-type="spatial" data-search="Sempadan PBT Negeri Selangor PLANMalaysia Selangor spatial annual verified">
-          <div class="uodc-dataset-index">03</div>
-          <div class="uodc-dataset-main">
-            <div class="uodc-tags"><span>Pentadbiran</span><span>Spatial</span><span class="verified">Verified</span></div>
-            <h3>Sempadan PBT Negeri Selangor</h3>
-            <p>PLANMalaysia Selangor · Kemas kini tahunan</p>
-          </div>
-          <div class="uodc-dataset-actions">
-            <button type="button" class="uodc-meta" data-title="Sempadan PBT Negeri Selangor" data-owner="PLANMalaysia Selangor" data-type="Spatial" data-update="Tahunan" data-status="Verified">Metadata</button>
-            <a href="https://faeiruzrusman.github.io/selangor-3d-map/?focus=pbt" target="_blank" rel="noopener">GeoPortal ↗</a>
-          </div>
-        </article>
-
-        <article class="uodc-dataset" data-category="social" data-type="spatial" data-search="Kemudahan Kesihatan Negeri Selangor KKM PLANMalaysia spatial quarterly draft">
-          <div class="uodc-dataset-index">04</div>
-          <div class="uodc-dataset-main">
-            <div class="uodc-tags"><span>Kesihatan</span><span>Spatial</span><span class="draft">Draft</span></div>
-            <h3>Kemudahan Kesihatan Negeri Selangor</h3>
-            <p>KKM / PLANMalaysia · Kemas kini suku tahunan</p>
-          </div>
-          <div class="uodc-dataset-actions">
-            <button type="button" class="uodc-meta" data-title="Kemudahan Kesihatan Negeri Selangor" data-owner="KKM / PLANMalaysia" data-type="Spatial" data-update="Suku Tahunan" data-status="Draft">Metadata</button>
-            <a href="https://faeiruzrusman.github.io/selangor-3d-map/?focus=health" target="_blank" rel="noopener">GeoPortal ↗</a>
-          </div>
-        </article>
-
-        <article class="uodc-dataset" data-category="education" data-type="spatial" data-search="Sekolah Negeri Selangor KPM PLANMalaysia spatial quarterly verified">
-          <div class="uodc-dataset-index">05</div>
-          <div class="uodc-dataset-main">
-            <div class="uodc-tags"><span>Pendidikan</span><span>Spatial</span><span class="verified">Verified</span></div>
-            <h3>Sekolah Negeri Selangor</h3>
-            <p>KPM / PLANMalaysia · Kemas kini suku tahunan</p>
-          </div>
-          <div class="uodc-dataset-actions">
-            <button type="button" class="uodc-meta" data-title="Sekolah Negeri Selangor" data-owner="KPM / PLANMalaysia" data-type="Spatial" data-update="Suku Tahunan" data-status="Verified">Metadata</button>
-            <a href="https://faeiruzrusman.github.io/selangor-3d-map/?focus=schools" target="_blank" rel="noopener">GeoPortal ↗</a>
-          </div>
-        </article>
-
-        <article class="uodc-dataset" data-category="mobility" data-type="spatial" data-search="Rangkaian Jalan Utama Negeri Selangor JKR PLANMalaysia spatial annual verified">
-          <div class="uodc-dataset-index">06</div>
-          <div class="uodc-dataset-main">
-            <div class="uodc-tags"><span>Mobiliti</span><span>Spatial</span><span class="verified">Verified</span></div>
-            <h3>Rangkaian Jalan Utama Negeri Selangor</h3>
-            <p>JKR / PLANMalaysia · Kemas kini tahunan</p>
-          </div>
-          <div class="uodc-dataset-actions">
-            <button type="button" class="uodc-meta" data-title="Rangkaian Jalan Utama Negeri Selangor" data-owner="JKR / PLANMalaysia" data-type="Spatial" data-update="Tahunan" data-status="Verified">Metadata</button>
-            <span class="uodc-disabled">Preview akan datang</span>
-          </div>
-        </article>
+      <div class="uodc-dataset-list" id="datasetList">
+        <div class="uodc-loading">Memuatkan katalog data SUO…</div>
       </div>
     </div>
   </section>
@@ -247,15 +165,20 @@
     <span class="uodc-kicker">DATASET METADATA</span>
     <h2 id="metaTitle">Metadata</h2>
     <dl>
-      <div><dt>Pemilik</dt><dd id="metaOwner">—</dd></div>
+      <div><dt>Pemilik / Sumber</dt><dd id="metaOwner">—</dd></div>
       <div><dt>Jenis</dt><dd id="metaType">—</dd></div>
-      <div><dt>Kemas kini</dt><dd id="metaUpdate">—</dd></div>
+      <div><dt>Format</dt><dd id="metaFormat">—</dd></div>
+      <div><dt>Tahun / Rujukan</dt><dd id="metaYear">—</dd></div>
       <div><dt>Status</dt><dd id="metaStatus">—</dd></div>
+      <div><dt>Akses</dt><dd id="metaAccess">—</dd></div>
+      <div><dt>Digunakan oleh</dt><dd id="metaApps">—</dd></div>
+      <div><dt>Repositori</dt><dd id="metaRepo">—</dd></div>
     </dl>
-    <p>Metadata penuh akan diperluas apabila katalog data SUO diperkemas dan dataset disahkan oleh pemilik data.</p>
+    <p id="metaDescription"></p>
+    <div class="uodc-modal-actions" id="metaActions"></div>
   </div>
 </dialog>
 
-<script src="js/uodc.js?v=7.21.1"></script>
+<script src="js/uodc.js?v=7.22.0"></script>
 </body>
 </html>
