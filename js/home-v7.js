@@ -123,7 +123,7 @@
   const themeCatalog = {
     housing:{
       eyebrow:{ms:"PERUMAHAN",en:"HOUSING"},
-      title:{ms:"Dashboard Perumahan Negeri Selangor",en:"Selangor Housing Dashboard"},
+      title:{ms:"Perumahan",en:"Housing"},
       desc:{ms:"Terokai taburan dan maklumat perumahan melalui aplikasi tematik SUO.",en:"Explore housing distribution and related information through SUO's thematic application."},
       primary:{ms:"Buka Dashboard ↗",en:"Open Dashboard ↗",url:"https://geospatialpms-glitch.github.io/Dashboard-Perumahan-Negeri-Selangor/"},
       secondary:{ms:"Lihat Aplikasi SUO →",en:"View SUO Applications →",url:"applications.html"},
@@ -131,7 +131,7 @@
     },
     industry:{
       eyebrow:{ms:"PERINDUSTRIAN",en:"INDUSTRY"},
-      title:{ms:"Perindustrian Negeri Selangor",en:"Selangor Industry Dashboard"},
+      title:{ms:"Perindustrian",en:"Industry"},
       desc:{ms:"Terokai lokasi, taburan dan maklumat kawasan perindustrian Negeri Selangor.",en:"Explore the location, distribution and information of industrial areas across Selangor."},
       primary:{ms:"Buka Dashboard ↗",en:"Open Dashboard ↗",url:"https://geospatialpms-glitch.github.io/Perindustrian-Negeri-Selangor/"},
       secondary:{ms:"Lihat Aplikasi SUO →",en:"View SUO Applications →",url:"applications.html"},
@@ -139,7 +139,7 @@
     },
     health:{
       eyebrow:{ms:"KESIHATAN",en:"HEALTH"},
-      title:{ms:"Kemudahan Kesihatan Negeri Selangor",en:"Selangor Health Facilities"},
+      title:{ms:"Kesihatan",en:"Health"},
       desc:{ms:"Paparan titik menggunakan data kemudahan kesihatan sebenar daripada SUO GeoPortal.",en:"Point locations use the actual health facilities dataset from the SUO GeoPortal."},
       primary:{ms:"Buka Dashboard ↗",en:"Open Dashboard ↗",url:"https://geospatialpms-glitch.github.io/Kemudahan-Kesihatan-Negeri-Selangor/"},
       secondary:{ms:"Buka 3D GeoPortal ↗",en:"Open 3D GeoPortal ↗",url:"https://faeiruzrusman.github.io/selangor-3d-map/?focus=health"},
@@ -147,7 +147,7 @@
     },
     mobility:{
       eyebrow:{ms:"MOBILITI",en:"MOBILITY"},
-      title:{ms:"Rangkaian Rel & Ketersambungan",en:"Rail Network & Connectivity"},
+      title:{ms:"Mobiliti",en:"Mobility"},
       desc:{ms:"Paparan menggunakan rangkaian rel dan stesen sebenar daripada dataset pengangkutan SUO GeoPortal.",en:"The preview uses the actual rail network and station datasets from the SUO GeoPortal."},
       primary:{ms:"Buka 3D GeoPortal ↗",en:"Open 3D GeoPortal ↗",url:"https://faeiruzrusman.github.io/selangor-3d-map/?focus=mobility"},
       secondary:{ms:"Analitik Spatial ↗",en:"Spatial Analytics ↗",url:"https://faeiruzrusman.github.io/spatial-analytics/"},
@@ -155,7 +155,7 @@
     },
     environment:{
       eyebrow:{ms:"ALAM SEKITAR",en:"ENVIRONMENT"},
-      title:{ms:"Alam Sekitar & Tanah Lapang",en:"Environment & Open Space"},
+      title:{ms:"Alam Sekitar",en:"Environment"},
       desc:{ms:"Terokai maklumat tanah lapang awam serta kecerdasan cuaca dan banjir melalui aplikasi SUO berkaitan.",en:"Explore public open space information together with weather and flood intelligence through related SUO applications."},
       primary:{ms:"Buka Tanah Lapang ↗",en:"Open Public Open Space ↗",url:"https://geospatialpms-glitch.github.io/TANAH-LAPANG-AWAM-NEGERI-SELANGOR/"},
       secondary:{ms:"Buka 3D GeoPortal ↗",en:"Open 3D GeoPortal ↗",url:"https://faeiruzrusman.github.io/selangor-3d-map/?focus=environment"},
@@ -163,7 +163,7 @@
     },
     planning:{
       eyebrow:{ms:"PERANCANGAN",en:"PLANNING"},
-      title:{ms:"Perancangan Negeri & Guna Tanah",en:"State Planning & Land Use"},
+      title:{ms:"Perancangan",en:"Planning"},
       desc:{ms:"Gunakan sempadan pentadbiran sebenar Selangor bersama Dashboard Guna Tanah dan RSN Selangor 2035.",en:"Use Selangor's actual administrative boundaries together with the Land Use Dashboard and Selangor State Structure Plan 2035."},
       primary:{ms:"Buka Dashboard Guna Tanah ↗",en:"Open Land Use Dashboard ↗",url:"https://sismaps.jpbdselangor.gov.my/dashboard"},
       secondary:{ms:"Buka RSN Selangor 2035 ↗",en:"Open RSN Selangor 2035 ↗",url:"https://arcg.is/11Sbea"},
@@ -603,7 +603,7 @@
 
   const mapSources = {
     hero: "https://faeiruzrusman.github.io/selangor-3d-map/data/pentadbiran/sempadan_daerah_selangor.geojson",
-    spatial: "https://faeiruzrusman.github.io/selangor-3d-map/data/pentadbiran/sempadan_daerah_selangor.geojson"
+    spatial: "https://faeiruzrusman.github.io/selangor-3d-map/data/pentadbiran/sempadan_pbt_selangor_2024.geojson"
   };
 
   const collectPoints = (geom) => {
@@ -688,17 +688,35 @@
         }).join(" ")+" Z").join(" ");
         path.setAttribute("d",d);
         path.setAttribute("fill-rule","evenodd");
-        path.setAttribute("class",opts.heroDistrict?"real-polygon hero-district":"real-polygon");
+        path.setAttribute("class",
+          opts.heroDistrict
+            ? "real-polygon hero-district"
+            : opts.spatialPbt
+              ? "real-polygon spatial-pbt"
+              : "real-polygon"
+        );
         path.style.setProperty("--district-i",i);
         path.setAttribute("fill",
           opts.heroDistrict
             ? (i%4===0?"#8F0D23":i%4===1?"#B51230":i%4===2?"#C8102E":"#D62443")
-            : opts.district
-              ? (i%2 ? "#E9A8B3":"#F2C4CB")
-              : (i%3===0?"#8F0D23":i%3===1?"#B51230":"#D22442")
+            : opts.spatialPbt
+              ? (i%3===0?"#F2B9C3":i%3===1?"#EBA7B4":"#F5CAD1")
+              : opts.district
+                ? (i%2 ? "#E9A8B3":"#F2C4CB")
+                : (i%3===0?"#8F0D23":i%3===1?"#B51230":"#D22442")
         );
-        path.setAttribute("stroke",opts.heroDistrict?"rgba(255,255,255,.86)":opts.district?"#C8102E":"rgba(255,255,255,.78)");
-        path.setAttribute("stroke-width",opts.heroDistrict?"1.5":opts.district?"1.35":"1.1");
+        path.setAttribute("stroke",
+          opts.heroDistrict
+            ? "rgba(255,255,255,.86)"
+            : opts.spatialPbt
+              ? "#D61F43"
+              : opts.district
+                ? "#C8102E"
+                : "rgba(255,255,255,.78)"
+        );
+        path.setAttribute("stroke-width",
+          opts.heroDistrict ? "1.5" : opts.spatialPbt ? "1.15" : opts.district ? "1.35" : "1.1"
+        );
         const title=document.createElementNS(NS,"title");
         title.textContent=f.properties?.web_name || f.properties?.NAMA_PBT || f.properties?.DAERAH || "Selangor";
         path.appendChild(title);
@@ -729,7 +747,7 @@
             label.style.setProperty("--district-i",i);
             label.textContent=String(districtName).toUpperCase();
             svg.appendChild(label);
-          } else if(!opts.district || opts.labels){
+          } else if((!opts.district && !opts.spatialPbt) || opts.labels){
             const node=document.createElementNS(NS,"circle");
             node.setAttribute("cx",px);
             node.setAttribute("cy",py);
@@ -749,7 +767,7 @@
   };
 
   renderRealSelangorMap("v7HeroMap",mapSources.hero,{district:true,heroDistrict:true});
-  renderRealSelangorMap("v7SpatialMap",mapSources.spatial,{district:true,labels:false});
+  renderRealSelangorMap("v7SpatialMap",mapSources.spatial,{district:false,spatialPbt:true,labels:false});
 
   const heroMapWrap=document.querySelector(".v7-hero .v7-map-wrap");
   const heroMap=document.getElementById("v7HeroMap");
@@ -785,5 +803,35 @@
     });
 
     heroMapWrap.addEventListener("pointerleave",resetHeroMap);
+  }
+
+  const spatialMapWrap=document.querySelector(".v7-spatial .v7-spatial-map");
+  const spatialMap=document.getElementById("v7SpatialMap");
+
+  if(spatialMapWrap && spatialMap && window.matchMedia("(pointer:fine)").matches){
+    const resetSpatialMap=()=>{
+      spatialMap.style.setProperty("--spatial-rx","0deg");
+      spatialMap.style.setProperty("--spatial-ry","0deg");
+      spatialMap.style.setProperty("--spatial-tx","0px");
+      spatialMap.style.setProperty("--spatial-ty","0px");
+      spatialMapWrap.classList.remove("is-map-hover");
+    };
+
+    spatialMapWrap.addEventListener("pointerenter",()=>{
+      spatialMapWrap.classList.add("is-map-hover");
+    });
+
+    spatialMapWrap.addEventListener("pointermove",(e)=>{
+      const r=spatialMapWrap.getBoundingClientRect();
+      const nx=((e.clientX-r.left)/r.width)-.5;
+      const ny=((e.clientY-r.top)/r.height)-.5;
+
+      spatialMap.style.setProperty("--spatial-rx",(-ny*2.2).toFixed(2)+"deg");
+      spatialMap.style.setProperty("--spatial-ry",(nx*3.0).toFixed(2)+"deg");
+      spatialMap.style.setProperty("--spatial-tx",(nx*6).toFixed(1)+"px");
+      spatialMap.style.setProperty("--spatial-ty",(ny*4).toFixed(1)+"px");
+    });
+
+    spatialMapWrap.addEventListener("pointerleave",resetSpatialMap);
   }
 })();
