@@ -38,20 +38,55 @@
     return loading;
   };
 
-  const score=(query,text,title="")=>{
-    const q=normalize(query);
-    const terms=q.split(" ").filter(t=>t.length>1);
+  const QUESTION_WORDS=new Set([
+    "berapa","apakah","apa","siapa","mana","tolong","boleh","nak","saya","aku","kau",
+    "the","what","how","much","many","is","are","of"
+  ]);
+
+  const normaliseIntent=value=>normalize(value)
+    .replace(/\bluas\b/g,"keluasan")
+    .replace(/\barea\b/g,"keluasan")
+    .replace(/\bpopulasi\b/g,"penduduk")
+    .replace(/\bpopulation\b/g,"penduduk")
+    .replace(/\bdensity\b/g,"kepadatan")
+    .replace(/\blocal authority\b/g,"pbt");
+
+  const meaningfulTerms=query=>normaliseIntent(query)
+    .split(" ")
+    .filter(t=>t.length>1 && !QUESTION_WORDS.has(t));
+
+  const score=(query,text,title="",keywords=[])=>{
+    const q=normaliseIntent(query);
+    const terms=meaningfulTerms(query);
     if(!terms.length) return 0;
-    const hay=normalize(text);
-    const head=normalize(title);
+
+    const hay=normaliseIntent(text);
+    const head=normaliseIntent(title);
+    const core=terms.join(" ");
     let total=0;
+
     terms.forEach(term=>{
       if(head.includes(term)) total+=5;
       if(hay.includes(term)) total+=2;
-      if(hay===term) total+=4;
     });
-    if(hay.includes(q)) total+=6;
-    if(head.includes(q)) total+=8;
+
+    // Strongly prefer records whose title matches the actual subject + attribute.
+    if(core && head.includes(core)) total+=34;
+    else if(core && hay.includes(core)) total+=18;
+
+    const titleAll=terms.every(term=>head.includes(term));
+    const hayAll=terms.every(term=>hay.includes(term));
+    if(titleAll) total+=24;
+    else if(hayAll) total+=10;
+
+    // Multi-word keywords act as named-entity / exact-topic aliases.
+    (keywords||[]).forEach(keyword=>{
+      const k=normaliseIntent(keyword);
+      if(!k) return;
+      if(q.includes(k)) total+=k.includes(" ")?28:8;
+    });
+
+    if(head===core) total+=20;
     return total;
   };
 
@@ -65,7 +100,7 @@
     if(types.includes("facts")){
       (state.facts?.facts||[]).forEach(item=>{
         const text=[item.title,item.fact,...(item.keywords||[])].join(" ");
-        const s=score(query,text,item.title);
+        const s=score(query,text,item.title,item.keywords||[]);
         if(s>0) results.push({
           type:"fact",score:s,id:item.id,title:item.title,text:item.fact,
           category:item.category,keywords:item.keywords||[],source:null,raw:item
@@ -87,7 +122,7 @@
 
     if(types.includes("glossary")){
       (state.glossary?.glossary||[]).forEach(item=>{
-        const s=score(query,item.term+" "+item.definition,item.term);
+        const s=score(query,item.term+" "+item.definition,item.term,[]);
         if(s>0) results.push({
           type:"glossary",score:s,title:item.term,text:item.definition,
           category:"Glosari",source:null,raw:item
@@ -97,7 +132,7 @@
 
     if(types.includes("faq")){
       (state.faq?.faqs||[]).forEach(item=>{
-        const s=score(query,item.question+" "+item.answer,item.question);
+        const s=score(query,item.question+" "+item.answer,item.question,[]);
         if(s>0) results.push({
           type:"faq",score:s,id:item.id,title:item.question,text:item.answer,
           category:"FAQ",source:null,raw:item
@@ -108,5 +143,7 @@
     return results.sort((a,b)=>b.score-a.score).slice(0,limit);
   };
 
-  window.SUOKnowledge={PATHS,normalize,load,search,sourceById};
+  window.SUOKnowledge={
+    PATHS,normalize,normaliseIntent,meaningfulTerms,load,search,sourceById
+  };
 })();
