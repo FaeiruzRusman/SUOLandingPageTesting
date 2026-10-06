@@ -997,7 +997,8 @@
       "category_code": "F",
       "category": "Collaboration, Governance & Security",
       "title": "Collaboration & Governance",
-      "fact": "Komponen ini menyelaras perkongsian data, peranan agensi, standard dan tatacara penggunaan SUO.",      "keywords": [
+      "fact": "Komponen ini menyelaras perkongsian data, peranan agensi, standard dan tatacara penggunaan SUO.",
+      "keywords": [
         "governance"
       ],
       "source_type": "SUO Knowledge Base"
