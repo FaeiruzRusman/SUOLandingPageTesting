@@ -2600,8 +2600,11 @@ body{
 }
 
 
+
+
+
 /* =========================================================
-   v7.19.2 — subtle SUO identity watermark across the site
+   v7.19.4 — single fixed SUO background mark
    ========================================================= */
 body::after{
   content:"";
@@ -2609,100 +2612,54 @@ body::after{
   inset:0;
   z-index:8;
   pointer-events:none;
-  opacity:.022;
   background-image:url("../assets/logos/logo-suo.png");
-  background-repeat:repeat;
-  background-size:240px auto;
-  background-position:42px 34px;
-  filter:grayscale(1) sepia(.18) contrast(.88);
+  background-repeat:no-repeat;
+  background-position:center center;
+  background-size:min(68vw,760px) auto;
+  opacity:.028;
+  filter:saturate(.68) contrast(.90);
   mix-blend-mode:multiply;
+  transform:translateZ(0);
 }
 
-/* keep navigation crisp above the watermark layer */
-.v7-header{
-  z-index:50!important;
-}
-
-/* light sections get one extra oversized watermark, still restrained */
-.v7-hero,
-.v7-spatial,
-.v7-ecosystem,
-.v7-apps{
-  isolation:isolate;
-}
-.v7-hero .v7-shell,
-.v7-spatial .v7-shell,
-.v7-ecosystem .v7-shell,
-.v7-apps .v7-shell{
-  position:relative;
-  z-index:2;
-}
+/* Remove the previous per-section watermark marks. */
 .v7-hero::after,
 .v7-spatial::after,
 .v7-ecosystem::before,
 .v7-apps::before{
-  content:"";
-  position:absolute;
-  width:360px;
-  height:360px;
-  pointer-events:none;
-  background:url("../assets/logos/logo-suo.png") center/contain no-repeat;
-  opacity:.024;
-  filter:grayscale(1) sepia(.14);
-  z-index:1;
+  content:none!important;
+  display:none!important;
 }
 
-/* place them away from key copy/content */
-.v7-hero::after{
-  right:-70px;
-  bottom:-80px;
-}
-.v7-spatial::after{
-  left:-95px;
-  bottom:-95px;
-}
-.v7-ecosystem::before{
-  right:-100px;
-  top:70px;
-}
-.v7-apps::before{
-  left:-110px;
-  top:180px;
-}
-
-/* dark / high-information sections should not receive the global pattern strongly */
+/* Keep the fixed mark subtle over darker panels. */
 .v7-assistant-side,
 .v7-footer{
   isolation:isolate;
 }
-.v7-assistant-side::after,
-.v7-footer::after{
-  content:"";
-  position:absolute;
-  inset:0;
-  pointer-events:none;
-  background:linear-gradient(rgba(0,0,0,.025),rgba(0,0,0,.025));
-  z-index:0;
+
+@media(max-width:1000px){
+  body::after{
+    background-size:min(76vw,620px) auto;
+    opacity:.025;
+  }
 }
 
-/* responsive restraint */
 @media(max-width:760px){
   body::after{
-    opacity:.014;
-    background-size:190px auto;
-    background-position:28px 22px;
+    background-size:min(88vw,430px) auto;
+    opacity:.021;
   }
-  .v7-hero::after,
-  .v7-spatial::after,
-  .v7-ecosystem::before,
-  .v7-apps::before{
-    width:260px;
-    height:260px;
+}
+
+@media(max-width:430px){
+  body::after{
+    background-size:92vw auto;
     opacity:.018;
   }
 }
+
 @media(prefers-reduced-transparency:reduce){
   body::after{
-    opacity:.012;
+    opacity:.014;
   }
 }
