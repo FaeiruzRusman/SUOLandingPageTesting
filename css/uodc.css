@@ -1,7 +1,7 @@
 :root{
-  --red:#B83246;--deep:#7E2030;--gold:#D2B34F;--soft-gold:#F0E2B3;
-  --ivory:#FBF7EF;--white:#fff;--charcoal:#292725;--muted:#6C665F;
-  --line:#E5DCCF;--soft:#F1EBE2;--shadow:0 18px 55px rgba(55,40,28,.09);
+  --red:#C43B50;--deep:#842437;--gold:#D9B84E;--soft-gold:#F5E6AD;
+  --ivory:#FFF9F1;--white:#fff;--charcoal:#2B2926;--muted:#68615A;
+  --line:#E9DDCF;--soft:#F1EBE2;--shadow:0 18px 55px rgba(55,40,28,.09);
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -66,4 +66,43 @@ a{text-decoration:none;color:inherit}button,input,select{font:inherit}.uodc-shel
 }
 .uodc-modal-card dl>div{
   grid-template-columns:125px 1fr;
+}
+
+
+/* v7.22.1 — brighter shared SUO visual system */
+body{
+  background:#FFF9F2!important;
+}
+.uodc-header{
+  background:rgba(255,253,249,.95)!important;
+}
+.uodc-hero{
+  background:
+    radial-gradient(circle at 78% 24%,rgba(217,184,78,.22),transparent 25%),
+    radial-gradient(circle at 10% 86%,rgba(196,59,80,.06),transparent 28%),
+    linear-gradient(120deg,#FFFDF9 0%,#FAEEE3 58%,#FFF8EF 100%)!important;
+}
+.uodc-identity-card{
+  background:rgba(255,255,255,.88)!important;
+  border-color:rgba(132,36,55,.105)!important;
+  box-shadow:0 18px 55px rgba(66,43,27,.08)!important;
+}
+.uodc-summary{
+  background:#FFFFFF!important;
+}
+.uodc-catalog{
+  background:
+    radial-gradient(circle at 95% 5%,rgba(217,184,78,.08),transparent 25%),
+    linear-gradient(180deg,#FFFFFF 0%,#FBF5ED 100%)!important;
+}
+.uodc-dataset{
+  background:rgba(255,255,255,.98)!important;
+  border-color:#E8DED3!important;
+  box-shadow:0 9px 26px rgba(55,40,28,.038)!important;
+}
+.uodc-principles{
+  background:linear-gradient(180deg,#F9F0E4,#F5E8D6)!important;
+}
+.uodc-principle-grid article{
+  background:rgba(255,255,255,.82)!important;
 }
