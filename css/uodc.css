@@ -26,3 +26,44 @@ a{text-decoration:none;color:inherit}button,input,select{font:inherit}.uodc-shel
 .uodc-modal{border:0;padding:0;background:transparent}.uodc-modal::backdrop{background:rgba(36,30,26,.36);backdrop-filter:blur(3px)}.uodc-modal-card{position:relative;width:min(480px,calc(100vw - 32px));padding:27px;border:1px solid #dfd4c8;border-radius:24px;background:#fff;box-shadow:0 30px 80px rgba(45,32,25,.24)}.uodc-modal-card h2{margin:7px 0 18px;font:800 24px "Manrope";letter-spacing:-.035em}.uodc-modal-close{position:absolute;right:14px;top:14px;border:0;background:#f3eee8;width:34px;height:34px;border-radius:50%;font-size:19px;cursor:pointer}.uodc-modal dl{margin:0;display:grid;gap:8px}.uodc-modal dl>div{display:grid;grid-template-columns:110px 1fr;padding:9px 0;border-bottom:1px solid #eee7df}.uodc-modal dt{color:var(--muted);font-size:9px}.uodc-modal dd{margin:0;font-size:10px;font-weight:700}.uodc-modal-card p{margin:18px 0 0;color:var(--muted);font-size:10px;line-height:1.6}
 @media(max-width:1080px){.uodc-links{display:none}.uodc-mobile-toggle{display:block}.uodc-header.mobile-open .uodc-links{display:flex;position:absolute;top:76px;left:20px;right:20px;padding:14px 18px;flex-direction:column;align-items:stretch;gap:0;border:1px solid var(--line);border-radius:18px;background:#fff;box-shadow:var(--shadow)}.uodc-header.mobile-open .uodc-links>a,.uodc-header.mobile-open .uodc-dropdown>button{padding:10px 0}.uodc-header.mobile-open .uodc-links>a:after{display:none}.uodc-header.mobile-open .uodc-dropdown{display:block}.uodc-header.mobile-open .uodc-dropdown>button{width:100%;justify-content:space-between}.uodc-header.mobile-open .uodc-menu{position:static;width:100%;margin-top:4px;opacity:1;visibility:visible;transform:none;display:none;box-shadow:none;background:#f8f3ec}.uodc-header.mobile-open .uodc-dropdown.open .uodc-menu{display:block}.uodc-hero-grid{grid-template-columns:1fr}.uodc-identity-card{max-width:680px}.uodc-principle-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:720px){body:before{background-size:90vw auto;opacity:.017}.uodc-shell{width:min(100% - 28px,1180px)}.uodc-brand span{display:none}.uodc-hero{padding:62px 0 44px}.uodc-hero h1{font-size:45px}.uodc-identity-card{grid-template-columns:74px 1fr;padding:20px}.uodc-identity-card img{width:70px}.uodc-summary-grid{grid-template-columns:repeat(2,1fr)}.uodc-summary article:nth-child(2){border-right:0}.uodc-toolbar{grid-template-columns:1fr}.uodc-section-head{align-items:flex-start;flex-direction:column}.uodc-count{text-align:left}.uodc-dataset{grid-template-columns:42px 1fr}.uodc-dataset-actions{grid-column:2;flex-wrap:wrap}.uodc-principle-grid{grid-template-columns:1fr}.uodc-footer-grid{grid-template-columns:1fr}.uodc-footer-links{flex-wrap:wrap}}
+
+
+/* =========================================================
+   v7.22.0 — dynamic full SUO data inventory
+   ========================================================= */
+.uodc-tags .access{
+  background:#eee9f4!important;
+  color:#6f5f80!important;
+}
+.uodc-loading,.uodc-empty{
+  padding:32px;
+  border:1px dashed #dccfc1;
+  border-radius:18px;
+  background:rgba(255,255,255,.62);
+  text-align:center;
+  color:#7f766e;
+  font-size:11px;
+}
+.uodc-modal-actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:7px;
+  margin-top:18px;
+}
+.uodc-modal-actions a{
+  padding:9px 11px;
+  border:1px solid #dfd5ca;
+  border-radius:10px;
+  background:#fff;
+  color:#514a44;
+  font-size:9px;
+  font-weight:800;
+}
+.uodc-modal-actions a.primary{
+  background:var(--deep);
+  border-color:var(--deep);
+  color:#fff;
+}
+.uodc-modal-card dl>div{
+  grid-template-columns:125px 1fr;
+}
