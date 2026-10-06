@@ -1659,3 +1659,21 @@ iframe[data-src]:not([src]){
     padding:24px;
   }
 }
+
+
+/* v7.15.3 — consistent thematic dashboard titles */
+#dashboard-tematik .v7-app h3{
+  min-height:2.3em!important;
+  display:flex;
+  align-items:flex-end;
+  margin:8px 0 6px!important;
+  font-size:20px!important;
+  line-height:1.15!important;
+  letter-spacing:-.025em!important;
+}
+@media(max-width:680px){
+  #dashboard-tematik .v7-app h3{
+    min-height:auto!important;
+    font-size:19px!important;
+  }
+}
