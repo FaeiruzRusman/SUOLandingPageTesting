@@ -15,6 +15,51 @@
     menu?.setAttribute('aria-expanded','false');
   }));
 
+  // v7.18.3: keep primary navigation aligned with the section currently in view.
+  const primaryNavLinks=Array.from(document.querySelectorAll('#v7PrimaryNav a[href^="#"]'));
+  const primarySectionIds=["home","spatial","ecosystem","applications","roadmap","contact"];
+  const primarySections=primarySectionIds
+    .map(id=>document.getElementById(id))
+    .filter(Boolean);
+
+  const setPrimaryNavActive=(id)=>{
+    primaryNavLinks.forEach(link=>{
+      const active=link.getAttribute("href")==="#"+id;
+      link.classList.toggle("active",active);
+      if(active) link.setAttribute("aria-current","page");
+      else link.removeAttribute("aria-current");
+    });
+  };
+
+  let navSpyTick=false;
+  const syncPrimaryNav=()=>{
+    navSpyTick=false;
+    if(!primarySections.length) return;
+
+    const headerOffset=(header?.offsetHeight || 72)+90;
+    const marker=window.scrollY+headerOffset;
+    let current=primarySections[0].id;
+
+    primarySections.forEach(section=>{
+      if(section.offsetTop<=marker) current=section.id;
+    });
+
+    const atBottom=(window.innerHeight+window.scrollY)>=document.documentElement.scrollHeight-6;
+    if(atBottom && document.getElementById("contact")) current="contact";
+
+    setPrimaryNavActive(current);
+  };
+
+  const queuePrimaryNavSync=()=>{
+    if(navSpyTick) return;
+    navSpyTick=true;
+    window.requestAnimationFrame(syncPrimaryNav);
+  };
+
+  syncPrimaryNav();
+  window.addEventListener("scroll",queuePrimaryNavSync,{passive:true});
+  window.addEventListener("resize",queuePrimaryNavSync,{passive:true});
+
 
   // v7.8.2: use browser-native iframe lazy loading for reliable previews.
   // We no longer defer src via IntersectionObserver because it can fail to
