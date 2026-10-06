@@ -2216,3 +2216,28 @@ iframe[data-src]:not([src]){
   font-size:8px!important;
   letter-spacing:.04em!important;
 }
+
+
+/* v7.18.3 — primary nav order + single active indicator */
+.v7-links a{
+  transition:color .18s ease;
+}
+.v7-links a:after{
+  left:0!important;
+  right:0!important;
+  transform:scaleX(0);
+  transform-origin:left center;
+  transition:transform .18s ease!important;
+}
+.v7-links a:hover{
+  color:var(--suo-red);
+}
+.v7-links a:hover:after{
+  right:0!important;
+  transform:scaleX(0)!important;
+}
+.v7-links a.active:after,
+.v7-links a.active:hover:after{
+  right:0!important;
+  transform:scaleX(1)!important;
+}
