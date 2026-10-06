@@ -2140,3 +2140,79 @@ iframe[data-src]:not([src]){
     transition:none!important;
   }
 }
+
+
+/* =========================================================
+   v7.18.2 — restrained Spatial Canvas interaction
+   ========================================================= */
+.v7-spatial-map:before{
+  opacity:.28!important;
+  filter:blur(12px)!important;
+  background:
+    radial-gradient(circle at var(--spot-x) var(--spot-y),
+      rgba(255,255,255,.34) 0,
+      rgba(244,195,0,.10) 13%,
+      rgba(200,16,46,.045) 30%,
+      transparent 58%)!important;
+}
+.v7-spatial-map:after{
+  display:none!important;
+}
+.v7-spatial-map.is-map-hover:before{
+  opacity:.42!important;
+}
+
+.v7-spatial-map.is-map-hover .v7-spatial-real-map{
+  filter:
+    drop-shadow(0 20px 28px rgba(115,18,38,.13))
+    drop-shadow(0 0 10px rgba(244,195,0,.05))!important;
+}
+
+/* keep other PBTs visible */
+#v7SpatialMap:has(.spatial-pbt:hover) .spatial-pbt:not(:hover){
+  opacity:.78!important;
+  filter:saturate(.90) brightness(.98)!important;
+}
+
+/* soft focus only */
+#v7SpatialMap .spatial-pbt:hover{
+  opacity:1!important;
+  transform:scale(1.018) translateY(-1.5px)!important;
+  filter:
+    brightness(1.10)
+    saturate(1.06)
+    drop-shadow(0 4px 7px rgba(143,13,35,.18))!important;
+  stroke:#F4C300!important;
+  stroke-width:1.65!important;
+}
+
+/* calmer initial reveal */
+#v7SpatialMap .spatial-pbt{
+  animation:
+    v7SpatialPbtSoftIn .56s cubic-bezier(.2,.72,.25,1) forwards,
+    v7SpatialPbtBreathe 7.5s ease-in-out infinite!important;
+  animation-delay:
+    calc(var(--district-i) * 26ms + 90ms),
+    calc(var(--district-i) * 26ms + 1.2s)!important;
+}
+@keyframes v7SpatialPbtSoftIn{
+  from{
+    opacity:0;
+    transform:translateY(6px) scale(.992);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0) scale(1);
+  }
+}
+
+/* discreet tooltip */
+.v7-spatial-tooltip{
+  padding:7px 10px!important;
+  background:rgba(34,30,27,.88)!important;
+  border-color:rgba(244,195,0,.20)!important;
+  color:#f6f0df!important;
+  box-shadow:0 8px 20px rgba(35,20,12,.16)!important;
+  font-size:8px!important;
+  letter-spacing:.04em!important;
+}
