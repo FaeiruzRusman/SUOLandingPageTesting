@@ -138,7 +138,7 @@
   </div>
 </main>
 
-<script src="js/suo-knowledge.js?v=1.2.0"></script>
+<script src="js/suo-knowledge.js?v=1.2.1"></script>
 <script>
 (() => {
   const messages=document.getElementById("messages");
@@ -182,6 +182,30 @@
       text:"Boleh. Cuba tanya tentang dashboard, 3D GeoPortal, UODC, SISMAPS, SMARTDesa, perumahan, guna tanah atau kemudahan.",
       links:[links.applications]
     };
+
+    // Direct factual questions must be resolved before broad navigation rules such as "PBT".
+    const metricIntent=/\b(keluasan|luas|penduduk|populasi|kepadatan|density|umur median|kadar|jumlah penduduk|bilangan penduduk)\b/i.test(raw)
+      || /\bberapa\b.*\b(pbt|daerah|penduduk|populasi|luas|keluasan|kepadatan)\b/i.test(raw);
+
+    if(metricIntent && window.SUOKnowledge){
+      await knowledgeReady;
+      const directMatches=await window.SUOKnowledge.search(raw,{limit:1,types:["selangor"]});
+      if(directMatches.length){
+        const item=directMatches[0];
+        const source=item.source
+          ? '<br><small>Sumber: '+item.source.agency+' · '+(item.raw.as_of||"")+'</small>'
+          : "";
+        const caveat=item.raw?.caveat
+          ? '<br><small class="answer-caveat">Nota: '+item.raw.caveat+'</small>'
+          : "";
+        const directLinks=[links.knowledge];
+        if(item.source?.url) directLinks.unshift({label:"Sumber Rasmi",url:item.source.url});
+        return {
+          text:"<strong>"+item.title+"</strong><br>"+item.text+source+caveat,
+          links:directLinks
+        };
+      }
+    }
 
     if(has(q,["apa dashboard","dashboard yang ada","senarai dashboard","dashboard tematik","semua dashboard"])){
       return {
@@ -245,7 +269,7 @@
       return {text:"Kategori <strong>StoryMaps</strong> dalam SUO kini merangkumi RSN Selangor 2035 dan Pelancongan Selangor.",links:[links.rsn,links.tourism,links.storymaps]};
     }
 
-    if(has(q,["spatial","kanvas","pbt","sempadan pbt"])){
+    if(has(q,["spatial","kanvas","sempadan pbt","peta pbt","map pbt"])){
       return {text:"<strong>Kanvas Spatial Selangor</strong> menggunakan peta PBT sebagai asas untuk meneroka tema Perumahan, Perindustrian, Kesihatan, Mobiliti, Alam Sekitar dan Perancangan.",links:[links.spatial]};
     }
 
