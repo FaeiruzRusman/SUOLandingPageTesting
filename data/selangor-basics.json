@@ -1,7 +1,7 @@
 {
   "meta": {
     "name": "Selangor Basic Facts",
-    "version": "1.1.0",
+    "version": "1.2.0",
     "updated": "2026-10-06",
     "language": "ms",
     "purpose": "Authoritative baseline figures and interpretation rules for SUO Knowledge Base and Mr. TPr SUO.",
@@ -315,6 +315,269 @@
         "kepadatan penduduk sabak bernam"
       ],
       "source_id": "SRC-DOSM-SABAK2020"
+    },
+    {
+      "id": "PBT-AREA-01",
+      "title": "Keluasan PBT MBSA — Majlis Bandaraya Shah Alam",
+      "value": 290.3,
+      "unit": "km²",
+      "as_of": "Semasa",
+      "fact": "Keluasan kawasan pentadbiran MBSA (Majlis Bandaraya Shah Alam) ialah 290.30 km² berdasarkan maklumat rasmi MBSA.",
+      "keywords": [
+        "pbt",
+        "mbsa",
+        "mbsa",
+        "majlis bandaraya shah alam",
+        "shah alam",
+        "keluasan mbsa",
+        "luas mbsa",
+        "keluasan pbt mbsa",
+        "luas pbt mbsa"
+      ],
+      "source_id": "SRC-MBSA-AREA"
+    },
+    {
+      "id": "PBT-AREA-02",
+      "title": "Keluasan PBT MBPJ — Majlis Bandaraya Petaling Jaya",
+      "value": 97.2,
+      "unit": "km²",
+      "as_of": "2014",
+      "fact": "Keluasan kawasan pentadbiran MBPJ (Majlis Bandaraya Petaling Jaya) ialah 97.20 km² berdasarkan rujukan rasmi Dewan Negeri Selangor 2014.",
+      "keywords": [
+        "pbt",
+        "mbpj",
+        "mbpj",
+        "majlis bandaraya petaling jaya",
+        "petaling jaya",
+        "keluasan mbpj",
+        "luas mbpj",
+        "keluasan pbt mbpj",
+        "luas pbt mbpj"
+      ],
+      "source_id": "SRC-DEWAN-PBT-AREA-2014",
+      "caveat": "Angka ini menggunakan rujukan rasmi Dewan Negeri Selangor tahun 2014. Semak sumber PBT terkini jika sempadan pentadbiran telah berubah."
+    },
+    {
+      "id": "PBT-AREA-03",
+      "title": "Keluasan PBT MBDK — Majlis Bandaraya Diraja Klang",
+      "value": 573,
+      "unit": "km²",
+      "as_of": "2014",
+      "fact": "Keluasan kawasan pentadbiran MBDK (Majlis Bandaraya Diraja Klang) ialah 573.00 km² berdasarkan rujukan rasmi Dewan Negeri Selangor 2014.",
+      "keywords": [
+        "pbt",
+        "mbdk",
+        "mbdk",
+        "mpk",
+        "majlis perbandaran klang",
+        "majlis bandaraya diraja klang",
+        "klang",
+        "keluasan mbdk",
+        "luas mbdk",
+        "keluasan pbt mbdk",
+        "luas pbt mbdk"
+      ],
+      "source_id": "SRC-DEWAN-PBT-AREA-2014",
+      "caveat": "Angka ini menggunakan rujukan rasmi Dewan Negeri Selangor tahun 2014. Semak sumber PBT terkini jika sempadan pentadbiran telah berubah."
+    },
+    {
+      "id": "PBT-AREA-04",
+      "title": "Keluasan PBT MPS — Majlis Perbandaran Selayang",
+      "value": 1293.2,
+      "unit": "km²",
+      "as_of": "2014",
+      "fact": "Keluasan kawasan pentadbiran MPS (Majlis Perbandaran Selayang) ialah 1,293.20 km² berdasarkan rujukan rasmi Dewan Negeri Selangor 2014.",
+      "keywords": [
+        "pbt",
+        "mps",
+        "mps",
+        "majlis perbandaran selayang",
+        "selayang",
+        "keluasan mps",
+        "luas mps",
+        "keluasan pbt mps",
+        "luas pbt mps"
+      ],
+      "source_id": "SRC-DEWAN-PBT-AREA-2014",
+      "caveat": "Angka ini menggunakan rujukan rasmi Dewan Negeri Selangor tahun 2014. Semak sumber PBT terkini jika sempadan pentadbiran telah berubah."
+    },
+    {
+      "id": "PBT-AREA-05",
+      "title": "Keluasan PBT MBSJ — Majlis Bandaraya Subang Jaya",
+      "value": 161.8,
+      "unit": "km²",
+      "as_of": "2014",
+      "fact": "Keluasan kawasan pentadbiran MBSJ (Majlis Bandaraya Subang Jaya) ialah 161.80 km² berdasarkan rujukan rasmi Dewan Negeri Selangor 2014.",
+      "keywords": [
+        "pbt",
+        "mbsj",
+        "mbsj",
+        "mpsj",
+        "majlis perbandaran subang jaya",
+        "majlis bandaraya subang jaya",
+        "subang jaya",
+        "keluasan mbsj",
+        "luas mbsj",
+        "keluasan pbt mbsj",
+        "luas pbt mbsj"
+      ],
+      "source_id": "SRC-DEWAN-PBT-AREA-2014",
+      "caveat": "Angka ini menggunakan rujukan rasmi Dewan Negeri Selangor tahun 2014. Semak sumber PBT terkini jika sempadan pentadbiran telah berubah."
+    },
+    {
+      "id": "PBT-AREA-06",
+      "title": "Keluasan PBT MPAJ — Majlis Perbandaran Ampang Jaya",
+      "value": 143.5,
+      "unit": "km²",
+      "as_of": "2014",
+      "fact": "Keluasan kawasan pentadbiran MPAJ (Majlis Perbandaran Ampang Jaya) ialah 143.50 km² berdasarkan rujukan rasmi Dewan Negeri Selangor 2014.",
+      "keywords": [
+        "pbt",
+        "mpaj",
+        "mpaj",
+        "majlis perbandaran ampang jaya",
+        "ampang jaya",
+        "keluasan mpaj",
+        "luas mpaj",
+        "keluasan pbt mpaj",
+        "luas pbt mpaj"
+      ],
+      "source_id": "SRC-DEWAN-PBT-AREA-2014",
+      "caveat": "Angka ini menggunakan rujukan rasmi Dewan Negeri Selangor tahun 2014. Semak sumber PBT terkini jika sempadan pentadbiran telah berubah."
+    },
+    {
+      "id": "PBT-AREA-07",
+      "title": "Keluasan PBT MPKj — Majlis Perbandaran Kajang",
+      "value": 787.61,
+      "unit": "km²",
+      "as_of": "2014",
+      "fact": "Keluasan kawasan pentadbiran MPKj (Majlis Perbandaran Kajang) ialah 787.61 km² berdasarkan rujukan rasmi Dewan Negeri Selangor 2014.",
+      "keywords": [
+        "pbt",
+        "mpkj",
+        "mpkj",
+        "majlis perbandaran kajang",
+        "kajang",
+        "keluasan mpkj",
+        "luas mpkj",
+        "keluasan pbt mpkj",
+        "luas pbt mpkj"
+      ],
+      "source_id": "SRC-DEWAN-PBT-AREA-2014",
+      "caveat": "Angka ini menggunakan rujukan rasmi Dewan Negeri Selangor tahun 2014. Semak sumber PBT terkini jika sempadan pentadbiran telah berubah."
+    },
+    {
+      "id": "PBT-AREA-08",
+      "title": "Keluasan PBT MPSepang — Majlis Perbandaran Sepang",
+      "value": 599.66,
+      "unit": "km²",
+      "as_of": "2014",
+      "fact": "Keluasan kawasan pentadbiran MPSepang (Majlis Perbandaran Sepang) ialah 599.66 km² berdasarkan rujukan rasmi Dewan Negeri Selangor 2014.",
+      "keywords": [
+        "pbt",
+        "mpsepang",
+        "mpsepang",
+        "mpsp",
+        "majlis perbandaran sepang",
+        "sepang",
+        "keluasan mpsepang",
+        "luas mpsepang",
+        "keluasan pbt mpsepang",
+        "luas pbt mpsepang"
+      ],
+      "source_id": "SRC-DEWAN-PBT-AREA-2014",
+      "caveat": "Angka ini menggunakan rujukan rasmi Dewan Negeri Selangor tahun 2014. Semak sumber PBT terkini jika sempadan pentadbiran telah berubah."
+    },
+    {
+      "id": "PBT-AREA-09",
+      "title": "Keluasan PBT MPKL — Majlis Perbandaran Kuala Langat",
+      "value": 857.7,
+      "unit": "km²",
+      "as_of": "2014",
+      "fact": "Keluasan kawasan pentadbiran MPKL (Majlis Perbandaran Kuala Langat) ialah 857.70 km² berdasarkan rujukan rasmi Dewan Negeri Selangor 2014.",
+      "keywords": [
+        "pbt",
+        "mpkl",
+        "mpkl",
+        "mdkl",
+        "majlis daerah kuala langat",
+        "majlis perbandaran kuala langat",
+        "kuala langat",
+        "keluasan mpkl",
+        "luas mpkl",
+        "keluasan pbt mpkl",
+        "luas pbt mpkl"
+      ],
+      "source_id": "SRC-DEWAN-PBT-AREA-2014",
+      "caveat": "Angka ini menggunakan rujukan rasmi Dewan Negeri Selangor tahun 2014. Semak sumber PBT terkini jika sempadan pentadbiran telah berubah."
+    },
+    {
+      "id": "PBT-AREA-10",
+      "title": "Keluasan PBT MPKS — Majlis Perbandaran Kuala Selangor",
+      "value": 1194.5,
+      "unit": "km²",
+      "as_of": "2014",
+      "fact": "Keluasan kawasan pentadbiran MPKS (Majlis Perbandaran Kuala Selangor) ialah 1,194.50 km² berdasarkan rujukan rasmi Dewan Negeri Selangor 2014.",
+      "keywords": [
+        "pbt",
+        "mpks",
+        "mpks",
+        "mdks",
+        "majlis daerah kuala selangor",
+        "majlis perbandaran kuala selangor",
+        "kuala selangor",
+        "keluasan mpks",
+        "luas mpks",
+        "keluasan pbt mpks",
+        "luas pbt mpks"
+      ],
+      "source_id": "SRC-DEWAN-PBT-AREA-2014",
+      "caveat": "Angka ini menggunakan rujukan rasmi Dewan Negeri Selangor tahun 2014. Semak sumber PBT terkini jika sempadan pentadbiran telah berubah."
+    },
+    {
+      "id": "PBT-AREA-11",
+      "title": "Keluasan PBT MPHS — Majlis Perbandaran Hulu Selangor",
+      "value": 1756.3,
+      "unit": "km²",
+      "as_of": "2014",
+      "fact": "Keluasan kawasan pentadbiran MPHS (Majlis Perbandaran Hulu Selangor) ialah 1,756.30 km² berdasarkan rujukan rasmi Dewan Negeri Selangor 2014.",
+      "keywords": [
+        "pbt",
+        "mphs",
+        "mphs",
+        "mdhs",
+        "majlis daerah hulu selangor",
+        "majlis perbandaran hulu selangor",
+        "hulu selangor",
+        "ulu selangor",
+        "keluasan mphs",
+        "luas mphs",
+        "keluasan pbt mphs",
+        "luas pbt mphs"
+      ],
+      "source_id": "SRC-DEWAN-PBT-AREA-2014",
+      "caveat": "Angka ini menggunakan rujukan rasmi Dewan Negeri Selangor tahun 2014. Semak sumber PBT terkini jika sempadan pentadbiran telah berubah."
+    },
+    {
+      "id": "PBT-AREA-12",
+      "title": "Keluasan PBT MDSB — Majlis Daerah Sabak Bernam",
+      "value": 1017,
+      "unit": "km²",
+      "as_of": "2014",
+      "fact": "Keluasan kawasan pentadbiran MDSB (Majlis Daerah Sabak Bernam) ialah 1,017.00 km² berdasarkan rujukan rasmi Dewan Negeri Selangor 2014.",
+      "keywords": [
+        "pbt",
+        "mdsb",
+        "mdsb",
+        "majlis daerah sabak bernam",
+        "pbt sabak bernam",
+        "keluasan mdsb",
+        "luas mdsb",
+        "keluasan pbt mdsb",
+        "luas pbt mdsb"
+      ],
+      "source_id": "SRC-DEWAN-PBT-AREA-2014",
+      "caveat": "Angka ini menggunakan rujukan rasmi Dewan Negeri Selangor tahun 2014. Semak sumber PBT terkini jika sempadan pentadbiran telah berubah."
     }
   ],
   "districts": [
@@ -499,6 +762,20 @@
       "agency": "Pejabat Daerah dan Tanah Sabak Bernam",
       "title": "Mengenai Daerah Sabak Bernam",
       "url": "https://sabakbernam.selangor.gov.my/index.php/pages/view/32?mid=76",
+      "accessed": "2026-10-06"
+    },
+    {
+      "id": "SRC-MBSA-AREA",
+      "agency": "Majlis Bandaraya Shah Alam (MBSA)",
+      "title": "Lokasi dan Demografi Shah Alam",
+      "url": "https://www.mbsa.gov.my/ms-my/infoshahalam/kenalishahalam/Halaman/lokasi_demografi.aspx",
+      "accessed": "2026-10-06"
+    },
+    {
+      "id": "SRC-DEWAN-PBT-AREA-2014",
+      "agency": "Dewan Negeri Selangor",
+      "title": "Jumlah dan Kepadatan Penduduk Mengikut PBT",
+      "url": "https://dewan.selangor.gov.my/question/jumlah-dan-kepadatan-penduduk/",
       "accessed": "2026-10-06"
     }
   ]
