@@ -1711,3 +1711,9 @@ iframe[data-src]:not([src]){
   opacity:1;
   transform:translateX(0);
 }
+
+
+/* v7.16.1 — application category links land on category headers */
+.v7-app-category-head[id]{
+  scroll-margin-top:105px;
+}
