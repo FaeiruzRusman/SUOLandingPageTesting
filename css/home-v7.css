@@ -732,3 +732,35 @@ iframe[data-src]:not([src]){
     text-align:left!important;
   }
 }
+
+
+/* v7.11.13 balanced spaced hero title */
+@media(min-width:1101px){
+  html[lang="ms"] .v7-hero .v7-suo-main-title,
+  html[lang="en"] .v7-hero .v7-suo-main-title{
+    display:flex!important;
+    justify-content:space-between!important;
+    align-items:baseline!important;
+    width:610px!important;
+    max-width:610px!important;
+    white-space:nowrap!important;
+    overflow:visible!important;
+    font:800 44px/1 "Manrope",sans-serif!important;
+    letter-spacing:-.035em!important;
+  }
+  .v7-suo-main-title > span{
+    display:block!important;
+    flex:0 0 auto!important;
+  }
+}
+@media(min-width:761px) and (max-width:1100px){
+  html[lang="ms"] .v7-hero .v7-suo-main-title,
+  html[lang="en"] .v7-hero .v7-suo-main-title{
+    display:flex!important;
+    justify-content:space-between!important;
+    width:100%!important;
+    max-width:100%!important;
+    font-size:31px!important;
+    letter-spacing:-.03em!important;
+  }
+}
