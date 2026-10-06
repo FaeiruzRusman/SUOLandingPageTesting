@@ -28,7 +28,7 @@
   <link rel="apple-touch-icon" href="assets/logos/logo-suo.png">
   <link rel="preconnect" href="https://faeiruzrusman.github.io" crossorigin>
   <link rel="dns-prefetch" href="//geospatialpms-glitch.github.io">
-  <link rel="stylesheet" href="css/home-v7.css?v=7.13.0">
+  <link rel="stylesheet" href="css/home-v7.css?v=7.13.1">
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
@@ -293,18 +293,32 @@
 
 
 
-<section class="v7-eco-road" id="roadmap">
-  <div class="v7-eco-side">
-    <div class="v7-kicker" style="color:var(--suo-gold)" data-ms="Ekosistem SUO" data-en="SUO Ecosystem">Ekosistem SUO</div><h2 class="v7-title" style="font-size:36px"><span data-ms="Platform Terhubung." data-en="Connected Platforms.">Platform Terhubung.</span><br><span data-ms="Data Dikongsi." data-en="Shared Data.">Data Dikongsi.</span><br><span data-ms="Keputusan Lebih Baik." data-en="Better Decisions.">Keputusan Lebih Baik.</span></h2>
-    <div class="v7-node-wrap"><div class="v7-node-center">SUO</div><span class="v7-node n1">3D GeoPortal</span><span class="v7-node n2" data-ms="Analitik Spatial" data-en="Spatial Analytics">Analitik Spatial</span><span class="v7-node n3">UODC</span><span class="v7-node n4">SISMAPS</span><span class="v7-node n5" data-ms="Dashboard" data-en="Dashboards">Dashboard</span><span class="v7-node n6">StoryMaps</span></div>
-  </div>
-  <div class="v7-road-side">
-    <div class="v7-kicker" data-ms="Hala Tuju Seterusnya" data-en="The Road Ahead">Hala Tuju Seterusnya</div><h2 class="v7-title" style="font-size:36px" data-ms="Pelan Hala Tuju SUO" data-en="SUO Roadmap">Pelan Hala Tuju SUO</h2>
+<section class="v7-eco-road v7-road-assistant" id="roadmap">
+  <div class="v7-road-left">
+    <div class="v7-kicker" data-ms="Hala Tuju Seterusnya" data-en="The Road Ahead">Hala Tuju Seterusnya</div>
+    <h2 class="v7-title" style="font-size:36px" data-ms="Pelan Hala Tuju SUO" data-en="SUO Roadmap">Pelan Hala Tuju SUO</h2>
     <div class="v7-timeline">
       <div class="v7-year"><b>2026</b><strong data-ms="Asas" data-en="Foundation">Asas</strong><span data-ms="Kerangka · Pasukan Petugas · Portal · Dashboard · 3D GeoPortal" data-en="Framework · Task Force · Portal · Dashboards · 3D GeoPortal">Kerangka · Pasukan Petugas · Portal · Dashboard · 3D GeoPortal</span></div>
       <div class="v7-year"><b>2027</b><strong data-ms="Integrasi" data-en="Integration">Integrasi</strong><span data-ms="GIS Enterprise · API · Hab Data · UODC" data-en="Enterprise GIS · API · Data Hub · UODC">GIS Enterprise · API · Hab Data · UODC</span></div>
       <div class="v7-year"><b>2028</b><strong data-ms="Kecerdasan" data-en="Intelligence">Kecerdasan</strong><span data-ms="Analitik Lanjutan · AI · Model Ramalan · Masa Nyata" data-en="Advanced Analytics · AI · Predictive Models · Realtime">Analitik Lanjutan · AI · Model Ramalan · Masa Nyata</span></div>
       <div class="v7-year"><b>2029</b><strong data-ms="Kembar Digital" data-en="Digital Twin">Kembar Digital</strong><span data-ms="Simulasi · Perancangan Senario · Kembar Digital Bandar Bersepadu" data-en="Simulation · Scenario Planning · Integrated Urban Digital Twin">Simulasi · Perancangan Senario · Kembar Digital Bandar Bersepadu</span></div>
+    </div>
+  </div>
+
+  <div class="v7-assistant-side">
+    <div class="v7-assistant-inline">
+      <div class="v7-avatar" aria-label="Mr. TPr. SUO" style="width:132px;height:132px;max-width:132px;max-height:132px;overflow:hidden;border-radius:50%;flex:0 0 132px">
+        <img loading="lazy" decoding="async" src="https://faeiruzrusman.github.io/selangor-3d-map/assets/avatar/mr-tpr-suo.png?v=8.0.5D" alt="Mr. TPr. SUO" width="132" height="132" style="display:block;width:132px;height:132px;max-width:132px;max-height:132px;object-fit:cover;border-radius:50%">
+      </div>
+      <div class="v7-assistant-copy">
+        <div class="v7-kicker" data-ms="Pembantu AI Perancangan Bandar" data-en="AI Urban Planning Assistant">Pembantu AI Perancangan Bandar</div>
+        <h2 class="v7-title" data-ms="Tanya Mr. TPr. SUO" data-en="Ask Mr. TPr. SUO">Tanya Mr. TPr. SUO</h2>
+        <p data-ms="Terokai aplikasi SUO, data dan maklumat perancangan bandar melalui pembantu pintar." data-en="Discover SUO applications, data and urban planning information through an intelligent assistant.">Terokai aplikasi SUO, data dan maklumat perancangan bandar melalui pembantu pintar.</p>
+        <div class="v7-ask">
+          <input id="v7AskInput" data-placeholder-ms="Tanya tentang perumahan, guna tanah, kemudahan atau perancangan..." data-placeholder-en="Ask about housing, land use, facilities or planning..." placeholder="Tanya tentang perumahan, guna tanah, kemudahan atau perancangan...">
+          <button id="v7AskBtn" class="v7-btn gold" data-ms="Tanya SUO →" data-en="Ask SUO →">Tanya SUO →</button>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -318,12 +332,7 @@
   </div>
 </section>
 
-<section class="v7-section v7-assistant">
-  <div class="v7-shell v7-assistant-grid">
-    <div class="v7-avatar" aria-label="Mr. TPr. SUO" style="width:132px;height:132px;max-width:132px;max-height:132px;overflow:hidden;border-radius:50%;flex:0 0 132px"><img loading="lazy" decoding="async" src="https://faeiruzrusman.github.io/selangor-3d-map/assets/avatar/mr-tpr-suo.png?v=8.0.5D" alt="Mr. TPr. SUO" width="132" height="132" style="display:block;width:132px;height:132px;max-width:132px;max-height:132px;object-fit:cover;border-radius:50%"></div>
-    <div><div class="v7-kicker" data-ms="Pembantu AI Perancangan Bandar" data-en="AI Urban Planning Assistant">Pembantu AI Perancangan Bandar</div><h2 class="v7-title" data-ms="Tanya Mr. TPr. SUO" data-en="Ask Mr. TPr. SUO">Tanya Mr. TPr. SUO</h2><p style="color:#f2dfe3;max-width:700px" data-ms="Terokai aplikasi SUO, data dan maklumat perancangan bandar melalui pembantu pintar." data-en="Discover SUO applications, data and urban planning information through an intelligent assistant.">Terokai aplikasi SUO, data dan maklumat perancangan bandar melalui pembantu pintar.</p><div class="v7-ask"><input id="v7AskInput" data-placeholder-ms="Tanya tentang perumahan, guna tanah, kemudahan atau perancangan..." data-placeholder-en="Ask about housing, land use, facilities or planning..." placeholder="Tanya tentang perumahan, guna tanah, kemudahan atau perancangan..."><button id="v7AskBtn" class="v7-btn gold" data-ms="Tanya SUO →" data-en="Ask SUO →">Tanya SUO →</button></div></div>
-  </div>
-</section>
+
 </main>
 
 
@@ -339,7 +348,7 @@
     <div class="v7-status-grid">
       <article class="v7-status-card">
         <div><span class="v7-status-badge">GITHUB PAGES</span><b>Landing Page</b></div>
-        <strong>V7.13.0</strong>
+        <strong>V7.13.1</strong>
         <small data-ms="Repo dikemas kini 2 Okt 2026" data-en="Repository updated 2 Oct 2026">Repo dikemas kini 2 Okt 2026</small>
       </article>
       <article class="v7-status-card">
@@ -373,6 +382,6 @@
     <div class="v7-footer-bottom"><span>© 2026 Selangor Urban Observatory · PLANMalaysia Selangor</span><span data-ms="Privasi · Penafian" data-en="Privacy · Disclaimer">Privasi · Penafian</span></div>
   </div>
 </footer>
-<script src="js/home-v7.js?v=7.13.0"></script>
+<script src="js/home-v7.js?v=7.13.1"></script>
 </body>
 </html>
