@@ -809,12 +809,20 @@
   const spatialMap=document.getElementById("v7SpatialMap");
 
   if(spatialMapWrap && spatialMap && window.matchMedia("(pointer:fine)").matches){
+    const tooltip=document.createElement("div");
+    tooltip.className="v7-spatial-tooltip";
+    tooltip.setAttribute("aria-hidden","true");
+    spatialMapWrap.appendChild(tooltip);
+
     const resetSpatialMap=()=>{
       spatialMap.style.setProperty("--spatial-rx","0deg");
       spatialMap.style.setProperty("--spatial-ry","0deg");
       spatialMap.style.setProperty("--spatial-tx","0px");
       spatialMap.style.setProperty("--spatial-ty","0px");
+      spatialMapWrap.style.setProperty("--spot-x","50%");
+      spatialMapWrap.style.setProperty("--spot-y","50%");
       spatialMapWrap.classList.remove("is-map-hover");
+      tooltip.classList.remove("show");
     };
 
     spatialMapWrap.addEventListener("pointerenter",()=>{
@@ -823,13 +831,38 @@
 
     spatialMapWrap.addEventListener("pointermove",(e)=>{
       const r=spatialMapWrap.getBoundingClientRect();
-      const nx=((e.clientX-r.left)/r.width)-.5;
-      const ny=((e.clientY-r.top)/r.height)-.5;
+      const px=e.clientX-r.left;
+      const py=e.clientY-r.top;
+      const nx=(px/r.width)-.5;
+      const ny=(py/r.height)-.5;
 
-      spatialMap.style.setProperty("--spatial-rx",(-ny*2.2).toFixed(2)+"deg");
-      spatialMap.style.setProperty("--spatial-ry",(nx*3.0).toFixed(2)+"deg");
-      spatialMap.style.setProperty("--spatial-tx",(nx*6).toFixed(1)+"px");
-      spatialMap.style.setProperty("--spatial-ty",(ny*4).toFixed(1)+"px");
+      spatialMap.style.setProperty("--spatial-rx",(-ny*5.2).toFixed(2)+"deg");
+      spatialMap.style.setProperty("--spatial-ry",(nx*6.8).toFixed(2)+"deg");
+      spatialMap.style.setProperty("--spatial-tx",(nx*12).toFixed(1)+"px");
+      spatialMap.style.setProperty("--spatial-ty",(ny*8).toFixed(1)+"px");
+
+      spatialMapWrap.style.setProperty("--spot-x",px.toFixed(1)+"px");
+      spatialMapWrap.style.setProperty("--spot-y",py.toFixed(1)+"px");
+
+      tooltip.style.left=Math.min(r.width-18,Math.max(18,px+16))+"px";
+      tooltip.style.top=Math.min(r.height-18,Math.max(18,py-12))+"px";
+    });
+
+    spatialMapWrap.addEventListener("pointerover",(e)=>{
+      const shape=e.target.closest?.(".spatial-pbt");
+      if(!shape) return;
+      const title=shape.querySelector("title")?.textContent?.trim();
+      if(title){
+        tooltip.textContent=title;
+        tooltip.classList.add("show");
+      }
+    });
+
+    spatialMapWrap.addEventListener("pointerout",(e)=>{
+      const shape=e.target.closest?.(".spatial-pbt");
+      if(!shape) return;
+      const next=e.relatedTarget?.closest?.(".spatial-pbt");
+      if(!next) tooltip.classList.remove("show");
     });
 
     spatialMapWrap.addEventListener("pointerleave",resetSpatialMap);
