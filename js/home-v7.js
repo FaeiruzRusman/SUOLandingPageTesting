@@ -8,6 +8,10 @@
   menu?.addEventListener('click', () => {
     const open = body.classList.toggle('v7-mobile-open');
     menu.setAttribute('aria-expanded', String(open));
+    if(!open){
+      document.getElementById("v7ApplicationsNav")?.classList.remove("open");
+      document.querySelector(".v7-nav-drop-toggle")?.setAttribute("aria-expanded","false");
+    }
   });
 
   document.querySelectorAll('.v7-links a').forEach(a => a.addEventListener('click',()=>{
@@ -15,12 +19,42 @@
     menu?.setAttribute('aria-expanded','false');
   }));
 
-  // v7.18.3: keep primary navigation aligned with the section currently in view.
-  const primaryNavLinks=Array.from(document.querySelectorAll('#v7PrimaryNav a[href^="#"]'));
+  // v7.19.5: primary navigation + Applications dropdown.
+  const applicationsNav=document.getElementById("v7ApplicationsNav");
+  const applicationsToggle=applicationsNav?.querySelector(".v7-nav-drop-toggle");
+  const applicationSubLinks=Array.from(applicationsNav?.querySelectorAll(".v7-nav-drop-menu a") || []);
+  const primaryNavLinks=Array.from(document.querySelectorAll('#v7PrimaryNav > a[href^="#"]'));
   const primarySectionIds=["home","spatial","ecosystem","applications","roadmap","contact"];
   const primarySections=primarySectionIds
     .map(id=>document.getElementById(id))
     .filter(Boolean);
+
+  const setApplicationsOpen=(open)=>{
+    applicationsNav?.classList.toggle("open",open);
+    applicationsToggle?.setAttribute("aria-expanded",String(open));
+  };
+
+  applicationsToggle?.addEventListener("click",(e)=>{
+    e.stopPropagation();
+    setApplicationsOpen(!applicationsNav?.classList.contains("open"));
+  });
+
+  applicationSubLinks.forEach(link=>link.addEventListener("click",()=>{
+    setApplicationsOpen(false);
+    body.classList.remove("v7-mobile-open");
+    menu?.setAttribute("aria-expanded","false");
+  }));
+
+  document.addEventListener("click",(e)=>{
+    if(applicationsNav && !applicationsNav.contains(e.target)) setApplicationsOpen(false);
+  });
+
+  applicationsNav?.addEventListener("keydown",(e)=>{
+    if(e.key==="Escape"){
+      setApplicationsOpen(false);
+      applicationsToggle?.focus();
+    }
+  });
 
   const setPrimaryNavActive=(id)=>{
     primaryNavLinks.forEach(link=>{
@@ -29,6 +63,11 @@
       if(active) link.setAttribute("aria-current","page");
       else link.removeAttribute("aria-current");
     });
+
+    const applicationsActive=id==="applications";
+    applicationsToggle?.classList.toggle("active",applicationsActive);
+    if(applicationsActive) applicationsToggle?.setAttribute("aria-current","page");
+    else applicationsToggle?.removeAttribute("aria-current");
   };
 
   let navSpyTick=false;
