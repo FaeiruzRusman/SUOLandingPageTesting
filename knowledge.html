@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="ms">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="SUO Knowledge Base — kamus fakta, istilah, FAQ dan fakta asas Negeri Selangor untuk Selangor Urban Observatory.">
+  <title>SUO Knowledge Base | Selangor Urban Observatory</title>
+  <link rel="icon" href="assets/logos/logo-suo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/knowledge.css?v=1.1.0">
+</head>
+<body>
+<header class="kb-topbar">
+  <div class="kb-shell kb-nav">
+    <a class="kb-brand" href="index.html">
+      <img src="assets/logos/logo-suo.png" alt="Selangor Urban Observatory">
+      <div><strong>SELANGOR URBAN OBSERVATORY</strong><span>KNOWLEDGE BASE</span></div>
+    </a>
+    <div class="kb-nav-actions">
+      <a href="ai-assistant.html" class="kb-link">Tanya Mr. TPr SUO</a>
+      <a href="index.html" class="kb-link kb-link-primary">← Portal SUO</a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="kb-hero">
+    <div class="kb-shell">
+      <span class="kb-kicker">Selangor Urban Observatory</span>
+      <h1>SUO <span>Knowledge Base</span></h1>
+      <p>Kamus fakta, istilah, soalan lazim dan angka asas Negeri Selangor. Sumber pusat yang digunakan bersama oleh portal SUO dan Mr. TPr SUO.</p>
+
+      <div class="kb-stats">
+        <div><b id="statFacts">—</b><span>Fakta SUO</span></div>
+        <div><b id="statSelangor">—</b><span>Fakta Selangor</span></div>
+        <div><b id="statGlossary">—</b><span>Istilah</span></div>
+        <div><b id="statFaq">—</b><span>FAQ</span></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="kb-shell kb-main">
+    <section class="kb-toolbar">
+      <input id="search" class="kb-search" type="search" placeholder="Cari fakta… contoh: penduduk, UODC, PBT, Digital Twin, banjir">
+      <div class="kb-tabs" role="tablist" aria-label="Knowledge Base">
+        <button class="kb-tab active" data-target="factsPanel">Fakta SUO</button>
+        <button class="kb-tab" data-target="selangorPanel">Selangor Asas</button>
+        <button class="kb-tab" data-target="glossaryPanel">Glosari</button>
+        <button class="kb-tab" data-target="faqPanel">FAQ</button>
+      </div>
+    </section>
+
+    <section id="factsPanel" class="kb-panel active">
+      <div id="categoryChips" class="kb-chips"></div>
+      <div class="kb-section-head">
+        <div><span>RUJUKAN SUO</span><h2>Kamus Fakta SUO</h2></div>
+        <b id="resultsCount"></b>
+      </div>
+      <div id="factsGrid" class="kb-grid"></div>
+    </section>
+
+    <section id="selangorPanel" class="kb-panel">
+      <div class="kb-section-head">
+        <div><span>BASELINE NEGERI</span><h2>Fakta Asas Selangor</h2></div>
+        <b id="selangorCount"></b>
+      </div>
+      <div id="selangorGrid" class="kb-grid kb-grid-selangor"></div>
+
+      <div class="kb-subsection">
+        <div class="kb-section-head"><div><span>PENTADBIRAN</span><h2>9 Daerah</h2></div></div>
+        <div id="districtList" class="kb-chip-list"></div>
+      </div>
+
+      <div class="kb-subsection">
+        <div class="kb-section-head"><div><span>KERAJAAN TEMPATAN</span><h2>12 PBT</h2></div></div>
+        <div id="pbtList" class="kb-pbt-grid"></div>
+      </div>
+
+      <div class="kb-subsection">
+        <div class="kb-section-head"><div><span>LOGIK RUJUKAN</span><h2>Kaedah Membaca Angka</h2></div></div>
+        <div id="logicList" class="kb-logic-list"></div>
+      </div>
+    </section>
+
+    <section id="glossaryPanel" class="kb-panel">
+      <div class="kb-section-head">
+        <div><span>ISTILAH TEKNIKAL</span><h2>Glosari SUO</h2></div>
+      </div>
+      <div id="glossaryGrid" class="kb-grid"></div>
+    </section>
+
+    <section id="faqPanel" class="kb-panel">
+      <div class="kb-section-head">
+        <div><span>SOALAN LAZIM</span><h2>FAQ SUO</h2></div>
+      </div>
+      <div id="faqList" class="kb-faq"></div>
+    </section>
+
+    <div class="kb-note">
+      <strong>Nota penerbitan.</strong>
+      Angka yang berubah mengikut masa hendaklah dipaparkan bersama tahun rujukan dan sumber. Untuk keputusan rasmi, semak dokumen autoritatif terkini.
+    </div>
+  </div>
+</main>
+
+<footer class="kb-footer">
+  <div class="kb-shell">
+    <span>© 2026 Selangor Urban Observatory · PLANMalaysia Selangor</span>
+    <a href="ai-assistant.html">Ask Mr. TPr SUO →</a>
+  </div>
+</footer>
+
+<script src="js/suo-knowledge.js?v=1.1.0"></script>
+<script src="js/app.js?v=1.1.0"></script>
+</body>
+</html>
