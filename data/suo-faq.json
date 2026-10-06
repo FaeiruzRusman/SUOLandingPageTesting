@@ -1,0 +1,257 @@
+{
+  "meta": {
+    "count": 50
+  },
+  "faqs": [
+    {
+      "id": "FAQ-001",
+      "question": "Apa itu SUO?",
+      "answer": "SUO ialah Selangor Urban Observatory, ekosistem data dan urban intelligence peringkat Negeri Selangor untuk menyokong perancangan serta keputusan berasaskan bukti."
+    },
+    {
+      "id": "FAQ-002",
+      "question": "Adakah SUO sama dengan GIS?",
+      "answer": "Tidak. GIS ialah salah satu teknologi dalam SUO. SUO turut merangkumi data bukan spatial, dashboard, analitik, AI, UODC, governance dan aplikasi digital."
+    },
+    {
+      "id": "FAQ-003",
+      "question": "Adakah SUO sama dengan MUO?",
+      "answer": "Tidak. MUO ialah inisiatif urban observatory di peringkat nasional, manakala SUO memberi fokus kepada konteks dan keperluan Negeri Selangor."
+    },
+    {
+      "id": "FAQ-004",
+      "question": "Siapa pengguna SUO?",
+      "answer": "Antara pengguna utama ialah Kerajaan Negeri, PLANMalaysia Selangor, PBT dan agensi teknikal mengikut tahap akses yang ditetapkan."
+    },
+    {
+      "id": "FAQ-005",
+      "question": "Apakah fungsi utama SUO?",
+      "answer": "Mengintegrasi data, menyediakan analitik dan dashboard, memudahkan penemuan data serta menyokong keputusan perancangan."
+    },
+    {
+      "id": "FAQ-006",
+      "question": "Apakah Urban Data Hub?",
+      "answer": "Lapisan yang mengurus integrasi, penyimpanan, metadata, API dan penyampaian data SUO."
+    },
+    {
+      "id": "FAQ-007",
+      "question": "Apakah Urban Intelligence?",
+      "answer": "Proses menukarkan data bandar kepada indikator, trend, pola dan insight yang boleh digunakan untuk keputusan."
+    },
+    {
+      "id": "FAQ-008",
+      "question": "Apakah UODC?",
+      "answer": "Urban Observatory Data Catalog ialah katalog pusat yang menerangkan dataset yang tersedia dalam ekosistem SUO."
+    },
+    {
+      "id": "FAQ-009",
+      "question": "Bolehkah semua data UODC dimuat turun?",
+      "answer": "Tidak semestinya. Tahap akses bergantung kepada klasifikasi, sensitiviti dan dasar pemilik data."
+    },
+    {
+      "id": "FAQ-010",
+      "question": "Apakah 3D GeoPortal?",
+      "answer": "Aplikasi peta interaktif SUO untuk memvisualisasikan data perbandaran dalam 2D dan 3D."
+    },
+    {
+      "id": "FAQ-011",
+      "question": "Apakah Ask Mr. TPr SUO?",
+      "answer": "Pembantu digital berasaskan AI yang direka untuk membantu pengguna mendapatkan maklumat berkaitan SUO melalui pertanyaan bahasa semula jadi."
+    },
+    {
+      "id": "FAQ-012",
+      "question": "Adakah jawapan AI menggantikan pegawai?",
+      "answer": "Tidak. AI membantu carian dan penerangan, tetapi keputusan rasmi kekal tertakluk kepada pegawai, dokumen dan pihak berkuasa berkenaan."
+    },
+    {
+      "id": "FAQ-013",
+      "question": "Adakah SUO menggunakan data masa nyata?",
+      "answer": "Ya apabila sesuai, tetapi banyak dataset perancangan dikemas kini secara berkala dan tidak perlu masa nyata."
+    },
+    {
+      "id": "FAQ-014",
+      "question": "Apakah Coverage Analysis?",
+      "answer": "Analisis untuk menentukan kawasan yang berada atau tidak berada dalam liputan sesuatu fasiliti atau perkhidmatan."
+    },
+    {
+      "id": "FAQ-015",
+      "question": "Apakah Nearest Facility?",
+      "answer": "Analisis rangkaian untuk mengenal pasti fasiliti paling hampir berdasarkan laluan, masa atau jarak perjalanan."
+    },
+    {
+      "id": "FAQ-016",
+      "question": "Bolehkah SUO membantu analisis banjir?",
+      "answer": "Ya. Data risiko banjir boleh digabungkan dengan populasi, jalan, kemudahan dan aset bagi menyokong mitigasi serta perancangan."
+    },
+    {
+      "id": "FAQ-017",
+      "question": "Bolehkah SUO membantu pemantauan SDG?",
+      "answer": "Ya, termasuk indikator yang berkaitan dengan SDG 11 apabila data dan metodologi yang sesuai tersedia."
+    },
+    {
+      "id": "FAQ-018",
+      "question": "Apakah data yang boleh dimasukkan ke SUO?",
+      "answer": "Data spatial dan bukan spatial seperti guna tanah, penduduk, kemudahan, infrastruktur, alam sekitar, perumahan, trafik dan indikator."
+    },
+    {
+      "id": "FAQ-019",
+      "question": "Bagaimana kualiti data dikawal?",
+      "answer": "Melalui standard data, metadata, validation, QA/QC, pemilik data dan proses kemas kini yang ditetapkan."
+    },
+    {
+      "id": "FAQ-020",
+      "question": "Siapa pemilik data dalam SUO?",
+      "answer": "Pemilik data kekal pada agensi atau unit yang mempunyai autoriti terhadap dataset berkenaan."
+    },
+    {
+      "id": "FAQ-021",
+      "question": "Adakah SUO menjadi satu pangkalan data tunggal?",
+      "answer": "SUO boleh menggabungkan repositori berpusat dengan integrasi API; tidak semua sistem asal perlu dipindahkan sepenuhnya."
+    },
+    {
+      "id": "FAQ-022",
+      "question": "Adakah data sensitif dipaparkan kepada umum?",
+      "answer": "Tidak. Akses perlu mengikuti klasifikasi data, keselamatan, privasi dan RBAC."
+    },
+    {
+      "id": "FAQ-023",
+      "question": "Apakah manfaat SUO kepada PBT?",
+      "answer": "PBT boleh mendapat rujukan data lebih konsisten, analitik silang sektor, pemantauan indikator dan aplikasi sokongan keputusan."
+    },
+    {
+      "id": "FAQ-024",
+      "question": "Apakah manfaat SUO kepada Kerajaan Negeri?",
+      "answer": "SUO menyediakan pandangan merentas daerah dan PBT untuk pemantauan isu, prestasi dan pembangunan negeri."
+    },
+    {
+      "id": "FAQ-025",
+      "question": "Apakah dashboard awal SUO 2026?",
+      "answer": "Pelan 2026 mensasarkan 11 dashboard awal yang dibangunkan oleh tiga bahagian Task Force SUO."
+    },
+    {
+      "id": "FAQ-026",
+      "question": "Berapa dashboard awal dirancang?",
+      "answer": "Sebanyak 11 dashboard berfungsi dirancang sebagai kandungan awal SUO pada 2026."
+    },
+    {
+      "id": "FAQ-027",
+      "question": "Bila pre-launch SUO dirancang?",
+      "answer": "Pelan pelaksanaan 2026 meletakkan pre-launch pada November 2026 sempena HPBS 2026."
+    },
+    {
+      "id": "FAQ-028",
+      "question": "Bila sasaran production-ready?",
+      "answer": "Pelan kerja 2026 menetapkan sasaran production-ready pada 6 November 2026."
+    },
+    {
+      "id": "FAQ-029",
+      "question": "Apakah fokus 2027?",
+      "answer": "Kajian semasa, pembangunan kerangka SUO, reka bentuk sistem dan pelan pengurusan data."
+    },
+    {
+      "id": "FAQ-030",
+      "question": "Apakah fokus 2028?",
+      "answer": "Pembangunan platform, dashboard, pangkalan data dan integrasi sistem."
+    },
+    {
+      "id": "FAQ-031",
+      "question": "Apakah fokus 2029?",
+      "answer": "Pengoperasian SUO, analitik lanjutan, pemantauan masa nyata dan pembangunan asas Digital Twin."
+    },
+    {
+      "id": "FAQ-032",
+      "question": "Adakah SUO ialah Digital Twin?",
+      "answer": "Tidak. Digital Twin boleh menjadi keupayaan lanjutan dalam SUO, tetapi SUO merangkumi skop yang lebih luas."
+    },
+    {
+      "id": "FAQ-033",
+      "question": "Apakah data lineage?",
+      "answer": "Jejak yang menunjukkan dari mana data datang, bagaimana ia berubah dan di mana ia digunakan."
+    },
+    {
+      "id": "FAQ-034",
+      "question": "Mengapa metadata penting?",
+      "answer": "Metadata membantu pengguna menilai sumber, kemutakhiran, skala, ketepatan dan batasan dataset."
+    },
+    {
+      "id": "FAQ-035",
+      "question": "Mengapa API penting?",
+      "answer": "API membolehkan pertukaran data antara sistem tanpa proses manual yang berulang."
+    },
+    {
+      "id": "FAQ-036",
+      "question": "Apakah RBAC?",
+      "answer": "Role-Based Access Control menentukan data dan fungsi berdasarkan peranan pengguna."
+    },
+    {
+      "id": "FAQ-037",
+      "question": "Apakah audit trail?",
+      "answer": "Rekod tindakan pengguna atau perubahan sistem untuk akauntabiliti dan keselamatan."
+    },
+    {
+      "id": "FAQ-038",
+      "question": "Apakah semantic search?",
+      "answer": "Carian yang memahami makna pertanyaan walaupun perkataan pengguna tidak sama tepat dengan teks sumber."
+    },
+    {
+      "id": "FAQ-039",
+      "question": "Apakah RAG?",
+      "answer": "Kaedah AI yang mencari sumber relevan terlebih dahulu sebelum menghasilkan jawapan."
+    },
+    {
+      "id": "FAQ-040",
+      "question": "Bolehkah SUO digunakan di telefon?",
+      "answer": "Portal dan aplikasi sepatutnya direka responsif supaya fungsi utama boleh diakses melalui peranti mudah alih."
+    },
+    {
+      "id": "FAQ-041",
+      "question": "Adakah semua analitik automatik boleh dipercayai?",
+      "answer": "Tidak semestinya. Output perlu disemak bersama kualiti data, metodologi, andaian dan batasannya."
+    },
+    {
+      "id": "FAQ-042",
+      "question": "Bagaimana dataset baharu dimasukkan?",
+      "answer": "Dataset wajar didaftarkan, disemak struktur dan kualiti, dilengkapkan metadata, diklasifikasi akses dan kemudian diterbitkan."
+    },
+    {
+      "id": "FAQ-043",
+      "question": "Apakah beza data owner dan data steward?",
+      "answer": "Data owner mempunyai autoriti terhadap dataset; data steward mengurus kualiti dan amalan penggunaan hariannya."
+    },
+    {
+      "id": "FAQ-044",
+      "question": "Mengapa data standard penting?",
+      "answer": "Standard mengelakkan konflik kod, nama medan, tarikh, koordinat dan kategori apabila data digabungkan."
+    },
+    {
+      "id": "FAQ-045",
+      "question": "Bolehkah SUO menggunakan AI?",
+      "answer": "Ya, untuk carian, pengelasan, anomali, ramalan dan GeoAI, tertakluk kepada kesesuaian data dan governance."
+    },
+    {
+      "id": "FAQ-046",
+      "question": "Bagaimana SUO menyokong RSN Selangor 2035?",
+      "answer": "SUO boleh digunakan untuk memantau dasar, strategi, indikator dan kemajuan pelaksanaan yang mempunyai data bersesuaian."
+    },
+    {
+      "id": "FAQ-047",
+      "question": "Apakah living platform?",
+      "answer": "Platform yang sentiasa berkembang apabila data, dasar, teknologi dan keperluan pengguna berubah."
+    },
+    {
+      "id": "FAQ-048",
+      "question": "Adakah SUO mempunyai satu source of truth?",
+      "answer": "SUO beraspirasi menyediakan rujukan yang lebih konsisten, tetapi sumber autoritatif tetap perlu dikenal pasti untuk setiap dataset."
+    },
+    {
+      "id": "FAQ-049",
+      "question": "Apakah prinsip utama SUO?",
+      "answer": "Data yang sahih, interoperabiliti, governance, analitik yang boleh diterangkan dan keputusan berasaskan bukti."
+    },
+    {
+      "id": "FAQ-050",
+      "question": "Bagaimana saya mencari fakta SUO?",
+      "answer": "Gunakan halaman SUO Knowledge Base atau Ask Mr. TPr SUO yang membaca sumber fakta, glosari dan FAQ yang sama."
+    }
+  ]
+}
