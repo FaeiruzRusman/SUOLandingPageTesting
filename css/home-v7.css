@@ -789,3 +789,27 @@ iframe[data-src]:not([src]){
     font-size:32px!important;
   }
 }
+
+
+/* v7.12.0 hero statistics: four strategic indicators */
+.v7-stats.v7-stats-four{
+  grid-template-columns:repeat(4,minmax(0,1fr))!important;
+}
+.v7-stats-four .v7-stat:last-child{
+  grid-column:auto!important;
+}
+.v7-stats-four .v7-stat-ecosystem b{
+  font-size:clamp(18px,1.65vw,25px)!important;
+}
+.v7-stats-four .v7-stat-ecosystem span{
+  max-width:190px;
+  margin-inline:auto;
+}
+@media(max-width:760px){
+  .v7-stats.v7-stats-four{
+    grid-template-columns:repeat(2,minmax(0,1fr))!important;
+  }
+  .v7-stats-four .v7-stat:last-child{
+    grid-column:auto!important;
+  }
+}
