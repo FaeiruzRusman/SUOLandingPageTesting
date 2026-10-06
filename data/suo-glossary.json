@@ -1,0 +1,207 @@
+{
+  "meta": {
+    "count": 50
+  },
+  "glossary": [
+    {
+      "term": "API",
+      "definition": "Antara muka yang membolehkan aplikasi atau sistem bertukar data secara teratur."
+    },
+    {
+      "term": "API Gateway",
+      "definition": "Lapisan kawalan untuk mengurus trafik, keselamatan dan akses API."
+    },
+    {
+      "term": "Audit Trail",
+      "definition": "Rekod kronologi tindakan pengguna atau perubahan sistem."
+    },
+    {
+      "term": "Authentication",
+      "definition": "Proses mengesahkan identiti pengguna."
+    },
+    {
+      "term": "Authorization",
+      "definition": "Proses menentukan apa yang dibenarkan dilakukan oleh pengguna."
+    },
+    {
+      "term": "Basemap",
+      "definition": "Peta latar yang memberi konteks geografi kepada layer tematik."
+    },
+    {
+      "term": "Big Data",
+      "definition": "Data berskala besar, pelbagai dan/atau berubah pantas yang memerlukan kaedah pengurusan serta analitik sesuai."
+    },
+    {
+      "term": "CRS",
+      "definition": "Coordinate Reference System; sistem rujukan yang menentukan bagaimana koordinat dipetakan di bumi."
+    },
+    {
+      "term": "Coverage Analysis",
+      "definition": "Analisis untuk menentukan kawasan yang diliputi atau tidak diliputi oleh sesuatu perkhidmatan."
+    },
+    {
+      "term": "Dashboard",
+      "definition": "Paparan ringkas indikator, carta, peta dan status untuk pemantauan."
+    },
+    {
+      "term": "Data Catalog",
+      "definition": "Inventori berstruktur yang menerangkan dataset yang tersedia."
+    },
+    {
+      "term": "Data Governance",
+      "definition": "Dasar dan proses untuk mengawal pemilikan, akses, kualiti dan penggunaan data."
+    },
+    {
+      "term": "Data Lake",
+      "definition": "Repositori untuk menyimpan data dalam pelbagai bentuk, lazimnya sebelum diproses."
+    },
+    {
+      "term": "Data Lineage",
+      "definition": "Jejak asal-usul dan transformasi data sepanjang kitar hayatnya."
+    },
+    {
+      "term": "Data Owner",
+      "definition": "Agensi atau pihak yang mempunyai autoriti terhadap sesuatu dataset."
+    },
+    {
+      "term": "Data Steward",
+      "definition": "Pegawai atau peranan yang menjaga kualiti dan penggunaan dataset."
+    },
+    {
+      "term": "Data Warehouse",
+      "definition": "Repositori berstruktur yang dioptimumkan untuk analisis dan pelaporan."
+    },
+    {
+      "term": "Decision Support System",
+      "definition": "Sistem yang menyediakan maklumat dan analisis untuk membantu pembuat keputusan."
+    },
+    {
+      "term": "Digital Twin",
+      "definition": "Representasi digital dinamik sesuatu aset, kawasan atau sistem yang boleh disokong data semasa dan model."
+    },
+    {
+      "term": "ETL",
+      "definition": "Extract, Transform, Load; proses mendapatkan, menyeragam dan memuatkan data."
+    },
+    {
+      "term": "Enterprise Geodatabase",
+      "definition": "Pangkalan data geospatial berpusat yang menyokong pengurusan, perkongsian dan kawalan multiuser."
+    },
+    {
+      "term": "Evidence-Based Planning",
+      "definition": "Perancangan yang menggunakan bukti, data dan analitik sebagai asas pertimbangan."
+    },
+    {
+      "term": "GeoAI",
+      "definition": "Penggunaan AI bersama data geospatial untuk mengenal pasti pola dan membuat analisis berasaskan lokasi."
+    },
+    {
+      "term": "Geospatial Data",
+      "definition": "Data yang mempunyai komponen lokasi atau geometri."
+    },
+    {
+      "term": "Hotspot Analysis",
+      "definition": "Analisis statistik/spatial untuk mengenal pasti tumpuan nilai tinggi atau rendah."
+    },
+    {
+      "term": "Interoperability",
+      "definition": "Keupayaan sistem berbeza bertukar dan menggunakan data secara bersama."
+    },
+    {
+      "term": "IoT",
+      "definition": "Internet of Things; rangkaian sensor atau peranti yang boleh menghantar data."
+    },
+    {
+      "term": "KPI",
+      "definition": "Key Performance Indicator; ukuran utama prestasi terhadap sasaran."
+    },
+    {
+      "term": "Layer",
+      "definition": "Lapisan data geospatial yang dipaparkan pada peta."
+    },
+    {
+      "term": "MUO",
+      "definition": "Malaysia Urban Observatory; inisiatif urban observatory di peringkat nasional."
+    },
+    {
+      "term": "Metadata",
+      "definition": "Maklumat yang menerangkan dataset, termasuk sumber, tarikh, format dan batasannya."
+    },
+    {
+      "term": "Nearest Facility",
+      "definition": "Analisis rangkaian untuk mengenal pasti fasiliti terdekat mengikut kos perjalanan."
+    },
+    {
+      "term": "Network Analysis",
+      "definition": "Analisis pergerakan melalui rangkaian seperti jalan atau rel."
+    },
+    {
+      "term": "Open Data",
+      "definition": "Data yang boleh diakses dan digunakan semula tertakluk kepada syarat yang ditetapkan."
+    },
+    {
+      "term": "Predictive Analytics",
+      "definition": "Analitik untuk menganggarkan kemungkinan kejadian atau nilai masa hadapan."
+    },
+    {
+      "term": "RAG",
+      "definition": "Retrieval-Augmented Generation; AI mendapatkan sumber relevan sebelum menghasilkan jawapan."
+    },
+    {
+      "term": "RBAC",
+      "definition": "Role-Based Access Control; akses ditentukan berdasarkan peranan pengguna."
+    },
+    {
+      "term": "Real-Time Data",
+      "definition": "Data yang dikemas kini dengan kelewatan minimum berbanding keadaan sebenar."
+    },
+    {
+      "term": "SDG 11",
+      "definition": "Matlamat Pembangunan Mampan berkaitan bandar dan komuniti mampan."
+    },
+    {
+      "term": "SUO",
+      "definition": "Selangor Urban Observatory; ekosistem data dan urban intelligence peringkat Negeri Selangor."
+    },
+    {
+      "term": "Scenario Analysis",
+      "definition": "Analisis beberapa andaian atau pilihan bagi membandingkan kemungkinan hasil."
+    },
+    {
+      "term": "Semantic Search",
+      "definition": "Carian berasaskan makna dan konteks, bukan sekadar perkataan tepat."
+    },
+    {
+      "term": "Service Area",
+      "definition": "Kawasan yang boleh dicapai daripada sesuatu lokasi dalam had masa atau jarak tertentu."
+    },
+    {
+      "term": "Spatial Analytics",
+      "definition": "Analisis yang menggunakan lokasi, jarak dan hubungan ruang."
+    },
+    {
+      "term": "UAT",
+      "definition": "User Acceptance Test; ujian oleh pengguna sebelum sistem diterima untuk operasi."
+    },
+    {
+      "term": "UODC",
+      "definition": "Urban Observatory Data Catalog; katalog dataset dalam ekosistem SUO."
+    },
+    {
+      "term": "Urban Data Hub",
+      "definition": "Komponen asas untuk mengintegrasi, menyimpan dan mengurus data urban."
+    },
+    {
+      "term": "Urban Intelligence",
+      "definition": "Proses menukarkan data bandar kepada insight yang menyokong keputusan."
+    },
+    {
+      "term": "Urban Observatory",
+      "definition": "Mekanisme sistematik untuk memerhati, mengumpul dan menganalisis data bandar."
+    },
+    {
+      "term": "Versioning",
+      "definition": "Kaedah merekod dan mengurus perubahan antara versi data atau kod."
+    }
+  ]
+}
