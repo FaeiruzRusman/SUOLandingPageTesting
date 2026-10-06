@@ -108,7 +108,7 @@
         <div class="eyebrow">Pembantu Pintar SUO</div>
         <h1>Mr. TPr SUO</h1>
         <p class="lead">Tanya tentang aplikasi SUO, data bandar, dashboard, GeoPortal, SISMAPS, SMARTDesa dan maklumat perancangan yang tersedia dalam ekosistem SUO.</p>
-        <span class="status"><i></i> Sedia membantu · SUO knowledge routing</span>
+        <span class="status"><i></i> Sedia membantu · SUO Knowledge Base</span>
       </div>
     </section>
 
@@ -134,10 +134,11 @@
       </form>
     </section>
 
-    <p class="note">Versi semasa menggunakan knowledge routing dalam portal SUO untuk menjawab soalan dan membawa pengguna ke aplikasi atau sumber yang relevan. Integrasi model AI/backend boleh ditambah pada fasa seterusnya.</p>
+    <p class="note">Mr. TPr SUO membaca sumber pusat yang sama dengan SUO Knowledge Base: fakta SUO, glosari, FAQ dan fakta asas Negeri Selangor. Jawapan rasmi masih tertakluk kepada sumber autoritatif yang dipautkan.</p>
   </div>
 </main>
 
+<script src="js/suo-knowledge.js?v=1.1.0"></script>
 <script>
 (() => {
   const messages=document.getElementById("messages");
@@ -166,42 +167,15 @@
     uodc:{label:"UODC",url:"uodc.html"},
     spatial:{label:"Kanvas Spatial",url:"index.html#spatial"},
     roadmap:{label:"Pelan Hala Tuju SUO",url:"index.html#roadmap"},
-    contact:{label:"Hubungi PLANMalaysia Selangor",url:"index.html#contact"}
+    contact:{label:"Hubungi PLANMalaysia Selangor",url:"index.html#contact"},
+    knowledge:{label:"SUO Knowledge Base",url:"knowledge.html"}
   };
 
-  const norm=s=>String(s||"").toLowerCase()
-    .normalize("NFD").replace(/[\u0300-\u036f]/g,"")
-    .replace(/[^a-z0-9\s]/g," ").replace(/\s+/g," ").trim();
-
+  const norm=window.SUOKnowledge?.normalize || (s=>String(s||"").toLowerCase());
   const has=(q,words)=>words.some(w=>q.includes(w));
+  const knowledgeReady=window.SUOKnowledge?.load?.().catch(()=>null) || Promise.resolve(null);
 
-  let suoFacts=[];
-  fetch("data/suo-facts.json")
-    .then(r=>r.ok?r.json():Promise.reject(new Error("facts unavailable")))
-    .then(data=>{suoFacts=Array.isArray(data.facts)?data.facts:[];})
-    .catch(()=>{suoFacts=[];});
-
-  const searchFacts=(raw,limit=4)=>{
-    const q=norm(raw);
-    const terms=q.split(" ").filter(x=>x.length>2);
-    if(!terms.length || !suoFacts.length) return [];
-    return suoFacts
-      .map(f=>{
-        const hay=norm([f.title,f.fact,...(f.keywords||[])].join(" "));
-        let score=0;
-        terms.forEach(t=>{
-          if(hay.includes(t)) score+=2;
-          if(norm(f.title||"").includes(t)) score+=2;
-        });
-        return {f,score};
-      })
-      .filter(x=>x.score>0)
-      .sort((a,b)=>b.score-a.score)
-      .slice(0,limit)
-      .map(x=>x.f);
-  };
-
-  const route=(raw)=>{
+  const route=async(raw)=>{
     const q=norm(raw);
 
     if(!q) return {
@@ -287,20 +261,32 @@
       return {text:"Aplikasi Digital SUO disusun kepada lima kategori: <strong>Dashboard Tematik, StoryMaps, 3D GeoPortal, SISMAPS dan SMARTDesa</strong>.",links:[links.applications,links.dashboards,links.geoportal]};
     }
 
-    const factMatches=searchFacts(raw,3);
-    if(factMatches.length){
-      const factsHtml=factMatches
-        .map(f=>"<strong>"+f.title+"</strong> — "+f.fact)
-        .join("<br><br>");
-      return {
-        text:factsHtml,
-        links:[links.applications,links.uodc]
-      };
+    await knowledgeReady;
+    const matches=window.SUOKnowledge
+      ? await window.SUOKnowledge.search(raw,{limit:3})
+      : [];
+
+    if(matches.length){
+      const factsHtml=matches.map(item=>{
+        const label=item.type==="selangor" ? "Selangor Asas" :
+                    item.type==="glossary" ? "Glosari" :
+                    item.type==="faq" ? "FAQ" : "Fakta SUO";
+        const source=item.source
+          ? '<br><small>Sumber: '+item.source.agency+' · '+(item.raw.as_of||"")+'</small>'
+          : "";
+        return "<strong>"+item.title+"</strong> <small>["+label+"]</small><br>"+item.text+source;
+      }).join("<br><br>");
+
+      const resultLinks=[links.knowledge];
+      const firstSource=matches.find(item=>item.source?.url)?.source;
+      if(firstSource) resultLinks.unshift({label:"Sumber Rasmi",url:firstSource.url});
+
+      return {text:factsHtml,links:resultLinks};
     }
 
     return {
-      text:"Saya belum dapat padankan soalan itu dengan kandungan SUO yang tersedia. Cuba gunakan kata kunci seperti <strong>perumahan, guna tanah, kesihatan, keselamatan, GeoPortal, UODC, SISMAPS, SMARTDesa, StoryMaps</strong> atau <strong>roadmap</strong>.",
-      links:[links.applications,links.uodc,links.geoportal]
+      text:"Saya belum dapat padankan soalan itu dengan Knowledge Base SUO. Cuba gunakan kata kunci seperti <strong>penduduk Selangor, PBT, daerah, UODC, Digital Twin, perumahan, guna tanah, GeoPortal</strong> atau buka Knowledge Base untuk carian penuh.",
+      links:[links.knowledge,links.applications,links.uodc]
     };
   };
 
@@ -337,13 +323,13 @@
     messages.scrollTop=messages.scrollHeight;
   };
 
-  const ask=(q)=>{
+  const ask=async(q)=>{
     q=String(q||"").trim();
     if(!q) return;
     addMessage("user",q.replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c])));
     input.value="";
-    const result=route(q);
-    window.setTimeout(()=>addMessage("bot",result.text,result.links),180);
+    const result=await route(q);
+    window.setTimeout(()=>addMessage("bot",result.text,result.links),120);
   };
 
   form.addEventListener("submit",e=>{e.preventDefault();ask(input.value);});
