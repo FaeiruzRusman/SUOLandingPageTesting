@@ -813,3 +813,27 @@ iframe[data-src]:not([src]){
     grid-column:auto!important;
   }
 }
+
+
+/* v7.12.1 UODC moved into Urban Data Hub card */
+.v7-card-link{
+  color:inherit!important;
+  text-decoration:none!important;
+  cursor:pointer;
+}
+.v7-card-link .v7-card-link-label{
+  display:inline-flex;
+  align-items:center;
+  margin-top:12px;
+  color:var(--suo-red);
+  font:800 10px/1.2 "Manrope";
+}
+.v7-card-link:hover{
+  transform:translateY(-4px);
+  border-color:rgba(200,16,46,.28);
+  box-shadow:0 16px 36px rgba(75,48,28,.09);
+}
+.v7-card-link:focus-visible{
+  outline:3px solid rgba(200,16,46,.25);
+  outline-offset:3px;
+}
