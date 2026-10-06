@@ -837,3 +837,29 @@ iframe[data-src]:not([src]){
   outline:3px solid rgba(200,16,46,.25);
   outline-offset:3px;
 }
+
+
+/* v7.12.5 coming-soon state for Urban Intelligence card */
+.v7-card-coming{
+  position:relative;
+}
+.v7-coming-badge{
+  display:inline-flex;
+  align-items:center;
+  width:max-content;
+  margin-top:12px;
+  padding:7px 10px;
+  border-radius:999px;
+  background:rgba(200,16,46,.08);
+  border:1px solid rgba(200,16,46,.16);
+  color:var(--suo-red);
+  font:800 9px/1 "Manrope";
+  text-transform:uppercase;
+  letter-spacing:.08em;
+}
+.v7-coming-copy{
+  margin:12px 0 0;
+  color:var(--suo-muted);
+  font-size:10px;
+  line-height:1.55;
+}
