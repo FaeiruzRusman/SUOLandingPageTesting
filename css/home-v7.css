@@ -844,3 +844,35 @@ iframe[data-src]:not([src]){
     font-size:clamp(38px,11vw,50px)!important;
   }
 }
+
+
+/* v7.11.8 align hero title end with first-line copy ("yang") */
+@media(min-width:761px){
+  html[lang="ms"] .v7-hero .v7-suo-main-title,
+  html[lang="en"] .v7-hero .v7-suo-main-title{
+    width:max-content!important;
+    max-width:610px!important;
+    white-space:nowrap!important;
+    font-size:42px!important;
+    line-height:1!important;
+    letter-spacing:-.045em!important;
+    margin:0 0 20px!important;
+  }
+  .v7-hero p{
+    max-width:610px!important;
+  }
+}
+@media(min-width:761px) and (max-width:900px){
+  html[lang="ms"] .v7-hero .v7-suo-main-title,
+  html[lang="en"] .v7-hero .v7-suo-main-title{
+    font-size:41px!important;
+  }
+}
+@media(max-width:760px){
+  html[lang="ms"] .v7-hero .v7-suo-main-title,
+  html[lang="en"] .v7-hero .v7-suo-main-title{
+    width:auto!important;
+    max-width:100%!important;
+    white-space:normal!important;
+  }
+}
