@@ -925,3 +925,12 @@ iframe[data-src]:not([src]){
     letter-spacing:-.047em!important;
   }
 }
+
+
+/* v7.11.11 final hero title width tune */
+@media(min-width:1101px){
+  .v7-hero .v7-suo-main-title{
+    font-size:60px!important;
+    letter-spacing:-.047em!important;
+  }
+}
