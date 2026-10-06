@@ -1,0 +1,1954 @@
+{
+  "meta": {
+    "name": "SUO Knowledge Base",
+    "version": "1.0.0",
+    "language": "ms",
+    "updated": "2026-10-06",
+    "facts_count": 170,
+    "glossary_count": 50,
+    "faq_count": 50,
+    "categories": {
+      "A": "Asas & Identiti SUO",
+      "B": "Data & Urban Data Hub",
+      "C": "Urban Intelligence & Analytics",
+      "D": "Digital Applications & GeoPortal",
+      "E": "Urban Observatory Data Catalog (UODC)",
+      "F": "Collaboration, Governance & Security",
+      "G": "Domain Data & Use Cases",
+      "H": "Pelaksanaan SUO Selangor 2026",
+      "I": "Roadmap, Digital Twin & Masa Hadapan",
+      "J": "Prinsip Operasi & Kualiti"
+    },
+    "note": "Semak dan sahkan fakta rasmi/berubah sebelum penerbitan awam. Kandungan operasi 2026 disusun daripada bahan perancangan SUO yang tersedia."
+  },
+  "facts": [
+    {
+      "id": "SUO-001",
+      "category_code": "A",
+      "category": "Asas & Identiti SUO",
+      "title": "Nama rasmi",
+      "fact": "Selangor Urban Observatory (SUO), yang turut dirujuk sebagai State Urban Observatory Selangor, ialah ekosistem pemerhatian, data dan analitik perbandaran di peringkat Negeri Selangor.",
+      "keywords": [
+        "nama",
+        "definisi",
+        "selangor"
+      ],
+      "source_type": "SUO Knowledge Base"
+    },
+    {
+      "id": "SUO-002",
+      "category_code": "A",
+      "category": "Asas & Identiti SUO",
+      "title": "Konsep Urban Observatory",
+      "fact": "Urban Observatory ialah mekanisme yang menyusun data bandar secara sistematik untuk pemantauan, analisis dan sokongan keputusan.",
+      "keywords": [
+        "urban observatory",
+        "konsep"
+      ],
+      "source_type": "SUO Knowledge Base"
+    },
+    {
+      "id": "SUO-003",
+      "category_code": "A",
+      "category": "Asas & Identiti SUO",
+      "title": "Peringkat negeri",
+      "fact": "SUO beroperasi pada skala negeri dan menyokong keperluan Kerajaan Negeri, PLANMalaysia Selangor serta Pihak Berkuasa Tempatan.",
+      "keywords": [
+        "negeri",
+        "pbt"
+      ],
+      "source_type": "SUO Knowledge Base"
+    },
+    {
+      "id": "SUO-004",
+      "category_code": "A",
+      "category": "Asas & Identiti SUO",
+      "title": "Hubungan dengan MUO",
+      "fact": "Pembangunan SUO diselaraskan dengan pendekatan Malaysia Urban Observatory (MUO) di peringkat nasional.",
+      "keywords": [
+        "muo",
+        "nasional"
+      ],
+      "source_type": "SUO Knowledge Base"
+    },
+    {
+      "id": "SUO-005",
+      "category_code": "A",
+      "category": "Asas & Identiti SUO",
+      "title": "Peneraju",
+      "fact": "PLANMalaysia Selangor merupakan peneraju utama penyelarasan dan pembangunan ekosistem SUO Selangor.",
+      "keywords": [
+        "planmalaysia selangor",
+        "peneraju"
+      ],
+      "source_type": "SUO Knowledge Base"
+    },
+    {
+      "id": "SUO-006",
+      "category_code": "A",
+      "category": "Asas & Identiti SUO",
+      "title": "Matlamat utama",
+      "fact": "Matlamat SUO ialah membentuk ekosistem data perbandaran bersepadu untuk menyokong keputusan perancangan berasaskan bukti.",
+      "keywords": [
+        "matlamat",
+        "evidence-based"
+      ],
+      "source_type": "SUO Knowledge Base"
+    },
+    {
+      "id": "SUO-007",
+      "category_code": "A",
+      "category": "Asas & Identiti SUO",
+      "title": "Evidence-based planning",
+      "fact": "SUO menggalakkan keputusan perancangan dibuat berdasarkan data, indikator dan analisis yang boleh disemak.",
+      "keywords": [
+        "evidence-based",
+        "perancangan"
+      ],
+      "source_type": "SUO Knowledge Base"
+    },
+    {
+      "id": "SUO-008",
+      "category_code": "A",
+      "category": "Asas & Identiti SUO",
+      "title": "Urban intelligence",
+      "fact": "SUO bukan sekadar portal data; ia berfungsi sebagai mekanisme urban intelligence negeri.",
+      "keywords": [
+        "urban intelligence"
+      ],
+      "source_type": "SUO Knowledge Base"
+    },
+    {
+      "id": "SUO-009",
+      "category_code": "A",
+      "category": "Asas & Identiti SUO",
+      "title": "Satu ekosistem",
+      "fact": "SUO perlu dilihat sebagai ekosistem yang menghubungkan data, analitik, aplikasi, tadbir urus dan kolaborasi.",
+      "keywords": [
+        "ekosistem"
+      ],
+      "source_type": "SUO Knowledge Base"
+    },
+    {
+      "id": "SUO-010",
+      "category_code": "A",
+      "category": "Asas & Identiti SUO",
+      "title": "Bukan sekadar GIS",
+      "fact": "GIS ialah salah satu komponen SUO, tetapi skop SUO turut merangkumi data bukan spatial, dashboard, AI, indikator dan governance.",
+      "keywords": [
+        "gis",
+        "bukan gis"
+      ],
+      "source_type": "SUO Knowledge Base"
+    },
+    {
+      "id": "SUO-011",
+      "category_code": "A",
+      "category": "Asas & Identiti SUO",
+      "title": "Data-to-decision",
+      "fact": "Rantaian nilai SUO boleh diringkaskan sebagai data → maklumat → analitik → intelligence → keputusan.",
+      "keywords": [
+        "data-to-decision"
+      ],
+      "source_type": "SUO Knowledge Base"
+    },
+    {
+      "id": "SUO-012",
+      "category_code": "A",
+      "category": "Asas & Identiti SUO",
+      "title": "Keputusan manusia",
+      "fact": "SUO membantu keputusan manusia; ia tidak menggantikan kuasa, tanggungjawab atau pertimbangan pihak berkuasa.",
+      "keywords": [
+        "decision support"
+      ],
+      "source_type": "SUO Knowledge Base"
+    },
+    {
+      "id": "SUO-013",
+      "category_code": "A",
+      "category": "Asas & Identiti SUO",
+      "title": "Fokus bandar",
+      "fact": "SUO memberi tumpuan kepada isu, prestasi, perubahan dan risiko yang berkaitan dengan pembangunan bandar dan wilayah.",
+      "keywords": [
+        "bandar",
+        "wilayah"
+      ],
+      "source_type": "SUO Knowledge Base"
+    },
+    {
+      "id": "SUO-014",
+      "category_code": "A",
+      "category": "Asas & Identiti SUO",
+      "title": "Sokongan PBT",
+      "fact": "SUO boleh menjadi platform bersama untuk menyokong 12 PBT di Negeri Selangor melalui data dan analitik yang lebih konsisten.",
+      "keywords": [
+        "12 pbt",
+        "pbt"
+      ],
+      "source_type": "SUO Knowledge Base"
+    },
+    {
+      "id": "SUO-015",
+      "category_code": "A",
+      "category": "Asas & Identiti SUO",
+      "title": "Rujukan negeri",
+      "fact": "SUO beraspirasi menjadi rujukan data perbandaran negeri yang lebih terselaras, konsisten dan boleh dijejaki.",
+      "keywords": [
+        "single source",
+        "rujukan"
+      ],
+      "source_type": "SUO Knowledge Base"
+    },
+    {
+      "id": "SUO-016",
+      "category_code": "B",
+      "category": "Data & Urban Data Hub",
+      "title": "Urban Data Hub",
+      "fact": "Urban Data Hub ialah lapisan asas yang mengurus kemasukan, penyimpanan, integrasi dan penyampaian data SUO.",
+      "keywords": [
+        "urban data hub"
+      ],
+      "source_type": "SUO Knowledge Base"
+    },
+    {
+      "id": "SUO-017",
+      "category_code": "B",
+      "category": "Data & Urban Data Hub",
+      "title": "Enterprise geodatabase",
+      "fact": "Enterprise geodatabase menyokong pengurusan data geospatial secara berpusat dan terkawal.",
+      "keywords": [
+        "enterprise geodatabase",
+        "spatial"
+      ],
+      "source_type": "SUO Knowledge Base"
+    },
+    {
+      "id": "SUO-018",
+      "category_code": "B",
+      "category": "Data & Urban Data Hub",
+      "title": "Data warehouse",
+      "fact": "Data warehouse menghimpunkan data berstruktur daripada pelbagai sumber untuk analisis dan pelaporan.",
+      "keywords": [
+        "data warehouse"
+      ],
+      "source_type": "SUO Knowledge Base"
+    },
+    {
+      "id": "SUO-019",
+      "category_code": "B",
+      "category": "Data & Urban Data Hub",
+      "title": "Data lake",
+      "fact": "Data lake boleh digunakan untuk menyimpan data berskala besar atau pelbagai format sebelum diproses.",
+      "keywords": [
+        "data lake"
+      ],
+      "source_type": "SUO Knowledge Base"
+    },
+    {
+      "id": "SUO-020",
+      "category_code": "B",
+      "category": "Data & Urban Data Hub",
+      "title": "Metadata",
+      "fact": "Metadata menerangkan asal, pemilik, tarikh, skala, format, kemutakhiran dan batasan sesuatu dataset.",
+      "keywords": [
+        "metadata"
+      ],
+      "source_type": "SUO Knowledge Base"
+    },
+    {
+      "id": "SUO-021",
+      "category_code": "B",
+      "category": "Data & Urban Data Hub",
+      "title": "API gateway",
+      "fact": "API gateway membolehkan sistem SUO berhubung dengan sumber data atau aplikasi lain secara terkawal.",
+      "keywords": [
+        "api",
+        "api gateway"
+      ],
+      "source_type": "SUO Knowledge Base"
+    },
+    {
+      "id": "SUO-022",
+      "category_code": "B",
+      "category": "Data & Urban Data Hub",
+      "title": "Interoperability",
+      "fact": "Interoperabiliti membolehkan data dan sistem daripada agensi berbeza digunakan bersama walaupun dibangunkan pada platform berlainan.",
+      "keywords": [
+        "interoperability"
+      ],
+      "source_type": "SUO Knowledge Base"
+    },
+    {
+      "id": "SUO-023",
+      "category_code": "B",
+      "category": "Data & Urban Data Hub",
+      "title": "Data spatial",
+      "fact": "Data spatial mengandungi lokasi, geometri atau hubungan ruang seperti titik, garisan dan poligon.",
+      "keywords": [
+        "spatial",
+        "geospatial"
+      ],
+      "source_type": "SUO Knowledge Base"
+    },
+    {
+      "id": "SUO-024",
+      "category_code": "B",
+      "category": "Data & Urban Data Hub",
+      "title": "Data bukan spatial",
+      "fact": "Data bukan spatial seperti statistik, rekod pentadbiran dan indikator boleh dihubungkan dengan data geospatial untuk analisis lebih lengkap.",
+      "keywords": [
+        "non-spatial",
+        "statistik"
+      ],
+      "source_type": "SUO Knowledge Base"
+    },
+    {
+      "id": "SUO-025",
+      "category_code": "B",
+      "category": "Data & Urban Data Hub",
+      "title": "Data masa nyata",
+      "fact": "Data masa nyata sesuai digunakan apabila keadaan berubah pantas, contohnya trafik, sensor atau status operasi tertentu.",
+      "keywords": [
+        "real-time"
+      ],
+      "source_type": "SUO Knowledge Base"
+    },
+    {
+      "id": "SUO-026",
+      "category_code": "B",
+      "category": "Data & Urban Data Hub",
+      "title": "Data berkala",
+      "fact": "Tidak semua data perlu masa nyata; banyak dataset perancangan dikemas kini secara bulanan, suku tahunan atau tahunan.",
+      "keywords": [
+        "periodic",
+        "kemas kini"
+      ],
+      "source_type": "SUO Knowledge Base"
+    },
+    {
+      "id": "SUO-027",
+      "category_code": "B",
+      "category": "Data & Urban Data Hub",
+      "title": "Data sejarah",
+      "fact": "Data sejarah penting untuk analisis trend, perubahan guna tanah dan penilaian prestasi jangka panjang.",
+      "keywords": [
+        "historical",
+        "trend"
+      ],
+      "source_type": "SUO Knowledge Base"
+    },
+    {
+      "id": "SUO-028",
+      "category_code": "B",
+      "category": "Data & Urban Data Hub",
+      "title": "ETL",
+      "fact": "Proses Extract, Transform, Load membantu menyeragamkan data sebelum dimasukkan ke dalam repositori SUO.",
+      "keywords": [
+        "etl"
+      ],
+      "source_type": "SUO Knowledge Base"
+    },
+    {
+      "id": "SUO-029",
+      "category_code": "B",
+      "category": "Data & Urban Data Hub",
+      "title": "Standard data",
+      "fact": "Standard nama medan, kod, koordinat, format tarikh dan klasifikasi membantu mengelakkan konflik antara dataset.",
+      "keywords": [
+        "standard data"
+      ],
+      "source_type": "SUO Knowledge Base"
+    },
+    {
+      "id": "SUO-030",
+      "category_code": "B",
+      "category": "Data & Urban Data Hub",
+      "title": "Unique identifier",
+      "fact": "Pengenal unik memudahkan rekod daripada sistem berbeza dipadankan tanpa bergantung kepada nama semata-mata.",
+      "keywords": [
+        "id",
+        "identifier"
+      ],
+      "source_type": "SUO Knowledge Base"
+    },
+    {
+      "id": "SUO-031",
+      "category_code": "B",
+      "category": "Data & Urban Data Hub",
+      "title": "Coordinate reference system",
+      "fact": "Sistem koordinat yang konsisten diperlukan supaya data spatial daripada pelbagai agensi sejajar dengan betul.",
+      "keywords": [
+        "crs",
+        "projection"
+      ],
+      "source_type": "SUO Knowledge Base"
+    },
+    {
+      "id": "SUO-032",
+      "category_code": "B",
+      "category": "Data & Urban Data Hub",
+      "title": "Data lineage",
+      "fact": "Data lineage merekod perjalanan data dari sumber asal sehingga digunakan dalam dashboard atau analitik.",
+      "keywords": [
+        "lineage",
+        "provenance"
+      ],
+      "source_type": "SUO Knowledge Base"
+    },
+    {
+      "id": "SUO-033",
+      "category_code": "B",
+      "category": "Data & Urban Data Hub",
+      "title": "Versioning",
+      "fact": "Versioning membantu menjejak perubahan dataset dan membezakan rekod lama dengan versi terkini.",
+      "keywords": [
+        "versioning"
+      ],
+      "source_type": "SUO Knowledge Base"
+    },
+    {
+      "id": "SUO-034",
+      "category_code": "B",
+      "category": "Data & Urban Data Hub",
+      "title": "Data refresh",
+      "fact": "Setiap dataset wajar mempunyai kekerapan kemas kini yang jelas dan bertanggungjawab.",
+      "keywords": [
+        "refresh",
+        "update"
+      ],
+      "source_type": "SUO Knowledge Base"
+    },
+    {
+      "id": "SUO-035",
+      "category_code": "B",
+      "category": "Data & Urban Data Hub",
+      "title": "Data owner",
+      "fact": "Pemilik data ialah agensi atau unit yang bertanggungjawab terhadap sumber dan autoriti sesuatu dataset.",
+      "keywords": [
+        "data owner"
+      ],
+      "source_type": "SUO Knowledge Base"
+    },
+    {
+      "id": "SUO-036",
+      "category_code": "C",
+      "category": "Urban Intelligence & Analytics",
+      "title": "Urban Intelligence & Analytics",
+      "fact": "Komponen ini menukarkan data mentah kepada indikator, pola, trend dan insight untuk pembuat keputusan.",
+      "keywords": [
+        "analytics",
+        "urban intelligence"
+      ],
+      "source_type": "SUO Knowledge Base"
+    },
+    {
+      "id": "SUO-037",
+      "category_code": "C",
+      "category": "Urban Intelligence & Analytics",
+      "title": "Spatial analytics",
+      "fact": "Spatial analytics menilai hubungan berdasarkan lokasi, jarak, kejiranan, kepadatan dan pola ruang.",
+      "keywords": [
+        "spatial analytics"
+      ],
+      "source_type": "SUO Knowledge Base"
+    },
+    {
+      "id": "SUO-038",
+      "category_code": "C",
+      "category": "Urban Intelligence & Analytics",
+      "title": "Network analysis",
+      "fact": "Network analysis menggunakan rangkaian jalan atau rel untuk mengira laluan, masa perjalanan dan aksesibiliti.",
+      "keywords": [
+        "network analysis"
+      ],
+      "source_type": "SUO Knowledge Base"
+    },
+    {
+      "id": "SUO-039",
+      "category_code": "C",
+      "category": "Urban Intelligence & Analytics",
+      "title": "Nearest facility",
+      "fact": "Analisis nearest facility mengenal pasti kemudahan yang paling mudah dicapai dari sesuatu lokasi.",
+      "keywords": [
+        "nearest facility"
+      ],
+      "source_type": "SUO Knowledge Base"
+    },
+    {
+      "id": "SUO-040",
+      "category_code": "C",
+      "category": "Urban Intelligence & Analytics",
+      "title": "Service area",
+      "fact": "Service area menunjukkan kawasan yang boleh dicapai dalam jarak atau masa perjalanan tertentu.",
+      "keywords": [
+        "service area",
+        "coverage"
+      ],
+      "source_type": "SUO Knowledge Base"
+    },
+    {
+      "id": "SUO-041",
+      "category_code": "C",
+      "category": "Urban Intelligence & Analytics",
+      "title": "Coverage analysis",
+      "fact": "Coverage analysis mengenal pasti kawasan yang berada atau tidak berada dalam liputan sesuatu perkhidmatan.",
+      "keywords": [
+        "coverage"
+      ],
+      "source_type": "SUO Knowledge Base"
+    },
+    {
+      "id": "SUO-042",
+      "category_code": "C",
+      "category": "Urban Intelligence & Analytics",
+      "title": "Hotspot analysis",
+      "fact": "Hotspot analysis membantu mengenal pasti tumpuan fenomena yang tinggi atau rendah secara spatial.",
+      "keywords": [
+        "hotspot"
+      ],
+      "source_type": "SUO Knowledge Base"
+    },
+    {
+      "id": "SUO-043",
+      "category_code": "C",
+      "category": "Urban Intelligence & Analytics",
+      "title": "Density analysis",
+      "fact": "Density analysis menggambarkan kepekatan sesuatu fenomena seperti penduduk, kemudahan atau kejadian.",
+      "keywords": [
+        "density"
+      ],
+      "source_type": "SUO Knowledge Base"
+    },
+    {
+      "id": "SUO-044",
+      "category_code": "C",
+      "category": "Urban Intelligence & Analytics",
+      "title": "Suitability analysis",
+      "fact": "Suitability analysis membantu menilai kesesuaian lokasi berdasarkan beberapa kriteria yang diberi pemberat.",
+      "keywords": [
+        "suitability"
+      ],
+      "source_type": "SUO Knowledge Base"
+    },
+    {
+      "id": "SUO-045",
+      "category_code": "C",
+      "category": "Urban Intelligence & Analytics",
+      "title": "Multi-criteria analysis",
+      "fact": "Analisis multi-kriteria menggabungkan beberapa faktor untuk menyokong pemilihan atau keutamaan kawasan.",
+      "keywords": [
+        "mcda",
+        "multi-criteria"
+      ],
+      "source_type": "SUO Knowledge Base"
+    },
+    {
+      "id": "SUO-046",
+      "category_code": "C",
+      "category": "Urban Intelligence & Analytics",
+      "title": "Trend analysis",
+      "fact": "Trend analysis menilai perubahan nilai mengikut masa untuk mengenal pasti arah perkembangan.",
+      "keywords": [
+        "trend"
+      ],
+      "source_type": "SUO Knowledge Base"
+    },
+    {
+      "id": "SUO-047",
+      "category_code": "C",
+      "category": "Urban Intelligence & Analytics",
+      "title": "Predictive analytics",
+      "fact": "Predictive analytics menggunakan data sejarah dan pembolehubah berkaitan untuk menganggarkan kemungkinan masa hadapan.",
+      "keywords": [
+        "predictive"
+      ],
+      "source_type": "SUO Knowledge Base"
+    },
+    {
+      "id": "SUO-048",
+      "category_code": "C",
+      "category": "Urban Intelligence & Analytics",
+      "title": "Scenario analysis",
+      "fact": "Scenario analysis membandingkan kemungkinan hasil apabila andaian atau dasar yang berbeza digunakan.",
+      "keywords": [
+        "scenario"
+      ],
+      "source_type": "SUO Knowledge Base"
+    },
+    {
+      "id": "SUO-049",
+      "category_code": "C",
+      "category": "Urban Intelligence & Analytics",
+      "title": "KPI monitoring",
+      "fact": "KPI monitoring membolehkan sasaran dan pencapaian indikator bandar dipantau secara konsisten.",
+      "keywords": [
+        "kpi"
+      ],
+      "source_type": "SUO Knowledge Base"
+    },
+    {
+      "id": "SUO-050",
+      "category_code": "C",
+      "category": "Urban Intelligence & Analytics",
+      "title": "Benchmarking",
+      "fact": "Benchmarking membandingkan prestasi antara kawasan, PBT atau tempoh untuk mengenal pasti jurang.",
+      "keywords": [
+        "benchmark"
+      ],
+      "source_type": "SUO Knowledge Base"
+    },
+    {
+      "id": "SUO-051",
+      "category_code": "C",
+      "category": "Urban Intelligence & Analytics",
+      "title": "AI analytics",
+      "fact": "AI analytics boleh membantu mengenal pasti pola, anomali dan hubungan kompleks dalam data perbandaran.",
+      "keywords": [
+        "ai analytics",
+        "ai"
+      ],
+      "source_type": "SUO Knowledge Base"
+    },
+    {
+      "id": "SUO-052",
+      "category_code": "C",
+      "category": "Urban Intelligence & Analytics",
+      "title": "GeoAI",
+      "fact": "GeoAI menggabungkan kecerdasan buatan dengan data geospatial untuk analisis berasaskan lokasi.",
+      "keywords": [
+        "geoai"
+      ],
+      "source_type": "SUO Knowledge Base"
+    },
+    {
+      "id": "SUO-053",
+      "category_code": "C",
+      "category": "Urban Intelligence & Analytics",
+      "title": "Anomaly detection",
+      "fact": "Pengesanan anomali boleh memberi amaran apabila data menunjukkan corak luar biasa yang perlu disemak.",
+      "keywords": [
+        "anomaly"
+      ],
+      "source_type": "SUO Knowledge Base"
+    },
+    {
+      "id": "SUO-054",
+      "category_code": "C",
+      "category": "Urban Intelligence & Analytics",
+      "title": "Decision support",
+      "fact": "Analitik SUO berfungsi sebagai input keputusan, bukan keputusan automatik yang menggantikan pegawai.",
+      "keywords": [
+        "decision support"
+      ],
+      "source_type": "SUO Knowledge Base"
+    },
+    {
+      "id": "SUO-055",
+      "category_code": "C",
+      "category": "Urban Intelligence & Analytics",
+      "title": "Explainability",
+      "fact": "Kaedah analitik perlu boleh diterangkan supaya pengguna memahami asas kepada sesuatu output atau cadangan.",
+      "keywords": [
+        "explainability"
+      ],
+      "source_type": "SUO Knowledge Base"
+    },
+    {
+      "id": "SUO-056",
+      "category_code": "D",
+      "category": "Digital Applications & GeoPortal",
+      "title": "Digital Applications",
+      "fact": "Digital Applications ialah lapisan yang menterjemahkan data dan analitik kepada aplikasi yang boleh digunakan pengguna.",
+      "keywords": [
+        "digital applications"
+      ],
+      "source_type": "SUO Knowledge Base"
+    },
+    {
+      "id": "SUO-057",
+      "category_code": "D",
+      "category": "Digital Applications & GeoPortal",
+      "title": "SUO Portal",
+      "fact": "Portal SUO bertindak sebagai pintu masuk kepada maklumat, data, aplikasi, analitik dan bahan rujukan SUO.",
+      "keywords": [
+        "portal"
+      ],
+      "source_type": "SUO Knowledge Base"
+    },
+    {
+      "id": "SUO-058",
+      "category_code": "D",
+      "category": "Digital Applications & GeoPortal",
+      "title": "3D GeoPortal",
+      "fact": "SUO 3D GeoPortal memvisualisasikan data perbandaran dalam persekitaran peta 2D dan 3D.",
+      "keywords": [
+        "3d geoportal"
+      ],
+      "source_type": "SUO Knowledge Base"
+    },
+    {
+      "id": "SUO-059",
+      "category_code": "D",
+      "category": "Digital Applications & GeoPortal",
+      "title": "2D/3D toggle",
+      "fact": "Pengguna boleh menukar mod 2D atau 3D mengikut konteks visualisasi dan analisis.",
+      "keywords": [
+        "2d",
+        "3d"
+      ],
+      "source_type": "SUO Knowledge Base"
+    },
+    {
+      "id": "SUO-060",
+      "category_code": "D",
+      "category": "Digital Applications & GeoPortal",
+      "title": "Split-screen",
+      "fact": "Split-screen membolehkan dua dataset, masa atau basemap dibandingkan secara serentak.",
+      "keywords": [
+        "split screen"
+      ],
+      "source_type": "SUO Knowledge Base"
+    },
+    {
+      "id": "SUO-061",
+      "category_code": "D",
+      "category": "Digital Applications & GeoPortal",
+      "title": "Basemap",
+      "fact": "Basemap menyediakan konteks lokasi dan boleh dipilih mengikut tujuan analisis.",
+      "keywords": [
+        "basemap"
+      ],
+      "source_type": "SUO Knowledge Base"
+    },
+    {
+      "id": "SUO-062",
+      "category_code": "D",
+      "category": "Digital Applications & GeoPortal",
+      "title": "Layer hierarchy",
+      "fact": "Susunan layer perlu mengikuti kepentingan visual supaya data kritikal tidak terlindung oleh lapisan lain.",
+      "keywords": [
+        "layer",
+        "hierarchy"
+      ],
+      "source_type": "SUO Knowledge Base"
+    },
+    {
+      "id": "SUO-063",
+      "category_code": "D",
+      "category": "Digital Applications & GeoPortal",
+      "title": "Standard popup",
+      "fact": "Popup yang distandardkan membantu setiap layer memaparkan atribut utama dalam format yang konsisten.",
+      "keywords": [
+        "popup"
+      ],
+      "source_type": "SUO Knowledge Base"
+    },
+    {
+      "id": "SUO-064",
+      "category_code": "D",
+      "category": "Digital Applications & GeoPortal",
+      "title": "Smart search",
+      "fact": "Smart search memudahkan pencarian lokasi, kemudahan, kawasan atau rekod tanpa menyemak layer satu demi satu.",
+      "keywords": [
+        "smart search"
+      ],
+      "source_type": "SUO Knowledge Base"
+    },
+    {
+      "id": "SUO-065",
+      "category_code": "D",
+      "category": "Digital Applications & GeoPortal",
+      "title": "Hierarki bandar",
+      "fact": "Layer hierarki bandar membantu memahami struktur petempatan dan peranan pusat bandar.",
+      "keywords": [
+        "hierarki bandar"
+      ],
+      "source_type": "SUO Knowledge Base"
+    },
+    {
+      "id": "SUO-066",
+      "category_code": "D",
+      "category": "Digital Applications & GeoPortal",
+      "title": "Kemudahan masyarakat",
+      "fact": "Layer kemudahan masyarakat boleh merangkumi kesihatan, keselamatan dan pendidikan.",
+      "keywords": [
+        "kemudahan masyarakat"
+      ],
+      "source_type": "SUO Knowledge Base"
+    },
+    {
+      "id": "SUO-067",
+      "category_code": "D",
+      "category": "Digital Applications & GeoPortal",
+      "title": "Kesihatan",
+      "fact": "Data hospital dan kemudahan kesihatan boleh dianalisis bersama penduduk dan akses rangkaian.",
+      "keywords": [
+        "hospital",
+        "kesihatan"
+      ],
+      "source_type": "SUO Knowledge Base"
+    },
+    {
+      "id": "SUO-068",
+      "category_code": "D",
+      "category": "Digital Applications & GeoPortal",
+      "title": "Keselamatan",
+      "fact": "Data polis, bomba, APM dan kemudahan keselamatan boleh digunakan untuk analisis taburan dan liputan.",
+      "keywords": [
+        "keselamatan"
+      ],
+      "source_type": "SUO Knowledge Base"
+    },
+    {
+      "id": "SUO-069",
+      "category_code": "D",
+      "category": "Digital Applications & GeoPortal",
+      "title": "Pendidikan",
+      "fact": "Lokasi sekolah boleh dianalisis dari aspek aksesibiliti, kapasiti dan kawasan perkhidmatan.",
+      "keywords": [
+        "sekolah",
+        "pendidikan"
+      ],
+      "source_type": "SUO Knowledge Base"
+    },
+    {
+      "id": "SUO-070",
+      "category_code": "D",
+      "category": "Digital Applications & GeoPortal",
+      "title": "Lot kadaster",
+      "fact": "Lot kadaster memberi unit spatial terperinci untuk menghubungkan isu pembangunan dengan tanah tertentu.",
+      "keywords": [
+        "kadaster"
+      ],
+      "source_type": "SUO Knowledge Base"
+    },
+    {
+      "id": "SUO-071",
+      "category_code": "D",
+      "category": "Digital Applications & GeoPortal",
+      "title": "Rel dan stesen",
+      "fact": "Data rangkaian rel dan stesen menyokong analisis aksesibiliti pengangkutan awam.",
+      "keywords": [
+        "rail",
+        "station"
+      ],
+      "source_type": "SUO Knowledge Base"
+    },
+    {
+      "id": "SUO-072",
+      "category_code": "D",
+      "category": "Digital Applications & GeoPortal",
+      "title": "Live traffic",
+      "fact": "Data trafik semasa boleh meningkatkan kefahaman terhadap keadaan rangkaian pengangkutan.",
+      "keywords": [
+        "traffic"
+      ],
+      "source_type": "SUO Knowledge Base"
+    },
+    {
+      "id": "SUO-073",
+      "category_code": "D",
+      "category": "Digital Applications & GeoPortal",
+      "title": "Flood Intelligence",
+      "fact": "Flood Intelligence menggabungkan data risiko, lokasi, infrastruktur dan populasi untuk menyokong mitigasi banjir.",
+      "keywords": [
+        "flood",
+        "banjir"
+      ],
+      "source_type": "SUO Knowledge Base"
+    },
+    {
+      "id": "SUO-074",
+      "category_code": "D",
+      "category": "Digital Applications & GeoPortal",
+      "title": "Weather Intelligence",
+      "fact": "Maklumat cuaca boleh digabungkan dengan data spatial bagi memberi konteks kepada analisis bandar dan risiko.",
+      "keywords": [
+        "weather"
+      ],
+      "source_type": "SUO Knowledge Base"
+    },
+    {
+      "id": "SUO-075",
+      "category_code": "D",
+      "category": "Digital Applications & GeoPortal",
+      "title": "Land Use Intelligence",
+      "fact": "Land Use Intelligence membantu memerhati pola, perubahan dan tekanan terhadap guna tanah.",
+      "keywords": [
+        "landuse",
+        "guna tanah"
+      ],
+      "source_type": "SUO Knowledge Base"
+    },
+    {
+      "id": "SUO-076",
+      "category_code": "E",
+      "category": "Urban Observatory Data Catalog (UODC)",
+      "title": "UODC",
+      "fact": "Urban Observatory Data Catalog (UODC) ialah katalog pusat yang merekod dataset yang wujud dalam ekosistem SUO.",
+      "keywords": [
+        "uodc"
+      ],
+      "source_type": "SUO Knowledge Base"
+    },
+    {
+      "id": "SUO-077",
+      "category_code": "E",
+      "category": "Urban Observatory Data Catalog (UODC)",
+      "title": "Bukan sekadar muat turun",
+      "fact": "UODC ialah inventori data dan tidak semestinya bermaksud semua dataset boleh dimuat turun secara terbuka.",
+      "keywords": [
+        "uodc",
+        "download"
+      ],
+      "source_type": "SUO Knowledge Base"
+    },
+    {
+      "id": "SUO-078",
+      "category_code": "E",
+      "category": "Urban Observatory Data Catalog (UODC)",
+      "title": "Data discovery",
+      "fact": "UODC membantu pengguna mengetahui data apa yang tersedia tanpa perlu mengetahui sistem asalnya.",
+      "keywords": [
+        "data discovery"
+      ],
+      "source_type": "SUO Knowledge Base"
+    },
+    {
+      "id": "SUO-079",
+      "category_code": "E",
+      "category": "Urban Observatory Data Catalog (UODC)",
+      "title": "Pemilik dataset",
+      "fact": "Setiap rekod UODC wajar menyatakan pemilik atau custodian dataset.",
+      "keywords": [
+        "owner",
+        "custodian"
+      ],
+      "source_type": "SUO Knowledge Base"
+    },
+    {
+      "id": "SUO-080",
+      "category_code": "E",
+      "category": "Urban Observatory Data Catalog (UODC)",
+      "title": "Tarikh kemas kini",
+      "fact": "Rekod UODC wajar menyatakan tarikh kemas kini terakhir dan kekerapan refresh.",
+      "keywords": [
+        "updated"
+      ],
+      "source_type": "SUO Knowledge Base"
+    },
+    {
+      "id": "SUO-081",
+      "category_code": "E",
+      "category": "Urban Observatory Data Catalog (UODC)",
+      "title": "Skala data",
+      "fact": "Skala atau tahap geografi seperti negeri, daerah, PBT atau lot perlu dinyatakan dalam katalog.",
+      "keywords": [
+        "scale"
+      ],
+      "source_type": "SUO Knowledge Base"
+    },
+    {
+      "id": "SUO-082",
+      "category_code": "E",
+      "category": "Urban Observatory Data Catalog (UODC)",
+      "title": "Format data",
+      "fact": "Format seperti GeoJSON, Shapefile, CSV, database atau API boleh direkodkan dalam UODC.",
+      "keywords": [
+        "format"
+      ],
+      "source_type": "SUO Knowledge Base"
+    },
+    {
+      "id": "SUO-083",
+      "category_code": "E",
+      "category": "Urban Observatory Data Catalog (UODC)",
+      "title": "Tahap akses",
+      "fact": "UODC boleh membezakan data terbuka, dalaman, terhad dan sensitif.",
+      "keywords": [
+        "access"
+      ],
+      "source_type": "SUO Knowledge Base"
+    },
+    {
+      "id": "SUO-084",
+      "category_code": "E",
+      "category": "Urban Observatory Data Catalog (UODC)",
+      "title": "Kualiti data",
+      "fact": "Maklumat kualiti dan batasan dataset penting supaya pengguna tidak membuat interpretasi melampaui kemampuan data.",
+      "keywords": [
+        "quality"
+      ],
+      "source_type": "SUO Knowledge Base"
+    },
+    {
+      "id": "SUO-085",
+      "category_code": "E",
+      "category": "Urban Observatory Data Catalog (UODC)",
+      "title": "Searchable catalog",
+      "fact": "Katalog yang boleh dicari melalui kata kunci dan kategori mempercepat proses penemuan data.",
+      "keywords": [
+        "search"
+      ],
+      "source_type": "SUO Knowledge Base"
+    },
+    {
+      "id": "SUO-086",
+      "category_code": "F",
+      "category": "Collaboration, Governance & Security",
+      "title": "Collaboration & Governance",
+      "fact": "Komponen ini menyelaras perkongsian data, peranan agensi, standard dan tatacara penggunaan SUO.",      "keywords": [
+        "governance"
+      ],
+      "source_type": "SUO Knowledge Base"
+    },
+    {
+      "id": "SUO-087",
+      "category_code": "F",
+      "category": "Collaboration, Governance & Security",
+      "title": "Data governance",
+      "fact": "Data governance menetapkan siapa boleh menyediakan, meluluskan, menggunakan dan mengubah data.",
+      "keywords": [
+        "data governance"
+      ],
+      "source_type": "SUO Knowledge Base"
+    },
+    {
+      "id": "SUO-088",
+      "category_code": "F",
+      "category": "Collaboration, Governance & Security",
+      "title": "Data steward",
+      "fact": "Data steward menjaga definisi, kualiti dan pematuhan dataset dalam operasi harian.",
+      "keywords": [
+        "data steward"
+      ],
+      "source_type": "SUO Knowledge Base"
+    },
+    {
+      "id": "SUO-089",
+      "category_code": "F",
+      "category": "Collaboration, Governance & Security",
+      "title": "RBAC",
+      "fact": "Role-Based Access Control mengehadkan fungsi dan dataset berdasarkan peranan pengguna.",
+      "keywords": [
+        "rbac"
+      ],
+      "source_type": "SUO Knowledge Base"
+    },
+    {
+      "id": "SUO-090",
+      "category_code": "F",
+      "category": "Collaboration, Governance & Security",
+      "title": "Audit trail",
+      "fact": "Audit trail merekod tindakan penting pengguna bagi tujuan akauntabiliti dan keselamatan.",
+      "keywords": [
+        "audit trail"
+      ],
+      "source_type": "SUO Knowledge Base"
+    },
+    {
+      "id": "SUO-091",
+      "category_code": "F",
+      "category": "Collaboration, Governance & Security",
+      "title": "Authentication",
+      "fact": "Pengesahan identiti diperlukan untuk ciri atau data yang tidak dibuka kepada pengguna awam.",
+      "keywords": [
+        "authentication"
+      ],
+      "source_type": "SUO Knowledge Base"
+    },
+    {
+      "id": "SUO-092",
+      "category_code": "F",
+      "category": "Collaboration, Governance & Security",
+      "title": "Authorization",
+      "fact": "Authorization menentukan tindakan yang dibenarkan selepas identiti pengguna disahkan.",
+      "keywords": [
+        "authorization"
+      ],
+      "source_type": "SUO Knowledge Base"
+    },
+    {
+      "id": "SUO-093",
+      "category_code": "F",
+      "category": "Collaboration, Governance & Security",
+      "title": "Data classification",
+      "fact": "Klasifikasi data membantu membezakan data awam, dalaman, terhad dan sensitif.",
+      "keywords": [
+        "classification"
+      ],
+      "source_type": "SUO Knowledge Base"
+    },
+    {
+      "id": "SUO-094",
+      "category_code": "F",
+      "category": "Collaboration, Governance & Security",
+      "title": "Least privilege",
+      "fact": "Pengguna wajar hanya mendapat akses minimum yang diperlukan untuk menjalankan tugas.",
+      "keywords": [
+        "least privilege"
+      ],
+      "source_type": "SUO Knowledge Base"
+    },
+    {
+      "id": "SUO-095",
+      "category_code": "F",
+      "category": "Collaboration, Governance & Security",
+      "title": "Backup",
+      "fact": "Backup berkala diperlukan bagi mengurangkan risiko kehilangan data atau konfigurasi.",
+      "keywords": [
+        "backup"
+      ],
+      "source_type": "SUO Knowledge Base"
+    },
+    {
+      "id": "SUO-096",
+      "category_code": "F",
+      "category": "Collaboration, Governance & Security",
+      "title": "Disaster recovery",
+      "fact": "Pelan disaster recovery menetapkan cara sistem dipulihkan selepas kegagalan besar.",
+      "keywords": [
+        "dr"
+      ],
+      "source_type": "SUO Knowledge Base"
+    },
+    {
+      "id": "SUO-097",
+      "category_code": "F",
+      "category": "Collaboration, Governance & Security",
+      "title": "Cybersecurity",
+      "fact": "Keselamatan siber perlu meliputi aplikasi, server, pangkalan data, akaun dan integrasi API.",
+      "keywords": [
+        "cybersecurity"
+      ],
+      "source_type": "SUO Knowledge Base"
+    },
+    {
+      "id": "SUO-098",
+      "category_code": "F",
+      "category": "Collaboration, Governance & Security",
+      "title": "Data sharing",
+      "fact": "Perkongsian data perlu mempunyai skop, tujuan, pemilik, tempoh dan syarat penggunaan yang jelas.",
+      "keywords": [
+        "sharing"
+      ],
+      "source_type": "SUO Knowledge Base"
+    },
+    {
+      "id": "SUO-099",
+      "category_code": "F",
+      "category": "Collaboration, Governance & Security",
+      "title": "Governance committee",
+      "fact": "Struktur jawatankuasa membantu menyelesaikan isu pemilikan data, akses, standard dan keutamaan pembangunan.",
+      "keywords": [
+        "committee"
+      ],
+      "source_type": "SUO Knowledge Base"
+    },
+    {
+      "id": "SUO-100",
+      "category_code": "F",
+      "category": "Collaboration, Governance & Security",
+      "title": "Cross-agency collaboration",
+      "fact": "Nilai SUO meningkat apabila data dan kepakaran pelbagai agensi dapat digunakan secara bersama.",
+      "keywords": [
+        "collaboration"
+      ],
+      "source_type": "SUO Knowledge Base"
+    },
+    {
+      "id": "SUO-101",
+      "category_code": "G",
+      "category": "Domain Data & Use Cases",
+      "title": "Perumahan",
+      "fact": "Data perumahan boleh digunakan untuk menilai taburan projek, bekalan, akses kemudahan dan jurang spatial.",
+      "keywords": [
+        "housing",
+        "perumahan"
+      ],
+      "source_type": "SUO Knowledge Base"
+    },
+    {
+      "id": "SUO-102",
+      "category_code": "G",
+      "category": "Domain Data & Use Cases",
+      "title": "Keselamatan bandar",
+      "fact": "Data keselamatan boleh digabungkan dengan rangkaian jalan, penduduk dan kemudahan tindak balas.",
+      "keywords": [
+        "safety"
+      ],
+      "source_type": "SUO Knowledge Base"
+    },
+    {
+      "id": "SUO-103",
+      "category_code": "G",
+      "category": "Domain Data & Use Cases",
+      "title": "Kesihatan bandar",
+      "fact": "Analisis kesihatan boleh menilai taburan fasiliti, akses dan hubungan dengan populasi.",
+      "keywords": [
+        "health"
+      ],
+      "source_type": "SUO Knowledge Base"
+    },
+    {
+      "id": "SUO-104",
+      "category_code": "G",
+      "category": "Domain Data & Use Cases",
+      "title": "Pendidikan",
+      "fact": "Analisis pendidikan boleh menilai akses sekolah, kapasiti dan kawasan yang berpotensi kekurangan perkhidmatan.",
+      "keywords": [
+        "education"
+      ],
+      "source_type": "SUO Knowledge Base"
+    },
+    {
+      "id": "SUO-105",
+      "category_code": "G",
+      "category": "Domain Data & Use Cases",
+      "title": "Penduduk",
+      "fact": "Data penduduk ialah asas penting bagi menganggarkan permintaan kemudahan dan perkhidmatan.",
+      "keywords": [
+        "population"
+      ],
+      "source_type": "SUO Knowledge Base"
+    },
+    {
+      "id": "SUO-106",
+      "category_code": "G",
+      "category": "Domain Data & Use Cases",
+      "title": "Sosioekonomi",
+      "fact": "Data sosioekonomi membantu memahami dimensi sosial dan ekonomi selain bentuk fizikal bandar.",
+      "keywords": [
+        "socioeconomic"
+      ],
+      "source_type": "SUO Knowledge Base"
+    },
+    {
+      "id": "SUO-107",
+      "category_code": "G",
+      "category": "Domain Data & Use Cases",
+      "title": "Alam sekitar",
+      "fact": "Data alam sekitar membantu menilai sungai, risiko, kawasan sensitif dan tekanan pembangunan.",
+      "keywords": [
+        "environment"
+      ],
+      "source_type": "SUO Knowledge Base"
+    },
+    {
+      "id": "SUO-108",
+      "category_code": "G",
+      "category": "Domain Data & Use Cases",
+      "title": "Pengangkutan",
+      "fact": "Data jalan, rel, stesen dan trafik menyokong analisis mobiliti dan aksesibiliti.",
+      "keywords": [
+        "transport"
+      ],
+      "source_type": "SUO Knowledge Base"
+    },
+    {
+      "id": "SUO-109",
+      "category_code": "G",
+      "category": "Domain Data & Use Cases",
+      "title": "Telekomunikasi",
+      "fact": "Data menara dan liputan boleh membantu mengenal pasti jurang perkhidmatan digital.",
+      "keywords": [
+        "telecom"
+      ],
+      "source_type": "SUO Knowledge Base"
+    },
+    {
+      "id": "SUO-110",
+      "category_code": "G",
+      "category": "Domain Data & Use Cases",
+      "title": "Tanah lapang",
+      "fact": "Data kawasan lapang boleh menyokong pemantauan keluasan, pewartaan, agihan dan akses.",
+      "keywords": [
+        "open space"
+      ],
+      "source_type": "SUO Knowledge Base"
+    },
+    {
+      "id": "SUO-111",
+      "category_code": "G",
+      "category": "Domain Data & Use Cases",
+      "title": "Pelancongan",
+      "fact": "Data produk, zon, projek dan akses boleh digunakan untuk pemantauan pembangunan pelancongan.",
+      "keywords": [
+        "tourism"
+      ],
+      "source_type": "SUO Knowledge Base"
+    },
+    {
+      "id": "SUO-112",
+      "category_code": "G",
+      "category": "Domain Data & Use Cases",
+      "title": "KSAS",
+      "fact": "Data Kawasan Sensitif Alam Sekitar membantu memantau sempadan, tekanan pembangunan dan pematuhan.",
+      "keywords": [
+        "ksas"
+      ],
+      "source_type": "SUO Knowledge Base"
+    },
+    {
+      "id": "SUO-113",
+      "category_code": "G",
+      "category": "Domain Data & Use Cases",
+      "title": "SIA",
+      "fact": "Pemantauan Social Impact Assessment boleh distrukturkan mengikut status permohonan, syor dan mitigasi.",
+      "keywords": [
+        "sia"
+      ],
+      "source_type": "SUO Knowledge Base"
+    },
+    {
+      "id": "SUO-114",
+      "category_code": "G",
+      "category": "Domain Data & Use Cases",
+      "title": "Permohonan statutori",
+      "fact": "Data proses permohonan boleh dipantau dari segi jumlah, status, tempoh dan keputusan.",
+      "keywords": [
+        "statutory"
+      ],
+      "source_type": "SUO Knowledge Base"
+    },
+    {
+      "id": "SUO-115",
+      "category_code": "G",
+      "category": "Domain Data & Use Cases",
+      "title": "Lembaga Rayuan",
+      "fact": "Data kes rayuan boleh dipantau dari segi jadual, status, keputusan dan tindakan susulan.",
+      "keywords": [
+        "rayuan"
+      ],
+      "source_type": "SUO Knowledge Base"
+    },
+    {
+      "id": "SUO-116",
+      "category_code": "G",
+      "category": "Domain Data & Use Cases",
+      "title": "SDG 11",
+      "fact": "SUO boleh menyokong pemantauan indikator berkaitan SDG 11: Sustainable Cities and Communities.",
+      "keywords": [
+        "sdg 11"
+      ],
+      "source_type": "SUO Knowledge Base"
+    },
+    {
+      "id": "SUO-117",
+      "category_code": "G",
+      "category": "Domain Data & Use Cases",
+      "title": "RSN Selangor 2035",
+      "fact": "SUO boleh menyokong pemantauan dasar, strategi, indikator dan kemajuan pelaksanaan rancangan struktur negeri.",
+      "keywords": [
+        "rsn",
+        "2035"
+      ],
+      "source_type": "SUO Knowledge Base"
+    },
+    {
+      "id": "SUO-118",
+      "category_code": "G",
+      "category": "Domain Data & Use Cases",
+      "title": "Bandar Selamat / MurniNET",
+      "fact": "Indikator prestasi bandar boleh dibandingkan mengikut PBT dan tempoh bagi mengenal pasti isu yang memerlukan tindakan.",
+      "keywords": [
+        "murninet",
+        "bandar selamat"
+      ],
+      "source_type": "SUO Knowledge Base"
+    },
+    {
+      "id": "SUO-119",
+      "category_code": "G",
+      "category": "Domain Data & Use Cases",
+      "title": "Bencana",
+      "fact": "Data risiko bencana boleh digabungkan dengan penduduk, aset dan infrastruktur bagi menilai pendedahan.",
+      "keywords": [
+        "disaster"
+      ],
+      "source_type": "SUO Knowledge Base"
+    },
+    {
+      "id": "SUO-120",
+      "category_code": "G",
+      "category": "Domain Data & Use Cases",
+      "title": "Kemampanan",
+      "fact": "Gabungan data sosial, ekonomi dan alam sekitar membantu keputusan pembangunan yang lebih seimbang.",
+      "keywords": [
+        "sustainability"
+      ],
+      "source_type": "SUO Knowledge Base"
+    },
+    {
+      "id": "SUO-121",
+      "category_code": "H",
+      "category": "Pelaksanaan SUO Selangor 2026",
+      "title": "Task Force SUO",
+      "fact": "Task Force SUO 2026 ditubuhkan untuk menyelaraskan asas pelaksanaan, data, analitik dan portfolio dashboard SUO.",
+      "keywords": [
+        "task force"
+      ],
+      "source_type": "Perancangan SUO 2026"
+    },
+    {
+      "id": "SUO-122",
+      "category_code": "H",
+      "category": "Pelaksanaan SUO Selangor 2026",
+      "title": "Tujuan Mesyuarat Task Force",
+      "fact": "Mesyuarat Task Force menetapkan kefahaman SUO sebagai mekanisme urban intelligence negeri, isu bandar, data teras dan kaedah perkongsian.",
+      "keywords": [
+        "task force",
+        "urban intelligence"
+      ],
+      "source_type": "Perancangan SUO 2026"
+    },
+    {
+      "id": "SUO-123",
+      "category_code": "H",
+      "category": "Pelaksanaan SUO Selangor 2026",
+      "title": "Penyelarasan sistem",
+      "fact": "Pelaksanaan SUO dirancang supaya selaras dengan SISMAPS, Smart Selangor dan RSN Selangor 2035.",
+      "keywords": [
+        "sismaps",
+        "smart selangor",
+        "rsn"
+      ],
+      "source_type": "Perancangan SUO 2026"
+    },
+    {
+      "id": "SUO-124",
+      "category_code": "H",
+      "category": "Pelaksanaan SUO Selangor 2026",
+      "title": "Mei 2026",
+      "fact": "Aktiviti awal termasuk lantikan Task Force SUO dan lawatan ke Malaysia Urban Observatory.",
+      "keywords": [
+        "mei 2026",
+        "muo"
+      ],
+      "source_type": "Perancangan SUO 2026"
+    },
+    {
+      "id": "SUO-125",
+      "category_code": "H",
+      "category": "Pelaksanaan SUO Selangor 2026",
+      "title": "Jun–Julai 2026",
+      "fact": "Fasa Jun–Julai merangkumi kursus penyediaan dashboard dan Mesyuarat Task Force Bil. 1/2026.",
+      "keywords": [
+        "julai 2026",
+        "dashboard"
+      ],
+      "source_type": "Perancangan SUO 2026"
+    },
+    {
+      "id": "SUO-126",
+      "category_code": "H",
+      "category": "Pelaksanaan SUO Selangor 2026",
+      "title": "Ogos 2026",
+      "fact": "Bulan Ogos diperuntukkan untuk penyediaan dashboard oleh kumpulan Task Force.",
+      "keywords": [
+        "ogos 2026"
+      ],
+      "source_type": "Perancangan SUO 2026"
+    },
+    {
+      "id": "SUO-127",
+      "category_code": "H",
+      "category": "Pelaksanaan SUO Selangor 2026",
+      "title": "September 2026",
+      "fact": "September merangkumi Mesyuarat Task Force Bil. 2/2026 dan pembentangan dashboard.",
+      "keywords": [
+        "september 2026"
+      ],
+      "source_type": "Perancangan SUO 2026"
+    },
+    {
+      "id": "SUO-128",
+      "category_code": "H",
+      "category": "Pelaksanaan SUO Selangor 2026",
+      "title": "Oktober 2026",
+      "fact": "Oktober merangkumi kelulusan dashboard melalui JPICT serta pembangunan kerangka SUO dan integrasi ke laman web.",
+      "keywords": [
+        "oktober 2026",
+        "jpict"
+      ],
+      "source_type": "Perancangan SUO 2026"
+    },
+    {
+      "id": "SUO-129",
+      "category_code": "H",
+      "category": "Pelaksanaan SUO Selangor 2026",
+      "title": "November 2026",
+      "fact": "November ditetapkan untuk pre-launch SUO di HPBS 2026.",
+      "keywords": [
+        "november 2026",
+        "pre-launch"
+      ],
+      "source_type": "Perancangan SUO 2026"
+    },
+    {
+      "id": "SUO-130",
+      "category_code": "H",
+      "category": "Pelaksanaan SUO Selangor 2026",
+      "title": "Hasil awal 2026",
+      "fact": "Sasaran kandungan awal SUO ialah 11 dashboard berfungsi dan bersedia untuk pre-launch.",
+      "keywords": [
+        "11 dashboard"
+      ],
+      "source_type": "Perancangan SUO 2026"
+    },
+    {
+      "id": "SUO-131",
+      "category_code": "H",
+      "category": "Pelaksanaan SUO Selangor 2026",
+      "title": "Portfolio BRP",
+      "fact": "Bahagian Rancangan Pembangunan diberikan portfolio lima dashboard.",
+      "keywords": [
+        "brp",
+        "5 dashboard"
+      ],
+      "source_type": "Perancangan SUO 2026"
+    },
+    {
+      "id": "SUO-132",
+      "category_code": "H",
+      "category": "Pelaksanaan SUO Selangor 2026",
+      "title": "Portfolio Korporat",
+      "fact": "Bahagian Perancangan Korporat diberikan portfolio tiga dashboard.",
+      "keywords": [
+        "korporat",
+        "3 dashboard"
+      ],
+      "source_type": "Perancangan SUO 2026"
+    },
+    {
+      "id": "SUO-133",
+      "category_code": "H",
+      "category": "Pelaksanaan SUO Selangor 2026",
+      "title": "Portfolio Pengawalan",
+      "fact": "Bahagian Pengawalan Perancangan diberikan portfolio tiga dashboard.",
+      "keywords": [
+        "pengawalan",
+        "3 dashboard"
+      ],
+      "source_type": "Perancangan SUO 2026"
+    },
+    {
+      "id": "SUO-134",
+      "category_code": "H",
+      "category": "Pelaksanaan SUO Selangor 2026",
+      "title": "Dashboard RSN",
+      "fact": "Dashboard RSN memfokuskan dasar, strategi, indikator dan kemajuan pelaksanaan.",
+      "keywords": [
+        "rsn dashboard"
+      ],
+      "source_type": "Perancangan SUO 2026"
+    },
+    {
+      "id": "SUO-135",
+      "category_code": "H",
+      "category": "Pelaksanaan SUO Selangor 2026",
+      "title": "Dashboard Pelancongan",
+      "fact": "Dashboard pelancongan memfokuskan produk, projek, zon pelancongan dan status pelaksanaan.",
+      "keywords": [
+        "pelancongan dashboard"
+      ],
+      "source_type": "Perancangan SUO 2026"
+    },
+    {
+      "id": "SUO-136",
+      "category_code": "H",
+      "category": "Pelaksanaan SUO Selangor 2026",
+      "title": "Dashboard Sekolah",
+      "fact": "Dashboard sekolah memfokuskan taburan, kapasiti, keperluan, tapak dan aksesibiliti sekolah.",
+      "keywords": [
+        "sekolah dashboard"
+      ],
+      "source_type": "Perancangan SUO 2026"
+    },
+    {
+      "id": "SUO-137",
+      "category_code": "H",
+      "category": "Pelaksanaan SUO Selangor 2026",
+      "title": "Dashboard Telekomunikasi",
+      "fact": "Dashboard menara telekomunikasi memfokuskan lokasi, status kelulusan, liputan dan jurang perkhidmatan.",
+      "keywords": [
+        "telco dashboard"
+      ],
+      "source_type": "Perancangan SUO 2026"
+    },
+    {
+      "id": "SUO-138",
+      "category_code": "H",
+      "category": "Pelaksanaan SUO Selangor 2026",
+      "title": "Dashboard Kawasan Lapang",
+      "fact": "Dashboard kawasan lapang memfokuskan keluasan, pewartaan, agihan, akses dan status penyediaan.",
+      "keywords": [
+        "tanah lapang dashboard"
+      ],
+      "source_type": "Perancangan SUO 2026"
+    },
+    {
+      "id": "SUO-139",
+      "category_code": "H",
+      "category": "Pelaksanaan SUO Selangor 2026",
+      "title": "Production-ready",
+      "fact": "Pelan kerja menetapkan sasaran production-ready pada 6 November 2026 sebelum semakan akhir dan perasmian.",
+      "keywords": [
+        "production-ready",
+        "6 november"
+      ],
+      "source_type": "Perancangan SUO 2026"
+    },
+    {
+      "id": "SUO-140",
+      "category_code": "H",
+      "category": "Pelaksanaan SUO Selangor 2026",
+      "title": "Perasmian",
+      "fact": "Jadual kerja 2026 meletakkan perasmian SUO pada 8 November 2026.",
+      "keywords": [
+        "8 november",
+        "perasmian"
+      ],
+      "source_type": "Perancangan SUO 2026"
+    },
+    {
+      "id": "SUO-141",
+      "category_code": "I",
+      "category": "Roadmap, Digital Twin & Masa Hadapan",
+      "title": "Roadmap 2027",
+      "fact": "Fasa 2027 memberi fokus kepada kajian semasa, kerangka SUO, reka bentuk sistem dan pelan pengurusan data.",
+      "keywords": [
+        "2027",
+        "roadmap"
+      ],
+      "source_type": "SUO Knowledge Base"
+    },
+    {
+      "id": "SUO-142",
+      "category_code": "I",
+      "category": "Roadmap, Digital Twin & Masa Hadapan",
+      "title": "Roadmap 2028",
+      "fact": "Fasa 2028 memberi fokus kepada pembangunan platform, dashboard, pangkalan data dan integrasi sistem.",
+      "keywords": [
+        "2028",
+        "roadmap"
+      ],
+      "source_type": "SUO Knowledge Base"
+    },
+    {
+      "id": "SUO-143",
+      "category_code": "I",
+      "category": "Roadmap, Digital Twin & Masa Hadapan",
+      "title": "Roadmap 2029",
+      "fact": "Fasa 2029 memberi fokus kepada pengoperasian, analitik lanjutan, pemantauan masa nyata dan asas Digital Twin.",
+      "keywords": [
+        "2029",
+        "roadmap"
+      ],
+      "source_type": "SUO Knowledge Base"
+    },
+    {
+      "id": "SUO-144",
+      "category_code": "I",
+      "category": "Roadmap, Digital Twin & Masa Hadapan",
+      "title": "Digital Twin ready",
+      "fact": "SUO boleh menyediakan asas data dan integrasi untuk pembangunan Digital Twin pada tahap kematangan lebih tinggi.",
+      "keywords": [
+        "digital twin"
+      ],
+      "source_type": "SUO Knowledge Base"
+    },
+    {
+      "id": "SUO-145",
+      "category_code": "I",
+      "category": "Roadmap, Digital Twin & Masa Hadapan",
+      "title": "Digital Twin bukan SUO",
+      "fact": "Digital Twin ialah satu keupayaan dalam ekosistem; SUO mempunyai skop lebih luas meliputi data, analitik, aplikasi dan governance.",
+      "keywords": [
+        "digital twin"
+      ],
+      "source_type": "SUO Knowledge Base"
+    },
+    {
+      "id": "SUO-146",
+      "category_code": "I",
+      "category": "Roadmap, Digital Twin & Masa Hadapan",
+      "title": "Simulasi bandar",
+      "fact": "Digital Twin dan model analitik boleh digunakan untuk menguji senario pembangunan sebelum tindakan dilaksanakan.",
+      "keywords": [
+        "simulation"
+      ],
+      "source_type": "SUO Knowledge Base"
+    },
+    {
+      "id": "SUO-147",
+      "category_code": "I",
+      "category": "Roadmap, Digital Twin & Masa Hadapan",
+      "title": "Sensor integration",
+      "fact": "Sensor IoT boleh menjadi salah satu sumber data apabila terdapat keperluan pemantauan masa nyata.",
+      "keywords": [
+        "iot",
+        "sensor"
+      ],
+      "source_type": "SUO Knowledge Base"
+    },
+    {
+      "id": "SUO-148",
+      "category_code": "I",
+      "category": "Roadmap, Digital Twin & Masa Hadapan",
+      "title": "Automation",
+      "fact": "Automasi pipeline data mengurangkan kerja manual dan risiko kesilapan semasa kemas kini.",
+      "keywords": [
+        "automation"
+      ],
+      "source_type": "SUO Knowledge Base"
+    },
+    {
+      "id": "SUO-149",
+      "category_code": "I",
+      "category": "Roadmap, Digital Twin & Masa Hadapan",
+      "title": "Scalability",
+      "fact": "Seni bina SUO perlu modular supaya dataset dan aplikasi baharu boleh ditambah tanpa membina semula keseluruhan sistem.",
+      "keywords": [
+        "scalability"
+      ],
+      "source_type": "SUO Knowledge Base"
+    },
+    {
+      "id": "SUO-150",
+      "category_code": "I",
+      "category": "Roadmap, Digital Twin & Masa Hadapan",
+      "title": "Cloud-ready",
+      "fact": "Seni bina boleh disediakan supaya mampu beroperasi dalam persekitaran on-premise, cloud atau hibrid mengikut dasar.",
+      "keywords": [
+        "cloud",
+        "hybrid"
+      ],
+      "source_type": "SUO Knowledge Base"
+    },
+    {
+      "id": "SUO-151",
+      "category_code": "I",
+      "category": "Roadmap, Digital Twin & Masa Hadapan",
+      "title": "AI assistant",
+      "fact": "Pembantu AI seperti Ask Mr. TPr SUO boleh membantu pengguna mencari fakta dan memahami kandungan SUO melalui bahasa semula jadi.",
+      "keywords": [
+        "ask mr tpr suo",
+        "chatbot"
+      ],
+      "source_type": "SUO Knowledge Base"
+    },
+    {
+      "id": "SUO-152",
+      "category_code": "I",
+      "category": "Roadmap, Digital Twin & Masa Hadapan",
+      "title": "Knowledge base",
+      "fact": "Knowledge base yang tersusun membolehkan chatbot memberi jawapan yang lebih konsisten dan boleh dikawal.",
+      "keywords": [
+        "knowledge base"
+      ],
+      "source_type": "SUO Knowledge Base"
+    },
+    {
+      "id": "SUO-153",
+      "category_code": "I",
+      "category": "Roadmap, Digital Twin & Masa Hadapan",
+      "title": "RAG",
+      "fact": "Retrieval-Augmented Generation boleh digunakan untuk membolehkan AI merujuk fakta, FAQ dan dokumen rasmi sebelum menjawab.",
+      "keywords": [
+        "rag"
+      ],
+      "source_type": "SUO Knowledge Base"
+    },
+    {
+      "id": "SUO-154",
+      "category_code": "I",
+      "category": "Roadmap, Digital Twin & Masa Hadapan",
+      "title": "Semantic search",
+      "fact": "Semantic search mencari maklumat berdasarkan maksud, bukan hanya padanan perkataan tepat.",
+      "keywords": [
+        "semantic search"
+      ],
+      "source_type": "SUO Knowledge Base"
+    },
+    {
+      "id": "SUO-155",
+      "category_code": "I",
+      "category": "Roadmap, Digital Twin & Masa Hadapan",
+      "title": "Living platform",
+      "fact": "SUO ialah platform hidup yang perlu berubah mengikut data, dasar, teknologi dan keperluan bandar.",
+      "keywords": [
+        "living platform"
+      ],
+      "source_type": "SUO Knowledge Base"
+    },
+    {
+      "id": "SUO-156",
+      "category_code": "J",
+      "category": "Prinsip Operasi & Kualiti",
+      "title": "Data quality",
+      "fact": "Ketepatan analitik SUO bergantung pada ketepatan, kelengkapan, konsistensi dan kemutakhiran data.",
+      "keywords": [
+        "data quality"
+      ],
+      "source_type": "SUO Knowledge Base"
+    },
+    {
+      "id": "SUO-157",
+      "category_code": "J",
+      "category": "Prinsip Operasi & Kualiti",
+      "title": "Garbage in, garbage out",
+      "fact": "Analitik canggih tidak dapat memperbaiki data sumber yang salah tanpa proses kualiti yang baik.",
+      "keywords": [
+        "gigo"
+      ],
+      "source_type": "SUO Knowledge Base"
+    },
+    {
+      "id": "SUO-158",
+      "category_code": "J",
+      "category": "Prinsip Operasi & Kualiti",
+      "title": "Validation",
+      "fact": "Dataset baharu perlu melalui semakan struktur, geometri, atribut dan logik sebelum digunakan.",
+      "keywords": [
+        "validation"
+      ],
+      "source_type": "SUO Knowledge Base"
+    },
+    {
+      "id": "SUO-159",
+      "category_code": "J",
+      "category": "Prinsip Operasi & Kualiti",
+      "title": "QA/QC",
+      "fact": "Quality assurance dan quality control perlu menjadi sebahagian daripada kitaran penerbitan data dan dashboard.",
+      "keywords": [
+        "qa",
+        "qc"
+      ],
+      "source_type": "SUO Knowledge Base"
+    },
+    {
+      "id": "SUO-160",
+      "category_code": "J",
+      "category": "Prinsip Operasi & Kualiti",
+      "title": "Source citation",
+      "fact": "Output penting sepatutnya boleh dikaitkan semula kepada sumber atau dataset asal.",
+      "keywords": [
+        "citation",
+        "source"
+      ],
+      "source_type": "SUO Knowledge Base"
+    },
+    {
+      "id": "SUO-161",
+      "category_code": "J",
+      "category": "Prinsip Operasi & Kualiti",
+      "title": "Confidence",
+      "fact": "Ramalan atau model wajar menunjukkan tahap keyakinan atau batasan jika berkenaan.",
+      "keywords": [
+        "confidence"
+      ],
+      "source_type": "SUO Knowledge Base"
+    },
+    {
+      "id": "SUO-162",
+      "category_code": "J",
+      "category": "Prinsip Operasi & Kualiti",
+      "title": "Privacy",
+      "fact": "Data individu atau sensitif perlu diminimumkan, diagregat atau dilindungi mengikut keperluan.",
+      "keywords": [
+        "privacy"
+      ],
+      "source_type": "SUO Knowledge Base"
+    },
+    {
+      "id": "SUO-163",
+      "category_code": "J",
+      "category": "Prinsip Operasi & Kualiti",
+      "title": "Open by design, restricted by need",
+      "fact": "Data boleh dibuka apabila sesuai, tetapi akses perlu dihadkan apabila terdapat isu keselamatan, privasi atau dasar.",
+      "keywords": [
+        "open data",
+        "restricted"
+      ],
+      "source_type": "SUO Knowledge Base"
+    },
+    {
+      "id": "SUO-164",
+      "category_code": "J",
+      "category": "Prinsip Operasi & Kualiti",
+      "title": "Mobile responsive",
+      "fact": "Portal dan aplikasi perlu responsif supaya boleh digunakan pada desktop, tablet dan telefon.",
+      "keywords": [
+        "responsive"
+      ],
+      "source_type": "SUO Knowledge Base"
+    },
+    {
+      "id": "SUO-165",
+      "category_code": "J",
+      "category": "Prinsip Operasi & Kualiti",
+      "title": "Accessibility",
+      "fact": "Reka bentuk perlu mengambil kira keterbacaan, kontras, navigasi papan kekunci dan pengguna berkeperluan berbeza.",
+      "keywords": [
+        "accessibility"
+      ],
+      "source_type": "SUO Knowledge Base"
+    },
+    {
+      "id": "SUO-166",
+      "category_code": "J",
+      "category": "Prinsip Operasi & Kualiti",
+      "title": "Performance",
+      "fact": "Aplikasi peta perlu mengurus saiz data, caching dan level-of-detail supaya prestasi kekal baik.",
+      "keywords": [
+        "performance"
+      ],
+      "source_type": "SUO Knowledge Base"
+    },
+    {
+      "id": "SUO-167",
+      "category_code": "J",
+      "category": "Prinsip Operasi & Kualiti",
+      "title": "Monitoring",
+      "fact": "Prestasi server, API, pangkalan data dan aplikasi perlu dipantau untuk mengesan gangguan lebih awal.",
+      "keywords": [
+        "monitoring"
+      ],
+      "source_type": "SUO Knowledge Base"
+    },
+    {
+      "id": "SUO-168",
+      "category_code": "J",
+      "category": "Prinsip Operasi & Kualiti",
+      "title": "Documentation",
+      "fact": "Dokumentasi teknikal dan operasi memastikan sistem boleh diselenggara walaupun berlaku pertukaran pegawai atau vendor.",
+      "keywords": [
+        "documentation"
+      ],
+      "source_type": "SUO Knowledge Base"
+    },
+    {
+      "id": "SUO-169",
+      "category_code": "J",
+      "category": "Prinsip Operasi & Kualiti",
+      "title": "SOP",
+      "fact": "SOP diperlukan untuk kemas kini data, penerbitan dashboard, akses pengguna, backup dan insiden.",
+      "keywords": [
+        "sop"
+      ],
+      "source_type": "SUO Knowledge Base"
+    },
+    {
+      "id": "SUO-170",
+      "category_code": "J",
+      "category": "Prinsip Operasi & Kualiti",
+      "title": "UAT",
+      "fact": "User Acceptance Test memastikan fungsi memenuhi keperluan pengguna sebelum deployment production.",
+      "keywords": [
+        "uat"
+      ],
+      "source_type": "SUO Knowledge Base"
+    }
+  ]
+}
