@@ -175,6 +175,32 @@
 
   const has=(q,words)=>words.some(w=>q.includes(w));
 
+  let suoFacts=[];
+  fetch("data/suo-facts.json")
+    .then(r=>r.ok?r.json():Promise.reject(new Error("facts unavailable")))
+    .then(data=>{suoFacts=Array.isArray(data.facts)?data.facts:[];})
+    .catch(()=>{suoFacts=[];});
+
+  const searchFacts=(raw,limit=4)=>{
+    const q=norm(raw);
+    const terms=q.split(" ").filter(x=>x.length>2);
+    if(!terms.length || !suoFacts.length) return [];
+    return suoFacts
+      .map(f=>{
+        const hay=norm([f.title,f.fact,...(f.keywords||[])].join(" "));
+        let score=0;
+        terms.forEach(t=>{
+          if(hay.includes(t)) score+=2;
+          if(norm(f.title||"").includes(t)) score+=2;
+        });
+        return {f,score};
+      })
+      .filter(x=>x.score>0)
+      .sort((a,b)=>b.score-a.score)
+      .slice(0,limit)
+      .map(x=>x.f);
+  };
+
   const route=(raw)=>{
     const q=norm(raw);
 
@@ -259,6 +285,17 @@
 
     if(has(q,["aplikasi","application","apps","apa ada dalam suo","apa yang ada"])){
       return {text:"Aplikasi Digital SUO disusun kepada lima kategori: <strong>Dashboard Tematik, StoryMaps, 3D GeoPortal, SISMAPS dan SMARTDesa</strong>.",links:[links.applications,links.dashboards,links.geoportal]};
+    }
+
+    const factMatches=searchFacts(raw,3);
+    if(factMatches.length){
+      const factsHtml=factMatches
+        .map(f=>"<strong>"+f.title+"</strong> — "+f.fact)
+        .join("<br><br>");
+      return {
+        text:factsHtml,
+        links:[links.applications,links.uodc]
+      };
     }
 
     return {
