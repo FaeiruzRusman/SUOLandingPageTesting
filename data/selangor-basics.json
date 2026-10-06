@@ -1,0 +1,443 @@
+{
+  "meta": {
+    "name": "Selangor Basic Facts",
+    "version": "1.0.0",
+    "updated": "2026-10-06",
+    "language": "ms",
+    "purpose": "Authoritative baseline figures and interpretation rules for SUO Knowledge Base and Mr. TPr SUO.",
+    "note": "Angka demografi perlu dibaca bersama tahun rujukan. Banci 2020 ialah baseline banci; angka 2025 ialah anggaran pertengahan tahun/preliminary DOSM."
+  },
+  "figures": [
+    {
+      "id": "SGR-001",
+      "title": "Nama negeri",
+      "value": "Selangor Darul Ehsan",
+      "unit": null,
+      "as_of": "current",
+      "fact": "Selangor turut dirujuk sebagai Selangor Darul Ehsan.",
+      "keywords": [
+        "selangor",
+        "nama negeri",
+        "darul ehsan"
+      ],
+      "source_id": "SRC-DOSM-CENSUS2020"
+    },
+    {
+      "id": "SGR-002",
+      "title": "Ibu negeri",
+      "value": "Shah Alam",
+      "unit": null,
+      "as_of": "current",
+      "fact": "Shah Alam ialah ibu negeri Selangor.",
+      "keywords": [
+        "ibu negeri",
+        "shah alam",
+        "capital"
+      ],
+      "source_id": "SRC-DEWAN-SHAH-ALAM"
+    },
+    {
+      "id": "SGR-003",
+      "title": "Keluasan negeri",
+      "value": 7950.91,
+      "unit": "km²",
+      "as_of": "MyCensus 2020 reference",
+      "fact": "Keluasan Selangor dalam rujukan Penemuan Utama Banci 2020 DOSM ialah 7,950.91 km².",
+      "keywords": [
+        "keluasan",
+        "area",
+        "km2"
+      ],
+      "source_id": "SRC-DOSM-CENSUS2020",
+      "caveat": "Keluasan boleh berbeza sedikit antara penerbitan mengikut sempadan/kaedah rujukan geospatial; paparkan tahun dan sumber bersama angka."
+    },
+    {
+      "id": "SGR-004",
+      "title": "Daerah pentadbiran",
+      "value": 9,
+      "unit": "daerah",
+      "as_of": "current",
+      "fact": "Selangor mempunyai sembilan daerah pentadbiran: Gombak, Klang, Kuala Langat, Kuala Selangor, Petaling, Sabak Bernam, Sepang, Hulu/Ulu Langat dan Hulu/Ulu Selangor.",
+      "keywords": [
+        "daerah",
+        "9 daerah",
+        "district"
+      ],
+      "source_id": "SRC-DOSM-CENSUS2020"
+    },
+    {
+      "id": "SGR-005",
+      "title": "Pihak Berkuasa Tempatan",
+      "value": 12,
+      "unit": "PBT",
+      "as_of": "2025-2026",
+      "fact": "Negeri Selangor mempunyai 12 Pihak Berkuasa Tempatan.",
+      "keywords": [
+        "pbt",
+        "12 pbt",
+        "pihak berkuasa tempatan"
+      ],
+      "source_id": "SRC-DEWAN-PBT2025"
+    },
+    {
+      "id": "SGR-006",
+      "title": "Mukim",
+      "value": 227,
+      "unit": "mukim",
+      "as_of": "MyCensus 2020 reference",
+      "fact": "Rujukan Penemuan Utama Banci 2020 DOSM menunjukkan 227 mukim di Selangor.",
+      "keywords": [
+        "mukim",
+        "227"
+      ],
+      "source_id": "SRC-DOSM-CENSUS2020"
+    },
+    {
+      "id": "SGR-007",
+      "title": "Penduduk Banci 2020",
+      "value": 6994423,
+      "unit": "orang",
+      "as_of": "2020",
+      "fact": "Banci Penduduk dan Perumahan Malaysia 2020 merekodkan 6,994,423 penduduk di Selangor.",
+      "keywords": [
+        "penduduk",
+        "populasi",
+        "2020",
+        "banci"
+      ],
+      "source_id": "SRC-DOSM-CENSUS2020"
+    },
+    {
+      "id": "SGR-008",
+      "title": "Kepadatan penduduk Banci 2020",
+      "value": 880,
+      "unit": "orang/km²",
+      "as_of": "2020",
+      "fact": "Kepadatan penduduk Selangor berdasarkan Banci 2020 ialah 880 orang bagi setiap km².",
+      "keywords": [
+        "kepadatan",
+        "density",
+        "2020"
+      ],
+      "source_id": "SRC-DOSM-CENSUS2020"
+    },
+    {
+      "id": "SGR-009",
+      "title": "Kadar urbanisasi",
+      "value": 95.8,
+      "unit": "%",
+      "as_of": "2020",
+      "fact": "DOSM melaporkan 95.8% penduduk Selangor tinggal di kawasan bandar pada 2020.",
+      "keywords": [
+        "urbanisasi",
+        "urban",
+        "bandar",
+        "95.8"
+      ],
+      "source_id": "SRC-DOSM-URBAN2020"
+    },
+    {
+      "id": "SGR-010",
+      "title": "Anggaran penduduk 2025",
+      "value": 7406800,
+      "display_value": "7.4068 juta",
+      "unit": "orang",
+      "as_of": "2025P",
+      "fact": "Anggaran penduduk pertengahan tahun Selangor bagi 2025 ialah 7.4068 juta orang.",
+      "keywords": [
+        "penduduk",
+        "populasi",
+        "2025",
+        "anggaran",
+        "7.4 juta"
+      ],
+      "source_id": "SRC-DOSM-POP2025"
+    },
+    {
+      "id": "SGR-011",
+      "title": "Pertumbuhan penduduk tahunan",
+      "value": 0.6,
+      "unit": "%",
+      "as_of": "2025P",
+      "fact": "Kadar pertumbuhan penduduk tahunan Selangor bagi anggaran 2025 ialah 0.6%.",
+      "keywords": [
+        "pertumbuhan",
+        "growth",
+        "0.6",
+        "2025"
+      ],
+      "source_id": "SRC-DOSM-POP2025"
+    },
+    {
+      "id": "SGR-012",
+      "title": "Komposisi warganegara",
+      "value": 90.2,
+      "unit": "%",
+      "as_of": "2025P",
+      "fact": "Warganegara membentuk 90.2% daripada anggaran penduduk Selangor pada 2025; bukan warganegara 9.8%.",
+      "keywords": [
+        "warganegara",
+        "citizen",
+        "2025"
+      ],
+      "source_id": "SRC-DOSM-POP2025"
+    },
+    {
+      "id": "SGR-013",
+      "title": "Nisbah jantina",
+      "value": 114,
+      "unit": "lelaki bagi 100 perempuan",
+      "as_of": "2025P",
+      "fact": "Nisbah jantina Selangor pada 2025 ialah 114 lelaki bagi setiap 100 perempuan.",
+      "keywords": [
+        "jantina",
+        "sex ratio",
+        "lelaki",
+        "perempuan"
+      ],
+      "source_id": "SRC-DOSM-POP2025"
+    },
+    {
+      "id": "SGR-014",
+      "title": "Umur median",
+      "value": 33.8,
+      "unit": "tahun",
+      "as_of": "2025P",
+      "fact": "Umur median penduduk Selangor pada 2025 ialah 33.8 tahun.",
+      "keywords": [
+        "umur median",
+        "median age",
+        "2025"
+      ],
+      "source_id": "SRC-DOSM-POP2025"
+    },
+    {
+      "id": "SGR-015",
+      "title": "Penduduk umur bekerja",
+      "value": 71,
+      "unit": "%",
+      "as_of": "2025P",
+      "fact": "Kumpulan umur 15–64 tahun membentuk 71.0% penduduk Selangor pada 2025.",
+      "keywords": [
+        "umur bekerja",
+        "15 64",
+        "working age"
+      ],
+      "source_id": "SRC-DOSM-POP2025"
+    },
+    {
+      "id": "SGR-016",
+      "title": "Penduduk 65 tahun ke atas",
+      "value": 8.4,
+      "unit": "%",
+      "as_of": "2025P",
+      "fact": "Penduduk berumur 65 tahun dan ke atas membentuk 8.4% penduduk Selangor pada 2025.",
+      "keywords": [
+        "65",
+        "warga emas",
+        "ageing",
+        "elderly"
+      ],
+      "source_id": "SRC-DOSM-POP2025"
+    },
+    {
+      "id": "SGR-017",
+      "title": "Daerah penduduk terbesar",
+      "value": "Petaling",
+      "unit": null,
+      "as_of": "2025",
+      "fact": "Petaling ialah daerah berpenduduk paling ramai di Malaysia pada 2025 dengan kira-kira 2.3706 juta penduduk.",
+      "keywords": [
+        "petaling",
+        "daerah terbesar",
+        "penduduk daerah"
+      ],
+      "source_id": "SRC-OPENDOSM-DISTRICT2025"
+    },
+    {
+      "id": "SGR-018",
+      "title": "Kepadatan Petaling",
+      "value": 4858,
+      "unit": "orang/km²",
+      "as_of": "2025",
+      "fact": "Petaling merekodkan kepadatan penduduk 4,858 orang/km² pada 2025, tertinggi antara daerah pentadbiran Malaysia dalam keluaran DOSM tersebut.",
+      "keywords": [
+        "petaling",
+        "kepadatan",
+        "4858"
+      ],
+      "source_id": "SRC-DOSM-DISTRICT2025"
+    }
+  ],
+  "districts": [
+    {
+      "name": "Gombak"
+    },
+    {
+      "name": "Klang"
+    },
+    {
+      "name": "Kuala Langat"
+    },
+    {
+      "name": "Kuala Selangor"
+    },
+    {
+      "name": "Petaling"
+    },
+    {
+      "name": "Sabak Bernam"
+    },
+    {
+      "name": "Sepang"
+    },
+    {
+      "name": "Hulu Langat",
+      "official_dosm_label": "Ulu Langat"
+    },
+    {
+      "name": "Hulu Selangor",
+      "official_dosm_label": "Ulu Selangor"
+    }
+  ],
+  "local_authorities": [
+    {
+      "abbr": "MBSA",
+      "name": "Majlis Bandaraya Shah Alam"
+    },
+    {
+      "abbr": "MBPJ",
+      "name": "Majlis Bandaraya Petaling Jaya"
+    },
+    {
+      "abbr": "MBSJ",
+      "name": "Majlis Bandaraya Subang Jaya"
+    },
+    {
+      "abbr": "MBDK",
+      "name": "Majlis Bandaraya Diraja Klang"
+    },
+    {
+      "abbr": "MPAJ",
+      "name": "Majlis Perbandaran Ampang Jaya"
+    },
+    {
+      "abbr": "MPS",
+      "name": "Majlis Perbandaran Selayang"
+    },
+    {
+      "abbr": "MPKj",
+      "name": "Majlis Perbandaran Kajang"
+    },
+    {
+      "abbr": "MPSepang",
+      "name": "Majlis Perbandaran Sepang"
+    },
+    {
+      "abbr": "MPKL",
+      "name": "Majlis Perbandaran Kuala Langat"
+    },
+    {
+      "abbr": "MPKS",
+      "name": "Majlis Perbandaran Kuala Selangor"
+    },
+    {
+      "abbr": "MPHS",
+      "name": "Majlis Perbandaran Hulu Selangor"
+    },
+    {
+      "abbr": "MDSB",
+      "name": "Majlis Daerah Sabak Bernam"
+    }
+  ],
+  "logic_rules": [
+    {
+      "id": "RULE-01",
+      "title": "Bezakan Banci dan anggaran",
+      "rule": "Jangan banding angka Banci 2020 dengan anggaran 2025 tanpa menyatakan tahun dan jenis statistik. Banci ialah kiraan baseline; angka antara banci ialah anggaran pertengahan tahun."
+    },
+    {
+      "id": "RULE-02",
+      "title": "Daerah bukan PBT",
+      "rule": "Daerah pentadbiran dan kawasan PBT ialah dua geografi pentadbiran yang berbeza. Jangan anggap satu daerah bersamaan satu PBT."
+    },
+    {
+      "id": "RULE-03",
+      "title": "Utamakan sumber autoritatif",
+      "rule": "Untuk demografi, utamakan DOSM/OpenDOSM. Untuk struktur PBT/kerajaan negeri, utamakan Kerajaan Negeri Selangor/Dewan Negeri/RSN. Untuk maklumat perancangan, utamakan PLANMalaysia dan PLANMalaysia Selangor."
+    },
+    {
+      "id": "RULE-04",
+      "title": "Paparkan tahun rujukan",
+      "rule": "Semua angka yang boleh berubah seperti penduduk, kadar pertumbuhan, status PBT dan KPI hendaklah dipaparkan bersama tahun atau tarikh rujukan."
+    },
+    {
+      "id": "RULE-05",
+      "title": "Preliminary",
+      "rule": "Angka bertanda P atau preliminary hendaklah dikenal pasti sebagai anggaran awal dan tidak dipersembahkan sebagai angka muktamad."
+    },
+    {
+      "id": "RULE-06",
+      "title": "Keluasan",
+      "rule": "Jika keluasan berbeza sedikit antara penerbitan, jangan campur atau puratakan angka. Gunakan satu sumber, nyatakan tahun/sumber dan simpan caveat perbezaan sempadan/kaedah."
+    }
+  ],
+  "sources": [
+    {
+      "id": "SRC-DOSM-CENSUS2020",
+      "agency": "Jabatan Perangkaan Malaysia (DOSM)",
+      "title": "Penemuan Utama Banci Penduduk dan Perumahan Malaysia 2020 — Selangor",
+      "url": "https://www.dosm.gov.my/portal-main/publication-estatistik-log?chapter_id=1618&document_id=449",
+      "accessed": "2026-10-06"
+    },
+    {
+      "id": "SRC-DOSM-URBAN2020",
+      "agency": "Jabatan Perangkaan Malaysia (DOSM)",
+      "title": "Launching of Report on the Key Findings Population and Housing Census of Malaysia 2020",
+      "url": "https://www.dosm.gov.my/portal-main/release-content/launching-of-report-on-the-key-findings-population-and-housing-census-of-malaysia-2020-",
+      "accessed": "2026-10-06"
+    },
+    {
+      "id": "SRC-DOSM-POP2025",
+      "agency": "Jabatan Perangkaan Malaysia (DOSM)",
+      "title": "Current Population Estimates, Selangor, 2025",
+      "url": "https://www.dosm.gov.my/uploads/release-content/file_20251001192403.pdf",
+      "accessed": "2026-10-06"
+    },
+    {
+      "id": "SRC-DOSM-DISTRICT2025",
+      "agency": "Jabatan Perangkaan Malaysia (DOSM)",
+      "title": "Current Population Estimates by Administrative District, 2025",
+      "url": "https://www.dosm.gov.my/portal-main/release-content/current-population-estimates-by-administrative-district-2025",
+      "accessed": "2026-10-06"
+    },
+    {
+      "id": "SRC-OPENDOSM-DISTRICT2025",
+      "agency": "Jabatan Perangkaan Malaysia (OpenDOSM)",
+      "title": "Population Table: Administrative Districts — Petaling, Selangor",
+      "url": "https://open.dosm.gov.my/data-catalogue/population_district?district=petaling&state=selangor&visual=table",
+      "accessed": "2026-10-06"
+    },
+    {
+      "id": "SRC-DEWAN-PBT2025",
+      "agency": "Dewan Negeri Selangor",
+      "title": "Kertas Mesyuarat 2025 — Dua Belas Pihak Berkuasa Tempatan Negeri Selangor",
+      "url": "https://dewan.selangor.gov.my/wp-content/uploads/2025/07/Agenda-7.7.2025-Isnin.pdf",
+      "accessed": "2026-10-06"
+    },
+    {
+      "id": "SRC-DEWAN-SHAH-ALAM",
+      "agency": "Dewan Negeri Selangor",
+      "title": "Bandar Islam di Shah Alam",
+      "url": "https://dewan.selangor.gov.my/question/bandar-islam-di-shah-alam/",
+      "accessed": "2026-10-06"
+    },
+    {
+      "id": "SRC-RSN2035",
+      "agency": "Kerajaan Negeri Selangor / PLANMalaysia Selangor",
+      "title": "Ringkasan Eksekutif Rancangan Struktur Negeri Selangor 2035",
+      "url": "https://www.selangor.gov.my/sabakbernam/resources/RSN%202035/BM_RE_RSN_Selangor_2035_%28Pengubahan%29.pdf",
+      "accessed": "2026-10-06"
+    }
+  ]
+}
