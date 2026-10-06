@@ -750,4 +750,40 @@
 
   renderRealSelangorMap("v7HeroMap",mapSources.hero,{district:true,heroDistrict:true});
   renderRealSelangorMap("v7SpatialMap",mapSources.spatial,{district:true,labels:false});
+
+  const heroMapWrap=document.querySelector(".v7-hero .v7-map-wrap");
+  const heroMap=document.getElementById("v7HeroMap");
+  const heroOrb=document.querySelector(".v7-hero .v7-map-orb");
+
+  if(heroMapWrap && heroMap && window.matchMedia("(pointer:fine)").matches){
+    const resetHeroMap=()=>{
+      heroMap.style.setProperty("--map-rx","0deg");
+      heroMap.style.setProperty("--map-ry","0deg");
+      heroMap.style.setProperty("--map-tx","0px");
+      heroMap.style.setProperty("--map-ty","0px");
+      heroOrb?.style.setProperty("--orb-x","0px");
+      heroOrb?.style.setProperty("--orb-y","0px");
+      heroMapWrap.classList.remove("is-map-hover");
+    };
+
+    heroMapWrap.addEventListener("pointerenter",()=>{
+      heroMapWrap.classList.add("is-map-hover");
+    });
+
+    heroMapWrap.addEventListener("pointermove",(e)=>{
+      const r=heroMapWrap.getBoundingClientRect();
+      const nx=((e.clientX-r.left)/r.width)-.5;
+      const ny=((e.clientY-r.top)/r.height)-.5;
+
+      heroMap.style.setProperty("--map-rx",(-ny*2.8).toFixed(2)+"deg");
+      heroMap.style.setProperty("--map-ry",(nx*3.6).toFixed(2)+"deg");
+      heroMap.style.setProperty("--map-tx",(nx*7).toFixed(1)+"px");
+      heroMap.style.setProperty("--map-ty",(ny*5).toFixed(1)+"px");
+
+      heroOrb?.style.setProperty("--orb-x",(nx*11).toFixed(1)+"px");
+      heroOrb?.style.setProperty("--orb-y",(ny*8).toFixed(1)+"px");
+    });
+
+    heroMapWrap.addEventListener("pointerleave",resetHeroMap);
+  }
 })();
