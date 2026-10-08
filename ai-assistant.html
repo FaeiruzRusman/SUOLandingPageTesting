@@ -156,6 +156,8 @@
     cemetery:{label:"Perkuburan",url:"https://geospatialpms-glitch.github.io/Tapak-Perkuburan-Negeri-Selangor/"},
     safety:{label:"Keselamatan",url:"https://faeiruzrusman.github.io/Dashboard-Kemudahan-Keselamatan/"},
     geopark:{label:"Geopark",url:"https://geospatialpms-glitch.github.io/Dashboard-Geopark-Gombak-Hulu-Langat/"},
+    ksas:{label:"KSAS Negeri Selangor",url:"https://geospatialpms-glitch.github.io/KSAS-Negeri-Selangor/"},
+    sia:{label:"SIA Negeri Selangor",url:"https://geospatialpms-glitch.github.io/SIA-Negeri-Selangor/"},
     landuse:{label:"Guna Tanah",url:"https://sismaps.jpbdselangor.gov.my/dashboard"},
     smartdesaDash:{label:"Dashboard SMARTDesa",url:"https://sismaps.jpbdselangor.gov.my/sdbigscreen"},
     storymaps:{label:"StoryMaps",url:"index.html#storymaps"},
@@ -240,7 +242,7 @@
 
     if(has(q,["apa dashboard","dashboard yang ada","senarai dashboard","dashboard tematik","semua dashboard"])){
       return {
-        text:"SUO kini menghimpunkan <strong>9 Dashboard Tematik</strong>: Guna Tanah, Perumahan, Perindustrian, Kesihatan, Tanah Lapang, Perkuburan, Keselamatan, SMARTDesa dan Geopark.",
+        text:"SUO kini menghimpunkan <strong>11 Dashboard Tematik</strong>: Guna Tanah, KSAS, SIA, Perumahan, Perindustrian, Kesihatan, Tanah Lapang, Perkuburan, Keselamatan, SMARTDesa dan Geopark.",
         links:[links.dashboards,links.landuse,links.housing]
       };
     }
@@ -249,6 +251,20 @@
       return {
         text:"Untuk maklumat perumahan, anda boleh terus ke aplikasi <strong>Perumahan</strong>. Ia menyediakan paparan spatial dan maklumat berkaitan perumahan Negeri Selangor.",
         links:[links.housing,links.dashboards]
+      };
+    }
+
+    if(has(q,["ksas","kawasan sensitif alam sekitar","environmentally sensitive"])){
+      return {
+        text:"Dashboard <strong>Kawasan Sensitif Alam Sekitar (KSAS) Negeri Selangor</strong> tersedia dalam kategori Dashboard Tematik SUO untuk pemantauan dan penerokaan spatial KSAS.",
+        links:[links.ksas,links.dashboards]
+      };
+    }
+
+    if(has(q,["sia","social impact assessment","penilaian impak sosial"])){
+      return {
+        text:"Dashboard <strong>SIA Negeri Selangor</strong> tersedia dalam kategori Dashboard Tematik SUO untuk pemantauan dan maklumat Social Impact Assessment.",
+        links:[links.sia,links.dashboards]
       };
     }
 
