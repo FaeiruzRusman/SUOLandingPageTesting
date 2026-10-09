@@ -159,6 +159,8 @@
     ksas:{label:"KSAS Negeri Selangor",url:"https://geospatialpms-glitch.github.io/KSAS-Negeri-Selangor/"},
     sia:{label:"SIA Negeri Selangor",url:"https://geospatialpms-glitch.github.io/SIA-Negeri-Selangor/"},
     schoolDense:{label:"Sekolah Padat",url:"https://adzhansaike98.github.io/SEKOLAH-PADAT-NEGERI-SELANGOR-TAHUN-2026/"},
+    murninets:{label:"MURNInets",url:"https://sobriazani4-coder.github.io/STATUS-MURNINETS-NEGERI-SELANGOR-TAHUN-2026/"},
+    smartdesaCentre:{label:"Pusat SMARTDesa",url:"https://geospatialpms-glitch.github.io/STORY-MAP-PUSAT-SMART-DESA-NEGERI-SELANGOR/"},
     landuse:{label:"Guna Tanah",url:"https://sismaps.jpbdselangor.gov.my/dashboard"},
     smartdesaDash:{label:"Dashboard SMARTDesa",url:"https://sismaps.jpbdselangor.gov.my/sdbigscreen"},
     storymaps:{label:"StoryMaps",url:"index.html#storymaps"},
@@ -243,7 +245,7 @@
 
     if(has(q,["apa dashboard","dashboard yang ada","senarai dashboard","dashboard tematik","semua dashboard"])){
       return {
-        text:"SUO kini menghimpunkan <strong>12 Dashboard Tematik</strong>: Geopark, Guna Tanah, KSAS, Kemudahan Keselamatan, Kemudahan Kesihatan, Perindustrian, Perumahan, Sekolah Padat, SIA, SMARTDesa, Tanah Lapang Awam dan Tapak Perkuburan.",
+        text:"SUO kini menghimpunkan <strong>14 Dashboard Tematik</strong>: Geopark, Guna Tanah, KSAS, Kemudahan Keselamatan, Kemudahan Kesihatan, MURNInets, Perindustrian, Perumahan, Pusat SMARTDesa, Sekolah Padat, SIA, SMARTDesa, Tanah Lapang Awam dan Tapak Perkuburan.",
         links:[links.dashboards,links.landuse,links.housing]
       };
     }
@@ -259,6 +261,20 @@
       return {
         text:"Dashboard <strong>Kawasan Sensitif Alam Sekitar (KSAS) Negeri Selangor</strong> tersedia dalam kategori Dashboard Tematik SUO untuk pemantauan dan penerokaan spatial KSAS.",
         links:[links.ksas,links.dashboards]
+      };
+    }
+
+    if(has(q,["murninets","murninet","status murninets","bandar mampan"])){
+      return {
+        text:"Dashboard <strong>MURNInets</strong> tersedia dalam kategori Dashboard Tematik SUO untuk pemantauan status MURNInets Negeri Selangor tahun 2026.",
+        links:[links.murninets,links.dashboards]
+      };
+    }
+
+    if(has(q,["pusat smartdesa","pusat smart desa","story map smart desa","story map smartdesa"])){
+      return {
+        text:"Dashboard <strong>Pusat SMARTDesa</strong> menyediakan penerokaan interaktif lokasi dan maklumat Pusat SMARTDesa Negeri Selangor.",
+        links:[links.smartdesaCentre,links.dashboards]
       };
     }
 
