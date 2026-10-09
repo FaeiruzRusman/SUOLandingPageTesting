@@ -3234,32 +3234,46 @@ body{
 
 
 
+
+
 /* =========================================================
-   v7.24.6 — simple two-line SUO hero heading
+   v7.24.7 — isolated two-line hero title lockup
+   No legacy v7-suo-main-title selectors apply here.
    ========================================================= */
-.v7-hero .v7-suo-main-title,
-html[lang="en"] .v7-hero .v7-suo-main-title{
+.v7-hero .v7-hero-title-lockup,
+html[lang="ms"] .v7-hero .v7-hero-title-lockup,
+html[lang="en"] .v7-hero .v7-hero-title-lockup{
   display:block!important;
   width:610px!important;
   max-width:610px!important;
   margin:0 0 20px!important;
+  padding:0!important;
   color:var(--suo-red)!important;
-  white-space:normal!important;
-  overflow:visible!important;
   font-family:"Manrope",sans-serif!important;
   font-weight:800!important;
   letter-spacing:-.04em!important;
+  white-space:normal!important;
 }
 
-.v7-hero .v7-suo-main-title .v7-suo-title-line{
+.v7-hero .v7-hero-title-name,
+.v7-hero .v7-hero-title-abbr{
   display:block!important;
-  width:100%!important;
+  position:static!important;
+  float:none!important;
+  width:auto!important;
+  max-width:none!important;
+  margin-left:0!important;
+  margin-right:0!important;
+  transform:none!important;
+}
+
+.v7-hero .v7-hero-title-name{
   font-size:42px!important;
   line-height:1.02!important;
 }
 
-.v7-hero .v7-suo-main-title .v7-suo-abbr{
-  margin-top:4px!important;
+.v7-hero .v7-hero-title-abbr{
+  margin-top:5px!important;
   font-size:36px!important;
   line-height:1!important;
 }
@@ -3270,17 +3284,18 @@ html[lang="en"] .v7-hero .v7-suo-main-title{
 }
 
 @media(max-width:760px){
-  .v7-hero .v7-suo-main-title,
-  html[lang="en"] .v7-hero .v7-suo-main-title{
+  .v7-hero .v7-hero-title-lockup,
+  html[lang="ms"] .v7-hero .v7-hero-title-lockup,
+  html[lang="en"] .v7-hero .v7-hero-title-lockup{
     width:100%!important;
     max-width:100%!important;
   }
 
-  .v7-hero .v7-suo-main-title .v7-suo-title-line{
+  .v7-hero .v7-hero-title-name{
     font-size:clamp(32px,9vw,40px)!important;
   }
 
-  .v7-hero .v7-suo-main-title .v7-suo-abbr{
+  .v7-hero .v7-hero-title-abbr{
     font-size:clamp(28px,8vw,34px)!important;
   }
 
