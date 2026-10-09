@@ -158,6 +158,7 @@
     geopark:{label:"Geopark",url:"https://geospatialpms-glitch.github.io/Dashboard-Geopark-Gombak-Hulu-Langat/"},
     ksas:{label:"KSAS Negeri Selangor",url:"https://geospatialpms-glitch.github.io/KSAS-Negeri-Selangor/"},
     sia:{label:"SIA Negeri Selangor",url:"https://geospatialpms-glitch.github.io/SIA-Negeri-Selangor/"},
+    schoolDense:{label:"Sekolah Padat Negeri Selangor 2026",url:"https://adzhansaike98.github.io/SEKOLAH-PADAT-NEGERI-SELANGOR-TAHUN-2026/"},
     landuse:{label:"Guna Tanah",url:"https://sismaps.jpbdselangor.gov.my/dashboard"},
     smartdesaDash:{label:"Dashboard SMARTDesa",url:"https://sismaps.jpbdselangor.gov.my/sdbigscreen"},
     storymaps:{label:"StoryMaps",url:"index.html#storymaps"},
@@ -242,7 +243,7 @@
 
     if(has(q,["apa dashboard","dashboard yang ada","senarai dashboard","dashboard tematik","semua dashboard"])){
       return {
-        text:"SUO kini menghimpunkan <strong>11 Dashboard Tematik</strong>: Guna Tanah, KSAS, SIA, Perumahan, Perindustrian, Kesihatan, Tanah Lapang, Perkuburan, Keselamatan, SMARTDesa dan Geopark.",
+        text:"SUO kini menghimpunkan <strong>12 Dashboard Tematik</strong>: Geopark, Guna Tanah, KSAS, Kemudahan Keselamatan, Kemudahan Kesihatan, Perindustrian, Perumahan, Sekolah Padat Negeri Selangor 2026, SIA, SMARTDesa, Tanah Lapang Awam dan Tapak Perkuburan.",
         links:[links.dashboards,links.landuse,links.housing]
       };
     }
@@ -258,6 +259,13 @@
       return {
         text:"Dashboard <strong>Kawasan Sensitif Alam Sekitar (KSAS) Negeri Selangor</strong> tersedia dalam kategori Dashboard Tematik SUO untuk pemantauan dan penerokaan spatial KSAS.",
         links:[links.ksas,links.dashboards]
+      };
+    }
+
+    if(has(q,["sekolah padat","sekolah berkepadatan","high density school","sekolah 2026"])){
+      return {
+        text:"Dashboard <strong>Sekolah Padat Negeri Selangor 2026</strong> tersedia dalam kategori Dashboard Tematik SUO untuk pemantauan sekolah berkepadatan tinggi di Negeri Selangor.",
+        links:[links.schoolDense,links.dashboards]
       };
     }
 
