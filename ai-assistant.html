@@ -150,6 +150,7 @@
     applications:{label:"Terokai Aplikasi SUO",url:"index.html#applications"},
     dashboards:{label:"Dashboard Tematik",url:"index.html#dashboard-tematik"},
     housing:{label:"Perumahan",url:"https://geospatialpms-glitch.github.io/Dashboard-Perumahan-Negeri-Selangor/"},
+    affordableHousing:{label:"Perumahan Mampu Milik",url:"https://geospatialpms-glitch.github.io/Dashboard-Selangor-Affordable-Housing/"},
     industry:{label:"Perindustrian",url:"https://geospatialpms-glitch.github.io/Perindustrian-Negeri-Selangor/"},
     health:{label:"Kesihatan",url:"https://geospatialpms-glitch.github.io/Kemudahan-Kesihatan-Negeri-Selangor/"},
     openSpace:{label:"Tanah Lapang",url:"https://geospatialpms-glitch.github.io/TANAH-LAPANG-AWAM-NEGERI-SELANGOR/"},
@@ -245,8 +246,15 @@
 
     if(has(q,["apa dashboard","dashboard yang ada","senarai dashboard","dashboard tematik","semua dashboard"])){
       return {
-        text:"SUO kini menghimpunkan <strong>14 Dashboard Tematik</strong>: Geopark, Guna Tanah, KSAS, Kemudahan Keselamatan, Kemudahan Kesihatan, MURNInets, Perindustrian, Perumahan, Pusat SMARTDesa, Sekolah Padat, SIA, SMARTDesa, Tanah Lapang Awam dan Tapak Perkuburan.",
+        text:"SUO kini menghimpunkan <strong>15 Dashboard Tematik</strong>: Geopark, Guna Tanah, KSAS, Kemudahan Keselamatan, Kemudahan Kesihatan, MURNInets, Perindustrian, Perumahan, Perumahan Mampu Milik, Pusat SMARTDesa, Sekolah Padat, SIA, SMARTDesa, Tanah Lapang Awam dan Tapak Perkuburan.",
         links:[links.dashboards,links.landuse,links.housing]
+      };
+    }
+
+    if(has(q,["perumahan mampu milik","affordable housing","rumah mampu milik","lphs"])){
+      return {
+        text:"Dashboard <strong>Perumahan Mampu Milik</strong> menyediakan pemantauan projek dan statistik perumahan mampu milik Negeri Selangor.",
+        links:[links.affordableHousing,links.dashboards]
       };
     }
 
