@@ -3232,49 +3232,60 @@ body{
 
 
 
+
+
 /* =========================================================
-   v7.24.5 — final hero heading size
+   v7.24.6 — simple two-line SUO hero heading
    ========================================================= */
-@media(min-width:761px){
-  .v7-hero .v7-suo-main-title,
-  html[lang="en"] .v7-hero .v7-suo-main-title{
-    display:flex!important;
-    align-items:baseline!important;
-    justify-content:flex-start!important;
-    width:610px!important;
-    max-width:610px!important;
-    gap:4px!important;
-    margin:0 0 20px!important;
-    white-space:nowrap!important;
-    overflow:visible!important;
-    font:800 29px/1 "Manrope",sans-serif!important;
-    letter-spacing:-.035em!important;
-  }
+.v7-hero .v7-suo-main-title,
+html[lang="en"] .v7-hero .v7-suo-main-title{
+  display:block!important;
+  width:610px!important;
+  max-width:610px!important;
+  margin:0 0 20px!important;
+  color:var(--suo-red)!important;
+  white-space:normal!important;
+  overflow:visible!important;
+  font-family:"Manrope",sans-serif!important;
+  font-weight:800!important;
+  letter-spacing:-.04em!important;
+}
 
-  .v7-hero .v7-suo-main-title > span{
-    display:inline-block!important;
-    flex:0 0 auto!important;
-  }
+.v7-hero .v7-suo-main-title .v7-suo-title-line{
+  display:block!important;
+  width:100%!important;
+  font-size:42px!important;
+  line-height:1.02!important;
+}
 
-  .v7-hero .v7-suo-main-title .v7-suo-abbr{
-    font-size:1em!important;
-  }
+.v7-hero .v7-suo-main-title .v7-suo-abbr{
+  margin-top:4px!important;
+  font-size:36px!important;
+  line-height:1!important;
+}
 
-  .v7-hero .v7-hero-intro{
-    width:610px!important;
-    max-width:610px!important;
-  }
+.v7-hero .v7-hero-intro{
+  width:610px!important;
+  max-width:610px!important;
 }
 
 @media(max-width:760px){
   .v7-hero .v7-suo-main-title,
   html[lang="en"] .v7-hero .v7-suo-main-title{
-    width:auto!important;
+    width:100%!important;
     max-width:100%!important;
-    white-space:normal!important;
-    font-size:clamp(28px,8vw,36px)!important;
-    line-height:1.02!important;
-    gap:4px!important;
-    flex-wrap:wrap!important;
+  }
+
+  .v7-hero .v7-suo-main-title .v7-suo-title-line{
+    font-size:clamp(32px,9vw,40px)!important;
+  }
+
+  .v7-hero .v7-suo-main-title .v7-suo-abbr{
+    font-size:clamp(28px,8vw,34px)!important;
+  }
+
+  .v7-hero .v7-hero-intro{
+    width:100%!important;
+    max-width:100%!important;
   }
 }
