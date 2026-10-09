@@ -1226,7 +1226,7 @@ iframe[data-src]:not([src]){
 
 .v7-footer-contact-grid{
   display:grid;
-  grid-template-columns:1.08fr 1fr .92fr;
+  grid-template-columns:1fr 1fr;
   gap:14px;
 }
 .v7-footer-panel{
