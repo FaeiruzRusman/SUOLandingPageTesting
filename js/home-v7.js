@@ -952,42 +952,4 @@
     spatialMapWrap.addEventListener("pointerleave",resetSpatialMap);
   }
 
-  // v7.24.4: fit the hero heading to the actual rendered width of its intro copy.
-  const fitHeroTitleToIntro=()=>{
-    const title=document.querySelector(".v7-hero .v7-suo-main-title");
-    const intro=document.querySelector(".v7-hero .v7-hero-intro");
-    if(!title || !intro) return;
-
-    if(window.innerWidth<=760){
-      title.style.removeProperty("font-size");
-      return;
-    }
-
-    // Reset to a known readable starting size, then scale from actual DOM width.
-    let size=46;
-    title.style.setProperty("font-size",size+"px","important");
-
-    const target=Math.floor(intro.getBoundingClientRect().width);
-    let measured=title.getBoundingClientRect().width;
-
-    if(!target || !measured) return;
-
-    // Ratio pass gets very close; refinement guarantees the title does not exceed the intro.
-    size=Math.min(size, size*(target/measured));
-    title.style.setProperty("font-size",size.toFixed(2)+"px","important");
-
-    measured=title.getBoundingClientRect().width;
-    let guard=0;
-    while(measured>target && size>24 && guard<20){
-      size-=0.35;
-      title.style.setProperty("font-size",size.toFixed(2)+"px","important");
-      measured=title.getBoundingClientRect().width;
-      guard++;
-    }
-  };
-
-  fitHeroTitleToIntro();
-  window.addEventListener("load",fitHeroTitleToIntro,{once:true});
-  window.addEventListener("resize",()=>window.requestAnimationFrame(fitHeroTitleToIntro),{passive:true});
-  document.fonts?.ready?.then(fitHeroTitleToIntro);
 })();
