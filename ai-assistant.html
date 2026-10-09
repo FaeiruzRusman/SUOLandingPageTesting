@@ -246,7 +246,7 @@
 
     if(has(q,["apa dashboard","dashboard yang ada","senarai dashboard","dashboard tematik","semua dashboard"])){
       return {
-        text:"SUO kini menghimpunkan <strong>15 Dashboard Tematik</strong>: Geopark, Guna Tanah, KSAS, Kemudahan Keselamatan, Kemudahan Kesihatan, MURNInets, Perindustrian, Perumahan, Perumahan Mampu Milik, Pusat SMARTDesa, Sekolah Padat, SIA, SMARTDesa, Tanah Lapang Awam dan Tapak Perkuburan.",
+        text:"SUO kini menghimpunkan <strong>14 Dashboard Tematik</strong>: Geopark, Guna Tanah, KSAS, Kemudahan Keselamatan, Kemudahan Kesihatan, MURNInets, Perindustrian, Perumahan, Perumahan Mampu Milik, Sekolah Padat, SIA, SMARTDesa, Tanah Lapang Awam dan Tapak Perkuburan.",
         links:[links.dashboards,links.landuse,links.housing]
       };
     }
@@ -281,8 +281,8 @@
 
     if(has(q,["pusat smartdesa","pusat smart desa","story map smart desa","story map smartdesa"])){
       return {
-        text:"Dashboard <strong>Pusat SMARTDesa</strong> menyediakan penerokaan interaktif lokasi dan maklumat Pusat SMARTDesa Negeri Selangor.",
-        links:[links.smartdesaCentre,links.dashboards]
+        text:"StoryMap <strong>Pusat SMARTDesa</strong> menyediakan penerokaan interaktif lokasi dan maklumat Pusat SMARTDesa Negeri Selangor.",
+        links:[links.smartdesaCentre,links.storymaps]
       };
     }
 
@@ -345,7 +345,7 @@
     }
 
     if(has(q,["storymap","storymaps","rsn","rancangan struktur","pelancongan","tourism"])){
-      return {text:"Kategori <strong>StoryMaps</strong> dalam SUO kini merangkumi RSN Selangor 2035 dan Pelancongan Selangor.",links:[links.rsn,links.tourism,links.storymaps]};
+      return {text:"Kategori <strong>StoryMaps</strong> dalam SUO kini merangkumi Pelancongan Selangor, Pusat SMARTDesa dan RSN Selangor 2035.",links:[links.tourism,links.smartdesaCentre,links.rsn,links.storymaps]};
     }
 
     if(has(q,["spatial","kanvas","sempadan pbt","peta pbt","map pbt"])){
