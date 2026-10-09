@@ -3229,25 +3229,44 @@ body{
 
 
 /* =========================================================
-   v7.24.2 — refine hero title width after adding (SUO)
+   v7.24.3 — definitive hero title sizing
+   Keep the full title inside the same 610px measure as intro copy
    ========================================================= */
 @media(min-width:761px){
-  .v7-hero .v7-suo-main-title{
+  .v7-hero .v7-suo-main-title,
+  html[lang="en"] .v7-hero .v7-suo-main-title{
+    display:flex!important;
+    align-items:baseline!important;
+    justify-content:flex-start!important;
     width:610px!important;
     max-width:610px!important;
-    font-size:41px!important;
-    line-height:.98!important;
-    letter-spacing:-.038em!important;
-    gap:7px!important;
-    white-space:nowrap;
+    gap:5px!important;
+    margin:0 0 20px!important;
+    white-space:nowrap!important;
+    overflow:visible!important;
+    font:800 34px/.98 "Manrope",sans-serif!important;
+    letter-spacing:-.042em!important;
   }
+
+  .v7-hero .v7-suo-main-title > span{
+    display:inline-block!important;
+    flex:0 0 auto!important;
+  }
+
   .v7-hero .v7-suo-main-title .v7-suo-abbr{
-    font-size:.94em;
+    font-size:1em!important;
   }
 }
 
 @media(max-width:760px){
-  .v7-hero .v7-suo-main-title{
-    font-size:clamp(32px,9.2vw,40px)!important;
+  .v7-hero .v7-suo-main-title,
+  html[lang="en"] .v7-hero .v7-suo-main-title{
+    width:auto!important;
+    max-width:100%!important;
+    white-space:normal!important;
+    font-size:clamp(30px,8.5vw,38px)!important;
+    line-height:1!important;
+    gap:5px!important;
+    flex-wrap:wrap!important;
   }
 }
