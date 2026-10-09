@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="ms">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#C8102E">
+<title>Penafian | Selangor Urban Observatory</title>
+<link rel="icon" href="assets/logos/logo-suo.png">
+<style>
+:root{font-family:system-ui,-apple-system,"Segoe UI",Arial,sans-serif;color:#29282b;background:#faf8f6}
+*{box-sizing:border-box}body{margin:0;line-height:1.75}header{background:white;border-bottom:1px solid #eadfdc}
+.wrap{max-width:960px;margin:auto;padding:24px}
+.brand{display:flex;gap:13px;align-items:center;text-decoration:none;color:#6d1022;font-weight:750;letter-spacing:.02em}
+.brand img{width:48px;height:48px;object-fit:contain}
+.top{display:flex;align-items:center;justify-content:space-between;gap:16px}
+button{font:inherit;border:1px solid #c9b8b7;border-radius:30px;padding:5px 15px;background:white;color:#7a1730;cursor:pointer}
+main{padding:46px 0 70px}h1{color:#8b1630;font-size:clamp(2rem,4vw,2.7rem);margin:6px 0 18px;line-height:1.2}
+h2{font-size:1.15rem;margin:25px 0 8px;color:#8b1630}p{margin:0 0 15px}
+.kicker{font-weight:700;text-transform:uppercase;letter-spacing:.13em;color:#a68558;font-size:.8rem}
+.panel{background:white;border:1px solid #eee2df;border-radius:17px;padding:clamp(22px,4vw,42px);box-shadow:0 8px 30px #63202c0a}
+.metadata{font-size:.88rem;color:#77676a;margin-bottom:25px}
+.notice{background:#f9f2ed;border-left:3px solid #ba933e;padding:14px 18px;border-radius:6px}
+footer{border-top:1px solid #eadfdc;color:#746e6f;font-size:.85rem;background:white}
+a{color:#8b1630}
+[hidden]{display:none!important}
+@media(max-width:540px){.brand span{font-size:.8rem}.wrap{padding:16px}main{padding:24px 0 46px}}
+</style>
+</head>
+<body>
+<header><div class="wrap top"><a class="brand" href="index.html"><img src="assets/logos/logo-suo.png" alt="Logo SUO"><span>SELANGOR URBAN OBSERVATORY</span></a><button id="switchLang" type="button" aria-label="Switch language">EN</button></div></header>
+<main class="wrap"><div class="panel">
+<section id="ms"><div class="kicker">Portal SUO</div><h1>Penafian</h1><div class="metadata">Tarikh akhir kemas kini halaman: 9 Oktober 2026</div>
+<p>Segala maklumat, data, peta, visualisasi dan analisis yang dipaparkan melalui Portal Selangor Urban Observatory (SUO) disediakan bagi tujuan rujukan, pemantauan, penyelidikan dan sokongan kepada perancangan serta pembuatan keputusan berasaskan data.</p>
+<p>PLANMalaysia Selangor berusaha memastikan maklumat yang disediakan adalah tepat, terkini dan bersumberkan agensi yang berkaitan. Walau bagaimanapun, Jabatan tidak menjamin ketepatan, kelengkapan atau kemas kini semua maklumat pada setiap masa.</p>
+<p>Sebarang penggunaan, tafsiran atau keputusan yang dibuat berdasarkan maklumat portal ini adalah di bawah tanggungjawab pengguna. Maklumat yang dipaparkan tidak menggantikan dokumen rasmi, pengesahan agensi berautoriti atau keputusan pihak berkuasa yang berkaitan.</p>
+<p>Hak cipta, pemilikan dan penggunaan data adalah tertakluk kepada ketetapan agensi pembekal data serta peraturan yang berkuat kuasa.</p>
+<h2>Data Geospatial dan Peta</h2>
+<p>Peta, sempadan dan lapisan geospatial adalah untuk visualisasi dan rujukan perancangan sahaja. Maklumat ini tidak boleh digunakan sebagai pengukuran kadaster, penentuan hak milik atau pengesahan sempadan secara rasmi. Sila rujuk agensi berautoriti untuk pengesahan.</p>
+<h2>Tarikh Kemas Kini Data</h2>
+<p class="notice">Tarikh akhir kemas kini portal tidak semestinya sama dengan tarikh kemas kini setiap dataset, dashboard atau lapisan GIS. Sila rujuk sumber data, tahun rujukan atau metadata yang dinyatakan pada paparan masing-masing. Jika tidak dinyatakan, tarikh kemas kini data belum dapat disahkan.</p>
+<p><a href="index.html">← Kembali ke Portal SUO</a></p></section>
+<section id="en" hidden><div class="kicker">SUO Portal</div><h1>Disclaimer</h1><div class="metadata">Page last updated: 9 October 2026</div>
+<p>All information, data, maps, visualisations and analyses displayed on the Selangor Urban Observatory (SUO) Portal are provided for reference, monitoring, research and to support evidence-based planning and decision-making.</p>
+<p>PLANMalaysia Selangor endeavours to provide accurate and up-to-date information obtained from relevant agencies. However, the Department does not guarantee the accuracy, completeness or currency of all information at all times.</p>
+<p>Users are responsible for how they use, interpret or make decisions based on information from this portal. The information does not replace official documents, verification by competent agencies or decisions issued by the relevant authorities.</p>
+<p>Copyright, ownership and use of data remain subject to the requirements of the respective data-providing agencies and applicable regulations.</p>
+<h2>Geospatial Data and Maps</h2><p>Maps, boundaries and geospatial layers are provided for visualisation and planning reference only. They must not be used for cadastral measurement, determining land ownership or official boundary verification. Please contact the competent authority for verification.</p>
+<h2>Data Update Dates</h2><p class="notice">The portal's last-updated date does not necessarily reflect the update date of individual datasets, dashboards or GIS layers. Refer to the source, reference year or metadata displayed for each dataset. Where this is unavailable, its update date has not been verified.</p>
+<p><a href="index.html">← Back to SUO Portal</a></p></section>
+</div></main>
+<footer><div class="wrap">© 2026 Selangor Urban Observatory · PLANMalaysia Selangor</div></footer>
+<script>
+(function(){const ms=document.getElementById('ms'),en=document.getElementById('en'),btn=document.getElementById('switchLang');function setLanguage(language){const isEn=language==='en';ms.hidden=isEn;en.hidden=!isEn;document.documentElement.lang=isEn?'en':'ms';btn.textContent=isEn?'BM':'EN';}const p=new URLSearchParams(location.search).get('lang');setLanguage(p==='en'?'en':'ms');btn.addEventListener('click',()=>setLanguage(document.documentElement.lang==='ms'?'en':'ms'));})();
+</script>
+</body></html>
