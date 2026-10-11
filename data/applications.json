@@ -1,0 +1,564 @@
+{
+  "meta": {
+    "name": "SUO Applications Registry",
+    "version": "1.0.0",
+    "updated": "2026-10-11",
+    "source_of_truth": true,
+    "note": "All active SUO applications, dashboards, StoryMaps and core platforms should be registered here first."
+  },
+  "groups": [
+    {
+      "id": "dashboard",
+      "label_ms": "Dashboard Tematik",
+      "label_en": "Thematic Dashboards",
+      "landing_order": 1
+    },
+    {
+      "id": "storymap",
+      "label_ms": "StoryMaps",
+      "label_en": "StoryMaps",
+      "landing_order": 2
+    },
+    {
+      "id": "geoportal",
+      "label_ms": "3D GeoPortal",
+      "label_en": "3D GeoPortal",
+      "landing_order": 3
+    },
+    {
+      "id": "sismaps",
+      "label_ms": "SISMAPS",
+      "label_en": "SISMAPS",
+      "landing_order": 4
+    },
+    {
+      "id": "smartdesa",
+      "label_ms": "SMARTDesa",
+      "label_en": "SMARTDesa",
+      "landing_order": 5
+    },
+    {
+      "id": "platform",
+      "label_ms": "Platform",
+      "label_en": "Platforms",
+      "landing_order": 6
+    },
+    {
+      "id": "soon",
+      "label_ms": "Akan Datang",
+      "label_en": "Coming Soon",
+      "landing_order": 99
+    }
+  ],
+  "applications": [
+    {
+      "id": "geopark",
+      "group": "dashboard",
+      "title_ms": "Geopark Gombak-Hulu Langat",
+      "title_en": "Gombak-Hulu Langat Geopark",
+      "tag_ms": "Geopark",
+      "tag_en": "Geopark",
+      "description_ms": "Warisan geologi, geoheritage dan maklumat spatial Geopark Gombak-Hulu Langat.",
+      "description_en": "Geological heritage, geoheritage and spatial information for the Gombak-Hulu Langat Geopark.",
+      "url": "https://geospatialpms-glitch.github.io/Dashboard-Geopark-Gombak-Hulu-Langat/",
+      "status": "active",
+      "host": "GitHub Pages",
+      "keywords": [
+        "geopark",
+        "gombak",
+        "hulu langat",
+        "warisan geologi",
+        "geoheritage",
+        "geotourism",
+        "konservasi"
+      ],
+      "card_class": "geopark",
+      "preview": true
+    },
+    {
+      "id": "landuse",
+      "group": "dashboard",
+      "title_ms": "Guna Tanah",
+      "title_en": "Land Use",
+      "tag_ms": "Guna Tanah",
+      "tag_en": "Land Use",
+      "description_ms": "Pemantauan guna tanah dan maklumat perancangan Negeri Selangor.",
+      "description_en": "Land-use monitoring and planning information for Selangor.",
+      "url": "https://sismaps.jpbdselangor.gov.my/dashboard",
+      "status": "active",
+      "host": "SISMAPS",
+      "keywords": [
+        "guna tanah",
+        "land use",
+        "zoning",
+        "tepu bina",
+        "sismaps"
+      ],
+      "card_class": "landuse",
+      "preview": true
+    },
+    {
+      "id": "ksas",
+      "group": "dashboard",
+      "title_ms": "Kawasan Sensitif Alam Sekitar (KSAS)",
+      "title_en": "Environmentally Sensitive Areas (KSAS)",
+      "tag_ms": "Alam Sekitar",
+      "tag_en": "Environment",
+      "description_ms": "Pemantauan dan penerokaan spatial Kawasan Sensitif Alam Sekitar Negeri Selangor.",
+      "description_en": "Spatial monitoring and exploration of Environmentally Sensitive Areas across Selangor.",
+      "url": "https://geospatialpms-glitch.github.io/KSAS-Negeri-Selangor/",
+      "status": "active",
+      "host": "GitHub Pages",
+      "keywords": [
+        "ksas",
+        "kawasan sensitif alam sekitar",
+        "environmentally sensitive area",
+        "alam sekitar"
+      ],
+      "card_class": "ksas",
+      "preview": true
+    },
+    {
+      "id": "safety",
+      "group": "dashboard",
+      "title_ms": "Kemudahan Keselamatan",
+      "title_en": "Safety Facilities",
+      "tag_ms": "Keselamatan",
+      "tag_en": "Safety",
+      "description_ms": "PDRM, JBPM dan APM dengan analisis liputan serta kemudahan terdekat.",
+      "description_en": "PDRM, JBPM and APM with coverage and nearest-facility analysis.",
+      "url": "https://faeiruzrusman.github.io/Dashboard-Kemudahan-Keselamatan/",
+      "status": "active",
+      "host": "GitHub Pages",
+      "keywords": [
+        "keselamatan",
+        "safety",
+        "polis",
+        "pdrm",
+        "ipk",
+        "ipd",
+        "bomba",
+        "jbpm",
+        "apm",
+        "coverage",
+        "nearest facility"
+      ],
+      "card_class": "safety",
+      "preview": true
+    },
+    {
+      "id": "health",
+      "group": "dashboard",
+      "title_ms": "Kemudahan Kesihatan",
+      "title_en": "Health Facilities",
+      "tag_ms": "Kesihatan",
+      "tag_en": "Health",
+      "description_ms": "Taburan dan capaian kemudahan kesihatan.",
+      "description_en": "Distribution and accessibility of healthcare facilities.",
+      "url": "https://geospatialpms-glitch.github.io/Kemudahan-Kesihatan-Negeri-Selangor/",
+      "status": "active",
+      "host": "GitHub Pages",
+      "keywords": [
+        "kesihatan",
+        "health",
+        "hospital",
+        "klinik",
+        "healthcare"
+      ],
+      "card_class": "health",
+      "preview": true
+    },
+    {
+      "id": "appeal-board",
+      "group": "dashboard",
+      "title_ms": "Lembaga Rayuan Negeri Selangor",
+      "title_en": "Selangor Appeal Board",
+      "tag_ms": "Pengawalan Perancangan",
+      "tag_en": "Planning Control",
+      "description_ms": "Paparan maklumat dan pemantauan berkaitan Lembaga Rayuan Negeri Selangor.",
+      "description_en": "Information and monitoring dashboard for the Selangor Appeal Board.",
+      "url": "https://halimjpbdsel-hue.github.io/DASHBOARD-LEMBAGA-RAYUAN-NEGERI-SELANGOR/",
+      "status": "active",
+      "host": "GitHub Pages",
+      "keywords": [
+        "lembaga rayuan",
+        "appeal board",
+        "rayuan perancangan",
+        "pengawalan perancangan"
+      ],
+      "card_class": "appeal-board",
+      "preview": true
+    },
+    {
+      "id": "murninets",
+      "group": "dashboard",
+      "title_ms": "MURNInets",
+      "title_en": "MURNInets",
+      "tag_ms": "Bandar Mampan",
+      "tag_en": "Sustainable Cities",
+      "description_ms": "Pemantauan status MURNInets Negeri Selangor bagi tahun 2026.",
+      "description_en": "Monitoring of Selangor MURNInets status for 2026.",
+      "url": "https://sobriazani4-coder.github.io/STATUS-MURNINETS-NEGERI-SELANGOR-TAHUN-2026/",
+      "status": "active",
+      "host": "GitHub Pages",
+      "keywords": [
+        "murninets",
+        "murninet",
+        "bandar mampan",
+        "sustainable cities",
+        "2026"
+      ],
+      "card_class": "murninets",
+      "preview": true
+    },
+    {
+      "id": "industry",
+      "group": "dashboard",
+      "title_ms": "Perindustrian",
+      "title_en": "Industry",
+      "tag_ms": "Perindustrian",
+      "tag_en": "Industry",
+      "description_ms": "Taburan industri dan kawasan perindustrian.",
+      "description_en": "Distribution of industries and industrial areas.",
+      "url": "https://geospatialpms-glitch.github.io/Perindustrian-Negeri-Selangor/",
+      "status": "active",
+      "host": "GitHub Pages",
+      "keywords": [
+        "perindustrian",
+        "industry",
+        "industrial park",
+        "kawasan industri"
+      ],
+      "card_class": "industry",
+      "preview": true
+    },
+    {
+      "id": "housing",
+      "group": "dashboard",
+      "title_ms": "Perumahan",
+      "title_en": "Housing",
+      "tag_ms": "Perumahan",
+      "tag_en": "Housing",
+      "description_ms": "Maklumat dan kecerdasan spatial berkaitan perumahan Negeri Selangor.",
+      "description_en": "Spatial information and intelligence related to housing across Selangor.",
+      "url": "https://geospatialpms-glitch.github.io/Dashboard-Perumahan-Negeri-Selangor/",
+      "status": "active",
+      "host": "GitHub Pages",
+      "keywords": [
+        "perumahan",
+        "housing",
+        "rumah",
+        "rsku"
+      ],
+      "card_class": "housing",
+      "preview": true
+    },
+    {
+      "id": "affordable-housing",
+      "group": "dashboard",
+      "title_ms": "Perumahan Mampu Milik",
+      "title_en": "Affordable Housing",
+      "tag_ms": "Perumahan",
+      "tag_en": "Housing",
+      "description_ms": "Pemantauan projek dan statistik perumahan mampu milik Negeri Selangor.",
+      "description_en": "Monitoring of affordable housing projects and statistics across Selangor.",
+      "url": "https://geospatialpms-glitch.github.io/Dashboard-Selangor-Affordable-Housing/",
+      "status": "active",
+      "host": "GitHub Pages",
+      "keywords": [
+        "perumahan mampu milik",
+        "affordable housing",
+        "rumah mampu milik",
+        "lphs"
+      ],
+      "card_class": "affordable-housing",
+      "preview": true
+    },
+    {
+      "id": "school-density",
+      "group": "dashboard",
+      "title_ms": "Sekolah Padat",
+      "title_en": "High-Density Schools",
+      "tag_ms": "Pendidikan",
+      "tag_en": "Education",
+      "description_ms": "Pemantauan sekolah berkepadatan tinggi dan maklumat berkaitan bagi Negeri Selangor tahun 2026.",
+      "description_en": "Monitoring of high-density schools and related information across Selangor for 2026.",
+      "url": "https://adzhansaike98.github.io/SEKOLAH-PADAT-NEGERI-SELANGOR-TAHUN-2026/",
+      "status": "active",
+      "host": "GitHub Pages",
+      "keywords": [
+        "sekolah padat",
+        "sekolah berkepadatan",
+        "high density school",
+        "pendidikan",
+        "2026"
+      ],
+      "card_class": "school-density",
+      "preview": true
+    },
+    {
+      "id": "sia",
+      "group": "dashboard",
+      "title_ms": "SIA Negeri Selangor",
+      "title_en": "Selangor SIA",
+      "tag_ms": "Penilaian Impak Sosial",
+      "tag_en": "Social Impact Assessment",
+      "description_ms": "Dashboard pemantauan dan maklumat Social Impact Assessment (SIA) bagi Negeri Selangor.",
+      "description_en": "Monitoring and information dashboard for Social Impact Assessment (SIA) in Selangor.",
+      "url": "https://geospatialpms-glitch.github.io/SIA-Negeri-Selangor/",
+      "status": "active",
+      "host": "GitHub Pages",
+      "keywords": [
+        "sia",
+        "social impact assessment",
+        "penilaian impak sosial"
+      ],
+      "card_class": "sia",
+      "preview": true
+    },
+    {
+      "id": "smartdesa-dashboard",
+      "group": "dashboard",
+      "title_ms": "SMARTDesa",
+      "title_en": "SMARTDesa",
+      "tag_ms": "Desa",
+      "tag_en": "Rural",
+      "description_ms": "Paparan dashboard maklumat pembangunan desa Negeri Selangor.",
+      "description_en": "Dashboard view of rural development information across Selangor.",
+      "url": "https://sismaps.jpbdselangor.gov.my/sdbigscreen",
+      "status": "active",
+      "host": "SISMAPS",
+      "keywords": [
+        "smartdesa",
+        "desa",
+        "rural",
+        "kampung",
+        "pembangunan desa"
+      ],
+      "card_class": "smartdesa",
+      "preview": true
+    },
+    {
+      "id": "open-space",
+      "group": "dashboard",
+      "title_ms": "Tanah Lapang Awam",
+      "title_en": "Public Open Space",
+      "tag_ms": "Tanah Lapang",
+      "tag_en": "Open Space",
+      "description_ms": "Maklumat dan taburan tanah lapang awam Negeri Selangor.",
+      "description_en": "Information and distribution of public open spaces across Selangor.",
+      "url": "https://geospatialpms-glitch.github.io/TANAH-LAPANG-AWAM-NEGERI-SELANGOR/",
+      "status": "active",
+      "host": "GitHub Pages",
+      "keywords": [
+        "tanah lapang",
+        "open space",
+        "taman",
+        "rekreasi"
+      ],
+      "card_class": "open",
+      "preview": true
+    },
+    {
+      "id": "cemetery",
+      "group": "dashboard",
+      "title_ms": "Tapak Perkuburan",
+      "title_en": "Cemetery Sites",
+      "tag_ms": "Perkuburan",
+      "tag_en": "Cemetery",
+      "description_ms": "Inventori spatial dan taburan tapak perkuburan Negeri Selangor.",
+      "description_en": "Spatial inventory and distribution of cemetery sites across Selangor.",
+      "url": "https://geospatialpms-glitch.github.io/Tapak-Perkuburan-Negeri-Selangor/",
+      "status": "active",
+      "host": "GitHub Pages",
+      "keywords": [
+        "perkuburan",
+        "cemetery",
+        "kubur",
+        "burial"
+      ],
+      "card_class": "cemetery",
+      "preview": true
+    },
+    {
+      "id": "tourism-storymap",
+      "group": "storymap",
+      "title_ms": "Pelancongan Selangor",
+      "title_en": "Selangor Tourism",
+      "tag_ms": "StoryMap",
+      "tag_en": "StoryMap",
+      "description_ms": "Panduan pelaksanaan dan maklumat pelancongan Negeri Selangor.",
+      "description_en": "Implementation guide and tourism information for Selangor.",
+      "url": "https://arcg.is/1WiD0n2",
+      "status": "active",
+      "host": "ArcGIS StoryMaps",
+      "keywords": [
+        "pelancongan",
+        "tourism",
+        "destinasi",
+        "travel"
+      ],
+      "card_class": "tourism",
+      "preview": true
+    },
+    {
+      "id": "smartdesa-storymap",
+      "group": "storymap",
+      "title_ms": "Pusat SMARTDesa",
+      "title_en": "SMARTDesa Centres",
+      "tag_ms": "StoryMap",
+      "tag_en": "StoryMap",
+      "description_ms": "Penerokaan maklumat dan lokasi Pusat SMARTDesa Negeri Selangor melalui paparan interaktif.",
+      "description_en": "Interactive exploration of Selangor SMARTDesa centres and related information.",
+      "url": "https://geospatialpms-glitch.github.io/STORY-MAP-PUSAT-SMART-DESA-NEGERI-SELANGOR/",
+      "status": "active",
+      "host": "GitHub Pages",
+      "keywords": [
+        "pusat smartdesa",
+        "pusat smart desa",
+        "storymap",
+        "desa pintar"
+      ],
+      "card_class": "smartdesa-story",
+      "preview": true
+    },
+    {
+      "id": "rsn-storymap",
+      "group": "storymap",
+      "title_ms": "RSN Selangor 2035",
+      "title_en": "Selangor State Structure Plan 2035",
+      "tag_ms": "StoryMap",
+      "tag_en": "StoryMap",
+      "description_ms": "Rancangan Struktur Negeri Selangor 2035 dalam pengalaman StoryMap.",
+      "description_en": "Selangor State Structure Plan 2035 presented through StoryMap.",
+      "url": "https://arcg.is/11Sbea",
+      "status": "active",
+      "host": "ArcGIS StoryMaps",
+      "keywords": [
+        "rsn",
+        "rancangan struktur",
+        "selangor 2035",
+        "planning policy"
+      ],
+      "card_class": "rsn",
+      "preview": true
+    },
+    {
+      "id": "geoportal",
+      "group": "geoportal",
+      "title_ms": "Selangor 3D GeoPortal",
+      "title_en": "Selangor 3D GeoPortal",
+      "tag_ms": "3D GeoPortal",
+      "tag_en": "3D GeoPortal",
+      "description_ms": "GeoPortal flagship SUO dengan paparan 2D/3D, carian pintar, trafik langsung dan lapisan kecerdasan.",
+      "description_en": "SUO flagship GeoPortal with 2D/3D views, smart search, live traffic and intelligence layers.",
+      "url": "https://faeiruzrusman.github.io/selangor-3d-map/",
+      "status": "active",
+      "host": "GitHub Pages",
+      "keywords": [
+        "geoportal",
+        "3d",
+        "peta",
+        "map",
+        "spatial"
+      ],
+      "preview": true
+    },
+    {
+      "id": "sismaps",
+      "group": "sismaps",
+      "title_ms": "SISMAPS",
+      "title_en": "SISMAPS",
+      "tag_ms": "SISMAPS",
+      "tag_en": "SISMAPS",
+      "description_ms": "Sistem Maklumat Perancangan Guna Tanah Negeri Selangor.",
+      "description_en": "Selangor Land Use Planning Information System.",
+      "url": "https://sismaps.jpbdselangor.gov.my/index",
+      "status": "active",
+      "host": "SISMAPS",
+      "keywords": [
+        "sismaps",
+        "guna tanah",
+        "perancangan"
+      ],
+      "preview": true
+    },
+    {
+      "id": "smartdesa-platform",
+      "group": "smartdesa",
+      "title_ms": "SMARTDesa",
+      "title_en": "SMARTDesa",
+      "tag_ms": "SMARTDesa",
+      "tag_en": "SMARTDesa",
+      "description_ms": "Platform maklumat pembangunan desa dalam ekosistem SISMAPS.",
+      "description_en": "Rural development information platform within the SISMAPS ecosystem.",
+      "url": "https://sismaps.jpbdselangor.gov.my/smartdesa",
+      "status": "active",
+      "host": "SISMAPS",
+      "keywords": [
+        "smartdesa",
+        "desa",
+        "rural"
+      ],
+      "preview": true
+    },
+    {
+      "id": "spatial-analytics",
+      "group": "platform",
+      "title_ms": "Analitik Spatial SUO",
+      "title_en": "SUO Spatial Analytics",
+      "tag_ms": "Platform",
+      "tag_en": "Platform",
+      "description_ms": "Workspace analisis spatial dan kecerdasan perancangan SUO.",
+      "description_en": "Workspace for spatial analysis and planning intelligence.",
+      "url": "https://faeiruzrusman.github.io/spatial-analytics/",
+      "status": "active",
+      "host": "GitHub Pages",
+      "keywords": [
+        "analitik spatial",
+        "spatial analytics",
+        "nearest facility",
+        "coverage analysis"
+      ],
+      "preview": false,
+      "catalog_only": true
+    },
+    {
+      "id": "e20a",
+      "group": "soon",
+      "title_ms": "Permohonan e20A",
+      "title_en": "e20A Applications",
+      "tag_ms": "Dashboard",
+      "tag_en": "Dashboard",
+      "description_ms": "Aplikasi digital SUO dalam pembangunan.",
+      "description_en": "SUO digital application in development.",
+      "url": null,
+      "status": "soon",
+      "host": null,
+      "keywords": [
+        "e20a",
+        "permohonan"
+      ],
+      "preview": false
+    },
+    {
+      "id": "telecom-towers",
+      "group": "soon",
+      "title_ms": "Menara Telekomunikasi",
+      "title_en": "Telecommunication Towers",
+      "tag_ms": "Dashboard",
+      "tag_en": "Dashboard",
+      "description_ms": "Aplikasi digital SUO dalam pembangunan.",
+      "description_en": "SUO digital application in development.",
+      "url": null,
+      "status": "soon",
+      "host": null,
+      "keywords": [
+        "telekomunikasi",
+        "menara",
+        "telco"
+      ],
+      "preview": false
+    }
+  ]
+}
