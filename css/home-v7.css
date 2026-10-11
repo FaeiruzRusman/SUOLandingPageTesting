@@ -3310,3 +3310,18 @@ html[lang="en"] .v7-hero .v7-hero-title-lockup{
 .v7-footer-bottom > span{display:inline-flex!important;align-items:center!important;gap:5px!important;white-space:nowrap!important}
 .v7-footer-bottom > span > span{display:inline!important;white-space:nowrap!important}
 @media(max-width:760px){.v7-footer-bottom{flex-wrap:wrap!important;gap:8px!important}.v7-footer-bottom > span{white-space:normal!important}}
+
+
+/* v7.27.1 — mobile nested Applications submenu tap state */
+@media(max-width:1000px){
+  .v7-mobile-open .v7-nav-flyout-item.submenu-open > .v7-nav-side-menu{
+    max-height:420px!important;
+    margin:3px 0 6px!important;
+    padding:6px!important;
+  }
+
+  .v7-mobile-open .v7-nav-flyout-item.submenu-open > .v7-nav-flyout-parent .v7-nav-side-arrow{
+    transform:rotate(90deg)!important;
+    color:var(--suo-red)!important;
+  }
+}
