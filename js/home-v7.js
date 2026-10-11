@@ -40,7 +40,17 @@
   });
 
   applicationsNav?.addEventListener("click",(e)=>{
-    if(e.target.closest(".v7-nav-drop-menu a")){
+    const parent=e.target.closest(".v7-nav-flyout-parent");
+    if(parent && window.matchMedia("(max-width:1000px)").matches){
+      e.preventDefault();
+      const item=parent.closest(".v7-nav-flyout-item");
+      const open=!item?.classList.contains("submenu-open");
+      applicationsNav.querySelectorAll(".v7-nav-flyout-item.submenu-open").forEach(x=>x.classList.remove("submenu-open"));
+      item?.classList.toggle("submenu-open",open);
+      return;
+    }
+
+    if(e.target.closest(".v7-nav-side-menu a")){
       setApplicationsOpen(false);
       body.classList.remove("v7-mobile-open");
       menu?.setAttribute("aria-expanded","false");
