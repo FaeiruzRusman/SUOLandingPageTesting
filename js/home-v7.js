@@ -22,7 +22,7 @@
   // v7.19.5: primary navigation + Applications dropdown.
   const applicationsNav=document.getElementById("v7ApplicationsNav");
   const applicationsToggle=applicationsNav?.querySelector(".v7-nav-drop-toggle");
-  const applicationSubLinks=Array.from(applicationsNav?.querySelectorAll(".v7-nav-drop-menu a") || []);
+  // Flyout links are registry-rendered asynchronously; use event delegation.
   const primaryNavLinks=Array.from(document.querySelectorAll('#v7PrimaryNav > a[href^="#"]'));
   const primarySectionIds=["home","spatial","ecosystem","applications","roadmap","contact"];
   const primarySections=primarySectionIds
@@ -39,11 +39,13 @@
     setApplicationsOpen(!applicationsNav?.classList.contains("open"));
   });
 
-  applicationSubLinks.forEach(link=>link.addEventListener("click",()=>{
-    setApplicationsOpen(false);
-    body.classList.remove("v7-mobile-open");
-    menu?.setAttribute("aria-expanded","false");
-  }));
+  applicationsNav?.addEventListener("click",(e)=>{
+    if(e.target.closest(".v7-nav-drop-menu a")){
+      setApplicationsOpen(false);
+      body.classList.remove("v7-mobile-open");
+      menu?.setAttribute("aria-expanded","false");
+    }
+  });
 
   document.addEventListener("click",(e)=>{
     if(applicationsNav && !applicationsNav.contains(e.target)) setApplicationsOpen(false);
@@ -183,12 +185,15 @@
   };
   let code = localStorage.getItem('suo-lang') || 'ms';
   applyLang(code);
-  lang?.addEventListener('click',()=>{code = code === 'ms' ? 'en' : 'ms'; applyLang(code); window.setTimeout(()=>{ if(typeof renderSearch === "function" && searchPanel && !searchPanel.hidden) renderSearch(searchInput?.value || ""); if(typeof applyTheme === "function") applyTheme(localStorage.getItem("suo-theme") || "housing"); },0)});
+  lang?.addEventListener('click',()=>{code = code === 'ms' ? 'en' : 'ms'; applyLang(code); window.setTimeout(()=>{ if(typeof renderSearch === "function" && searchPanel && !searchPanel.hidden) renderSearch(searchInput?.value || ""); if(typeof applyTheme === "function") applyTheme(localStorage.getItem("suo-theme") || "housing"); if(window.SUOApps) window.SUOApps.refreshLanguage().catch(()=>{}); },0)});
 
   const io = new IntersectionObserver(entries => entries.forEach(e => {
     if(e.isIntersecting){ e.target.classList.add('visible'); io.unobserve(e.target); }
   }), {threshold:.12});
   document.querySelectorAll('.v7-reveal').forEach(el=>io.observe(el));
+  document.addEventListener("suo:applications-rendered",()=>{
+    document.querySelectorAll(".registry-app-card.v7-reveal:not(.visible)").forEach(el=>io.observe(el));
+  });
 
   // Theme controls are wired below with real spatial overlays and linked applications.
 
@@ -453,7 +458,7 @@
   document.querySelectorAll(".v7-theme[data-theme]").forEach(btn=>btn.addEventListener("click",()=>applyTheme(btn.dataset.theme)));
   window.setTimeout(()=>applyTheme("housing"),0);
 
-  const suoSearchIndex = [
+  let suoSearchIndex = [
     {
       titleMs:"Dashboard Perumahan Negeri Selangor", titleEn:"Selangor Housing Dashboard",
       type:"Dashboard", icon:"⌂",
@@ -593,6 +598,30 @@
       keywords:["trafik","traffic","live traffic","jalan","kesesakan","congestion"]
     }
   ];
+
+  // v7.27.0: Applications come from the central registry.
+  // Keep GeoPortal layer shortcuts from the legacy index, but replace app-level
+  // Dashboard / StoryMap / Platform records with registry records.
+  const syncSearchWithRegistry=async()=>{
+    if(!window.SUOApps) return;
+    try{
+      const apps=await window.SUOApps.active();
+      const registryItems=apps.map(app=>({
+        titleMs:app.title_ms,
+        titleEn:app.title_en,
+        type:app.group==="dashboard"?"Dashboard":app.group==="storymap"?"StoryMap":"Platform",
+        icon:app.group==="dashboard"?"▦":app.group==="storymap"?"▤":"◈",
+        url:app.url,
+        keywords:app.keywords||[]
+      }));
+      const layerOnly=suoSearchIndex.filter(item=>
+        (item.typeMs==="Layer GeoPortal" || item.typeEn==="GeoPortal Layer")
+      );
+      suoSearchIndex=[...registryItems,...layerOnly];
+      if(searchPanel && !searchPanel.hidden) renderSearch(searchInput?.value||"");
+    }catch(err){ console.warn("SUO registry search sync failed",err); }
+  };
+  syncSearchWithRegistry();
 
   const normalizeSearch = (s) => (s || "")
     .toLowerCase()
