@@ -138,6 +138,7 @@
   </div>
 </main>
 
+<script src="js/app-registry.js?v=1.0.0"></script>
 <script src="js/suo-knowledge.js?v=1.3.0"></script>
 <script>
 (() => {
@@ -178,11 +179,34 @@
     knowledge:{label:"SUO Knowledge Base",url:"knowledge.html"}
   };
 
+  const appRegistryReady=window.SUOApps?.load().then(async()=>{
+    const mapping={
+      housing:"housing",affordableHousing:"affordable-housing",industry:"industry",health:"health",
+      openSpace:"open-space",cemetery:"cemetery",safety:"safety",geopark:"geopark",ksas:"ksas",
+      sia:"sia",schoolDense:"school-density",appealBoard:"appeal-board",murninets:"murninets",
+      smartdesaCentre:"smartdesa-storymap",landuse:"landuse",smartdesaDash:"smartdesa-dashboard",
+      rsn:"rsn-storymap",tourism:"tourism-storymap",geoportal:"geoportal",sismaps:"sismaps",
+      smartdesa:"smartdesa-platform"
+    };
+    for(const [key,id] of Object.entries(mapping)){
+      const app=await window.SUOApps.getById(id);
+      if(app) links[key]={label:app.title_ms,url:app.url};
+    }
+  }).catch(()=>null) || Promise.resolve(null);
+
+  const registrySummary=async(group)=>{
+    await appRegistryReady;
+    if(!window.SUOApps) return null;
+    const items=await window.SUOApps.group(group);
+    return {items,count:items.length,names:items.map(x=>x.title_ms)};
+  };
+
   const norm=window.SUOKnowledge?.normalize || (s=>String(s||"").toLowerCase());
   const has=(q,words)=>words.some(w=>q.includes(w));
   const knowledgeReady=window.SUOKnowledge?.load?.().catch(()=>null) || Promise.resolve(null);
 
   const route=async(raw)=>{
+    await appRegistryReady;
     const q=norm(raw);
 
     if(!q) return {
@@ -247,7 +271,7 @@
 
     if(has(q,["apa dashboard","dashboard yang ada","senarai dashboard","dashboard tematik","semua dashboard"])){
       return {
-        text:"SUO kini menghimpunkan <strong>15 Dashboard Tematik</strong>: Geopark, Guna Tanah, KSAS, Kemudahan Keselamatan, Kemudahan Kesihatan, Lembaga Rayuan Negeri Selangor, MURNInets, Perindustrian, Perumahan, Perumahan Mampu Milik, Sekolah Padat, SIA, SMARTDesa, Tanah Lapang Awam dan Tapak Perkuburan.",
+        text:(()=>"<strong>Dashboard Tematik SUO</strong> kini mempunyai senarai aplikasi yang diselaraskan terus daripada Central Applications Registry.")(),
         links:[links.dashboards,links.landuse,links.housing]
       };
     }
@@ -353,7 +377,9 @@
     }
 
     if(has(q,["storymap","storymaps","rsn","rancangan struktur","pelancongan","tourism"])){
-      return {text:"Kategori <strong>StoryMaps</strong> dalam SUO kini merangkumi Pelancongan Selangor, Pusat SMARTDesa dan RSN Selangor 2035.",links:[links.tourism,links.smartdesaCentre,links.rsn,links.storymaps]};
+      const summary=await registrySummary("storymap");
+      const names=summary?.names?.join(", ")||"StoryMaps SUO";
+      return {text:"Kategori <strong>StoryMaps</strong> mempunyai "+(summary?.count||0)+" aplikasi: "+names+".",links:[links.storymaps,links.tourism,links.smartdesaCentre,links.rsn]};
     }
 
     if(has(q,["spatial","kanvas","sempadan pbt","peta pbt","map pbt"])){
