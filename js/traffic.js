@@ -1,66 +1,65 @@
 (() => {
-  "use strict";
+  const SUPABASE_URL="https://wafxbgltfohxbupjzfsr.supabase.co";
+  const SUPABASE_KEY="sb_publishable_o_7nBoBlcZZo6eDNdOVOYg_UCb1PfQC";
+  const STORAGE_KEY="suo-visitor-id";
 
-  const API = "https://abacus.jasoncameron.dev";
-  const NS = "selangor-urban-observatory-portal-2026";
-  const TOTAL_KEY = "total-pageviews";
-  const UNIQUE_KEY = "unique-browsers";
-  const UNIQUE_FLAG = "suo_unique_visitor_v1";
-
-  const hit = async (key) => {
-    const r = await fetch(`${API}/hit/${NS}/${key}`, {cache:"no-store"});
-    if(!r.ok) throw new Error("Traffic counter "+r.status);
-    return r.json();
+  const isLikelyBot=()=>{
+    const ua=navigator.userAgent||"";
+    return navigator.webdriver || /bot|crawler|spider|headless|preview|facebookexternalhit|whatsapp/i.test(ua);
   };
 
-  const get = async (key) => {
-    const r = await fetch(`${API}/get/${NS}/${key}`, {cache:"no-store"});
-    if(!r.ok) throw new Error("Traffic counter "+r.status);
-    return r.json();
-  };
-
-  const valueOf = data => Number(data?.value ?? data?.count ?? 0) || 0;
-  const format = n => new Intl.NumberFormat(document.documentElement.lang==="en"?"en-MY":"ms-MY").format(n);
-
-  const paint = (total, unique) => {
-    document.querySelectorAll("[data-suo-total-visits]").forEach(el => {
-      el.textContent = format(total);
-    });
-    document.querySelectorAll("[data-suo-unique-visitors]").forEach(el => {
-      el.textContent = format(unique);
-    });
-    document.querySelectorAll("[data-suo-traffic-status]").forEach(el => {
-      el.hidden = true;
-    });
-  };
-
-  const run = async () => {
+  const getVisitorId=()=>{
     try{
-      const totalData = await hit(TOTAL_KEY);
-
-      let uniqueData;
-      let alreadyCounted = false;
-      try { alreadyCounted = localStorage.getItem(UNIQUE_FLAG) === "1"; } catch(_) {}
-
-      if(!alreadyCounted){
-        uniqueData = await hit(UNIQUE_KEY);
-        try { localStorage.setItem(UNIQUE_FLAG,"1"); } catch(_) {}
-      }else{
-        uniqueData = await get(UNIQUE_KEY);
+      let id=localStorage.getItem(STORAGE_KEY);
+      if(!id){
+        id=crypto.randomUUID ? crypto.randomUUID() :
+          "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g,c=>{
+            const r=Math.random()*16|0,v=c==="x"?r:(r&0x3|0x8); return v.toString(16);
+          });
+        localStorage.setItem(STORAGE_KEY,id);
       }
-
-      paint(valueOf(totalData), valueOf(uniqueData));
-    }catch(err){
-      console.warn("SUO traffic counter unavailable", err);
-      document.querySelectorAll("[data-suo-traffic]").forEach(el => {
-        el.hidden = true;
-      });
+      return id;
+    }catch{
+      return crypto.randomUUID ? crypto.randomUUID() : "00000000-0000-4000-8000-000000000001";
     }
   };
 
-  if(document.readyState==="loading"){
-    document.addEventListener("DOMContentLoaded", run, {once:true});
-  }else{
-    run();
-  }
+  const fmt=n=>new Intl.NumberFormat(document.documentElement.lang==="en"?"en-MY":"ms-MY").format(Number(n||0));
+
+  const updateCounter=(data)=>{
+    const today=document.getElementById("suoTrafficToday");
+    const total=document.getElementById("suoTrafficTotal");
+    const unique=document.getElementById("suoTrafficUnique");
+    if(today) today.textContent=fmt(data.today_views);
+    if(total) total.textContent=fmt(data.portal_views);
+    if(unique) unique.textContent=fmt(data.unique_visitors);
+    document.querySelectorAll("[data-traffic-status]").forEach(el=>{
+      el.dataset.trafficStatus="ready";
+    });
+  };
+
+  const record=async()=>{
+    if(location.protocol==="file:" || isLikelyBot()) return;
+    const path=location.pathname.replace(/\/+$/,"/") || "/";
+    const visitorId=getVisitorId();
+    try{
+      const res=await fetch(SUPABASE_URL+"/rest/v1/rpc/suo_record_portal_view",{
+        method:"POST",
+        headers:{
+          "apikey":SUPABASE_KEY,
+          "Content-Type":"application/json"
+        },
+        body:JSON.stringify({p_path:path,p_visitor_id:visitorId}),
+        keepalive:true
+      });
+      if(!res.ok) throw new Error("Traffic RPC "+res.status);
+      const rows=await res.json();
+      if(Array.isArray(rows)&&rows[0]) updateCounter(rows[0]);
+    }catch(err){
+      console.warn("SUO traffic counter unavailable",err);
+    }
+  };
+
+  if(document.readyState==="loading") document.addEventListener("DOMContentLoaded",record,{once:true});
+  else record();
 })();
