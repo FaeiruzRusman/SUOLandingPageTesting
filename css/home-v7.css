@@ -3325,3 +3325,37 @@ html[lang="en"] .v7-hero .v7-hero-title-lockup{
     color:var(--suo-red)!important;
   }
 }
+
+
+/* v7.27.1 — privacy-minimal portal traffic counter */
+.v7-traffic-counter{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin:18px 0 0;
+  padding:12px 0 2px;
+  border-top:1px solid rgba(255,255,255,.12);
+}
+.v7-traffic-counter>div{
+  display:flex;
+  align-items:baseline;
+  gap:7px;
+  padding:6px 10px;
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:999px;
+  background:rgba(255,255,255,.045);
+}
+.v7-traffic-counter span{
+  font-size:11px;
+  color:rgba(255,255,255,.62);
+}
+.v7-traffic-counter strong{
+  font-size:13px;
+  color:#fff;
+  font-variant-numeric:tabular-nums;
+}
+.v7-traffic-counter[data-traffic-status="loading"] strong{opacity:.55}
+@media(max-width:760px){
+  .v7-traffic-counter{gap:7px}
+  .v7-traffic-counter>div{padding:5px 8px}
+}
