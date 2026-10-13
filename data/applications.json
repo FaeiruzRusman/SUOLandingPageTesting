@@ -1,8 +1,8 @@
 {
   "meta": {
     "name": "SUO Applications Registry",
-    "version": "1.0.0",
-    "updated": "2026-10-11",
+    "version": "1.1.0",
+    "updated": "2026-10-14",
     "source_of_truth": true,
     "note": "All active SUO applications, dashboards, StoryMaps and core platforms should be registered here first."
   },
@@ -73,7 +73,11 @@
         "konservasi"
       ],
       "card_class": "geopark",
-      "preview": true
+      "preview": true,
+      "themes": [
+        "environment",
+        "economy"
+      ]
     },
     {
       "id": "landuse",
@@ -95,7 +99,10 @@
         "sismaps"
       ],
       "card_class": "landuse",
-      "preview": true
+      "preview": true,
+      "themes": [
+        "planning"
+      ]
     },
     {
       "id": "ksas",
@@ -116,7 +123,10 @@
         "alam sekitar"
       ],
       "card_class": "ksas",
-      "preview": true
+      "preview": true,
+      "themes": [
+        "environment"
+      ]
     },
     {
       "id": "safety",
@@ -144,7 +154,10 @@
         "nearest facility"
       ],
       "card_class": "safety",
-      "preview": true
+      "preview": true,
+      "themes": [
+        "facilities"
+      ]
     },
     {
       "id": "health",
@@ -166,7 +179,10 @@
         "healthcare"
       ],
       "card_class": "health",
-      "preview": true
+      "preview": true,
+      "themes": [
+        "facilities"
+      ]
     },
     {
       "id": "appeal-board",
@@ -187,7 +203,10 @@
         "pengawalan perancangan"
       ],
       "card_class": "appeal-board",
-      "preview": true
+      "preview": true,
+      "themes": [
+        "planning"
+      ]
     },
     {
       "id": "murninets",
@@ -209,7 +228,10 @@
         "2026"
       ],
       "card_class": "murninets",
-      "preview": true
+      "preview": true,
+      "themes": [
+        "planning"
+      ]
     },
     {
       "id": "industry",
@@ -230,7 +252,10 @@
         "kawasan industri"
       ],
       "card_class": "industry",
-      "preview": true
+      "preview": true,
+      "themes": [
+        "economy"
+      ]
     },
     {
       "id": "housing",
@@ -251,7 +276,10 @@
         "rsku"
       ],
       "card_class": "housing",
-      "preview": true
+      "preview": true,
+      "themes": [
+        "housing"
+      ]
     },
     {
       "id": "affordable-housing",
@@ -272,7 +300,10 @@
         "lphs"
       ],
       "card_class": "affordable-housing",
-      "preview": true
+      "preview": true,
+      "themes": [
+        "housing"
+      ]
     },
     {
       "id": "school-density",
@@ -294,7 +325,10 @@
         "2026"
       ],
       "card_class": "school-density",
-      "preview": true
+      "preview": true,
+      "themes": [
+        "facilities"
+      ]
     },
     {
       "id": "sia",
@@ -314,7 +348,10 @@
         "penilaian impak sosial"
       ],
       "card_class": "sia",
-      "preview": true
+      "preview": true,
+      "themes": [
+        "planning"
+      ]
     },
     {
       "id": "smartdesa-dashboard",
@@ -336,7 +373,10 @@
         "pembangunan desa"
       ],
       "card_class": "smartdesa",
-      "preview": true
+      "preview": true,
+      "themes": [
+        "community"
+      ]
     },
     {
       "id": "open-space",
@@ -357,7 +397,10 @@
         "rekreasi"
       ],
       "card_class": "open",
-      "preview": true
+      "preview": true,
+      "themes": [
+        "environment"
+      ]
     },
     {
       "id": "cemetery",
@@ -378,7 +421,10 @@
         "burial"
       ],
       "card_class": "cemetery",
-      "preview": true
+      "preview": true,
+      "themes": [
+        "facilities"
+      ]
     },
     {
       "id": "tourism-storymap",
@@ -399,7 +445,11 @@
         "travel"
       ],
       "card_class": "tourism",
-      "preview": true
+      "preview": true,
+      "themes": [
+        "economy",
+        "community"
+      ]
     },
     {
       "id": "smartdesa-storymap",
@@ -420,7 +470,10 @@
         "desa pintar"
       ],
       "card_class": "smartdesa-story",
-      "preview": true
+      "preview": true,
+      "themes": [
+        "community"
+      ]
     },
     {
       "id": "rsn-storymap",
@@ -441,7 +494,10 @@
         "planning policy"
       ],
       "card_class": "rsn",
-      "preview": true
+      "preview": true,
+      "themes": [
+        "planning"
+      ]
     },
     {
       "id": "geoportal",
@@ -462,7 +518,10 @@
         "map",
         "spatial"
       ],
-      "preview": true
+      "preview": true,
+      "themes": [
+        "mobility"
+      ]
     },
     {
       "id": "sismaps",
@@ -500,7 +559,10 @@
         "desa",
         "rural"
       ],
-      "preview": true
+      "preview": true,
+      "themes": [
+        "community"
+      ]
     },
     {
       "id": "spatial-analytics",
@@ -521,7 +583,10 @@
         "coverage analysis"
       ],
       "preview": false,
-      "catalog_only": true
+      "catalog_only": true,
+      "themes": [
+        "mobility"
+      ]
     },
     {
       "id": "e20a",
