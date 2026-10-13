@@ -3387,3 +3387,70 @@ html[lang="en"] .v7-hero .v7-hero-title-lockup{
     margin-top:4px;
   }
 }
+
+
+/* =========================================================
+   v7.28.0 Spatial Canvas — registry-linked thematic apps
+   ========================================================= */
+.v7-theme-list{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+}
+.v7-theme-detail{
+  align-items:start;
+}
+.v7-theme-related{
+  margin-top:14px;
+}
+.v7-theme-related.is-empty{display:none}
+.v7-theme-related-label{
+  display:block;
+  margin-bottom:7px;
+  color:var(--suo-red);
+  font:800 8px/1.2 "Manrope",sans-serif;
+  letter-spacing:.12em;
+}
+.v7-theme-related-links{
+  display:flex;
+  flex-wrap:wrap;
+  gap:6px;
+}
+.v7-theme-related-links a{
+  display:inline-flex;
+  align-items:center;
+  gap:7px;
+  min-height:30px;
+  padding:6px 10px;
+  border:1px solid rgba(132,36,55,.13);
+  border-radius:999px;
+  background:rgba(255,255,255,.76);
+  color:#312b27;
+  font:750 9px/1.25 "Manrope",sans-serif;
+  text-decoration:none;
+  transition:transform .18s ease,border-color .18s ease,background .18s ease;
+}
+.v7-theme-related-links a span{
+  color:var(--suo-red);
+  font-size:7px;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+}
+.v7-theme-related-links a:hover{
+  transform:translateY(-1px);
+  border-color:rgba(196,59,80,.35);
+  background:#fff;
+}
+@media(max-width:760px){
+  .v7-theme-related-links{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+  }
+  .v7-theme-related-links a{
+    border-radius:12px;
+    white-space:normal;
+  }
+}
+@media(max-width:430px){
+  .v7-theme-related-links{grid-template-columns:1fr}
+}
