@@ -223,50 +223,79 @@
     housing:{
       eyebrow:{ms:"PERUMAHAN",en:"HOUSING"},
       title:{ms:"Perumahan",en:"Housing"},
-      desc:{ms:"Terokai taburan dan maklumat perumahan melalui aplikasi tematik SUO.",en:"Explore housing distribution and related information through SUO's thematic application."},
-      primary:{ms:"Buka Dashboard ↗",en:"Open Dashboard ↗",url:"https://geospatialpms-glitch.github.io/Dashboard-Perumahan-Negeri-Selangor/"},
-      secondary:{ms:"Lihat Aplikasi SUO →",en:"View SUO Applications →",url:"applications.html"},
+      desc:{ms:"Perumahan umum dan perumahan mampu milik dihimpunkan dalam satu dimensi untuk perbandingan dan pemantauan.",en:"General and affordable housing are brought together in one dimension for comparison and monitoring."},
+      primary:{ms:"Buka Dashboard Utama ↗",en:"Open Main Dashboard ↗",url:"https://geospatialpms-glitch.github.io/Dashboard-Perumahan-Negeri-Selangor/"},
+      secondary:{ms:"Lihat Semua Aplikasi →",en:"View All Applications →",url:"#dashboard-tematik"},
       overlay:null
     },
-    industry:{
-      eyebrow:{ms:"PERINDUSTRIAN",en:"INDUSTRY"},
-      title:{ms:"Perindustrian",en:"Industry"},
-      desc:{ms:"Terokai lokasi, taburan dan maklumat kawasan perindustrian Negeri Selangor.",en:"Explore the location, distribution and information of industrial areas across Selangor."},
-      primary:{ms:"Buka Dashboard ↗",en:"Open Dashboard ↗",url:"https://geospatialpms-glitch.github.io/Perindustrian-Negeri-Selangor/"},
-      secondary:{ms:"Lihat Aplikasi SUO →",en:"View SUO Applications →",url:"applications.html"},
+    economy:{
+      eyebrow:{ms:"EKONOMI & INDUSTRI",en:"ECONOMY & INDUSTRY"},
+      title:{ms:"Ekonomi & Industri",en:"Economy & Industry"},
+      desc:{ms:"Hubungkan perindustrian, geopark dan pelancongan untuk melihat aset ekonomi serta potensi wilayah secara lebih menyeluruh.",en:"Connect industry, geopark and tourism to understand economic assets and regional potential more comprehensively."},
+      primary:{ms:"Buka Perindustrian ↗",en:"Open Industry ↗",url:"https://geospatialpms-glitch.github.io/Perindustrian-Negeri-Selangor/"},
+      secondary:{ms:"Lihat Semua Aplikasi →",en:"View All Applications →",url:"#dashboard-tematik"},
       overlay:null
     },
-    health:{
-      eyebrow:{ms:"KESIHATAN",en:"HEALTH"},
-      title:{ms:"Kesihatan",en:"Health"},
-      desc:{ms:"Paparan titik menggunakan data kemudahan kesihatan sebenar daripada SUO GeoPortal.",en:"Point locations use the actual health facilities dataset from the SUO GeoPortal."},
-      primary:{ms:"Buka Dashboard ↗",en:"Open Dashboard ↗",url:"https://geospatialpms-glitch.github.io/Kemudahan-Kesihatan-Negeri-Selangor/"},
+    facilities:{
+      eyebrow:{ms:"KEMUDAHAN & PERKHIDMATAN",en:"FACILITIES & SERVICES"},
+      title:{ms:"Kemudahan",en:"Facilities"},
+      desc:{ms:"Terokai kesihatan, keselamatan, pendidikan dan kemudahan berkaitan dalam satu paparan tematik.",en:"Explore health, safety, education and related facilities within one thematic view."},
+      primary:{ms:"Buka Kesihatan ↗",en:"Open Health ↗",url:"https://geospatialpms-glitch.github.io/Kemudahan-Kesihatan-Negeri-Selangor/"},
       secondary:{ms:"Buka 3D GeoPortal ↗",en:"Open 3D GeoPortal ↗",url:"https://faeiruzrusman.github.io/selangor-3d-map/?focus=health"},
       overlay:"health"
-    },
-    mobility:{
-      eyebrow:{ms:"MOBILITI",en:"MOBILITY"},
-      title:{ms:"Mobiliti",en:"Mobility"},
-      desc:{ms:"Paparan menggunakan rangkaian rel dan stesen sebenar daripada dataset pengangkutan SUO GeoPortal.",en:"The preview uses the actual rail network and station datasets from the SUO GeoPortal."},
-      primary:{ms:"Buka 3D GeoPortal ↗",en:"Open 3D GeoPortal ↗",url:"https://faeiruzrusman.github.io/selangor-3d-map/?focus=mobility"},
-      secondary:{ms:"Analitik Spatial ↗",en:"Spatial Analytics ↗",url:"https://faeiruzrusman.github.io/spatial-analytics/"},
-      overlay:"mobility"
     },
     environment:{
       eyebrow:{ms:"ALAM SEKITAR",en:"ENVIRONMENT"},
       title:{ms:"Alam Sekitar",en:"Environment"},
-      desc:{ms:"Terokai maklumat tanah lapang awam serta kecerdasan cuaca dan banjir melalui aplikasi SUO berkaitan.",en:"Explore public open space information together with weather and flood intelligence through related SUO applications."},
-      primary:{ms:"Buka Tanah Lapang ↗",en:"Open Public Open Space ↗",url:"https://geospatialpms-glitch.github.io/TANAH-LAPANG-AWAM-NEGERI-SELANGOR/"},
+      desc:{ms:"Satukan KSAS, tanah lapang dan geopark untuk memahami aset alam sekitar, rekreasi dan sensitiviti spatial.",en:"Bring together environmentally sensitive areas, open space and geopark assets to understand environmental and spatial sensitivities."},
+      primary:{ms:"Buka KSAS ↗",en:"Open KSAS ↗",url:"https://geospatialpms-glitch.github.io/KSAS-Negeri-Selangor/"},
       secondary:{ms:"Buka 3D GeoPortal ↗",en:"Open 3D GeoPortal ↗",url:"https://faeiruzrusman.github.io/selangor-3d-map/?focus=environment"},
       overlay:null
     },
     planning:{
-      eyebrow:{ms:"PERANCANGAN",en:"PLANNING"},
+      eyebrow:{ms:"PERANCANGAN & TADBIR URUS",en:"PLANNING & GOVERNANCE"},
       title:{ms:"Perancangan",en:"Planning"},
-      desc:{ms:"Gunakan sempadan pentadbiran sebenar Selangor bersama Dashboard Guna Tanah dan RSN Selangor 2035.",en:"Use Selangor's actual administrative boundaries together with the Land Use Dashboard and Selangor State Structure Plan 2035."},
-      primary:{ms:"Buka Dashboard Guna Tanah ↗",en:"Open Land Use Dashboard ↗",url:"https://sismaps.jpbdselangor.gov.my/dashboard"},
+      desc:{ms:"Gabungkan guna tanah, Lembaga Rayuan, SIA, MURNInets dan RSN Selangor 2035 untuk konteks perancangan yang lebih lengkap.",en:"Combine land use, the Appeal Board, SIA, MURNInets and the Selangor State Structure Plan 2035 for a fuller planning context."},
+      primary:{ms:"Buka Guna Tanah ↗",en:"Open Land Use ↗",url:"https://sismaps.jpbdselangor.gov.my/dashboard"},
       secondary:{ms:"Buka RSN Selangor 2035 ↗",en:"Open RSN Selangor 2035 ↗",url:"https://arcg.is/11Sbea"},
       overlay:null
+    },
+    community:{
+      eyebrow:{ms:"DESA & KOMUNITI",en:"RURAL & COMMUNITY"},
+      title:{ms:"Desa & Komuniti",en:"Rural & Community"},
+      desc:{ms:"Pusat SMARTDesa, dashboard SMARTDesa dan StoryMaps komuniti dihimpunkan untuk memahami pembangunan setempat.",en:"SMARTDesa centres, the SMARTDesa dashboard and community StoryMaps are combined to understand local development."},
+      primary:{ms:"Buka Pusat SMARTDesa ↗",en:"Open SMARTDesa Centres ↗",url:"https://geospatialpms-glitch.github.io/STORY-MAP-PUSAT-SMART-DESA-NEGERI-SELANGOR/"},
+      secondary:{ms:"Buka SMARTDesa ↗",en:"Open SMARTDesa ↗",url:"https://sismaps.jpbdselangor.gov.my/smartdesa"},
+      overlay:null
+    },
+    mobility:{
+      eyebrow:{ms:"MOBILITI",en:"MOBILITY"},
+      title:{ms:"Mobiliti",en:"Mobility"},
+      desc:{ms:"Terokai rangkaian rel, stesen, trafik dan analitik mobiliti melalui 3D GeoPortal serta Analitik Spatial SUO.",en:"Explore rail networks, stations, traffic and mobility analytics through the 3D GeoPortal and SUO Spatial Analytics."},
+      primary:{ms:"Buka 3D GeoPortal ↗",en:"Open 3D GeoPortal ↗",url:"https://faeiruzrusman.github.io/selangor-3d-map/?focus=mobility"},
+      secondary:{ms:"Analitik Spatial ↗",en:"Spatial Analytics ↗",url:"https://faeiruzrusman.github.io/spatial-analytics/"},
+      overlay:"mobility"
+    }
+  };
+
+  const renderThemeRelated=async(key)=>{
+    const host=document.querySelector("#v7ThemeRelated .v7-theme-related-links");
+    const label=document.querySelector("#v7ThemeRelated .v7-theme-related-label");
+    if(!host) return;
+    const langCode=document.documentElement.lang==="en"?"en":"ms";
+    if(label) label.textContent=langCode==="en"?"RELATED APPLICATIONS":"APLIKASI BERKAITAN";
+    try{
+      const apps=window.SUOApps ? await window.SUOApps.active() : [];
+      const related=apps.filter(app=>Array.isArray(app.themes)&&app.themes.includes(key));
+      host.innerHTML=related.map(app=>{
+        const title=app["title_"+langCode]||app.title_ms;
+        const type=app.group==="storymap"?"StoryMap":app.group==="dashboard"?"Dashboard":"Platform";
+        return '<a href="'+app.url+'" target="_blank" rel="noopener"><span>'+type+'</span>'+title+'</a>';
+      }).join("");
+      document.getElementById("v7ThemeRelated")?.classList.toggle("is-empty",related.length===0);
+    }catch(err){
+      host.innerHTML="";
+      console.warn("SUO theme registry:",err);
     }
   };
 
@@ -462,11 +491,12 @@
     if(primary){primary.textContent=item.primary[langCode];primary.href=item.primary.url;primary.target=item.primary.url.startsWith("http")?"_blank":"_self"}
     if(secondary){secondary.textContent=item.secondary[langCode];secondary.href=item.secondary.url;secondary.target=item.secondary.url.startsWith("http")?"_blank":"_self"}
     try{await renderThemeOverlay(item.overlay)}catch(err){console.warn("SUO theme overlay:",err)}
+    await renderThemeRelated(key);
     localStorage.setItem("suo-theme",key);
   };
 
   document.querySelectorAll(".v7-theme[data-theme]").forEach(btn=>btn.addEventListener("click",()=>applyTheme(btn.dataset.theme)));
-  window.setTimeout(()=>applyTheme("housing"),0);
+  window.setTimeout(()=>applyTheme(localStorage.getItem("suo-theme") || "housing"),0);
 
   let suoSearchIndex = [
     {
