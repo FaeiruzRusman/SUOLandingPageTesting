@@ -4,7 +4,37 @@
     "version": "1.1.0",
     "updated": "2026-10-14",
     "source_of_truth": true,
-    "note": "All active SUO applications, dashboards, StoryMaps and core platforms should be registered here first."
+    "note": "All active SUO applications, dashboards, StoryMaps and core platforms should be registered here first.",
+    "theme_taxonomy": {
+      "housing": {
+        "label_ms": "Perumahan",
+        "label_en": "Housing"
+      },
+      "economy": {
+        "label_ms": "Ekonomi & Industri",
+        "label_en": "Economy & Industry"
+      },
+      "facilities": {
+        "label_ms": "Kemudahan",
+        "label_en": "Facilities"
+      },
+      "environment": {
+        "label_ms": "Alam Sekitar",
+        "label_en": "Environment"
+      },
+      "planning": {
+        "label_ms": "Perancangan",
+        "label_en": "Planning"
+      },
+      "community": {
+        "label_ms": "Desa & Komuniti",
+        "label_en": "Rural & Community"
+      },
+      "mobility": {
+        "label_ms": "Mobiliti",
+        "label_en": "Mobility"
+      }
+    }
   },
   "groups": [
     {
@@ -75,8 +105,8 @@
       "card_class": "geopark",
       "preview": true,
       "themes": [
-        "environment",
-        "economy"
+        "economy",
+        "environment"
       ]
     },
     {
@@ -125,7 +155,8 @@
       "card_class": "ksas",
       "preview": true,
       "themes": [
-        "environment"
+        "environment",
+        "planning"
       ]
     },
     {
@@ -399,7 +430,8 @@
       "card_class": "open",
       "preview": true,
       "themes": [
-        "environment"
+        "environment",
+        "facilities"
       ]
     },
     {
@@ -423,7 +455,8 @@
       "card_class": "cemetery",
       "preview": true,
       "themes": [
-        "facilities"
+        "facilities",
+        "community"
       ]
     },
     {
@@ -520,7 +553,10 @@
       ],
       "preview": true,
       "themes": [
-        "mobility"
+        "mobility",
+        "facilities",
+        "environment",
+        "planning"
       ]
     },
     {
@@ -540,7 +576,10 @@
         "guna tanah",
         "perancangan"
       ],
-      "preview": true
+      "preview": true,
+      "themes": [
+        "planning"
+      ]
     },
     {
       "id": "smartdesa-platform",
@@ -585,7 +624,9 @@
       "preview": false,
       "catalog_only": true,
       "themes": [
-        "mobility"
+        "mobility",
+        "facilities",
+        "planning"
       ]
     },
     {
@@ -604,7 +645,10 @@
         "e20a",
         "permohonan"
       ],
-      "preview": false
+      "preview": false,
+      "themes": [
+        "planning"
+      ]
     },
     {
       "id": "telecom-towers",
@@ -623,7 +667,10 @@
         "menara",
         "telco"
       ],
-      "preview": false
+      "preview": false,
+      "themes": [
+        "facilities"
+      ]
     }
   ]
 }
