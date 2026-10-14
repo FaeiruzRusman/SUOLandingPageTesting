@@ -138,7 +138,7 @@
   </div>
 </main>
 
-<script src="js/app-registry.js?v=1.0.0"></script>
+<script src="js/app-registry.js?v=1.2.0"></script>
 <script src="js/suo-knowledge.js?v=1.3.0"></script>
 <script>
 (() => {
@@ -154,6 +154,7 @@
     affordableHousing:{label:"Perumahan Mampu Milik",url:"https://geospatialpms-glitch.github.io/Dashboard-Selangor-Affordable-Housing/"},
     industry:{label:"Perindustrian",url:"https://geospatialpms-glitch.github.io/Perindustrian-Negeri-Selangor/"},
     health:{label:"Kesihatan",url:"https://geospatialpms-glitch.github.io/Kemudahan-Kesihatan-Negeri-Selangor/"},
+    educationFacilities:{label:"Kemudahan Pendidikan",url:"https://faeiruzrusman.github.io/Dashboard-Kemudahan-Pendidikan-Selangor/"},
     openSpace:{label:"Tanah Lapang",url:"https://geospatialpms-glitch.github.io/TANAH-LAPANG-AWAM-NEGERI-SELANGOR/"},
     cemetery:{label:"Perkuburan",url:"https://geospatialpms-glitch.github.io/Tapak-Perkuburan-Negeri-Selangor/"},
     safety:{label:"Keselamatan",url:"https://faeiruzrusman.github.io/Dashboard-Kemudahan-Keselamatan/"},
@@ -181,7 +182,7 @@
 
   const appRegistryReady=window.SUOApps?.load().then(async()=>{
     const mapping={
-      housing:"housing",affordableHousing:"affordable-housing",industry:"industry",health:"health",
+      housing:"housing",affordableHousing:"affordable-housing",industry:"industry",health:"health",educationFacilities:"education-facilities",
       openSpace:"open-space",cemetery:"cemetery",safety:"safety",geopark:"geopark",ksas:"ksas",
       sia:"sia",schoolDense:"school-density",appealBoard:"appeal-board",murninets:"murninets",
       smartdesaCentre:"smartdesa-storymap",landuse:"landuse",smartdesaDash:"smartdesa-dashboard",
@@ -315,6 +316,13 @@
       return {
         text:"StoryMap <strong>Pusat SMARTDesa</strong> menyediakan penerokaan interaktif lokasi dan maklumat Pusat SMARTDesa Negeri Selangor.",
         links:[links.smartdesaCentre,links.storymaps]
+      };
+    }
+
+    if(has(q,["kemudahan pendidikan","education facilities","kemudahan sekolah","institusi pendidikan","sekolah negeri selangor"])){
+      return {
+        text:"Dashboard <strong>Kemudahan Pendidikan</strong> tersedia dalam kategori Dashboard Tematik SUO untuk paparan taburan dan maklumat kemudahan pendidikan Negeri Selangor.",
+        links:[links.educationFacilities,links.dashboards]
       };
     }
 
