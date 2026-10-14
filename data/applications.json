@@ -1,7 +1,7 @@
 {
   "meta": {
     "name": "SUO Applications Registry",
-    "version": "1.1.0",
+    "version": "1.2.0",
     "updated": "2026-10-14",
     "source_of_truth": true,
     "note": "All active SUO applications, dashboards, StoryMaps and core platforms should be registered here first.",
@@ -668,6 +668,33 @@
         "telco"
       ],
       "preview": false,
+      "themes": [
+        "facilities"
+      ]
+    },
+    {
+      "id": "education-facilities",
+      "group": "dashboard",
+      "title_ms": "Kemudahan Pendidikan",
+      "title_en": "Education Facilities",
+      "tag_ms": "Pendidikan",
+      "tag_en": "Education",
+      "description_ms": "Paparan taburan dan maklumat kemudahan pendidikan Negeri Selangor.",
+      "description_en": "Distribution and information on education facilities across Selangor.",
+      "url": "https://faeiruzrusman.github.io/Dashboard-Kemudahan-Pendidikan-Selangor/",
+      "status": "active",
+      "host": "GitHub Pages",
+      "keywords": [
+        "kemudahan pendidikan",
+        "pendidikan",
+        "education",
+        "sekolah",
+        "school",
+        "kemudahan sekolah",
+        "institusi pendidikan"
+      ],
+      "card_class": "education",
+      "preview": true,
       "themes": [
         "facilities"
       ]
