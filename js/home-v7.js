@@ -240,7 +240,7 @@
       eyebrow:{ms:"KEMUDAHAN & PERKHIDMATAN",en:"FACILITIES & SERVICES"},
       title:{ms:"Kemudahan",en:"Facilities"},
       desc:{ms:"Terokai kesihatan, keselamatan, pendidikan dan kemudahan berkaitan dalam satu paparan tematik.",en:"Explore health, safety, education and related facilities within one thematic view."},
-      primary:{ms:"Buka Kesihatan ↗",en:"Open Health ↗",url:"https://geospatialpms-glitch.github.io/Kemudahan-Kesihatan-Negeri-Selangor/"},
+      primary:{ms:"Buka Kemudahan Pendidikan ↗",en:"Open Education Facilities ↗",url:"https://faeiruzrusman.github.io/Dashboard-Kemudahan-Pendidikan-Selangor/"},
       secondary:{ms:"Buka 3D GeoPortal ↗",en:"Open 3D GeoPortal ↗",url:"https://faeiruzrusman.github.io/selangor-3d-map/?focus=health"},
       overlay:"health"
     },
