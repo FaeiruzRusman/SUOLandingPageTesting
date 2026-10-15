@@ -1,8 +1,8 @@
 {
   "meta": {
     "name": "SUO Applications Registry",
-    "version": "1.2.0",
-    "updated": "2026-10-14",
+    "version": "1.3.0",
+    "updated": "2026-10-15",
     "source_of_truth": true,
     "note": "All active SUO applications, dashboards, StoryMaps and core platforms should be registered here first.",
     "theme_taxonomy": {
@@ -698,6 +698,30 @@
       "themes": [
         "facilities"
       ]
+    },
+    {
+      "id": "rancangan-pemajuan-storymap",
+      "group": "storymap",
+      "title_ms": "Rancangan Pemajuan Negeri Selangor",
+      "title_en": "Selangor Development Plans",
+      "tag_ms": "StoryMap",
+      "tag_en": "StoryMap",
+      "description_ms": "Penerokaan interaktif Rancangan Pemajuan Negeri Selangor melalui pengalaman StoryMap.",
+      "description_en": "Interactive exploration of Selangor development plans through a StoryMap experience.",
+      "url": "https://geospatialpms-glitch.github.io/Rancangan-Pemajuan-Negeri-Selangor/ai-storymap/",
+      "status": "active",
+      "host": "GitHub Pages",
+      "keywords": [
+        "rancangan pemajuan",
+        "rancangan tempatan",
+        "rancangan struktur",
+        "rancangan kawasan khas",
+        "development plan",
+        "planning",
+        "storymap"
+      ],
+      "card_class": "development-plan-story",
+      "preview": true
     }
   ]
 }
