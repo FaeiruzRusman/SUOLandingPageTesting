@@ -61,6 +61,13 @@
     if(applicationsNav && !applicationsNav.contains(e.target)) setApplicationsOpen(false);
   });
 
+  primaryNavLinks.forEach(link=>link.addEventListener("click",()=>{
+    body.classList.remove("v7-mobile-open");
+    menu?.setAttribute("aria-expanded","false");
+    const id=link.getAttribute("href")?.slice(1);
+    if(id) setPrimaryNavActive(id);
+  }));
+
   applicationsNav?.addEventListener("keydown",(e)=>{
     if(e.key==="Escape"){
       setApplicationsOpen(false);
