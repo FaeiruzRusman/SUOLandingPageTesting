@@ -229,9 +229,17 @@
       overlay:null
     },
     economy:{
-      eyebrow:{ms:"EKONOMI & INDUSTRI",en:"ECONOMY & INDUSTRY"},
-      title:{ms:"Ekonomi & Industri",en:"Economy & Industry"},
-      desc:{ms:"Hubungkan perindustrian, geopark dan pelancongan untuk melihat aset ekonomi serta potensi wilayah secara lebih menyeluruh.",en:"Connect industry, geopark and tourism to understand economic assets and regional potential more comprehensively."},
+      eyebrow:{ms:"EKONOMI",en:"ECONOMY"},
+      title:{ms:"Ekonomi",en:"Economy"},
+      desc:{ms:"Terokai aset dan aktiviti ekonomi melalui Geopark serta pelancongan untuk memahami potensi wilayah dan pembangunan ekonomi Negeri Selangor.",en:"Explore economic assets and activity through Geopark and tourism to understand regional potential and Selangor's economic development."},
+      primary:{ms:"Buka Geopark ↗",en:"Open Geopark ↗",url:"https://geospatialpms-glitch.github.io/Dashboard-Geopark-Gombak-Hulu-Langat/"},
+      secondary:{ms:"Lihat Semua Aplikasi →",en:"View All Applications →",url:"#dashboard-tematik"},
+      overlay:null
+    },
+    industry:{
+      eyebrow:{ms:"INDUSTRI",en:"INDUSTRY"},
+      title:{ms:"Industri",en:"Industry"},
+      desc:{ms:"Terokai taburan industri dan kawasan perindustrian Negeri Selangor bagi menyokong pemantauan pembangunan serta perancangan spatial.",en:"Explore the distribution of industries and industrial areas across Selangor to support development monitoring and spatial planning."},
       primary:{ms:"Buka Perindustrian ↗",en:"Open Industry ↗",url:"https://geospatialpms-glitch.github.io/Perindustrian-Negeri-Selangor/"},
       secondary:{ms:"Lihat Semua Aplikasi →",en:"View All Applications →",url:"#dashboard-tematik"},
       overlay:null
