@@ -276,6 +276,38 @@
       secondary:{ms:"Buka SMARTDesa ↗",en:"Open SMARTDesa ↗",url:"https://sismaps.jpbdselangor.gov.my/smartdesa"},
       overlay:null
     },
+    demographics:{
+      eyebrow:{ms:"DEMOGRAFI & SOSIOEKONOMI",en:"DEMOGRAPHICS & SOCIOECONOMICS"},
+      title:{ms:"Demografi & Sosioekonomi",en:"Demographics & Socioeconomics"},
+      desc:{ms:"Terokai profil penduduk, isi rumah, pendapatan, kemiskinan, tenaga buruh dan indikator sosioekonomi Negeri Selangor.",en:"Explore population, households, income, poverty, labour force and socioeconomic indicators across Selangor."},
+      primary:{ms:"Buka Dashboard Demografi ↗",en:"Open Demographics Dashboard ↗",url:"https://faeiruzrusman.github.io/Dashboard-Demografi-Sosioekonomi-Selangor/"},
+      secondary:{ms:"Lihat Semua Aplikasi →",en:"View All Applications →",url:"#dashboard-tematik"},
+      overlay:null
+    },
+    infrastructure:{
+      eyebrow:{ms:"INFRASTRUKTUR & UTILITI",en:"INFRASTRUCTURE & UTILITIES"},
+      title:{ms:"Infrastruktur & Utiliti",en:"Infrastructure & Utilities"},
+      desc:{ms:"Himpunkan maklumat infrastruktur asas, telekomunikasi dan utiliti untuk menyokong perancangan kapasiti serta pembangunan negeri.",en:"Bring together core infrastructure, telecommunications and utility information to support capacity planning and state development."},
+      primary:{ms:"Buka 3D GeoPortal ↗",en:"Open 3D GeoPortal ↗",url:"https://faeiruzrusman.github.io/selangor-3d-map/"},
+      secondary:{ms:"Buka SISMAPS ↗",en:"Open SISMAPS ↗",url:"https://sismaps.jpbdselangor.gov.my/index"},
+      overlay:null
+    },
+    resilience:{
+      eyebrow:{ms:"RISIKO & DAYA TAHAN",en:"RISK & RESILIENCE"},
+      title:{ms:"Risiko & Daya Tahan",en:"Risk & Resilience"},
+      desc:{ms:"Gabungkan maklumat banjir, kawasan sensitif, keselamatan dan indikator bandar mampan untuk menyokong perancangan bandar yang lebih berdaya tahan.",en:"Combine flood, sensitive-area, safety and sustainable-city information to support more resilient urban planning."},
+      primary:{ms:"Buka 3D GeoPortal ↗",en:"Open 3D GeoPortal ↗",url:"https://faeiruzrusman.github.io/selangor-3d-map/"},
+      secondary:{ms:"Buka KSAS ↗",en:"Open KSAS ↗",url:"https://geospatialpms-glitch.github.io/KSAS-Negeri-Selangor/"},
+      overlay:null
+    },
+    landdev:{
+      eyebrow:{ms:"TANAH & PEMBANGUNAN",en:"LAND & DEVELOPMENT"},
+      title:{ms:"Tanah & Pembangunan",en:"Land & Development"},
+      desc:{ms:"Terokai guna tanah, kawalan pembangunan dan maklumat spatial berkaitan tanah untuk memahami corak serta tekanan pembangunan Negeri Selangor.",en:"Explore land use, development control and land-related spatial information to understand development patterns and pressures across Selangor."},
+      primary:{ms:"Buka Guna Tanah ↗",en:"Open Land Use ↗",url:"https://sismaps.jpbdselangor.gov.my/dashboard"},
+      secondary:{ms:"Buka SISMAPS ↗",en:"Open SISMAPS ↗",url:"https://sismaps.jpbdselangor.gov.my/index"},
+      overlay:null
+    },
     mobility:{
       eyebrow:{ms:"MOBILITI",en:"MOBILITY"},
       title:{ms:"Mobiliti",en:"Mobility"},
