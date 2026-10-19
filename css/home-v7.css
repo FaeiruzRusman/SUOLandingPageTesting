@@ -3589,3 +3589,134 @@ html[lang="en"] .v7-hero .v7-hero-title-lockup{
   display:block;
   line-height:1;
 }
+
+
+/* =========================================================
+   v7.29.0 — 12-theme Spatial Canvas + mobile production pass
+   ========================================================= */
+
+/* 12 themes: balanced, scalable grid instead of uneven pill wrapping */
+.v7-theme-list{
+  display:grid!important;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:9px!important;
+  width:100%;
+  margin-top:24px;
+}
+.v7-theme{
+  width:100%;
+  min-height:42px;
+  padding:10px 12px!important;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  line-height:1.25;
+  white-space:normal;
+  cursor:pointer;
+  transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease,background .18s ease;
+}
+.v7-theme:hover{
+  transform:translateY(-1px);
+  border-color:rgba(196,59,80,.34)!important;
+  box-shadow:0 7px 18px rgba(76,49,33,.07);
+}
+.v7-theme:focus-visible{
+  outline:3px solid rgba(217,184,78,.45);
+  outline-offset:2px;
+}
+.v7-theme.active{
+  box-shadow:0 9px 22px rgba(196,59,80,.17);
+}
+
+/* Theme detail should stay visually stable when labels vary in length */
+.v7-theme-detail{
+  margin-top:16px;
+}
+.v7-theme-related-links{
+  max-height:96px;
+  overflow:auto;
+  scrollbar-width:thin;
+}
+
+/* Primary-nav active state: clearer without becoming visually heavy */
+.v7-links > a.active,
+.v7-nav-drop-toggle.active{
+  color:var(--suo-red);
+}
+.v7-links > a[aria-current="page"]{
+  font-weight:750;
+}
+
+/* Tablet */
+@media(max-width:1000px){
+  .v7-theme-list{
+    grid-template-columns:repeat(3,minmax(0,1fr))!important;
+  }
+  .v7-spatial-grid{
+    gap:28px!important;
+  }
+  .v7-spatial-map{
+    order:2;
+  }
+  .v7-spatial-grid > .v7-reveal:last-child{
+    order:1;
+  }
+
+  /* Mobile nav: keep all items aligned and comfortably tappable */
+  .v7-mobile-open .v7-links{
+    max-height:calc(100vh - 96px);
+    overflow:auto;
+    gap:2px!important;
+  }
+  .v7-mobile-open .v7-links > a,
+  .v7-mobile-open .v7-nav-drop-toggle{
+    min-height:44px!important;
+    height:auto!important;
+    padding:10px 4px!important;
+    display:flex;
+    align-items:center;
+  }
+  .v7-mobile-open .v7-nav-dropdown{
+    display:block;
+    align-self:auto;
+  }
+  .v7-mobile-open .v7-nav-drop-toggle{
+    width:100%;
+    justify-content:space-between;
+  }
+}
+
+/* Phone */
+@media(max-width:680px){
+  .v7-theme-list{
+    grid-template-columns:repeat(2,minmax(0,1fr))!important;
+    gap:8px!important;
+  }
+  .v7-theme{
+    min-height:46px;
+    padding:9px 8px!important;
+    font-size:10px!important;
+  }
+  .v7-spatial-map{
+    height:300px!important;
+    margin-top:12px;
+  }
+  .v7-spatial-map .v7-spatial-real-map{
+    width:270px!important;
+    height:300px!important;
+  }
+  .v7-theme-related-links{
+    max-height:none;
+  }
+}
+
+/* Small phone */
+@media(max-width:390px){
+  .v7-theme-list{
+    grid-template-columns:1fr 1fr!important;
+  }
+  .v7-theme{
+    font-size:9.5px!important;
+  }
+}
