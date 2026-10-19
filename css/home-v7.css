@@ -3564,3 +3564,28 @@ html[lang="en"] .v7-hero .v7-hero-title-lockup{
     grid-auto-columns:minmax(160px,86vw)!important;
   }
 }
+
+
+/* =========================================================
+   v7.28.3 — Primary navigation vertical alignment
+   Keep text links and Applications dropdown on one baseline.
+   ========================================================= */
+.v7-links > a,
+.v7-nav-drop-toggle{
+  box-sizing:border-box;
+  height:76px;
+  display:flex;
+  align-items:center;
+  padding:0;
+  line-height:1;
+}
+.v7-links > a{
+  position:relative;
+}
+.v7-links > a:after{
+  bottom:17px;
+}
+.v7-nav-drop-toggle > span:first-child{
+  display:block;
+  line-height:1;
+}
