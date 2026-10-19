@@ -24,6 +24,60 @@
 
   const topicLabels={housing:"Perumahan",economy:"Ekonomi",industry:"Industri",facilities:"Kemudahan",environment:"Alam Sekitar",planning:"Perancangan",community:"Desa & Komuniti",mobility:"Mobiliti",demographics:"Demografi & Sosioekonomi",infrastructure:"Infrastruktur & Utiliti",resilience:"Risiko & Daya Tahan",landdev:"Tanah & Pembangunan"};
 
+  // Spatial intelligence: derive area directly from SUO boundary geometry when
+  // the question is spatial, instead of allowing place-name keyword matches to
+  // override the intended geographic level.
+  const STATE_DISTRICT_BOUNDARY_URL="https://faeiruzrusman.github.io/selangor-3d-map/data/pentadbiran/sempadan_daerah_selangor.geojson";
+  let stateBoundaryCache=null;
+
+  const isStateAreaQuery=q=>{
+    const n=norm(q);
+    const asksArea=/\b(luas|keluasan|area)\b/.test(n);
+    const saysSelangor=/\bselangor\b/.test(n);
+    const namedSubarea=/\b(kuala selangor|hulu selangor|petaling|klang|gombak|sepang|hulu langat|kuala langat|sabak bernam|mbsa|mbpj|mbdk|mps|mbsj|mpaj|mpkj|mpsepang|mpkl|mpks|mphs|mdsb)\b/.test(n);
+    return asksArea && saysSelangor && !namedSubarea;
+  };
+
+  const rad=d=>d*Math.PI/180;
+  const ringArea=coords=>{
+    if(!Array.isArray(coords)||coords.length<3) return 0;
+    const R=6378137;
+    let total=0;
+    for(let i=0;i<coords.length;i++){
+      const lower=coords[(i+coords.length-1)%coords.length];
+      const middle=coords[i];
+      const upper=coords[(i+1)%coords.length];
+      total+=(rad(upper[0])-rad(lower[0]))*Math.sin(rad(middle[1]));
+    }
+    return total*R*R/2;
+  };
+  const polygonArea=poly=>{
+    if(!Array.isArray(poly)||!poly.length) return 0;
+    let area=Math.abs(ringArea(poly[0]));
+    for(let i=1;i<poly.length;i++) area-=Math.abs(ringArea(poly[i]));
+    return Math.max(0,area);
+  };
+  const geometryArea=g=>{
+    if(!g) return 0;
+    if(g.type==="Polygon") return polygonArea(g.coordinates);
+    if(g.type==="MultiPolygon") return g.coordinates.reduce((sum,p)=>sum+polygonArea(p),0);
+    if(g.type==="GeometryCollection") return (g.geometries||[]).reduce((sum,x)=>sum+geometryArea(x),0);
+    return 0;
+  };
+  const loadStateBoundary=async()=>{
+    if(stateBoundaryCache) return stateBoundaryCache;
+    stateBoundaryCache=fetch(STATE_DISTRICT_BOUNDARY_URL,{cache:"force-cache"})
+      .then(r=>{if(!r.ok)throw new Error("Boundary GeoJSON "+r.status);return r.json()});
+    return stateBoundaryCache;
+  };
+  const deriveSelangorArea=async()=>{
+    const fc=await loadStateBoundary();
+    const sqm=(fc.features||[]).reduce((sum,f)=>sum+geometryArea(f.geometry),0);
+    if(!Number.isFinite(sqm)||sqm<=0) throw new Error("Invalid boundary area");
+    return sqm/1e6;
+  };
+
+
   const detectTopics=q=>{
     const n=norm(q); return Object.entries(TOPICS).filter(([,terms])=>terms.some(t=>n.includes(norm(t)))).map(([k])=>k);
   };
@@ -84,6 +138,48 @@
 
   const answer=async raw=>{
     const effective=isShortFollowup(raw)&&state.lastQuery ? state.lastQuery+" "+raw : raw;
+
+    // Geographic-level guard: "luas Selangor" means the whole state, not
+    // Kuala Selangor or another PBT whose name merely contains "Selangor".
+    if(isStateAreaQuery(effective)){
+      try{
+        const km2=await deriveSelangorArea();
+        const display=new Intl.NumberFormat("ms-MY",{maximumFractionDigits:2}).format(km2);
+        state.lastQuery=effective;state.lastTopics=["landdev"];state.lastApps=[];
+        return {
+          title:"Keluasan Negeri Selangor",
+          badge:"SPATIAL DERIVED",
+          summary:'Berdasarkan pengiraan terus daripada geometri <strong>sempadan daerah Negeri Selangor</strong> dalam GeoJSON SUO, keluasan spatial negeri ialah kira-kira <strong>'+display+' km²</strong>.',
+          insights:[
+            {label:"Kaedah",title:"Geometry-derived area",text:"Jumlah keluasan semua poligon daerah dikira terus daripada koordinat sempadan GeoJSON."},
+            {label:"Tahap geografi",title:"Negeri Selangor",text:"Carian ini dikunci pada tahap negeri supaya tidak tersalah padan dengan Kuala Selangor atau nama PBT lain."}
+          ],
+          sources:["SUO 3D GeoPortal · Sempadan Daerah Negeri Selangor (GeoJSON)"],
+          actions:[
+            {label:"Buka 3D GeoPortal",url:"https://faeiruzrusman.github.io/selangor-3d-map/"},
+            {label:"Kanvas Spatial SUO",url:"index.html#spatial"}
+          ]
+        };
+      }catch(err){
+        console.warn("SUO spatial area:",err);
+        // If the geometry source is temporarily unavailable, continue to the
+        // curated Knowledge Base rather than returning an unrelated PBT match.
+        const stateFacts=(await knowledgeSearch("keluasan negeri selangor",6))
+          .filter(x=>/keluasan negeri/i.test(x.title||""));
+        if(stateFacts.length){
+          const top=stateFacts[0];
+          return {
+            title:"Keluasan Negeri Selangor",
+            badge:"FAKTA NEGERI",
+            summary:'<strong>'+esc(top.text)+'</strong>',
+            insights:[],
+            sources:[sourceLabel(top)].filter(Boolean),
+            actions:[{label:"Kamus SUO",url:"knowledge.html"}]
+          };
+        }
+      }
+    }
+
     const topics=detectTopics(effective);
     const apps=await getApps();
     const matched=matchApps(apps,effective,topics);
