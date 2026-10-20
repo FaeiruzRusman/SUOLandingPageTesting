@@ -1,8 +1,8 @@
 {
   "meta": {
     "name": "SUO Applications Registry",
-    "version": "1.4.0",
-    "updated": "2026-10-19",
+    "version": "1.4.1",
+    "updated": "2026-10-20",
     "source_of_truth": true,
     "note": "All active SUO applications, dashboards, StoryMaps and core platforms should be registered here first.",
     "theme_taxonomy": {
@@ -784,6 +784,36 @@
       "preview": true,
       "themes": [
         "demographics"
+      ]
+    },
+    {
+      "id": "islamic-religious-facilities",
+      "group": "dashboard",
+      "title_ms": "Kemudahan Keagamaan Islam",
+      "title_en": "Islamic Religious Facilities",
+      "tag_ms": "Kemudahan Keagamaan",
+      "tag_en": "Religious Facilities",
+      "description_ms": "Dashboard kemudahan keagamaan Islam Negeri Selangor bagi penerokaan taburan spatial dan maklumat berkaitan kemudahan Islam.",
+      "description_en": "Dashboard of Islamic religious facilities in Selangor for spatial exploration and related facility information.",
+      "url": "https://geospatialpms-glitch.github.io/Kemudahan-Keagamaan-Islam-Negeri-Selangor/#home",
+      "status": "active",
+      "host": "GitHub Pages",
+      "keywords": [
+        "kemudahan keagamaan islam",
+        "keagamaan islam",
+        "islamic religious facilities",
+        "masjid",
+        "surau",
+        "islam",
+        "jais",
+        "kemudahan agama",
+        "religious facilities"
+      ],
+      "card_class": "islamic-religious",
+      "preview": true,
+      "themes": [
+        "facilities",
+        "community"
       ]
     }
   ]
