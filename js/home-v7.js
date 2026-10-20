@@ -959,9 +959,6 @@
           }
         }
       });
-      if(svgId==="v7SpatialMap" && typeof applyTheme==="function"){
-        window.setTimeout(()=>applyTheme("housing"),0);
-      }
     } catch(err) {
       console.warn("SUO real map preview fallback:",err);
       svg.innerHTML='<text x="240" y="260" text-anchor="middle" fill="#8F0D23" font-size="13">Peta Selangor sedang dimuatkan</text>';
