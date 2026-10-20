@@ -3720,3 +3720,6 @@ html[lang="en"] .v7-hero .v7-hero-title-lockup{
     font-size:9.5px!important;
   }
 }
+
+/* v7.29.1 — Spatial themes start unselected */
+.v7-theme-detail[hidden]{display:none!important}
