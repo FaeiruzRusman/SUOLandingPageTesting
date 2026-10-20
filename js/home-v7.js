@@ -202,7 +202,7 @@
   };
   let code = localStorage.getItem('suo-lang') || 'ms';
   applyLang(code);
-  lang?.addEventListener('click',()=>{code = code === 'ms' ? 'en' : 'ms'; applyLang(code); window.setTimeout(()=>{ if(typeof renderSearch === "function" && searchPanel && !searchPanel.hidden) renderSearch(searchInput?.value || ""); if(typeof applyTheme === "function") applyTheme(localStorage.getItem("suo-theme") || "housing"); if(window.SUOApps) window.SUOApps.refreshLanguage().catch(()=>{}); },0)});
+  lang?.addEventListener('click',()=>{code = code === 'ms' ? 'en' : 'ms'; applyLang(code); window.setTimeout(()=>{ if(typeof renderSearch === "function" && searchPanel && !searchPanel.hidden) renderSearch(searchInput?.value || ""); if(typeof applyTheme === "function"){ const selected=document.querySelector(".v7-theme.active[data-theme]"); if(selected) applyTheme(selected.dataset.theme); } if(window.SUOApps) window.SUOApps.refreshLanguage().catch(()=>{}); },0)});
 
   const io = new IntersectionObserver(entries => entries.forEach(e => {
     if(e.isIntersecting){ e.target.classList.add('visible'); io.unobserve(e.target); }
@@ -520,7 +520,10 @@
   };
 
   const applyTheme = async (key) => {
-    const item=themeCatalog[key] || themeCatalog.housing;
+    const item=themeCatalog[key];
+    if(!item) return;
+    const detail=document.getElementById("v7ThemeDetail");
+    if(detail) detail.hidden=false;
     const langCode=document.documentElement.lang==="en"?"en":"ms";
     document.querySelectorAll(".v7-theme").forEach(x=>{
       const active=x.dataset.theme===key;
@@ -539,11 +542,10 @@
     if(secondary){secondary.textContent=item.secondary[langCode];secondary.href=item.secondary.url;secondary.target=item.secondary.url.startsWith("http")?"_blank":"_self"}
     try{await renderThemeOverlay(item.overlay)}catch(err){console.warn("SUO theme overlay:",err)}
     await renderThemeRelated(key);
-    localStorage.setItem("suo-theme",key);
   };
 
   document.querySelectorAll(".v7-theme[data-theme]").forEach(btn=>btn.addEventListener("click",()=>applyTheme(btn.dataset.theme)));
-  window.setTimeout(()=>applyTheme(localStorage.getItem("suo-theme") || "housing"),0);
+  localStorage.removeItem("suo-theme");
 
   let suoSearchIndex = [
     {
