@@ -44,6 +44,7 @@ const schoolReply=async raw=>{
  const q=norm(raw),parsed=detect(raw);
  const listMode=/\b(senarai|list|nama|cari|carikan|apakah|apa|ade|ada|mana)\b/.test(q);
  const countMode=/\b(berapa|bilangan|jumlah|count|banyak)\b/.test(q);
+ const breakdownMode=/\b(pecah|pecahkan|pecahan|perincian|terperinci|kategori|mengikut jenis|ikut jenis|breakdown)\b/.test(q);
  const district=DISTRICTS.filter(d=>contains(q,norm(d[0]))).sort((a,b)=>b[0].length-a[0].length)[0]?.[0]||null;
  const matchedPbt=PBT.find(p=>[p[0],...p[2]].some(s=>contains(q,norm(s))));
  const explicitPbt=isScope(q);
@@ -74,7 +75,18 @@ const schoolReply=async raw=>{
    const scopeNote=pbt?"Rekod JAIS tanpa kod PBT tidak dapat diambil kira secara pasti dalam tapisan PBT. ":"";
    const sample=shown.slice(0,15).map((s,i)=>(i+1)+". "+esc(s.name)+" ("+esc(s.district)+", "+esc(s.level)+(s.category?" — "+esc(s.category):"")+")");
    const list=sample.length?"<ol>"+sample.map(s=>"<li>"+s.replace(/^\d+\.\s/,"")+"</li>").join("")+"</ol>":"";
-   let summary=countMode
+   const levels={rendah:0,menengah:0,agama:0,lain:0};
+   for(const school of shown){
+     const level=norm(school.level);
+     if(level.includes("agama"))levels.agama++;
+     else if(level.includes("menengah"))levels.menengah++;
+     else if(level.includes("rendah"))levels.rendah++;
+     else levels.lain++;
+   }
+   const breakdown='<ul><li><strong>Sekolah Rendah:</strong> '+levels.rendah+' rekod</li><li><strong>Sekolah Menengah:</strong> '+levels.menengah+' rekod</li><li><strong>Sekolah Agama:</strong> '+levels.agama+' rekod</li>'+(levels.lain?'<li><strong>Lain-lain/tidak dikelaskan:</strong> '+levels.lain+' rekod</li>':'')+'</ul>';
+   let summary=breakdownMode
+     ?'Pecahan <strong>'+shown.length+' rekod sekolah</strong> di <strong>'+esc(label)+'</strong> mengikut kategori ialah:'+breakdown+scopeNote+'Jumlah adalah rekod dalam indeks GeoJSON SUO, bukan statistik rasmi keseluruhan sekolah.'
+     :countMode
      ?"Terdapat <strong>"+shown.length+" rekod sekolah</strong> untuk <strong>"+esc(label)+"</strong>"+(category?" bagi kategori <strong>"+esc(category)+"</strong>":"")+" dalam indeks semasa SUO. "+scopeNote+"Jumlah ini mewakili rekod dataset, bukan statistik rasmi sekolah keseluruhan."
      :shown.length?"Ditemui <strong>"+shown.length+" rekod sekolah</strong> yang sepadan dengan carian di <strong>"+esc(label)+"</strong>. "+scopeNote+"Berikut "+Math.min(15,shown.length)+" rekod pertama:"+list
      :"Tiada padanan sekolah ditemui dalam indeks SUO bagi kriteria ini. Semak ejaan, tahap geografi atau kategori; tiada rekod rekaan diberikan.";
