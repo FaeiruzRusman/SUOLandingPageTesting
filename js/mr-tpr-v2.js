@@ -291,6 +291,32 @@
       };
     }
 
+    // Named-place discovery must never return unrelated general-policy facts.
+    const locationQuery=norm(effective);
+    const namedPlace=/(?:petaling jaya|shah alam|subang jaya|ampang jaya|kuala selangor|kuala langat|hulu selangor|hulu langat|sabak bernam|sepang|selayang|kajang|klang|gombak)/.test(locationQuery);
+    const locationDiscovery=/\b(apa|ape|apakah|yang berkaitan|berkaitan|maklumat|info|tentang|berkenaan|data)\b/.test(locationQuery);
+    if(namedPlace && locationDiscovery && !isAreaQuestion(effective)){
+      const locality=locationQuery.match(/petaling jaya|shah alam|subang jaya|ampang jaya|kuala selangor|kuala langat|hulu selangor|hulu langat|sabak bernam|sepang|selayang|kajang|klang|gombak/)[0];
+      const apps=await getApps();
+      const relevantApps=apps.filter(a=>[a.title_ms,a.title_en,a.description_ms,a.description_en,...(a.keywords||[])].some(v=>norm(v||"").includes(locality)));
+      const facts=(await knowledgeSearch(locality,30)).filter(f=>norm([f.title,f.text,...(f.raw?.keywords||[])].join(" ")).includes(locality));
+      const isPetalingJaya=locality==="petaling jaya";
+      const pbt=isPetalingJaya?PBT_AREA_REFERENCE.find(p=>p.code==="MBPJ"):PBT_AREA_REFERENCE.find(p=>p.aliases.some(a=>norm(a)===locality));
+      const items=[];
+      if(pbt)items.push({label:"PBT · JUPEM 2024",title:pbt.code+" — "+pbt.name,text:"Keluasan pentadbiran: "+areaFormat(pbt.ha)+" hektar ("+areaFormat(pbt.ha/100)+" km²)."});
+      facts.filter(f=>!(/keluasan/i.test(f.title)&&pbt)).slice(0,3).forEach(f=>items.push({label:f.category||"Data SUO",title:f.title,text:f.text}));
+      relevantApps.slice(0,3).forEach(a=>items.push({label:"Aplikasi SUO",title:a.title_ms||a.title_en,text:a.description_ms||""}));
+      state.lastQuery=effective;state.lastTopics=[];state.lastApps=relevantApps;
+      return {
+        title:"Maklumat berkaitan "+locality.replace(/\b\w/g,ch=>ch.toUpperCase()),
+        badge:"CARIAN LOKASI",
+        summary:items.length?"Berikut ialah maklumat yang mempunyai padanan lokasi <strong>"+esc(locality)+"</strong> dalam sumber SUO. Maklumat negeri yang tidak khusus kepada lokasi ini tidak disertakan.":"Tiada rekod khusus <strong>"+esc(locality)+"</strong> ditemui dalam katalog/Knowledge Base SUO. Saya tidak akan menggantikan jawapan dengan dasar negeri yang tiada kaitan langsung.",
+        insights:items.slice(0,4),
+        sources:[...(pbt?["JUPEM 2024 · Jadual keluasan PBT"]:[]),...facts.slice(0,2).map(sourceLabel)].filter(Boolean),
+        actions:relevantApps.slice(0,3).map(appAction)
+      };
+    }
+
     const topics=detectTopics(effective);
     const apps=await getApps();
     const matched=matchApps(apps,effective,topics);
