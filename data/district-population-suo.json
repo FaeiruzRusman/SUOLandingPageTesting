@@ -1,0 +1,337 @@
+{
+  "meta": {
+    "title": "Penduduk mengikut Daerah Selangor",
+    "unit": "ribu orang",
+    "period": "2020–2026",
+    "source": "Dataset penduduk daerah dalam Dashboard Demografi & Sosioekonomi SUO (rujukan DOSM)",
+    "source_repository": "SelangorUrbanObservatory/Dashboard-Demografi-Sosioekonomi-Negeri-Selangor",
+    "source_files": [
+      "data/population_district_selangor_part1.csv",
+      "data/population_district_selangor_part2.csv",
+      "data/population_district_selangor_part3.csv"
+    ],
+    "filters": {
+      "sex": "both",
+      "age": "overall",
+      "ethnicity": "overall"
+    },
+    "note": "Nilai asal dalam ribu orang, satu titik perpuluhan; darab 1,000 untuk angka orang. Angka mengikut pembundaran sumber; tidak setaraf dengan angka banci tepat."
+  },
+  "records": [
+    {
+      "district": "Gombak",
+      "year": 2020,
+      "thousand": 942.4
+    },
+    {
+      "district": "Klang",
+      "year": 2020,
+      "thousand": 1088.9
+    },
+    {
+      "district": "Kuala Langat",
+      "year": 2020,
+      "thousand": 307.4
+    },
+    {
+      "district": "Kuala Selangor",
+      "year": 2020,
+      "thousand": 281.7
+    },
+    {
+      "district": "Petaling",
+      "year": 2020,
+      "thousand": 2298.1
+    },
+    {
+      "district": "Sabak Bernam",
+      "year": 2020,
+      "thousand": 107.1
+    },
+    {
+      "district": "Sepang",
+      "year": 2020,
+      "thousand": 325.2
+    },
+    {
+      "district": "Hulu Langat",
+      "year": 2020,
+      "thousand": 1400.5
+    },
+    {
+      "district": "Hulu Selangor",
+      "year": 2020,
+      "thousand": 243
+    },
+    {
+      "district": "Gombak",
+      "year": 2021,
+      "thousand": 948
+    },
+    {
+      "district": "Klang",
+      "year": 2021,
+      "thousand": 1078.7
+    },
+    {
+      "district": "Kuala Langat",
+      "year": 2021,
+      "thousand": 312.2
+    },
+    {
+      "district": "Kuala Selangor",
+      "year": 2021,
+      "thousand": 285.1
+    },
+    {
+      "district": "Petaling",
+      "year": 2021,
+      "thousand": 2315.7
+    },
+    {
+      "district": "Sabak Bernam",
+      "year": 2021,
+      "thousand": 107.5
+    },
+    {
+      "district": "Sepang",
+      "year": 2021,
+      "thousand": 330.7
+    },
+    {
+      "district": "Hulu Langat",
+      "year": 2021,
+      "thousand": 1393.3
+    },
+    {
+      "district": "Hulu Selangor",
+      "year": 2021,
+      "thousand": 243.4
+    },
+    {
+      "district": "Gombak",
+      "year": 2022,
+      "thousand": 950.2
+    },
+    {
+      "district": "Klang",
+      "year": 2022,
+      "thousand": 1094.1
+    },
+    {
+      "district": "Kuala Langat",
+      "year": 2022,
+      "thousand": 314.5
+    },
+    {
+      "district": "Kuala Selangor",
+      "year": 2022,
+      "thousand": 287.6
+    },
+    {
+      "district": "Petaling",
+      "year": 2022,
+      "thousand": 2304.8
+    },
+    {
+      "district": "Sabak Bernam",
+      "year": 2022,
+      "thousand": 107.9
+    },
+    {
+      "district": "Sepang",
+      "year": 2022,
+      "thousand": 331.5
+    },
+    {
+      "district": "Hulu Langat",
+      "year": 2022,
+      "thousand": 1413.3
+    },
+    {
+      "district": "Hulu Selangor",
+      "year": 2022,
+      "thousand": 246.4
+    },
+    {
+      "district": "Gombak",
+      "year": 2023,
+      "thousand": 966.2
+    },
+    {
+      "district": "Klang",
+      "year": 2023,
+      "thousand": 1134
+    },
+    {
+      "district": "Kuala Langat",
+      "year": 2023,
+      "thousand": 320.7
+    },
+    {
+      "district": "Kuala Selangor",
+      "year": 2023,
+      "thousand": 293.2
+    },
+    {
+      "district": "Petaling",
+      "year": 2023,
+      "thousand": 2334.7
+    },
+    {
+      "district": "Sabak Bernam",
+      "year": 2023,
+      "thousand": 109.2
+    },
+    {
+      "district": "Sepang",
+      "year": 2023,
+      "thousand": 339.2
+    },
+    {
+      "district": "Hulu Langat",
+      "year": 2023,
+      "thousand": 1460.3
+    },
+    {
+      "district": "Hulu Selangor",
+      "year": 2023,
+      "thousand": 252.2
+    },
+    {
+      "district": "Gombak",
+      "year": 2024,
+      "thousand": 979.9
+    },
+    {
+      "district": "Klang",
+      "year": 2024,
+      "thousand": 1174.7
+    },
+    {
+      "district": "Kuala Langat",
+      "year": 2024,
+      "thousand": 326.4
+    },
+    {
+      "district": "Kuala Selangor",
+      "year": 2024,
+      "thousand": 298.4
+    },
+    {
+      "district": "Petaling",
+      "year": 2024,
+      "thousand": 2359.7
+    },
+    {
+      "district": "Sabak Bernam",
+      "year": 2024,
+      "thousand": 110.3
+    },
+    {
+      "district": "Sepang",
+      "year": 2024,
+      "thousand": 347
+    },
+    {
+      "district": "Hulu Langat",
+      "year": 2024,
+      "thousand": 1508
+    },
+    {
+      "district": "Hulu Selangor",
+      "year": 2024,
+      "thousand": 258.3
+    },
+    {
+      "district": "Gombak",
+      "year": 2025,
+      "thousand": 985.9
+    },
+    {
+      "district": "Klang",
+      "year": 2025,
+      "thousand": 1183.2
+    },
+    {
+      "district": "Kuala Langat",
+      "year": 2025,
+      "thousand": 329.1
+    },
+    {
+      "district": "Kuala Selangor",
+      "year": 2025,
+      "thousand": 301.7
+    },
+    {
+      "district": "Petaling",
+      "year": 2025,
+      "thousand": 2370.7
+    },
+    {
+      "district": "Sabak Bernam",
+      "year": 2025,
+      "thousand": 110.5
+    },
+    {
+      "district": "Sepang",
+      "year": 2025,
+      "thousand": 350.5
+    },
+    {
+      "district": "Hulu Langat",
+      "year": 2025,
+      "thousand": 1517.4
+    },
+    {
+      "district": "Hulu Selangor",
+      "year": 2025,
+      "thousand": 259.8
+    },
+    {
+      "district": "Gombak",
+      "year": 2026,
+      "thousand": 991.9
+    },
+    {
+      "district": "Klang",
+      "year": 2026,
+      "thousand": 1191.2
+    },
+    {
+      "district": "Kuala Langat",
+      "year": 2026,
+      "thousand": 331.6
+    },
+    {
+      "district": "Kuala Selangor",
+      "year": 2026,
+      "thousand": 305
+    },
+    {
+      "district": "Petaling",
+      "year": 2026,
+      "thousand": 2382
+    },
+    {
+      "district": "Sabak Bernam",
+      "year": 2026,
+      "thousand": 110.9
+    },
+    {
+      "district": "Sepang",
+      "year": 2026,
+      "thousand": 354.1
+    },
+    {
+      "district": "Hulu Langat",
+      "year": 2026,
+      "thousand": 1526.4
+    },
+    {
+      "district": "Hulu Selangor",
+      "year": 2026,
+      "thousand": 261.2
+    }
+  ]
+}
