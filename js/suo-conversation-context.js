@@ -36,7 +36,9 @@ const resolve=raw=>{
  const year=yearOf(q);
  const follow=/\b(tu|itu|tadi|pula|lagi|seterusnya|sebelumnya|sebelum|yang sama|banding|pecahkan|perincikan|further)\b/.test(q);
  const yearOnly=!!year && /^(?:tahun\s+)?20[0-3]\d(?:\s+(?:pula|pulak|lagi))?$/.test(q);
- const useContext=state.turns>0 && (yearOnly||follow||(!location&&!!ind)||(!ind&&!!location&&/pula|banding/.test(q)));
+ const locationOnly=!!location && !ind && !year && q.split(' ').length<=4;
+ const categoryOnly=!!category && !location && state.indicator==='sekolah';
+ const useContext=state.turns>0 && (yearOnly||locationOnly||categoryOnly||follow||(!location&&!!ind));
  let requestedYear=year;
  if(useContext && !year && state.year && /\b(tahun sebelum|tahun lepas|tahun sebelumnya)\b/.test(q))requestedYear=state.year-1;
  const effectiveLocation=location||(useContext?state.location:null);
