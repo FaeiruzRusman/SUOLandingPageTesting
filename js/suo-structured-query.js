@@ -83,9 +83,32 @@ const schoolReply=async raw=>{
      else if(level.includes("rendah"))levels.rendah++;
      else levels.lain++;
    }
+   // Second-level school classification from school names / JAIS category.
+   const lowerTypes={"SK":0,"SJKC":0,"SJKT":0,"Lain-lain":0};
+   const secondaryTypes={"SMK":0,"Sekolah Menengah Lain":0};
+   const religionTypes={};
+   for(const school of shown){
+     const level=norm(school.level),name=norm(school.name);
+     if(level.includes("rendah")){
+       if(name.includes("jenis kebangsaan cina")||/\bsjkc\b/.test(name))lowerTypes.SJKC++;
+       else if(name.includes("jenis kebangsaan tamil")||/\bsjkt\b/.test(name))lowerTypes.SJKT++;
+       else if(name.includes("kebangsaan")||/\bsk\b/.test(name))lowerTypes.SK++;
+       else lowerTypes["Lain-lain"]++;
+     } else if(level.includes("menengah")){
+       if(name.includes("menengah kebangsaan")||/\bsmk\b/.test(name))secondaryTypes.SMK++;
+       else secondaryTypes["Sekolah Menengah Lain"]++;
+     } else if(level.includes("agama")){
+       const subtype=String(school.category||"Tidak dikelaskan").toUpperCase();
+       religionTypes[subtype]=(religionTypes[subtype]||0)+1;
+     }
+   }
+   const subtypeRows=category==="rendah"?lowerTypes:category==="menengah"?secondaryTypes:category==="agama"?religionTypes:null;
+   const subtypeList=subtypeRows?'<ul>'+Object.entries(subtypeRows).filter(([,n])=>n>0).map(([type,n])=>'<li><strong>'+esc(type)+':</strong> '+n+' rekod</li>').join("")+'</ul>':"";
    const breakdown='<ul><li><strong>Sekolah Rendah:</strong> '+levels.rendah+' rekod</li><li><strong>Sekolah Menengah:</strong> '+levels.menengah+' rekod</li><li><strong>Sekolah Agama:</strong> '+levels.agama+' rekod</li>'+(levels.lain?'<li><strong>Lain-lain/tidak dikelaskan:</strong> '+levels.lain+' rekod</li>':'')+'</ul>';
    let summary=breakdownMode
-     ?'Pecahan <strong>'+shown.length+' rekod sekolah</strong> di <strong>'+esc(label)+'</strong> mengikut kategori ialah:'+breakdown+scopeNote+'Jumlah adalah rekod dalam indeks GeoJSON SUO, bukan statistik rasmi keseluruhan sekolah.'
+     ?(category&&subtypeRows
+       ?'Pecahan lanjut <strong>'+shown.length+' rekod sekolah '+esc(category)+'</strong> di <strong>'+esc(label)+'</strong> mengikut subkategori ialah:'+subtypeList+scopeNote+'Angka ini berdasarkan nama/atribut kategori yang tersedia dalam indeks GeoJSON SUO.'
+       :'Pecahan <strong>'+shown.length+' rekod sekolah</strong> di <strong>'+esc(label)+'</strong> mengikut kategori ialah:'+breakdown+scopeNote+'Jumlah adalah rekod dalam indeks GeoJSON SUO, bukan statistik rasmi keseluruhan sekolah.')
      :countMode
      ?"Terdapat <strong>"+shown.length+" rekod sekolah</strong> untuk <strong>"+esc(label)+"</strong>"+(category?" bagi kategori <strong>"+esc(category)+"</strong>":"")+" dalam indeks semasa SUO. "+scopeNote+"Jumlah ini mewakili rekod dataset, bukan statistik rasmi sekolah keseluruhan."
      :shown.length?"Ditemui <strong>"+shown.length+" rekod sekolah</strong> yang sepadan dengan carian di <strong>"+esc(label)+"</strong>. "+scopeNote+"Berikut "+Math.min(15,shown.length)+" rekod pertama:"+list
