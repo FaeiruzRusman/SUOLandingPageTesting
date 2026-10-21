@@ -210,6 +210,47 @@
       };
     }
 
+    // Answer precise RSN questions directly instead of showing broad SUO topic matches.
+    const intent=norm(effective);
+    const isRsn=/\b(rsn|rancangan struktur|rs negeri|rsn selangor)\b/.test(intent);
+    const asksGazette=/\b(bila|tarikh|tahun|diwartakan|warta|wartakan|pewartaan|gazette|gazetted)\b/.test(intent);
+    const asksRsnPillars=/\b(teras|strategi utama|hala tuju strategik)\b/.test(intent);
+    const asksMp34=/\bmp34\b|\bdasar suo\b|\bdasar selangor urban observatory\b/.test(intent);
+    if(isRsn && asksGazette){
+      state.lastQuery=effective;state.lastTopics=["planning"];state.lastApps=[];
+      return {
+        title:"Tarikh Pewartaan RS Negeri Selangor 2035 (Pengubahan)",
+        badge:"WARTA NEGERI",
+        summary:"<strong>RS Negeri Selangor 2035 (Pengubahan) diwartakan pada 19 Mac 2026 melalui Warta No. 1000.</strong>",
+        insights:[
+          {label:"Kelulusan JPNS",title:"10 Jun 2025",text:"Mesyuarat Jawatankuasa Perancang Negeri Selangor Bil. 3/2025."},
+          {label:"Persetujuan PBN",title:"17 Oktober 2025",text:"Majlis Mesyuarat Kerajaan Negeri (MMKN) Ke-30/2025."}
+        ],
+        sources:["RS Negeri Selangor 2035 (Pengubahan), halaman i (PDF halaman 3), Fakta Persetujuan Diwartakan"],
+        actions:[{label:"Rujuk Kamus SUO",url:"knowledge.html"}]
+      };
+    }
+    if(isRsn && asksRsnPillars){
+      state.lastQuery=effective;state.lastTopics=["planning"];state.lastApps=[];
+      return {
+        title:"Tiga Teras RS Negeri Selangor 2035 (Pengubahan)",
+        badge:"DASAR RSN",
+        summary:"<strong>Teras 1:</strong> Ke Arah Negeri Dinamik, Maju dan Berdaya Saing. <strong>Teras 2:</strong> Ke Arah Negeri Mampan dan Berdaya Tahan. <strong>Teras 3:</strong> Ke Arah Negeri Cekap Sumber dan Berdaya Huni.",
+        sources:["RS Negeri Selangor 2035 (Pengubahan), Bab 4 seksyen 4.2, halaman 4-3 hingga 4-5"],
+        actions:[{label:"Rujuk Kamus SUO",url:"knowledge.html"}]
+      };
+    }
+    if(asksMp34){
+      state.lastQuery=effective;state.lastTopics=["planning"];state.lastApps=[];
+      return {
+        title:"Dasar MP34 — Pelaksanaan SUO",
+        badge:"DASAR RSN",
+        summary:"<strong>Dasar MP34</strong> menetapkan pelaksanaan Selangor Urban Observatory (SUO) bagi menyelaras, mengintegrasi dan mengurus data raya peringkat negeri. Inisiatif P1 ialah sistem pemantauan perbandaran bersepadu untuk analitik data raya; P2 ialah pangkalan data dan sistem GIS bersepadu.",
+        sources:["RS Negeri Selangor 2035 (Pengubahan), Teras 2, Dasar MP34 (PDF halaman 334)"],
+        actions:[{label:"Rujuk Kamus SUO",url:"knowledge.html"}]
+      };
+    }
+
     const topics=detectTopics(effective);
     const apps=await getApps();
     const matched=matchApps(apps,effective,topics);
