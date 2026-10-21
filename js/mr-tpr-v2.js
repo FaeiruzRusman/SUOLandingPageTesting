@@ -1,7 +1,7 @@
 (() => {
   const $=s=>document.querySelector(s);
   const messages=$("#messages"),form=$("#askForm"),input=$("#askInput");
-  const avatar="https://faeiruzrusman.github.io/selangor-3d-map/assets/avatar/mr-tpr-suo.png?v=8.0.5D";
+  const avatar="https://selangorurbanobservatory.github.io/3D-Geoportal/assets/avatar/mr-tpr-suo.png?v=8.0.5D";
   const state={lastQuery:"",lastTopics:[],lastApps:[]};
 
   const esc=v=>String(v??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[c]));
@@ -27,7 +27,11 @@
   // Spatial intelligence: derive area directly from SUO boundary geometry when
   // the question is spatial, instead of allowing place-name keyword matches to
   // override the intended geographic level.
-  const STATE_DISTRICT_BOUNDARY_URL="https://faeiruzrusman.github.io/selangor-3d-map/data/pentadbiran/sempadan_daerah_selangor.geojson";
+  const STATE_DISTRICT_BOUNDARY_URL="https://selangorurbanobservatory.github.io/3D-Geoportal/data/pentadbiran/sempadan_daerah_selangor.geojson";
+  const PBT_BOUNDARY_URL="https://selangorurbanobservatory.github.io/3D-Geoportal/data/pentadbiran/sempadan_pbt_selangor_2024.geojson";
+  let pbtBoundaryCache=null;
+  const isAreaQuestion=q=>/\b(luas|keluasan|area)\b/.test(norm(q));
+  const isPbtAreaQuestion=q=>isAreaQuestion(q)&&/\b(pbt|pihak berkuasa tempatan|majlis|mbsa|mbpj|mbdk|mbsj|mps|mpaj|mpkj|mpsepang|mpkl|mpks|mphs|mdsb|mpk|mpsj|mdkl|mdks|mdhs|sabak bernam|shah alam|petaling jaya|subang jaya|ampang jaya|selayang|kajang|sepang|kuala langat|hulu selangor|kuala selangor|klang)\b/.test(norm(q));
   let stateBoundaryCache=null;
 
   const isStateAreaQuery=q=>{
@@ -35,7 +39,7 @@
     const asksArea=/\b(luas|keluasan|area)\b/.test(n);
     const saysSelangor=/\bselangor\b/.test(n);
     const namedSubarea=/\b(kuala selangor|hulu selangor|petaling|klang|gombak|sepang|hulu langat|kuala langat|sabak bernam|mbsa|mbpj|mbdk|mps|mbsj|mpaj|mpkj|mpsepang|mpkl|mpks|mphs|mdsb)\b/.test(n);
-    return asksArea && saysSelangor && !namedSubarea;
+    return asksArea && saysSelangor && !namedSubarea && !isPbtAreaQuestion(q);
   };
 
   const rad=d=>d*Math.PI/180;
@@ -77,6 +81,70 @@
     return sqm/1e6;
   };
 
+
+  // PBT GeoJSON exposes web_area / Shape_area in hectares, not square kilometres.
+  // Prefer its published attribute over recomputing surface area on lon/lat coordinates.
+  const loadPbtBoundary=()=>{
+    if(!pbtBoundaryCache){
+      pbtBoundaryCache=fetch(PBT_BOUNDARY_URL,{cache:"force-cache"})
+        .then(r=>{if(!r.ok)throw new Error("PBT GeoJSON "+r.status);return r.json()})
+        .catch(err=>{pbtBoundaryCache=null;throw err});
+    }
+    return pbtBoundaryCache;
+  };
+  const pbtAreaRows=async()=>{
+    const fc=await loadPbtBoundary();
+    const rows=(fc.features||[]).map(f=>{
+      const name=String(f.properties?.web_name||f.properties?.NAMA_PBT||"").trim();
+      const hectares=Number(f.properties?.web_area??f.properties?.Shape_area);
+      return {name,km2:hectares/100};
+    });
+    if(rows.length!==12||rows.some(r=>!r.name||!Number.isFinite(r.km2)||r.km2<=0))
+      throw new Error("PBT GeoJSON incomplete or area attributes invalid");
+    return rows;
+  };
+  const pbtNameAliases={
+    "Majlis Daerah Sabak Bernam":["mdsb","sabak bernam"],
+    "Majlis Perbandaran Kuala Selangor":["mpks","mdks","kuala selangor"],
+    "Majlis Bandaraya Subang Jaya":["mbsj","mpsj","subang jaya"],
+    "Majlis Bandaraya Petaling Jaya":["mbpj","petaling jaya"],
+    "Majlis Perbandaran Kuala Langat":["mpkl","mdkl","kuala langat"],
+    "Majlis Perbandaran Hulu Selangor":["mphs","mdhs","hulu selangor"],
+    "Majlis Perbandaran Sepang":["mpsepang","mpsp","sepang"],
+    "Majlis Perbandaran Kajang":["mpkj","kajang"],
+    "Majlis Perbandaran Ampang Jaya":["mpaj","ampang jaya"],
+    "Majlis Perbandaran Selayang":["mps","selayang"],
+    "Majlis Bandaraya Shah Alam":["mbsa","shah alam"],
+    "Majlis Bandaraya Diraja Klang":["mbdk","mpk","klang"]
+  };
+  const matchNamedPbt=(question,rows)=>{
+    const tokens=" "+norm(question)+" ";
+    return rows.find(row=>(pbtNameAliases[row.name]||[]).some(alias=>tokens.includes(" "+alias+" ")))||null;
+  };
+  const areaFormat=n=>new Intl.NumberFormat("ms-MY",{minimumFractionDigits:2,maximumFractionDigits:2}).format(n);
+  const answerPbtArea=async question=>{
+    try{
+      const rows=await pbtAreaRows();
+      const target=matchNamedPbt(question,rows);
+      const total=rows.reduce((sum,row)=>sum+row.km2,0);
+      const list=target?[target]:[...rows].sort((a,b)=>a.name.localeCompare(b.name,"ms"));
+      const listHtml='<ul>'+list.map(r=>'<li><strong>'+esc(r.name)+'</strong>: '+areaFormat(r.km2)+' km²</li>').join("")+'</ul>';
+      const summary=target
+        ? 'Mengikut atribut <strong>web_area</strong> dalam GeoJSON Sempadan PBT Selangor 2024, keluasan <strong>'+esc(target.name)+'</strong> ialah <strong>'+areaFormat(target.km2)+' km²</strong>.'
+        : 'GeoJSON Sempadan PBT Selangor 2024 mempunyai <strong>12 PBT</strong>. Jumlah keluasan berdasarkan atribut <strong>web_area</strong> ialah <strong>'+areaFormat(total)+' km²</strong>. Berikut pecahan setiap PBT:'+listHtml;
+      return {
+        title:target?"Keluasan "+target.name:"Keluasan 12 PBT Negeri Selangor",
+        badge:"GEOJSON PBT 2024",
+        summary,
+        insights:[{label:"Sumber",title:"Atribut web_area",text:"Nilai keluasan atribut dalam hektar dibahagi 100 untuk paparan km²; bukan keluasan daripada penjumlahan geometri latitud/longitud."}],
+        sources:["SUO 3D GeoPortal · Sempadan PBT Selangor 2024 (GeoJSON), atribut web_area"],
+        actions:[{label:"Buka 3D GeoPortal",url:"https://selangorurbanobservatory.github.io/3D-Geoportal/"}]
+      };
+    }catch(err){
+      console.warn("SUO PBT area lookup:",err);
+      return {title:"Keluasan PBT belum dapat dimuatkan",badge:"DATA SOURCE",summary:"Data keluasan PBT perlu dibaca daripada <strong>GeoJSON Sempadan PBT Selangor 2024</strong>. Sumber itu tidak dapat dimuatkan ketika ini; saya tidak akan gantikan dengan angka keluasan negeri daripada DOSM.",sources:["SUO 3D GeoPortal · Sempadan PBT Selangor 2024 (GeoJSON)"],actions:[{label:"Buka 3D GeoPortal",url:"https://selangorurbanobservatory.github.io/3D-Geoportal/"}]};
+    }
+  };
 
   const detectTopics=q=>{
     const n=norm(q); return Object.entries(TOPICS).filter(([,terms])=>terms.some(t=>n.includes(norm(t)))).map(([k])=>k);
@@ -138,6 +206,13 @@
 
   const answer=async raw=>{
     const effective=isShortFollowup(raw)&&state.lastQuery ? state.lastQuery+" "+raw : raw;
+
+    // PBT area requests must resolve against 12 PBT polygons before state/knowledge lookup.
+    if(isPbtAreaQuestion(effective)){
+      const result=await answerPbtArea(effective);
+      state.lastQuery=effective;state.lastTopics=["landdev"];state.lastApps=[];
+      return result;
+    }
 
     // Geographic-level guard: "luas Selangor" means the whole state, not
     // Kuala Selangor or another PBT whose name merely contains "Selangor".
