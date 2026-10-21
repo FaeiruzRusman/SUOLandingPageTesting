@@ -255,8 +255,8 @@
       eyebrow:{ms:"KEMUDAHAN & PERKHIDMATAN",en:"FACILITIES & SERVICES"},
       title:{ms:"Kemudahan",en:"Facilities"},
       desc:{ms:"Terokai kesihatan, keselamatan, pendidikan dan kemudahan berkaitan dalam satu paparan tematik.",en:"Explore health, safety, education and related facilities within one thematic view."},
-      primary:{ms:"Buka Kemudahan Pendidikan ↗",en:"Open Education Facilities ↗",url:"https://faeiruzrusman.github.io/Dashboard-Kemudahan-Pendidikan-Selangor/"},
-      secondary:{ms:"Buka 3D GeoPortal ↗",en:"Open 3D GeoPortal ↗",url:"https://faeiruzrusman.github.io/selangor-3d-map/?focus=health"},
+      primary:{ms:"Buka Kemudahan Pendidikan ↗",en:"Open Education Facilities ↗",url:"https://selangorurbanobservatory.github.io/Dashboard-Kemudahan-Pendidikan-Negeri-Selangor/"},
+      secondary:{ms:"Buka 3D GeoPortal ↗",en:"Open 3D GeoPortal ↗",url:"https://selangorurbanobservatory.github.io/3D-Geoportal/?focus=health"},
       overlay:"health"
     },
     environment:{
@@ -264,7 +264,7 @@
       title:{ms:"Alam Sekitar",en:"Environment"},
       desc:{ms:"Satukan KSAS, tanah lapang dan geopark untuk memahami aset alam sekitar, rekreasi dan sensitiviti spatial.",en:"Bring together environmentally sensitive areas, open space and geopark assets to understand environmental and spatial sensitivities."},
       primary:{ms:"Buka KSAS ↗",en:"Open KSAS ↗",url:"https://geospatialpms-glitch.github.io/KSAS-Negeri-Selangor/"},
-      secondary:{ms:"Buka 3D GeoPortal ↗",en:"Open 3D GeoPortal ↗",url:"https://faeiruzrusman.github.io/selangor-3d-map/?focus=environment"},
+      secondary:{ms:"Buka 3D GeoPortal ↗",en:"Open 3D GeoPortal ↗",url:"https://selangorurbanobservatory.github.io/3D-Geoportal/?focus=environment"},
       overlay:null
     },
     planning:{
@@ -287,7 +287,7 @@
       eyebrow:{ms:"DEMOGRAFI & SOSIOEKONOMI",en:"DEMOGRAPHICS & SOCIOECONOMICS"},
       title:{ms:"Demografi & Sosioekonomi",en:"Demographics & Socioeconomics"},
       desc:{ms:"Terokai profil penduduk, isi rumah, pendapatan, kemiskinan, tenaga buruh dan indikator sosioekonomi Negeri Selangor.",en:"Explore population, households, income, poverty, labour force and socioeconomic indicators across Selangor."},
-      primary:{ms:"Buka Dashboard Demografi ↗",en:"Open Demographics Dashboard ↗",url:"https://faeiruzrusman.github.io/Dashboard-Demografi-Sosioekonomi-Selangor/"},
+      primary:{ms:"Buka Dashboard Demografi ↗",en:"Open Demographics Dashboard ↗",url:"https://selangorurbanobservatory.github.io/Dashboard-Demografi-Sosioekonomi-Negeri-Selangor/"},
       secondary:{ms:"Lihat Semua Aplikasi →",en:"View All Applications →",url:"#dashboard-tematik"},
       overlay:null
     },
@@ -295,7 +295,7 @@
       eyebrow:{ms:"INFRASTRUKTUR & UTILITI",en:"INFRASTRUCTURE & UTILITIES"},
       title:{ms:"Infrastruktur & Utiliti",en:"Infrastructure & Utilities"},
       desc:{ms:"Himpunkan maklumat infrastruktur asas, telekomunikasi dan utiliti untuk menyokong perancangan kapasiti serta pembangunan negeri.",en:"Bring together core infrastructure, telecommunications and utility information to support capacity planning and state development."},
-      primary:{ms:"Buka 3D GeoPortal ↗",en:"Open 3D GeoPortal ↗",url:"https://faeiruzrusman.github.io/selangor-3d-map/"},
+      primary:{ms:"Buka 3D GeoPortal ↗",en:"Open 3D GeoPortal ↗",url:"https://selangorurbanobservatory.github.io/3D-Geoportal/"},
       secondary:{ms:"Buka SISMAPS ↗",en:"Open SISMAPS ↗",url:"https://sismaps.jpbdselangor.gov.my/index"},
       overlay:null
     },
@@ -303,7 +303,7 @@
       eyebrow:{ms:"RISIKO & DAYA TAHAN",en:"RISK & RESILIENCE"},
       title:{ms:"Risiko & Daya Tahan",en:"Risk & Resilience"},
       desc:{ms:"Gabungkan maklumat banjir, kawasan sensitif, keselamatan dan indikator bandar mampan untuk menyokong perancangan bandar yang lebih berdaya tahan.",en:"Combine flood, sensitive-area, safety and sustainable-city information to support more resilient urban planning."},
-      primary:{ms:"Buka 3D GeoPortal ↗",en:"Open 3D GeoPortal ↗",url:"https://faeiruzrusman.github.io/selangor-3d-map/"},
+      primary:{ms:"Buka 3D GeoPortal ↗",en:"Open 3D GeoPortal ↗",url:"https://selangorurbanobservatory.github.io/3D-Geoportal/"},
       secondary:{ms:"Buka KSAS ↗",en:"Open KSAS ↗",url:"https://geospatialpms-glitch.github.io/KSAS-Negeri-Selangor/"},
       overlay:null
     },
@@ -319,7 +319,7 @@
       eyebrow:{ms:"MOBILITI",en:"MOBILITY"},
       title:{ms:"Mobiliti",en:"Mobility"},
       desc:{ms:"Terokai rangkaian rel, stesen, trafik dan analitik mobiliti melalui 3D GeoPortal serta Analitik Spatial SUO.",en:"Explore rail networks, stations, traffic and mobility analytics through the 3D GeoPortal and SUO Spatial Analytics."},
-      primary:{ms:"Buka 3D GeoPortal ↗",en:"Open 3D GeoPortal ↗",url:"https://faeiruzrusman.github.io/selangor-3d-map/?focus=mobility"},
+      primary:{ms:"Buka 3D GeoPortal ↗",en:"Open 3D GeoPortal ↗",url:"https://selangorurbanobservatory.github.io/3D-Geoportal/?focus=mobility"},
       secondary:{ms:"Analitik Spatial ↗",en:"Spatial Analytics ↗",url:"https://faeiruzrusman.github.io/spatial-analytics/"},
       overlay:"mobility"
     }
@@ -347,9 +347,9 @@
   };
 
   const themeSpatialSources = {
-    health:"https://faeiruzrusman.github.io/selangor-3d-map/data/kesihatan/kemudahan_kesihatan_selangor.geojson",
-    rail:"https://faeiruzrusman.github.io/selangor-3d-map/data/transport/rail_network_final.geojson",
-    stations:"https://faeiruzrusman.github.io/selangor-3d-map/data/transport/rail_stations_final.geojson"
+    health:"https://selangorurbanobservatory.github.io/3D-Geoportal/data/kesihatan/kemudahan_kesihatan_selangor.geojson",
+    rail:"https://selangorurbanobservatory.github.io/3D-Geoportal/data/transport/rail_network_final.geojson",
+    stations:"https://selangorurbanobservatory.github.io/3D-Geoportal/data/transport/rail_stations_final.geojson"
   };
 
   const themeMapProjector = {project:null};
@@ -363,7 +363,7 @@
 
   const getSpatialProjector = async () => {
     if(themeMapProjector.project) return themeMapProjector.project;
-    const data=await loadThemeGeoJSON("https://faeiruzrusman.github.io/selangor-3d-map/data/pentadbiran/sempadan_daerah_selangor.geojson");
+    const data=await loadThemeGeoJSON("https://selangorurbanobservatory.github.io/3D-Geoportal/data/pentadbiran/sempadan_daerah_selangor.geojson");
     const all=data.features.flatMap(f=>collectPoints(f.geometry));
     const xs=all.map(p=>p[0]), ys=all.map(p=>p[1]);
     const minX=Math.min(...xs),maxX=Math.max(...xs),minY=Math.min(...ys),maxY=Math.max(...ys);
@@ -413,7 +413,7 @@
   };
 
   const getSelangorDistrictData = () => loadThemeGeoJSON(
-    "https://faeiruzrusman.github.io/selangor-3d-map/data/pentadbiran/sempadan_daerah_selangor.geojson"
+    "https://selangorurbanobservatory.github.io/3D-Geoportal/data/pentadbiran/sempadan_daerah_selangor.geojson"
   );
 
   const insideSelangor = (point, districtData) =>
@@ -557,7 +557,7 @@
     {
       titleMs:"Dashboard Kemudahan Keselamatan Negeri Selangor", titleEn:"Selangor Safety Facilities Dashboard",
       type:"Dashboard", icon:"◈",
-      url:"https://faeiruzrusman.github.io/Dashboard-Kemudahan-Keselamatan/",
+      url:"https://selangorurbanobservatory.github.io/Dashboard-Kemudahan-Keselamatan-Negeri-Selangor/",
       keywords:["keselamatan","safety","polis","pdrm","ipk","ipd","bomba","jbpm","apm","coverage analysis","nearest facility"]
     },
     {
@@ -617,7 +617,7 @@
     {
       titleMs:"SUO 3D GeoPortal", titleEn:"SUO 3D GeoPortal",
       type:"Platform", icon:"3D",
-      url:"https://faeiruzrusman.github.io/selangor-3d-map/",
+      url:"https://selangorurbanobservatory.github.io/3D-Geoportal/",
       keywords:["geoportal","3d map","peta selangor","layer spatial","map"]
     },
     {
@@ -629,61 +629,61 @@
     {
       titleMs:"Kemudahan Kesihatan — GeoPortal", titleEn:"Health Facilities — GeoPortal",
       typeMs:"Layer GeoPortal", typeEn:"GeoPortal Layer", icon:"✚",
-      url:"https://faeiruzrusman.github.io/selangor-3d-map/?focus=health",
+      url:"https://selangorurbanobservatory.github.io/3D-Geoportal/?focus=health",
       keywords:["hospital","klinik","kesihatan","health","healthcare"]
     },
     {
       titleMs:"Pendidikan — GeoPortal", titleEn:"Schools — GeoPortal",
       typeMs:"Layer GeoPortal", typeEn:"GeoPortal Layer", icon:"⌂",
-      url:"https://faeiruzrusman.github.io/selangor-3d-map/?focus=schools",
+      url:"https://selangorurbanobservatory.github.io/3D-Geoportal/?focus=schools",
       keywords:["sekolah","pendidikan","school","education","ppd"]
     },
     {
       titleMs:"Polis Diraja Malaysia — GeoPortal", titleEn:"Police Facilities — GeoPortal",
       typeMs:"Layer GeoPortal", typeEn:"GeoPortal Layer", icon:"◆",
-      url:"https://faeiruzrusman.github.io/selangor-3d-map/?focus=police",
+      url:"https://selangorurbanobservatory.github.io/3D-Geoportal/?focus=police",
       keywords:["polis","pdrm","ipk","ipd","police"]
     },
     {
       titleMs:"Balai Bomba & Penyelamat — GeoPortal", titleEn:"Fire & Rescue Stations — GeoPortal",
       typeMs:"Layer GeoPortal", typeEn:"GeoPortal Layer", icon:"▲",
-      url:"https://faeiruzrusman.github.io/selangor-3d-map/?focus=fire",
+      url:"https://selangorurbanobservatory.github.io/3D-Geoportal/?focus=fire",
       keywords:["bomba","balai bomba","fire station","fire rescue","jbpm"]
     },
     {
       titleMs:"Rangkaian Rel & Stesen — GeoPortal", titleEn:"Rail Network & Stations — GeoPortal",
       typeMs:"Layer GeoPortal", typeEn:"GeoPortal Layer", icon:"═",
-      url:"https://faeiruzrusman.github.io/selangor-3d-map/?focus=mobility",
+      url:"https://selangorurbanobservatory.github.io/3D-Geoportal/?focus=mobility",
       keywords:["rel","rail","stesen","station","mrt","lrt","ktm"]
     },
     {
       titleMs:"Lot Kadaster — GeoPortal", titleEn:"Cadastral Lots — GeoPortal",
       typeMs:"Layer GeoPortal", typeEn:"GeoPortal Layer", icon:"▦",
-      url:"https://faeiruzrusman.github.io/selangor-3d-map/?focus=cadastral",
+      url:"https://selangorurbanobservatory.github.io/3D-Geoportal/?focus=cadastral",
       keywords:["kadaster","cadastral","lot","lot tanah","parcel"]
     },
     {
       titleMs:"Sempadan PBT — GeoPortal", titleEn:"Local Authority Boundaries — GeoPortal",
       typeMs:"Layer GeoPortal", typeEn:"GeoPortal Layer", icon:"◇",
-      url:"https://faeiruzrusman.github.io/selangor-3d-map/?focus=pbt",
+      url:"https://selangorurbanobservatory.github.io/3D-Geoportal/?focus=pbt",
       keywords:["pbt","sempadan pbt","local authority","mbsa","mbpj","mpkj"]
     },
     {
       titleMs:"Sempadan Daerah — GeoPortal", titleEn:"District Boundaries — GeoPortal",
       typeMs:"Layer GeoPortal", typeEn:"GeoPortal Layer", icon:"▱",
-      url:"https://faeiruzrusman.github.io/selangor-3d-map/?focus=districts",
+      url:"https://selangorurbanobservatory.github.io/3D-Geoportal/?focus=districts",
       keywords:["daerah","district","sempadan daerah","klang","gombak","petaling"]
     },
     {
       titleMs:"Flood Intelligence — GeoPortal", titleEn:"Flood Intelligence — GeoPortal",
       typeMs:"Layer GeoPortal", typeEn:"GeoPortal Layer", icon:"≈",
-      url:"https://faeiruzrusman.github.io/selangor-3d-map/?focus=environment",
+      url:"https://selangorurbanobservatory.github.io/3D-Geoportal/?focus=environment",
       keywords:["banjir","flood","hujan","rainfall","flood intelligence"]
     },
     {
       titleMs:"Trafik Langsung — GeoPortal", titleEn:"Live Traffic — GeoPortal",
       typeMs:"Layer GeoPortal", typeEn:"GeoPortal Layer", icon:"↝",
-      url:"https://faeiruzrusman.github.io/selangor-3d-map/?focus=traffic",
+      url:"https://selangorurbanobservatory.github.io/3D-Geoportal/?focus=traffic",
       keywords:["trafik","traffic","live traffic","jalan","kesesakan","congestion"]
     }
   ];
@@ -804,8 +804,8 @@
   });
 
   const mapSources = {
-    hero: "https://faeiruzrusman.github.io/selangor-3d-map/data/pentadbiran/sempadan_daerah_selangor.geojson",
-    spatial: "https://faeiruzrusman.github.io/selangor-3d-map/data/pentadbiran/sempadan_pbt_selangor_2024.geojson"
+    hero: "https://selangorurbanobservatory.github.io/3D-Geoportal/data/pentadbiran/sempadan_daerah_selangor.geojson",
+    spatial: "https://selangorurbanobservatory.github.io/3D-Geoportal/data/pentadbiran/sempadan_pbt_selangor_2024.geojson"
   };
 
   const collectPoints = (geom) => {
