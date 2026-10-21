@@ -25,6 +25,8 @@ const source=(db,id)=>db.sources?.find(x=>x.id===id);
 const answer=async query=>{
   const v=detect(query);
   if(!v.indicator||!v.scope)return null;
+  // Preserve the existing complete 12-PBT list response for generic area queries.
+  if(v.scope==="pbt"&&!v.entity&&v.indicator==="area")return null;
   const label=v.scope==="district"?"Daerah "+(v.entity?.[0]||"Selangor"):v.scope==="pbt"?(v.entity?.[0]||"PBT Selangor"):"Negeri Selangor";
   const appAction=[{label:"Dashboard Demografi & Sosioekonomi",url:demourl}];
   let db;try{db=await getBasics()}catch(err){console.warn(err);return {title:label,badge:"SUMBER TIDAK TERSEDIA",summary:"Knowledge Base tidak dapat dimuatkan. Tiada angka alternatif diberikan.",sources:[],actions:appAction};}
