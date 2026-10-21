@@ -237,6 +237,16 @@
   const answer=async raw=>{
     const effective=isShortFollowup(raw)&&state.lastQuery ? state.lastQuery+" "+raw : raw;
 
+    // Population intent implies an administrative district when no PBT is explicitly named.
+    // Never fall through to a generic dashboard recommendation for a known district.
+    const normalizedQuestion=norm(effective);
+    const populationQuestion=/\b(penduduk|populasi|population|kepadatan|density)\b/.test(normalizedQuestion);
+    const explicitPbt=/\b(pbt|pihak berkuasa tempatan|majlis|mbsa|mbpj|mbdk|mbsj|mpaj|mpkj|mpkl|mpks|mphs|mdsb|mpsp|mpsepang)\b/.test(normalizedQuestion);
+    if(populationQuestion && !explicitPbt && matchDistrict(effective)){
+      state.lastQuery=effective;state.lastTopics=["demography"];state.lastApps=[];
+      return answerDistrict(effective);
+    }
+
     // Explicit daerah always overrides similarly named PBT, including Sepang/Klang/Kuala Selangor.
     if(hasDistrictScope(effective) && !/\b(pbt|majlis perbandaran|majlis bandaraya)\b/.test(norm(effective))){
       state.lastQuery=effective;state.lastTopics=["landdev"];state.lastApps=[];
