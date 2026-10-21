@@ -1,8 +1,8 @@
 {
   "meta": {
     "name": "SUO Applications Registry",
-    "version": "1.4.1",
-    "updated": "2026-10-20",
+    "version": "1.4.2",
+    "updated": "2026-10-21",
     "source_of_truth": true,
     "note": "All active SUO applications, dashboards, StoryMaps and core platforms should be registered here first.",
     "theme_taxonomy": {
@@ -190,7 +190,7 @@
       "tag_en": "Safety",
       "description_ms": "PDRM, JBPM dan APM dengan analisis liputan serta kemudahan terdekat.",
       "description_en": "PDRM, JBPM and APM with coverage and nearest-facility analysis.",
-      "url": "https://faeiruzrusman.github.io/Dashboard-Kemudahan-Keselamatan/",
+      "url": "https://selangorurbanobservatory.github.io/Dashboard-Kemudahan-Keselamatan-Negeri-Selangor/",
       "status": "active",
       "host": "GitHub Pages",
       "keywords": [
@@ -567,7 +567,7 @@
       "tag_en": "3D GeoPortal",
       "description_ms": "GeoPortal flagship SUO dengan paparan 2D/3D, carian pintar, trafik langsung dan lapisan kecerdasan.",
       "description_en": "SUO flagship GeoPortal with 2D/3D views, smart search, live traffic and intelligence layers.",
-      "url": "https://faeiruzrusman.github.io/selangor-3d-map/",
+      "url": "https://selangorurbanobservatory.github.io/3D-Geoportal/",
       "status": "active",
       "host": "GitHub Pages",
       "keywords": [
@@ -712,7 +712,7 @@
       "tag_en": "Education",
       "description_ms": "Paparan taburan dan maklumat kemudahan pendidikan Negeri Selangor.",
       "description_en": "Distribution and information on education facilities across Selangor.",
-      "url": "https://faeiruzrusman.github.io/Dashboard-Kemudahan-Pendidikan-Selangor/",
+      "url": "https://selangorurbanobservatory.github.io/Dashboard-Kemudahan-Pendidikan-Negeri-Selangor/",
       "status": "active",
       "host": "GitHub Pages",
       "keywords": [
@@ -763,7 +763,7 @@
       "tag_en": "Demographics & Socioeconomics",
       "description_ms": "Dashboard indikator penduduk, isi rumah, pendapatan, kemiskinan, tenaga buruh dan sosioekonomi Negeri Selangor.",
       "description_en": "Dashboard of population, household, income, poverty, labour force and socioeconomic indicators for Selangor.",
-      "url": "https://faeiruzrusman.github.io/Dashboard-Demografi-Sosioekonomi-Selangor/",
+      "url": "https://selangorurbanobservatory.github.io/Dashboard-Demografi-Sosioekonomi-Negeri-Selangor/",
       "status": "active",
       "host": "GitHub Pages",
       "keywords": [
