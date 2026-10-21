@@ -1,0 +1,1345 @@
+{
+  "meta": {
+    "title": "SUO Daerah · Sosioekonomi dan Tenaga Buruh",
+    "source": "Dataset CSV Dashboard Demografi & Sosioekonomi Negeri Selangor, berasaskan DOSM",
+    "repository": "SelangorUrbanObservatory/Dashboard-Demografi-Sosioekonomi-Negeri-Selangor",
+    "files": [
+      "data/hh_income_district_selangor.csv",
+      "data/hh_poverty_district_selangor.csv",
+      "data/hh_inequality_district_selangor.csv",
+      "data/lfs_district_selangor.csv"
+    ],
+    "last_ingested": "2026-10-21",
+    "units": {
+      "income_mean": "RM sebulan",
+      "income_median": "RM sebulan",
+      "poverty_absolute": "%",
+      "poverty_relative": "%",
+      "gini": "pekali (0–1)",
+      "lf": "ribu orang",
+      "lf_employed": "ribu orang",
+      "lf_unemployed": "ribu orang",
+      "lf_outside": "ribu orang",
+      "p_rate": "%",
+      "u_rate": "%",
+      "ep_ratio": "%"
+    },
+    "definitions": {
+      "income_mean": "Purata pendapatan isi rumah kasar bulanan",
+      "income_median": "Median pendapatan isi rumah kasar bulanan",
+      "poverty_absolute": "Insiden kemiskinan mutlak",
+      "poverty_relative": "Insiden kemiskinan relatif",
+      "gini": "Pekali Gini",
+      "lf": "Tenaga buruh",
+      "lf_employed": "Penduduk bekerja dalam tenaga buruh",
+      "lf_unemployed": "Penduduk menganggur dalam tenaga buruh",
+      "lf_outside": "Luar tenaga buruh",
+      "p_rate": "Kadar penyertaan tenaga buruh",
+      "u_rate": "Kadar pengangguran",
+      "ep_ratio": "Nisbah guna tenaga kepada penduduk"
+    },
+    "notes": [
+      "Data daerah Ulu Langat/Ulu Selangor dinormal kepada Hulu Langat/Hulu Selangor untuk carian sahaja.",
+      "Tahun berbeza antara fail. Tiada interpolasi atau nilai rekaan.",
+      "Angka tenaga buruh dalam ribu orang; bukan bilangan individu tepat."
+    ]
+  },
+  "records": [
+    {
+      "group": "income",
+      "district": "Gombak",
+      "year": 2019,
+      "income_mean": 11536,
+      "income_median": 8501
+    },
+    {
+      "group": "income",
+      "district": "Gombak",
+      "year": 2022,
+      "income_mean": 13523,
+      "income_median": 10180
+    },
+    {
+      "group": "income",
+      "district": "Gombak",
+      "year": 2024,
+      "income_mean": 14168,
+      "income_median": 10777
+    },
+    {
+      "group": "income",
+      "district": "Klang",
+      "year": 2019,
+      "income_mean": 9980,
+      "income_median": 7888
+    },
+    {
+      "group": "income",
+      "district": "Klang",
+      "year": 2022,
+      "income_mean": 10278,
+      "income_median": 8203
+    },
+    {
+      "group": "income",
+      "district": "Klang",
+      "year": 2024,
+      "income_mean": 10912,
+      "income_median": 8837
+    },
+    {
+      "group": "income",
+      "district": "Kuala Langat",
+      "year": 2019,
+      "income_mean": 8375,
+      "income_median": 6950
+    },
+    {
+      "group": "income",
+      "district": "Kuala Langat",
+      "year": 2022,
+      "income_mean": 11048,
+      "income_median": 10093
+    },
+    {
+      "group": "income",
+      "district": "Kuala Langat",
+      "year": 2024,
+      "income_mean": 11714,
+      "income_median": 10583
+    },
+    {
+      "group": "income",
+      "district": "Kuala Selangor",
+      "year": 2019,
+      "income_mean": 7866,
+      "income_median": 5855
+    },
+    {
+      "group": "income",
+      "district": "Kuala Selangor",
+      "year": 2022,
+      "income_mean": 9410,
+      "income_median": 7644
+    },
+    {
+      "group": "income",
+      "district": "Kuala Selangor",
+      "year": 2024,
+      "income_mean": 10584,
+      "income_median": 8046
+    },
+    {
+      "group": "income",
+      "district": "Petaling",
+      "year": 2019,
+      "income_mean": 12145,
+      "income_median": 8993
+    },
+    {
+      "group": "income",
+      "district": "Petaling",
+      "year": 2022,
+      "income_mean": 12760,
+      "income_median": 9618
+    },
+    {
+      "group": "income",
+      "district": "Petaling",
+      "year": 2024,
+      "income_mean": 14422,
+      "income_median": 10688
+    },
+    {
+      "group": "income",
+      "district": "Sabak Bernam",
+      "year": 2019,
+      "income_mean": 6042,
+      "income_median": 4454
+    },
+    {
+      "group": "income",
+      "district": "Sabak Bernam",
+      "year": 2022,
+      "income_mean": 6930,
+      "income_median": 5533
+    },
+    {
+      "group": "income",
+      "district": "Sabak Bernam",
+      "year": 2024,
+      "income_mean": 8033,
+      "income_median": 6941
+    },
+    {
+      "group": "income",
+      "district": "Sepang",
+      "year": 2019,
+      "income_mean": 12254,
+      "income_median": 8937
+    },
+    {
+      "group": "income",
+      "district": "Sepang",
+      "year": 2022,
+      "income_mean": 13673,
+      "income_median": 12608
+    },
+    {
+      "group": "income",
+      "district": "Sepang",
+      "year": 2024,
+      "income_mean": 15906,
+      "income_median": 11131
+    },
+    {
+      "group": "income",
+      "district": "Hulu Langat",
+      "year": 2019,
+      "income_mean": 10252,
+      "income_median": 8361
+    },
+    {
+      "group": "income",
+      "district": "Hulu Langat",
+      "year": 2022,
+      "income_mean": 13386,
+      "income_median": 11210
+    },
+    {
+      "group": "income",
+      "district": "Hulu Langat",
+      "year": 2024,
+      "income_mean": 13822,
+      "income_median": 11404
+    },
+    {
+      "group": "income",
+      "district": "Hulu Selangor",
+      "year": 2019,
+      "income_mean": 7598,
+      "income_median": 6249
+    },
+    {
+      "group": "income",
+      "district": "Hulu Selangor",
+      "year": 2022,
+      "income_mean": 8779,
+      "income_median": 7678
+    },
+    {
+      "group": "income",
+      "district": "Hulu Selangor",
+      "year": 2024,
+      "income_mean": 9499,
+      "income_median": 8485
+    },
+    {
+      "group": "poverty",
+      "district": "Gombak",
+      "year": 2019,
+      "poverty_absolute": 0.4,
+      "poverty_relative": 14.5
+    },
+    {
+      "group": "poverty",
+      "district": "Gombak",
+      "year": 2022,
+      "poverty_absolute": 2.4,
+      "poverty_relative": 13.8
+    },
+    {
+      "group": "poverty",
+      "district": "Gombak",
+      "year": 2024,
+      "poverty_absolute": 2.1,
+      "poverty_relative": 9.8
+    },
+    {
+      "group": "poverty",
+      "district": "Klang",
+      "year": 2019,
+      "poverty_absolute": 1.7,
+      "poverty_relative": 16.6
+    },
+    {
+      "group": "poverty",
+      "district": "Klang",
+      "year": 2022,
+      "poverty_absolute": 2.2,
+      "poverty_relative": 20.3
+    },
+    {
+      "group": "poverty",
+      "district": "Klang",
+      "year": 2024,
+      "poverty_absolute": 1,
+      "poverty_relative": 12
+    },
+    {
+      "group": "poverty",
+      "district": "Kuala Langat",
+      "year": 2019,
+      "poverty_absolute": 2.4,
+      "poverty_relative": 19.7
+    },
+    {
+      "group": "poverty",
+      "district": "Kuala Langat",
+      "year": 2022,
+      "poverty_absolute": 0.3,
+      "poverty_relative": 9.4
+    },
+    {
+      "group": "poverty",
+      "district": "Kuala Langat",
+      "year": 2024,
+      "poverty_absolute": 0.3,
+      "poverty_relative": 2.2
+    },
+    {
+      "group": "poverty",
+      "district": "Kuala Selangor",
+      "year": 2019,
+      "poverty_absolute": 3.5,
+      "poverty_relative": 30.4
+    },
+    {
+      "group": "poverty",
+      "district": "Kuala Selangor",
+      "year": 2022,
+      "poverty_absolute": 2.8,
+      "poverty_relative": 25.2
+    },
+    {
+      "group": "poverty",
+      "district": "Kuala Selangor",
+      "year": 2024,
+      "poverty_absolute": 1.8,
+      "poverty_relative": 21
+    },
+    {
+      "group": "poverty",
+      "district": "Petaling",
+      "year": 2019,
+      "poverty_absolute": 1.1,
+      "poverty_relative": 14.4
+    },
+    {
+      "group": "poverty",
+      "district": "Petaling",
+      "year": 2022,
+      "poverty_absolute": 1.6,
+      "poverty_relative": 14.9
+    },
+    {
+      "group": "poverty",
+      "district": "Petaling",
+      "year": 2024,
+      "poverty_absolute": 1,
+      "poverty_relative": 10.8
+    },
+    {
+      "group": "poverty",
+      "district": "Sabak Bernam",
+      "year": 2019,
+      "poverty_absolute": 4.7,
+      "poverty_relative": 46.2
+    },
+    {
+      "group": "poverty",
+      "district": "Sabak Bernam",
+      "year": 2022,
+      "poverty_absolute": 5.3,
+      "poverty_relative": 42.6
+    },
+    {
+      "group": "poverty",
+      "district": "Sabak Bernam",
+      "year": 2024,
+      "poverty_absolute": 2.7,
+      "poverty_relative": 25.7
+    },
+    {
+      "group": "poverty",
+      "district": "Sepang",
+      "year": 2019,
+      "poverty_absolute": 0.7,
+      "poverty_relative": 7.9
+    },
+    {
+      "group": "poverty",
+      "district": "Sepang",
+      "year": 2022,
+      "poverty_absolute": 0,
+      "poverty_relative": 3.4
+    },
+    {
+      "group": "poverty",
+      "district": "Sepang",
+      "year": 2024,
+      "poverty_absolute": 0.1,
+      "poverty_relative": 1.1
+    },
+    {
+      "group": "poverty",
+      "district": "Hulu Langat",
+      "year": 2019,
+      "poverty_absolute": 0.6,
+      "poverty_relative": 10.5
+    },
+    {
+      "group": "poverty",
+      "district": "Hulu Langat",
+      "year": 2022,
+      "poverty_absolute": 0.5,
+      "poverty_relative": 7
+    },
+    {
+      "group": "poverty",
+      "district": "Hulu Langat",
+      "year": 2024,
+      "poverty_absolute": 0.1,
+      "poverty_relative": 0.3
+    },
+    {
+      "group": "poverty",
+      "district": "Hulu Selangor",
+      "year": 2019,
+      "poverty_absolute": 1.5,
+      "poverty_relative": 26.6
+    },
+    {
+      "group": "poverty",
+      "district": "Hulu Selangor",
+      "year": 2022,
+      "poverty_absolute": 1.7,
+      "poverty_relative": 23.9
+    },
+    {
+      "group": "poverty",
+      "district": "Hulu Selangor",
+      "year": 2024,
+      "poverty_absolute": 0.4,
+      "poverty_relative": 16.7
+    },
+    {
+      "group": "inequality",
+      "district": "Gombak",
+      "year": 2019,
+      "gini": 0.402
+    },
+    {
+      "group": "inequality",
+      "district": "Gombak",
+      "year": 2022,
+      "gini": 0.392
+    },
+    {
+      "group": "inequality",
+      "district": "Gombak",
+      "year": 2024,
+      "gini": 0.366
+    },
+    {
+      "group": "inequality",
+      "district": "Klang",
+      "year": 2019,
+      "gini": 0.378
+    },
+    {
+      "group": "inequality",
+      "district": "Klang",
+      "year": 2022,
+      "gini": 0.347
+    },
+    {
+      "group": "inequality",
+      "district": "Klang",
+      "year": 2024,
+      "gini": 0.299
+    },
+    {
+      "group": "inequality",
+      "district": "Kuala Langat",
+      "year": 2019,
+      "gini": 0.336
+    },
+    {
+      "group": "inequality",
+      "district": "Kuala Langat",
+      "year": 2022,
+      "gini": 0.277
+    },
+    {
+      "group": "inequality",
+      "district": "Kuala Langat",
+      "year": 2024,
+      "gini": 0.16
+    },
+    {
+      "group": "inequality",
+      "district": "Kuala Selangor",
+      "year": 2019,
+      "gini": 0.4
+    },
+    {
+      "group": "inequality",
+      "district": "Kuala Selangor",
+      "year": 2022,
+      "gini": 0.346
+    },
+    {
+      "group": "inequality",
+      "district": "Kuala Selangor",
+      "year": 2024,
+      "gini": 0.35
+    },
+    {
+      "group": "inequality",
+      "district": "Petaling",
+      "year": 2019,
+      "gini": 0.409
+    },
+    {
+      "group": "inequality",
+      "district": "Petaling",
+      "year": 2022,
+      "gini": 0.392
+    },
+    {
+      "group": "inequality",
+      "district": "Petaling",
+      "year": 2024,
+      "gini": 0.387
+    },
+    {
+      "group": "inequality",
+      "district": "Sabak Bernam",
+      "year": 2019,
+      "gini": 0.391
+    },
+    {
+      "group": "inequality",
+      "district": "Sabak Bernam",
+      "year": 2022,
+      "gini": 0.321
+    },
+    {
+      "group": "inequality",
+      "district": "Sabak Bernam",
+      "year": 2024,
+      "gini": 0.268
+    },
+    {
+      "group": "inequality",
+      "district": "Sepang",
+      "year": 2019,
+      "gini": 0.397
+    },
+    {
+      "group": "inequality",
+      "district": "Sepang",
+      "year": 2022,
+      "gini": 0.229
+    },
+    {
+      "group": "inequality",
+      "district": "Sepang",
+      "year": 2024,
+      "gini": 0.332
+    },
+    {
+      "group": "inequality",
+      "district": "Hulu Langat",
+      "year": 2019,
+      "gini": 0.338
+    },
+    {
+      "group": "inequality",
+      "district": "Hulu Langat",
+      "year": 2022,
+      "gini": 0.326
+    },
+    {
+      "group": "inequality",
+      "district": "Hulu Langat",
+      "year": 2024,
+      "gini": 0.219
+    },
+    {
+      "group": "inequality",
+      "district": "Hulu Selangor",
+      "year": 2019,
+      "gini": 0.339
+    },
+    {
+      "group": "inequality",
+      "district": "Hulu Selangor",
+      "year": 2022,
+      "gini": 0.297
+    },
+    {
+      "group": "inequality",
+      "district": "Hulu Selangor",
+      "year": 2024,
+      "gini": 0.299
+    },
+    {
+      "group": "labour",
+      "district": "Gombak",
+      "year": 2018,
+      "lf": 438,
+      "lf_employed": 425.7,
+      "lf_unemployed": 12.3,
+      "lf_outside": 148.6,
+      "p_rate": 74.7,
+      "u_rate": 2.8,
+      "ep_ratio": 72.6
+    },
+    {
+      "group": "labour",
+      "district": "Gombak",
+      "year": 2019,
+      "lf": 442.3,
+      "lf_employed": 429.9,
+      "lf_unemployed": 12.4,
+      "lf_outside": 152.8,
+      "p_rate": 74.3,
+      "u_rate": 2.8,
+      "ep_ratio": 72.2
+    },
+    {
+      "group": "labour",
+      "district": "Gombak",
+      "year": 2020,
+      "lf": 497.1,
+      "lf_employed": 472.5,
+      "lf_unemployed": 24.7,
+      "lf_outside": 169.3,
+      "p_rate": 74.6,
+      "u_rate": 5,
+      "ep_ratio": 70.9
+    },
+    {
+      "group": "labour",
+      "district": "Gombak",
+      "year": 2021,
+      "lf": 501.8,
+      "lf_employed": 472.4,
+      "lf_unemployed": 29.4,
+      "lf_outside": 168.1,
+      "p_rate": 74.9,
+      "u_rate": 5.9,
+      "ep_ratio": 70.5
+    },
+    {
+      "group": "labour",
+      "district": "Gombak",
+      "year": 2022,
+      "lf": 498,
+      "lf_employed": 473.5,
+      "lf_unemployed": 24.5,
+      "lf_outside": 175.4,
+      "p_rate": 73.9,
+      "u_rate": 4.9,
+      "ep_ratio": 70.3
+    },
+    {
+      "group": "labour",
+      "district": "Gombak",
+      "year": 2023,
+      "lf": 513.3,
+      "lf_employed": 495,
+      "lf_unemployed": 18.3,
+      "lf_outside": 171.8,
+      "p_rate": 74.9,
+      "u_rate": 3.6,
+      "ep_ratio": 72.3
+    },
+    {
+      "group": "labour",
+      "district": "Gombak",
+      "year": 2024,
+      "lf": 527.5,
+      "lf_employed": 511.6,
+      "lf_unemployed": 15.9,
+      "lf_outside": 169.6,
+      "p_rate": 75.7,
+      "u_rate": 3,
+      "ep_ratio": 73.4
+    },
+    {
+      "group": "labour",
+      "district": "Hulu Langat",
+      "year": 2018,
+      "lf": 759.8,
+      "lf_employed": 737.4,
+      "lf_unemployed": 22.4,
+      "lf_outside": 214.5,
+      "p_rate": 78,
+      "u_rate": 3,
+      "ep_ratio": 75.7
+    },
+    {
+      "group": "labour",
+      "district": "Hulu Langat",
+      "year": 2019,
+      "lf": 761.9,
+      "lf_employed": 738.5,
+      "lf_unemployed": 23.4,
+      "lf_outside": 222.9,
+      "p_rate": 77.4,
+      "u_rate": 3.1,
+      "ep_ratio": 75
+    },
+    {
+      "group": "labour",
+      "district": "Hulu Langat",
+      "year": 2020,
+      "lf": 746,
+      "lf_employed": 703.8,
+      "lf_unemployed": 42.2,
+      "lf_outside": 249.7,
+      "p_rate": 74.9,
+      "u_rate": 5.7,
+      "ep_ratio": 70.7
+    },
+    {
+      "group": "labour",
+      "district": "Hulu Selangor",
+      "year": 2018,
+      "lf": 126,
+      "lf_employed": 123.1,
+      "lf_unemployed": 2.8,
+      "lf_outside": 39.7,
+      "p_rate": 76,
+      "u_rate": 2.3,
+      "ep_ratio": 74.3
+    },
+    {
+      "group": "labour",
+      "district": "Hulu Selangor",
+      "year": 2019,
+      "lf": 128.4,
+      "lf_employed": 125.4,
+      "lf_unemployed": 3,
+      "lf_outside": 40.9,
+      "p_rate": 75.9,
+      "u_rate": 2.3,
+      "ep_ratio": 74.1
+    },
+    {
+      "group": "labour",
+      "district": "Hulu Selangor",
+      "year": 2020,
+      "lf": 126.3,
+      "lf_employed": 123.6,
+      "lf_unemployed": 2.7,
+      "lf_outside": 43.3,
+      "p_rate": 74.5,
+      "u_rate": 2.1,
+      "ep_ratio": 72.9
+    },
+    {
+      "group": "labour",
+      "district": "Klang",
+      "year": 2018,
+      "lf": 573.2,
+      "lf_employed": 557.1,
+      "lf_unemployed": 16.1,
+      "lf_outside": 164.9,
+      "p_rate": 77.7,
+      "u_rate": 2.8,
+      "ep_ratio": 75.5
+    },
+    {
+      "group": "labour",
+      "district": "Klang",
+      "year": 2019,
+      "lf": 576.9,
+      "lf_employed": 560.2,
+      "lf_unemployed": 16.7,
+      "lf_outside": 170.8,
+      "p_rate": 77.2,
+      "u_rate": 2.9,
+      "ep_ratio": 74.9
+    },
+    {
+      "group": "labour",
+      "district": "Klang",
+      "year": 2020,
+      "lf": 599.6,
+      "lf_employed": 575.8,
+      "lf_unemployed": 23.9,
+      "lf_outside": 182.7,
+      "p_rate": 76.6,
+      "u_rate": 4,
+      "ep_ratio": 73.6
+    },
+    {
+      "group": "labour",
+      "district": "Klang",
+      "year": 2021,
+      "lf": 599.6,
+      "lf_employed": 570.4,
+      "lf_unemployed": 29.3,
+      "lf_outside": 168.3,
+      "p_rate": 78.1,
+      "u_rate": 4.9,
+      "ep_ratio": 74.3
+    },
+    {
+      "group": "labour",
+      "district": "Klang",
+      "year": 2022,
+      "lf": 620,
+      "lf_employed": 592.1,
+      "lf_unemployed": 27.9,
+      "lf_outside": 164.1,
+      "p_rate": 79.1,
+      "u_rate": 4.5,
+      "ep_ratio": 75.5
+    },
+    {
+      "group": "labour",
+      "district": "Klang",
+      "year": 2023,
+      "lf": 646.1,
+      "lf_employed": 625.3,
+      "lf_unemployed": 20.7,
+      "lf_outside": 164.9,
+      "p_rate": 79.7,
+      "u_rate": 3.2,
+      "ep_ratio": 77.1
+    },
+    {
+      "group": "labour",
+      "district": "Klang",
+      "year": 2024,
+      "lf": 674.6,
+      "lf_employed": 657,
+      "lf_unemployed": 17.6,
+      "lf_outside": 165.5,
+      "p_rate": 80.3,
+      "u_rate": 2.6,
+      "ep_ratio": 78.2
+    },
+    {
+      "group": "labour",
+      "district": "Kuala Langat",
+      "year": 2018,
+      "lf": 145.6,
+      "lf_employed": 141.5,
+      "lf_unemployed": 4.2,
+      "lf_outside": 46.6,
+      "p_rate": 75.8,
+      "u_rate": 2.9,
+      "ep_ratio": 73.6
+    },
+    {
+      "group": "labour",
+      "district": "Kuala Langat",
+      "year": 2019,
+      "lf": 148.1,
+      "lf_employed": 143.7,
+      "lf_unemployed": 4.4,
+      "lf_outside": 48.2,
+      "p_rate": 75.4,
+      "u_rate": 3,
+      "ep_ratio": 73.2
+    },
+    {
+      "group": "labour",
+      "district": "Kuala Langat",
+      "year": 2020,
+      "lf": 160.1,
+      "lf_employed": 153.8,
+      "lf_unemployed": 6.3,
+      "lf_outside": 55.6,
+      "p_rate": 74.2,
+      "u_rate": 3.9,
+      "ep_ratio": 71.3
+    },
+    {
+      "group": "labour",
+      "district": "Kuala Langat",
+      "year": 2021,
+      "lf": 160.1,
+      "lf_employed": 155,
+      "lf_unemployed": 5,
+      "lf_outside": 57.8,
+      "p_rate": 73.5,
+      "u_rate": 3.1,
+      "ep_ratio": 71.1
+    },
+    {
+      "group": "labour",
+      "district": "Kuala Langat",
+      "year": 2022,
+      "lf": 161.5,
+      "lf_employed": 157.9,
+      "lf_unemployed": 3.6,
+      "lf_outside": 57.5,
+      "p_rate": 73.7,
+      "u_rate": 2.2,
+      "ep_ratio": 72.1
+    },
+    {
+      "group": "labour",
+      "district": "Kuala Langat",
+      "year": 2023,
+      "lf": 165.1,
+      "lf_employed": 162.4,
+      "lf_unemployed": 2.6,
+      "lf_outside": 57.3,
+      "p_rate": 74.2,
+      "u_rate": 1.6,
+      "ep_ratio": 73
+    },
+    {
+      "group": "labour",
+      "district": "Kuala Langat",
+      "year": 2024,
+      "lf": 168.9,
+      "lf_employed": 166.9,
+      "lf_unemployed": 2,
+      "lf_outside": 56.9,
+      "p_rate": 74.8,
+      "u_rate": 1.2,
+      "ep_ratio": 73.9
+    },
+    {
+      "group": "labour",
+      "district": "Kuala Selangor",
+      "year": 2018,
+      "lf": 131.2,
+      "lf_employed": 127.3,
+      "lf_unemployed": 3.9,
+      "lf_outside": 47,
+      "p_rate": 73.6,
+      "u_rate": 2.9,
+      "ep_ratio": 71.4
+    },
+    {
+      "group": "labour",
+      "district": "Kuala Selangor",
+      "year": 2019,
+      "lf": 136.1,
+      "lf_employed": 132.1,
+      "lf_unemployed": 4,
+      "lf_outside": 48.2,
+      "p_rate": 73.8,
+      "u_rate": 3,
+      "ep_ratio": 71.7
+    },
+    {
+      "group": "labour",
+      "district": "Kuala Selangor",
+      "year": 2020,
+      "lf": 140.2,
+      "lf_employed": 132.7,
+      "lf_unemployed": 7.6,
+      "lf_outside": 56.8,
+      "p_rate": 71.2,
+      "u_rate": 5.4,
+      "ep_ratio": 67.4
+    },
+    {
+      "group": "labour",
+      "district": "Kuala Selangor",
+      "year": 2021,
+      "lf": 143.4,
+      "lf_employed": 136.6,
+      "lf_unemployed": 6.8,
+      "lf_outside": 57,
+      "p_rate": 71.5,
+      "u_rate": 4.7,
+      "ep_ratio": 68.2
+    },
+    {
+      "group": "labour",
+      "district": "Kuala Selangor",
+      "year": 2022,
+      "lf": 143.5,
+      "lf_employed": 137.1,
+      "lf_unemployed": 6.3,
+      "lf_outside": 58.4,
+      "p_rate": 71.1,
+      "u_rate": 4.4,
+      "ep_ratio": 67.9
+    },
+    {
+      "group": "labour",
+      "district": "Kuala Selangor",
+      "year": 2023,
+      "lf": 144.7,
+      "lf_employed": 140.1,
+      "lf_unemployed": 4.6,
+      "lf_outside": 60.6,
+      "p_rate": 70.5,
+      "u_rate": 3.1,
+      "ep_ratio": 68.2
+    },
+    {
+      "group": "labour",
+      "district": "Kuala Selangor",
+      "year": 2024,
+      "lf": 147.3,
+      "lf_employed": 143.6,
+      "lf_unemployed": 3.8,
+      "lf_outside": 61.3,
+      "p_rate": 70.6,
+      "u_rate": 2.6,
+      "ep_ratio": 68.8
+    },
+    {
+      "group": "labour",
+      "district": "Petaling",
+      "year": 2018,
+      "lf": 1166.5,
+      "lf_employed": 1135,
+      "lf_unemployed": 31.5,
+      "lf_outside": 376.3,
+      "p_rate": 75.6,
+      "u_rate": 2.7,
+      "ep_ratio": 73.6
+    },
+    {
+      "group": "labour",
+      "district": "Petaling",
+      "year": 2019,
+      "lf": 1189.7,
+      "lf_employed": 1157.1,
+      "lf_unemployed": 32.6,
+      "lf_outside": 386.5,
+      "p_rate": 75.5,
+      "u_rate": 2.7,
+      "ep_ratio": 73.4
+    },
+    {
+      "group": "labour",
+      "district": "Petaling",
+      "year": 2020,
+      "lf": 1262.2,
+      "lf_employed": 1210.2,
+      "lf_unemployed": 52,
+      "lf_outside": 380,
+      "p_rate": 76.9,
+      "u_rate": 4.1,
+      "ep_ratio": 73.7
+    },
+    {
+      "group": "labour",
+      "district": "Petaling",
+      "year": 2021,
+      "lf": 1297.9,
+      "lf_employed": 1249.7,
+      "lf_unemployed": 48.2,
+      "lf_outside": 364.9,
+      "p_rate": 78.1,
+      "u_rate": 3.7,
+      "ep_ratio": 75.2
+    },
+    {
+      "group": "labour",
+      "district": "Petaling",
+      "year": 2022,
+      "lf": 1297.9,
+      "lf_employed": 1255.3,
+      "lf_unemployed": 42.6,
+      "lf_outside": 353.6,
+      "p_rate": 78.6,
+      "u_rate": 3.3,
+      "ep_ratio": 76
+    },
+    {
+      "group": "labour",
+      "district": "Petaling",
+      "year": 2023,
+      "lf": 1327.4,
+      "lf_employed": 1295.7,
+      "lf_unemployed": 31.7,
+      "lf_outside": 347.2,
+      "p_rate": 79.3,
+      "u_rate": 2.4,
+      "ep_ratio": 77.4
+    },
+    {
+      "group": "labour",
+      "district": "Petaling",
+      "year": 2024,
+      "lf": 1354.1,
+      "lf_employed": 1326.6,
+      "lf_unemployed": 27.5,
+      "lf_outside": 343.8,
+      "p_rate": 79.8,
+      "u_rate": 2,
+      "ep_ratio": 78.1
+    },
+    {
+      "group": "labour",
+      "district": "Sabak Bernam",
+      "year": 2018,
+      "lf": 63.7,
+      "lf_employed": 61.7,
+      "lf_unemployed": 2,
+      "lf_outside": 20.9,
+      "p_rate": 75.3,
+      "u_rate": 3.2,
+      "ep_ratio": 72.9
+    },
+    {
+      "group": "labour",
+      "district": "Sabak Bernam",
+      "year": 2019,
+      "lf": 64.1,
+      "lf_employed": 61.9,
+      "lf_unemployed": 2.1,
+      "lf_outside": 21.6,
+      "p_rate": 74.8,
+      "u_rate": 3.3,
+      "ep_ratio": 72.2
+    },
+    {
+      "group": "labour",
+      "district": "Sabak Bernam",
+      "year": 2020,
+      "lf": 53.9,
+      "lf_employed": 52.1,
+      "lf_unemployed": 1.8,
+      "lf_outside": 20,
+      "p_rate": 72.9,
+      "u_rate": 3.3,
+      "ep_ratio": 70.5
+    },
+    {
+      "group": "labour",
+      "district": "Sabak Bernam",
+      "year": 2021,
+      "lf": 53.2,
+      "lf_employed": 51.2,
+      "lf_unemployed": 2,
+      "lf_outside": 21.1,
+      "p_rate": 71.6,
+      "u_rate": 3.8,
+      "ep_ratio": 68.9
+    },
+    {
+      "group": "labour",
+      "district": "Sabak Bernam",
+      "year": 2022,
+      "lf": 53.5,
+      "lf_employed": 51.9,
+      "lf_unemployed": 1.6,
+      "lf_outside": 21.1,
+      "p_rate": 71.7,
+      "u_rate": 3,
+      "ep_ratio": 69.6
+    },
+    {
+      "group": "labour",
+      "district": "Sabak Bernam",
+      "year": 2023,
+      "lf": 53.5,
+      "lf_employed": 52.3,
+      "lf_unemployed": 1.2,
+      "lf_outside": 21.9,
+      "p_rate": 71,
+      "u_rate": 2.2,
+      "ep_ratio": 69.4
+    },
+    {
+      "group": "labour",
+      "district": "Sabak Bernam",
+      "year": 2024,
+      "lf": 54.5,
+      "lf_employed": 53.4,
+      "lf_unemployed": 1,
+      "lf_outside": 21.8,
+      "p_rate": 71.4,
+      "u_rate": 1.9,
+      "ep_ratio": 70
+    },
+    {
+      "group": "labour",
+      "district": "Sepang",
+      "year": 2018,
+      "lf": 142.2,
+      "lf_employed": 137.8,
+      "lf_unemployed": 4.4,
+      "lf_outside": 43.4,
+      "p_rate": 76.6,
+      "u_rate": 3.1,
+      "ep_ratio": 74.2
+    },
+    {
+      "group": "labour",
+      "district": "Sepang",
+      "year": 2019,
+      "lf": 145.3,
+      "lf_employed": 140.7,
+      "lf_unemployed": 4.6,
+      "lf_outside": 44.9,
+      "p_rate": 76.4,
+      "u_rate": 3.2,
+      "ep_ratio": 74
+    },
+    {
+      "group": "labour",
+      "district": "Sepang",
+      "year": 2020,
+      "lf": 176.1,
+      "lf_employed": 168.9,
+      "lf_unemployed": 7.3,
+      "lf_outside": 55.5,
+      "p_rate": 76,
+      "u_rate": 4.1,
+      "ep_ratio": 72.9
+    },
+    {
+      "group": "labour",
+      "district": "Sepang",
+      "year": 2021,
+      "lf": 177.4,
+      "lf_employed": 168.7,
+      "lf_unemployed": 8.7,
+      "lf_outside": 57.5,
+      "p_rate": 75.5,
+      "u_rate": 4.9,
+      "ep_ratio": 71.8
+    },
+    {
+      "group": "labour",
+      "district": "Sepang",
+      "year": 2022,
+      "lf": 178.9,
+      "lf_employed": 171.1,
+      "lf_unemployed": 7.8,
+      "lf_outside": 55.7,
+      "p_rate": 76.3,
+      "u_rate": 4.4,
+      "ep_ratio": 72.9
+    },
+    {
+      "group": "labour",
+      "district": "Sepang",
+      "year": 2023,
+      "lf": 182.5,
+      "lf_employed": 176.8,
+      "lf_unemployed": 5.7,
+      "lf_outside": 56,
+      "p_rate": 76.5,
+      "u_rate": 3.1,
+      "ep_ratio": 74.1
+    },
+    {
+      "group": "labour",
+      "district": "Sepang",
+      "year": 2024,
+      "lf": 186.6,
+      "lf_employed": 181.8,
+      "lf_unemployed": 4.7,
+      "lf_outside": 56.6,
+      "p_rate": 76.7,
+      "u_rate": 2.5,
+      "ep_ratio": 74.8
+    },
+    {
+      "group": "labour",
+      "district": "Hulu Langat",
+      "year": 2021,
+      "lf": 747.3,
+      "lf_employed": 711.8,
+      "lf_unemployed": 35.4,
+      "lf_outside": 242.9,
+      "p_rate": 75.5,
+      "u_rate": 4.7,
+      "ep_ratio": 71.9
+    },
+    {
+      "group": "labour",
+      "district": "Hulu Langat",
+      "year": 2022,
+      "lf": 767.5,
+      "lf_employed": 738.5,
+      "lf_unemployed": 29,
+      "lf_outside": 236.2,
+      "p_rate": 76.5,
+      "u_rate": 3.8,
+      "ep_ratio": 73.6
+    },
+    {
+      "group": "labour",
+      "district": "Hulu Langat",
+      "year": 2023,
+      "lf": 798.6,
+      "lf_employed": 777,
+      "lf_unemployed": 21.7,
+      "lf_outside": 237.6,
+      "p_rate": 77.1,
+      "u_rate": 2.7,
+      "ep_ratio": 75
+    },
+    {
+      "group": "labour",
+      "district": "Hulu Langat",
+      "year": 2024,
+      "lf": 829.6,
+      "lf_employed": 810.9,
+      "lf_unemployed": 18.7,
+      "lf_outside": 242.2,
+      "p_rate": 77.4,
+      "u_rate": 2.3,
+      "ep_ratio": 75.7
+    },
+    {
+      "group": "labour",
+      "district": "Hulu Selangor",
+      "year": 2021,
+      "lf": 128.9,
+      "lf_employed": 125.2,
+      "lf_unemployed": 3.7,
+      "lf_outside": 41.1,
+      "p_rate": 75.8,
+      "u_rate": 2.9,
+      "ep_ratio": 73.6
+    },
+    {
+      "group": "labour",
+      "district": "Hulu Selangor",
+      "year": 2022,
+      "lf": 132.1,
+      "lf_employed": 129,
+      "lf_unemployed": 3.1,
+      "lf_outside": 40,
+      "p_rate": 76.8,
+      "u_rate": 2.4,
+      "ep_ratio": 75
+    },
+    {
+      "group": "labour",
+      "district": "Hulu Selangor",
+      "year": 2023,
+      "lf": 136.5,
+      "lf_employed": 134.2,
+      "lf_unemployed": 2.3,
+      "lf_outside": 39.6,
+      "p_rate": 77.5,
+      "u_rate": 1.7,
+      "ep_ratio": 76.2
+    },
+    {
+      "group": "labour",
+      "district": "Hulu Selangor",
+      "year": 2024,
+      "lf": 140.4,
+      "lf_employed": 138.4,
+      "lf_unemployed": 2,
+      "lf_outside": 40.1,
+      "p_rate": 77.8,
+      "u_rate": 1.4,
+      "ep_ratio": 76.7
+    }
+  ]
+}
