@@ -122,6 +122,24 @@
   const answerDistrict=question=>{
     const target=matchDistrict(question);
     const wantsArea=isAreaQuestion(question);
+    const wantsPopulation=/\b(penduduk|populasi|population)\b/.test(norm(question));
+    const wantsDensity=/\b(kepadatan|density)\b/.test(norm(question));
+    if(wantsPopulation||wantsDensity){
+      const verified={
+        "Petaling":{population:"kira-kira 2,370,600",density:"4,858",year:"2025",source:"DOSM · Anggaran Penduduk Mengikut Daerah Pentadbiran 2025"},
+        "Sabak Bernam":{population:"107,057",density:"107",year:"Banci 2020",source:"DOSM · Banci Penduduk dan Perumahan Malaysia 2020"}
+      };
+      const v=target&&verified[target.name];
+      if(v){
+        return {title:(wantsDensity?"Kepadatan":"Penduduk")+" Daerah "+target.name,badge:"DEMOGRAFI · DOSM",
+          summary:wantsDensity?"Kepadatan penduduk <strong>Daerah "+esc(target.name)+"</strong> ialah <strong>"+v.density+" orang/km²</strong> pada "+v.year+".":"Jumlah penduduk <strong>Daerah "+esc(target.name)+"</strong> ialah <strong>"+v.population+" orang</strong> pada "+v.year+".",
+          sources:[v.source],actions:[{label:"Dashboard Demografi & Sosioekonomi",url:"https://selangorurbanobservatory.github.io/Dashboard-Demografi-Sosioekonomi-Negeri-Selangor/"}]};
+      }
+      return {title:"Data Penduduk"+(target?" Daerah "+target.name:" Mengikut Daerah"),badge:"DEMOGRAFI",
+        summary:"Angka "+(wantsDensity?"kepadatan":"penduduk")+" bagi "+(target?"<strong>Daerah "+esc(target.name)+"</strong>":"daerah yang diminta")+" belum disahkan dalam Knowledge Base SUO. Saya tidak akan menggantikan data ini dengan keluasan tanah atau maklumat PBT.",
+        sources:["Rujukan yang diperlukan: DOSM · Penduduk Mengikut Daerah Pentadbiran"],
+        actions:[{label:"Dashboard Demografi & Sosioekonomi",url:"https://selangorurbanobservatory.github.io/Dashboard-Demografi-Sosioekonomi-Negeri-Selangor/"}]};
+    }
     if(!target) return {
       title:"Sembilan Daerah Selangor",badge:"DAERAH / RSN 2035",
       summary:"Negeri Selangor mempunyai <strong>9 daerah pentadbiran</strong>: "+DISTRICT_AREA_REFERENCE.map(d=>esc(d.name)).join(", ")+". Nyatakan daerah tertentu untuk melihat maklumat keluasan daerah.",
