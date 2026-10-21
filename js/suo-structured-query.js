@@ -75,10 +75,11 @@ const answer=async query=>{
       const value=row[v.indicator];
       const digits=v.indicator==="gini"?3:spec.unit==="ribu orang"?1:spec.unit==="%"?1:0;
       const display=new Intl.NumberFormat("ms-MY",{minimumFractionDigits:digits,maximumFractionDigits:digits}).format(value);
+      const formattedValue=spec.unit==="RM sebulan"?"RM"+display:display+" "+spec.unit;
       const note=spec.unit==="ribu orang"?" (bersamaan kira-kira "+new Intl.NumberFormat("ms-MY").format(Math.round(value*1000))+" orang; sumber dalam ribu orang).":".";
       return {
         title:spec.title+" · Daerah "+v.entity[0],badge:"SOSIOEKONOMI · "+chosenYear,
-        summary:"<strong>"+esc(spec.title)+"</strong> bagi <strong>Daerah "+esc(v.entity[0])+"</strong> pada <strong>"+chosenYear+"</strong> ialah <strong>"+display+" "+esc(spec.unit)+"</strong>"+note,
+        summary:"<strong>"+esc(spec.title)+"</strong> bagi <strong>Daerah "+esc(v.entity[0])+"</strong> pada <strong>"+chosenYear+"</strong> ialah <strong>"+esc(formattedValue)+"</strong>"+note,
         insights:[{label:"Sumber berstruktur",title:spec.group.toUpperCase(),text:"Data daerah daripada fail CSV Dashboard Demografi SUO; nilai dikekalkan mengikut tahun dan unit sumber."}],
         sources:["Dashboard Demografi & Sosioekonomi SUO · "+dataset.meta.files.find(file=>file.includes(spec.group==="income"?"hh_income":spec.group==="poverty"?"hh_poverty":spec.group==="inequality"?"hh_inequality":"lfs_district"))+" · rujukan DOSM"],actions
       };
