@@ -1,10 +1,10 @@
 {
   "meta": {
     "name": "SUO Knowledge Base",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "language": "ms",
-    "updated": "2026-10-06",
-    "facts_count": 170,
+    "updated": "2026-10-21",
+    "facts_count": 178,
     "glossary_count": 50,
     "faq_count": 50,
     "categories": {
@@ -19,7 +19,7 @@
       "I": "Roadmap, Digital Twin & Masa Hadapan",
       "J": "Prinsip Operasi & Kualiti"
     },
-    "note": "Semak dan sahkan fakta rasmi/berubah sebelum penerbitan awam. Kandungan operasi 2026 disusun daripada bahan perancangan SUO yang tersedia."
+    "note": "Fakta rujukan RS Negeri Selangor 2035 (Pengubahan) diwartakan dikatalogkan mengikut nombor dasar dan halaman; angka mengikut tahun/sumber dibezakan. Semak dan sahkan fakta rasmi/berubah sebelum penerbitan awam. Kandungan operasi 2026 disusun daripada bahan perancangan SUO yang tersedia."
   },
   "facts": [
     {
@@ -1950,6 +1950,180 @@
         "uat"
       ],
       "source_type": "SUO Knowledge Base"
+    },
+    {
+      "category_code": "G",
+      "category": "Dasar & Perancangan Negeri",
+      "source_type": "RS Negeri Selangor 2035 (Pengubahan) — Warta 1000, 19 Mac 2026",
+      "source_document": "Rancangan Struktur Negeri Selangor 2035 (Pengubahan)",
+      "source_agency": "PLANMalaysia Selangor",
+      "gazette_number": "1000",
+      "gazette_date": "2026-03-19",
+      "id": "RSN35-001",
+      "title": "Status pewartaan RS Negeri Selangor 2035 (Pengubahan)",
+      "fact": "RS Negeri Selangor 2035 (Pengubahan) diluluskan di JPNS Bil. 3/2025 pada 10 Jun 2025, dipersetujui oleh Pihak Berkuasa Negeri melalui MMKN Ke-30/2025 pada 17 Oktober 2025 dan fakta persetujuannya diwartakan dengan nombor Warta 1000 bertarikh 19 Mac 2026.",
+      "keywords": [
+        "rsn selangor 2035",
+        "rancangan struktur",
+        "pengubahan",
+        "warta 1000",
+        "diwartakan",
+        "tarikh warta",
+        "kelulusan JPNS"
+      ],
+      "source_page": "halaman i (PDF halaman 3)"
+    },
+    {
+      "category_code": "G",
+      "category": "Dasar & Perancangan Negeri",
+      "source_type": "RS Negeri Selangor 2035 (Pengubahan) — Warta 1000, 19 Mac 2026",
+      "source_document": "Rancangan Struktur Negeri Selangor 2035 (Pengubahan)",
+      "source_agency": "PLANMalaysia Selangor",
+      "gazette_number": "1000",
+      "gazette_date": "2026-03-19",
+      "id": "RSN35-002",
+      "title": "Tiga teras pembangunan RS Negeri Selangor 2035 (Pengubahan)",
+      "fact": "Teras 1: Ke Arah Negeri Dinamik, Maju dan Berdaya Saing; Teras 2: Ke Arah Negeri Mampan dan Berdaya Tahan; Teras 3: Ke Arah Negeri Cekap Sumber dan Berdaya Huni.",
+      "keywords": [
+        "tiga teras",
+        "teras 1",
+        "teras 2",
+        "teras 3",
+        "hala tuju strategik",
+        "rsn 2035"
+      ],
+      "source_page": "Bab 4 seksyen 4.2 (isi kandungan PDF halaman 6)"
+    },
+    {
+      "category_code": "G",
+      "category": "Dasar & Perancangan Negeri",
+      "source_type": "RS Negeri Selangor 2035 (Pengubahan) — Warta 1000, 19 Mac 2026",
+      "source_document": "Rancangan Struktur Negeri Selangor 2035 (Pengubahan)",
+      "source_agency": "PLANMalaysia Selangor",
+      "gazette_number": "1000",
+      "gazette_date": "2026-03-19",
+      "id": "RSN35-003",
+      "title": "Dasar MP34 — Pelaksanaan Selangor Urban Observatory",
+      "fact": "Dasar MP34 memperuntukkan pelaksanaan Selangor Urban Observatory (SUO) bagi penyelarasan, integrasi dan pengurusan data raya peringkat negeri. Inisiatif P1 ialah penyediaan sistem pemantauan perbandaran yang mengintegrasikan platform data raya dan analitik. Inisiatif P2 ialah mewujudkan pangkalan data dan sistem GIS bersepadu. JPBD dan PBT disenaraikan sebagai agensi pelaksana.",
+      "keywords": [
+        "MP34",
+        "dasar mp34",
+        "dasar suo",
+        "selangor urban observatory",
+        "inisiatif P1",
+        "inisiatif P2",
+        "pengurusan data raya",
+        "jpbd pbt"
+      ],
+      "source_page": "Teras 2, Dasar MP34 (PDF halaman 334)"
+    },
+    {
+      "category_code": "G",
+      "category": "Dasar & Perancangan Negeri",
+      "source_type": "RS Negeri Selangor 2035 (Pengubahan) — Warta 1000, 19 Mac 2026",
+      "source_document": "Rancangan Struktur Negeri Selangor 2035 (Pengubahan)",
+      "source_agency": "PLANMalaysia Selangor",
+      "gazette_number": "1000",
+      "gazette_date": "2026-03-19",
+      "id": "RSN35-004",
+      "title": "Fungsi utama State Urban Observatory (SUO) di bawah RSN Selangor",
+      "fact": "Seksyen 7.3.2 menyenaraikan empat fungsi SUO: pengumpulan data bersepadu daripada PBT, agensi teknikal, sektor swasta dan komuniti; analisis pintar menggunakan big data analytics, GIS, IoT dan AI; sokongan perancangan berasaskan bukti; serta pemantauan dan penilaian menggunakan dashboard interaktif untuk memantau pelaksanaan dasar dan indikator RS Negeri Selangor 2035.",
+      "keywords": [
+        "fungsi SUO",
+        "apa itu suo",
+        "7.3.2",
+        "data bersepadu",
+        "analisis pintar",
+        "evidence based planning",
+        "pemantauan indikator"
+      ],
+      "source_page": "Bab 7, seksyen 7.3.2, halaman 7-15 (PDF halaman 462)"
+    },
+    {
+      "category_code": "G",
+      "category": "Dasar & Perancangan Negeri",
+      "source_type": "RS Negeri Selangor 2035 (Pengubahan) — Warta 1000, 19 Mac 2026",
+      "source_document": "Rancangan Struktur Negeri Selangor 2035 (Pengubahan)",
+      "source_agency": "PLANMalaysia Selangor",
+      "gazette_number": "1000",
+      "gazette_date": "2026-03-19",
+      "id": "RSN35-005",
+      "title": "Sasaran SUO dalam Dasar MP34",
+      "fact": "Dasar MP34 menggariskan indikator penubuhan SUO, dengan pencapaian semasa tahun 2023 dinyatakan sebagai tiada dan sasaran tahun 2035 ialah penubuhan SUO. Keberhasilan yang disasarkan ialah peningkatan kecekapan pengurusan pembangunan negeri secara digital. Angka 2023 ialah garis dasar dokumen, bukan status semasa portal tahun 2026.",
+      "keywords": [
+        "sasaran 2035 SUO",
+        "indikator SUO",
+        "MP34",
+        "penubuhan suo",
+        "outcome",
+        "keberhasilan",
+        "2023"
+      ],
+      "source_page": "Teras 2, Dasar MP34 (PDF halaman 334)"
+    },
+    {
+      "category_code": "G",
+      "category": "Dasar & Perancangan Negeri",
+      "source_type": "RS Negeri Selangor 2035 (Pengubahan) — Warta 1000, 19 Mac 2026",
+      "source_document": "Rancangan Struktur Negeri Selangor 2035 (Pengubahan)",
+      "source_agency": "PLANMalaysia Selangor",
+      "gazette_number": "1000",
+      "gazette_date": "2026-03-19",
+      "id": "RSN35-006",
+      "title": "Keluasan kawasan kajian RS Negeri Selangor 2035 (Pengubahan)",
+      "fact": "Seksyen 1.2 menyatakan keluasan kawasan kajian 792,116.09 hektar menurut sumber PLANMalaysia Selangor 2023. Angka ini merujuk kawasan kajian RSN dan mesti dilabel demikian. Bagi soalan keluasan negeri terkini dalam SUO, rujukan JUPEM 2024 yang dibekalkan ialah 833,720.73 hektar; jangan mencampurkan kedua-dua angka atau menganggapnya setara.",
+      "keywords": [
+        "luas kawasan kajian",
+        "keluasan kawasan kajian rsn",
+        "792116.09",
+        "PLANMalaysia Selangor 2023",
+        "keluasan selangor",
+        "perbezaan keluasan"
+      ],
+      "source_page": "Bab 1 seksyen 1.2, halaman 1-5 (PDF halaman 23)"
+    },
+    {
+      "category_code": "G",
+      "category": "Dasar & Perancangan Negeri",
+      "source_type": "RS Negeri Selangor 2035 (Pengubahan) — Warta 1000, 19 Mac 2026",
+      "source_document": "Rancangan Struktur Negeri Selangor 2035 (Pengubahan)",
+      "source_agency": "PLANMalaysia Selangor",
+      "gazette_number": "1000",
+      "gazette_date": "2026-03-19",
+      "id": "RSN35-007",
+      "title": "Hierarki dasar dan bidang utama RS Negeri Selangor 2035 (Pengubahan)",
+      "fact": "Dokumen merangkumi dasar berkaitan ekonomi, industri, pelancongan, ICT, pembangunan bandar dan desa, pertanian, KSAS dan alam sekitar, teknologi hijau, perumahan, kemudahan masyarakat, pengangkutan, air dan utiliti; serta pelan strategik guna tanah dan pengurusan pelaksanaan/pemantauan.",
+      "keywords": [
+        "bidang dasar rsn",
+        "ekonomi",
+        "perumahan",
+        "ksas",
+        "pengangkutan",
+        "pelan guna tanah",
+        "hierarki dasar"
+      ],
+      "source_page": "Bab 5 hingga Bab 7 (isi kandungan PDF halaman 7-8)"
+    },
+    {
+      "category_code": "G",
+      "category": "Dasar & Perancangan Negeri",
+      "source_type": "RS Negeri Selangor 2035 (Pengubahan) — Warta 1000, 19 Mac 2026",
+      "source_document": "Rancangan Struktur Negeri Selangor 2035 (Pengubahan)",
+      "source_agency": "PLANMalaysia Selangor",
+      "gazette_number": "1000",
+      "gazette_date": "2026-03-19",
+      "id": "RSN35-008",
+      "title": "Hubungan SUO dan rancangan struktur negeri",
+      "fact": "RS Negeri Selangor 2035 (Pengubahan) memperkenalkan SUO sebagai mekanisme sokongan perancangan berasaskan data: pusat rujukan yang menggabungkan data sosial, ekonomi, spatial dan alam sekitar untuk analisis dan paparan dashboard, sokongan keputusan dan pemantauan pelaksanaan dasar serta indikator RSN.",
+      "keywords": [
+        "hubungan suo rsn",
+        "SUO rancangan struktur",
+        "evidence based",
+        "dashboard rsn",
+        "pemantauan dasar",
+        "data spatial"
+      ],
+      "source_page": "Bab 7 seksyen 7.3.2 (PDF halaman 462)"
     }
   ]
 }
