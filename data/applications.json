@@ -171,7 +171,8 @@
         "ksas",
         "kawasan sensitif alam sekitar",
         "environmentally sensitive area",
-        "alam sekitar"
+        "alam sekitar",
+        "KSAS Selangor"
       ],
       "card_class": "ksas",
       "preview": true,
@@ -254,7 +255,8 @@
         "lembaga rayuan",
         "appeal board",
         "rayuan perancangan",
-        "pengawalan perancangan"
+        "pengawalan perancangan",
+        "lembaga rayuan selangor"
       ],
       "card_class": "appeal-board",
       "preview": true,
@@ -305,7 +307,8 @@
         "perindustrian",
         "industry",
         "industrial park",
-        "kawasan industri"
+        "kawasan industri",
+        "sektor perindustrian"
       ],
       "card_class": "industry",
       "preview": true,
@@ -329,7 +332,8 @@
         "perumahan",
         "housing",
         "rumah",
-        "rsku"
+        "rsku",
+        "perumahan negeri selangor"
       ],
       "card_class": "housing",
       "preview": true,
@@ -353,7 +357,8 @@
         "perumahan mampu milik",
         "affordable housing",
         "rumah mampu milik",
-        "lphs"
+        "lphs",
+        "skim perumahan"
       ],
       "card_class": "affordable-housing",
       "preview": true,
@@ -401,7 +406,9 @@
       "keywords": [
         "sia",
         "social impact assessment",
-        "penilaian impak sosial"
+        "penilaian impak sosial",
+        "SIA Selangor",
+        "impak pembangunan"
       ],
       "card_class": "sia",
       "preview": true,
@@ -451,7 +458,8 @@
         "tanah lapang",
         "open space",
         "taman",
-        "rekreasi"
+        "rekreasi",
+        "tanah lapang awam"
       ],
       "card_class": "open",
       "preview": true,
@@ -476,7 +484,8 @@
         "perkuburan",
         "cemetery",
         "kubur",
-        "burial"
+        "burial",
+        "tanah perkuburan"
       ],
       "card_class": "cemetery",
       "preview": true,
@@ -501,7 +510,8 @@
         "pelancongan",
         "tourism",
         "destinasi",
-        "travel"
+        "travel",
+        "storymap pelancongan"
       ],
       "card_class": "tourism",
       "preview": true,
@@ -526,7 +536,8 @@
         "pusat smartdesa",
         "pusat smart desa",
         "storymap",
-        "desa pintar"
+        "desa pintar",
+        "komuniti desa"
       ],
       "card_class": "smartdesa-story",
       "preview": true,
@@ -550,7 +561,8 @@
         "rsn",
         "rancangan struktur",
         "selangor 2035",
-        "planning policy"
+        "planning policy",
+        "dasar negeri"
       ],
       "card_class": "rsn",
       "preview": true,
@@ -602,7 +614,9 @@
       "keywords": [
         "sismaps",
         "guna tanah",
-        "perancangan"
+        "perancangan",
+        "sistem maklumat perancangan",
+        "geospatial"
       ],
       "preview": true,
       "themes": [
@@ -626,7 +640,9 @@
       "keywords": [
         "smartdesa",
         "desa",
-        "rural"
+        "rural",
+        "desa pintar",
+        "smart village"
       ],
       "preview": true,
       "themes": [
@@ -649,7 +665,8 @@
         "analitik spatial",
         "spatial analytics",
         "nearest facility",
-        "coverage analysis"
+        "coverage analysis",
+        "analisis spatial"
       ],
       "preview": false,
       "catalog_only": true,
@@ -673,7 +690,9 @@
       "host": null,
       "keywords": [
         "e20a",
-        "permohonan"
+        "permohonan",
+        "aplikasi e20a",
+        "perancangan"
       ],
       "preview": false,
       "themes": [
@@ -695,7 +714,9 @@
       "keywords": [
         "telekomunikasi",
         "menara",
-        "telco"
+        "telco",
+        "menara telekomunikasi",
+        "infrastruktur telekomunikasi"
       ],
       "preview": false,
       "themes": [
@@ -752,7 +773,11 @@
         "storymap"
       ],
       "card_class": "development-plan-story",
-      "preview": true
+      "preview": true,
+      "themes": [
+        "planning",
+        "landdev"
+      ]
     },
     {
       "id": "demography-socioeconomic",
