@@ -236,6 +236,11 @@
 
   const answer=async raw=>{
     const effective=isShortFollowup(raw)&&state.lastQuery ? state.lastQuery+" "+raw : raw;
+    // Structured geography → indicator → year → cited-source engine has priority.
+    if(window.SUOStructuredQuery){
+      const structured=await window.SUOStructuredQuery.answer(effective);
+      if(structured){state.lastQuery=effective;state.lastTopics=[];state.lastApps=[];return structured;}
+    }
 
     // Population intent implies an administrative district when no PBT is explicitly named.
     // Never fall through to a generic dashboard recommendation for a known district.
