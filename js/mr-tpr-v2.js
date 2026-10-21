@@ -235,7 +235,10 @@
   };
 
   const answer=async raw=>{
-    const effective=isShortFollowup(raw)&&state.lastQuery ? state.lastQuery+" "+raw : raw;
+    const contextTurn=window.SUOConversationContext?.resolve(raw);
+    const effective=contextTurn?.query||(isShortFollowup(raw)&&state.lastQuery ? state.lastQuery+" "+raw : raw);
+    if(contextTurn?.reset)return {title:"Konteks telah dikosongkan",badge:"SESI BARU",summary:"Sila mulakan pertanyaan baharu dengan lokasi, indikator atau tahun yang ingin disemak.",sources:[],actions:[]};
+    if(contextTurn)window.SUOConversationContext.commit(contextTurn);
     // Structured geography → indicator → year → cited-source engine has priority.
     if(window.SUOStructuredQuery){
       const structured=await window.SUOStructuredQuery.answer(effective);
