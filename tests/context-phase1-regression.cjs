@@ -1,0 +1,25 @@
+// Run: node tests/context-phase1-regression.cjs
+const fs=require("node:fs"),vm=require("node:vm"),assert=require("node:assert/strict");
+const code=fs.readFileSync("js/suo-conversation-context.js","utf8");
+const sandbox={window:{}};vm.runInNewContext(code,sandbox);
+const ctx=sandbox.window.SUOConversationContext;
+const turn=q=>{const r=ctx.resolve(q);ctx.commit(r);return r};
+const has=(q,...parts)=>{const r=turn(q);for(const p of parts)assert.ok(r.query.toLowerCase().includes(p.toLowerCase()),q+" missed "+p+": "+r.query);return r};
+ctx.reset();
+turn("jumlah penduduk Klang 2023");
+has("Petaling pula?","petaling","penduduk","2023");
+has("Sabak Bernam?","sabak bernam","penduduk","2023");
+has("2024?","sabak bernam","penduduk","2024");
+ctx.reset();
+turn("pecahkan sekolah Sabak Bernam");
+has("sekolah rendah tu pecahkan lagi","sabak bernam","sekolah","rendah");
+has("Petaling pula","petaling","sekolah","rendah");
+ctx.reset();
+turn("median pendapatan Klang 2024");
+has("Gombak?","gombak","pendapatan","2024");
+ctx.reset();
+turn("luas daerah Sepang");
+has("Klang pula","klang","keluasan");
+const reset=turn("mula semula");assert.equal(reset.reset,true);
+assert.equal(ctx.snapshot().location,null);
+console.log("PASS: 9 sticky-context regression assertions (district, indicator, year, school, reset)");
