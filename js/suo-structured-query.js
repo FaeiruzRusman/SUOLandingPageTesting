@@ -38,8 +38,7 @@ const answer=async query=>{
       if(v.year&&v.year!==2023)return missing("Rujukan keluasan daerah dalam RSN menggunakan data 2023, bukan tahun yang diminta.");
       return result("Keluasan Daerah "+v.entity[0],"Keluasan kawasan kajian <strong>Daerah "+esc(v.entity[0])+"</strong> ialah <strong>"+fmt(v.entity[1])+" hektar</strong> ("+fmt(v.entity[1]/100)+" km²). Rujukan ini tidak sama dengan keluasan PBT.",null,["RS Negeri Selangor 2035 (Pengubahan), Seksyen 1.2, halaman 1-5 · PLANMalaysia Selangor 2023"]);
     }
-    const id=v.scope==="pbt"?("PBT-AREA-"+String(PBT.indexOf(v.entity)+1).padStart(2,"0")):"SGR-003";
-    const f=fact(id);if(!f||v.year&&v.year!==2024)return missing("Rujukan keluasan ini adalah JUPEM 2024.");
+    const f=v.scope==="pbt"?figures.find(row=>row.id.startsWith("PBT-AREA-")&&norm(row.title).includes(norm(v.entity?.[0]||"UNMATCHED"))):fact("SGR-003");if(!f||v.year&&v.year!==2024)return missing("Rujukan keluasan ini adalah JUPEM 2024.");
     const ha=Number(f.value)*100;
     return result("Keluasan "+label,"Berdasarkan JUPEM 2024, keluasan <strong>"+esc(label)+"</strong> ialah <strong>"+fmt(ha)+" hektar</strong> ("+fmt(f.value)+" km²).",f,["JUPEM 2024 · Jadual keluasan 12 PBT yang dibekalkan kepada SUO"]);
   }
