@@ -36,10 +36,56 @@ const detect=q=>{
   // The word 'klang' by itself defaults to the district, not MBDK.
   return {q:n,indicator,year:year?Number(year):null,scope,entity};
 };
+const educationUrl="https://selangorurbanobservatory.github.io/Dashboard-Kemudahan-Pendidikan-Negeri-Selangor/";
+let schoolDataPromise=null;
+const schoolData=()=>schoolDataPromise||(schoolDataPromise=fetch("data/suo-schools-index.json",{cache:"no-cache"}).then(r=>{if(!r.ok)throw Error("School index "+r.status);return r.json()}).catch(e=>{schoolDataPromise=null;throw e}));
+const schoolQuestion=q=>/\b(sekolah|school|smk|sjkc|sjkt|sra|srai|samt|mits|sbp|sekolah agama)\b/.test(norm(q));
+const schoolReply=async raw=>{
+ const q=norm(raw),parsed=detect(raw);
+ const listMode=/\b(senarai|list|nama|cari|carikan|apakah|apa|ade|ada|mana)\b/.test(q);
+ const countMode=/\b(berapa|bilangan|jumlah|count|banyak)\b/.test(q);
+ const district=DISTRICTS.filter(d=>contains(q,norm(d[0]))).sort((a,b)=>b[0].length-a[0].length)[0]?.[0]||null;
+ const matchedPbt=PBT.find(p=>[p[0],...p[2]].some(s=>contains(q,norm(s))));
+ const explicitPbt=isScope(q);
+ const pbt=matchedPbt&&(!district||explicitPbt)?matchedPbt[0]:null;
+ const category=/\b(agama|sra|srai|samt|mits)\b/.test(q)?"agama":/\b(menengah|smk|sbp)\b/.test(q)?"menengah":/\b(rendah|sk|sjkc|sjkt)\b/.test(q)?"rendah":null;
+ const actions=[{label:"Dashboard Kemudahan Pendidikan",url:educationUrl}];
+ try{
+   const data=await schoolData();
+   const schools=data.schools||[];
+   const isNamed=/\b(sekolah|smk|sjkc|sjkt|sra|srai|samt|mits)\b/.test(q)&&!countMode&&!/^(?:senarai|list|nama|cari|carikan|apakah|apa|berapa)\b/.test(q);
+   // Unspecified school name: search any non-geographic significant terms rather than return unrelated generic cards.
+   const ignore=new Set(["sekolah","school","apa","apakah","yang","ada","di","dalam","negeri","selangor","daerah","pbt","majlis","nama","cari","carikan","berkaitan","tentang","mana","senarai","berapa","bilangan","jumlah","rendah","menengah","agama","dan","di","untuk","lokasi"]);
+   const placeWords=new Set(norm(district||"").split(" ").concat(norm(matchedPbt?.[0]||"").split(" ")));
+   const nameTerms=q.split(" ").filter(t=>t.length>=3&&!ignore.has(t)&&!placeWords.has(t)&&!["2023","2024","2025","2026"].includes(t));
+   const filtered=schools.filter(s=>{
+     if(district&&(!pbt||/daerah/.test(q))&&norm(s.district)!==norm(district))return false;
+     if(pbt&&norm(s.pbt)!==norm(pbt))return false;
+     if(category&&!norm(s.level+" "+s.category).includes(category))return false;
+     return true;
+   });
+   let shown=filtered;
+   const nameSearch=/\b(bernama|nama sekolah|sekolah (?:smk|sk|sra|srai|sjkc|sjkt)|smk |sra |srai |sjkc |sjkt )\b/.test(q)||(!district&&!pbt&&!category&&nameTerms.length>0&&!countMode);
+   if(nameSearch){
+     const cleaned=nameTerms.filter(t=>t!=="smk"&&t!=="sjkc"&&t!=="sjkt"&&t!=="sra"&&t!=="srai");
+     if(cleaned.length)shown=shown.filter(s=>cleaned.every(t=>norm(s.name).includes(t)));
+   }
+   const label=pbt?"PBT "+pbt:district?"Daerah "+district:"Selangor";
+   const scopeNote=pbt?"Rekod JAIS tanpa kod PBT tidak dapat diambil kira secara pasti dalam tapisan PBT. ":"";
+   const sample=shown.slice(0,15).map((s,i)=>(i+1)+". "+esc(s.name)+" ("+esc(s.district)+", "+esc(s.level)+(s.category?" — "+esc(s.category):"")+")");
+   const list=sample.length?"<ol>"+sample.map(s=>"<li>"+s.replace(/^\d+\.\s/,"")+"</li>").join("")+"</ol>":"";
+   let summary=countMode
+     ?"Terdapat <strong>"+shown.length+" rekod sekolah</strong> untuk <strong>"+esc(label)+"</strong>"+(category?" bagi kategori <strong>"+esc(category)+"</strong>":"")+" dalam indeks semasa SUO. "+scopeNote+"Jumlah ini mewakili rekod dataset, bukan statistik rasmi sekolah keseluruhan."
+     :shown.length?"Ditemui <strong>"+shown.length+" rekod sekolah</strong> yang sepadan dengan carian di <strong>"+esc(label)+"</strong>. "+scopeNote+"Berikut "+Math.min(15,shown.length)+" rekod pertama:"+list
+     :"Tiada padanan sekolah ditemui dalam indeks SUO bagi kriteria ini. Semak ejaan, tahap geografi atau kategori; tiada rekod rekaan diberikan.";
+   return {title:"Kemudahan Pendidikan · "+label,badge:"DATA SEKOLAH SUO",summary,insights:[{label:"Liputan",title:"Indeks GeoJSON",text:"Sekolah umum dan JAIS; deduplikasi nama+daerah. Rekod memerlukan semakan ketepatan/kelengkapan."}],sources:["Dashboard Kemudahan Pendidikan SUO · sekolah_negeri_selangor.geojson dan sekolah_agama_jais_selangor.geojson · indeks "+data.meta.generated_date],actions};
+ }catch(e){console.warn("School query failed",e);return {title:"Data sekolah belum dapat dimuatkan",badge:"SUMBER TIDAK TERSEDIA",summary:"Indeks sekolah SUO gagal dibaca. Saya tidak akan menggantikan jawapan dengan anggaran tanpa sumber.",sources:[],actions};}
+};
 const getBasics=async()=>{if(!window.SUOKnowledge?.load)throw Error("Knowledge Base unavailable");let d=await window.SUOKnowledge.load();return d.selangor};
 const source=(db,id)=>db.sources?.find(x=>x.id===id);
 const answer=async query=>{
   const v=detect(query);
+  if(schoolQuestion(query))return schoolReply(query);
   if(!v.indicator||!v.scope)return null;
   // Query observed socioeconomic series before generic fact matching.
   const SOCIO={
