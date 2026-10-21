@@ -176,6 +176,7 @@
     try{return await window.SUOKnowledge.search(q,{limit})}catch{return []}
   };
   const sourceLabel=item=>{
+    if(item.raw?.source_document) return item.raw.source_document+" · "+(item.raw.source_page||"rujukan dasar")+(item.raw.gazette_number?" · Warta "+item.raw.gazette_number:"");
     if(item.source?.agency) return item.source.agency+(item.raw?.as_of?" · "+item.raw.as_of:"");
     if(item.category) return item.category;
     return "";
