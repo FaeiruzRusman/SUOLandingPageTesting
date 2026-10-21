@@ -113,12 +113,12 @@
     const listHtml='<ul>'+rows.map(r=>'<li><strong>'+esc(r.code)+' — '+esc(r.name)+'</strong>: '+areaFormat(r.ha)+' ha ('+areaFormat(r.ha/100)+' km²)</li>').join("")+'</ul>';
     return {
       title:target?"Keluasan "+target.code:"Keluasan 12 PBT Negeri Selangor",
-      badge:"RUJUKAN KELUASAN PBT",
+      badge:"JUPEM 2024",
       summary:target
-        ? 'Berdasarkan <strong>jadual keluasan PBT rujukan SUO</strong>, keluasan <strong>'+esc(target.code)+' ('+esc(target.name)+')</strong> ialah <strong>'+areaFormat(target.ha)+' hektar</strong> ('+areaFormat(target.ha/100)+' km²).'
-        : 'Berikut ialah keluasan <strong>12 PBT</strong> berdasarkan jadual rujukan SUO dalam unit hektar (ha):'+listHtml+'<p><strong>Jumlah nilai jadual: '+areaFormat(totalHa)+' ha ('+areaFormat(totalHa/100)+' km²).</strong> Jumlah ini tidak semestinya sama dengan keluasan geografi negeri dan perlu disemak dari segi liputan sempadan/tahun data.</p>',
+        ? 'Berdasarkan <strong>jadual keluasan PBT JUPEM 2024</strong>, keluasan <strong>'+esc(target.code)+' ('+esc(target.name)+')</strong> ialah <strong>'+areaFormat(target.ha)+' hektar</strong> ('+areaFormat(target.ha/100)+' km²).'
+        : 'Berikut ialah keluasan <strong>12 PBT</strong> berdasarkan jadual JUPEM 2024 dalam unit hektar (ha):'+listHtml+'<p><strong>Jumlah nilai jadual: '+areaFormat(totalHa)+' ha ('+areaFormat(totalHa/100)+' km²).</strong> Jumlah ini merupakan keluasan Negeri Selangor berdasarkan jadual JUPEM 2024.</p>',
       insights:[{label:"Unit",title:"Hektar (ha)",text:"1 km² = 100 ha. Keluasan PBT dirujuk daripada jadual nilai yang dibekalkan, bukan atribut web_area GeoJSON."}],
-      sources:["Jadual keluasan 12 PBT yang dibekalkan untuk SUO (unit hektar); tahun dan agensi penerbit belum dinyatakan"],
+      sources:["Jabatan Ukur dan Pemetaan Malaysia (JUPEM), 2024 · Jadual keluasan 12 PBT (hektar)"],
       actions:[{label:"Buka 3D GeoPortal (sempadan PBT)",url:"https://selangorurbanobservatory.github.io/3D-Geoportal/"}]
     };
   };
@@ -194,42 +194,19 @@
     // Geographic-level guard: "luas Selangor" means the whole state, not
     // Kuala Selangor or another PBT whose name merely contains "Selangor".
     if(isStateAreaQuery(effective)){
-      try{
-        const km2=await deriveSelangorArea();
-        const display=new Intl.NumberFormat("ms-MY",{maximumFractionDigits:2}).format(km2);
-        state.lastQuery=effective;state.lastTopics=["landdev"];state.lastApps=[];
-        return {
-          title:"Keluasan Negeri Selangor",
-          badge:"SPATIAL DERIVED",
-          summary:'Berdasarkan pengiraan terus daripada geometri <strong>sempadan daerah Negeri Selangor</strong> dalam GeoJSON SUO, keluasan spatial negeri ialah kira-kira <strong>'+display+' km²</strong>.',
-          insights:[
-            {label:"Kaedah",title:"Geometry-derived area",text:"Jumlah keluasan semua poligon daerah dikira terus daripada koordinat sempadan GeoJSON."},
-            {label:"Tahap geografi",title:"Negeri Selangor",text:"Carian ini dikunci pada tahap negeri supaya tidak tersalah padan dengan Kuala Selangor atau nama PBT lain."}
-          ],
-          sources:["SUO 3D GeoPortal · Sempadan Daerah Negeri Selangor (GeoJSON)"],
-          actions:[
-            {label:"Buka 3D GeoPortal",url:"https://selangorurbanobservatory.github.io/3D-Geoportal/"},
-            {label:"Kanvas Spatial SUO",url:"index.html#spatial"}
-          ]
-        };
-      }catch(err){
-        console.warn("SUO spatial area:",err);
-        // If the geometry source is temporarily unavailable, continue to the
-        // curated Knowledge Base rather than returning an unrelated PBT match.
-        const stateFacts=(await knowledgeSearch("keluasan negeri selangor",6))
-          .filter(x=>/keluasan negeri/i.test(x.title||""));
-        if(stateFacts.length){
-          const top=stateFacts[0];
-          return {
-            title:"Keluasan Negeri Selangor",
-            badge:"FAKTA NEGERI",
-            summary:'<strong>'+esc(top.text)+'</strong>',
-            insights:[],
-            sources:[sourceLabel(top)].filter(Boolean),
-            actions:[{label:"Kamus SUO",url:"knowledge.html"}]
-          };
-        }
-      }
+      const totalHa=PBT_AREA_REFERENCE.reduce((sum,row)=>sum+row.ha,0);
+      state.lastQuery=effective;state.lastTopics=["landdev"];state.lastApps=[];
+      return {
+        title:"Keluasan Negeri Selangor",
+        badge:"JUPEM 2024",
+        summary:'Berdasarkan <strong>rujukan JUPEM 2024</strong> yang dibekalkan untuk SUO, keluasan Negeri Selangor ialah <strong>'+areaFormat(totalHa)+' hektar</strong> ('+areaFormat(totalHa/100)+' km²). Angka ini merupakan jumlah keluasan 12 PBT dalam jadual rujukan.',
+        insights:[
+          {label:"Sumber",title:"JUPEM 2024",text:"Jumlah 12 nilai keluasan PBT dalam jadual rujukan."},
+          {label:"Unit",title:"Hektar dan km²",text:"1 km² bersamaan 100 hektar. Angka ini tidak menggantikan geometri sempadan untuk tujuan paparan peta."}
+        ],
+        sources:["Jabatan Ukur dan Pemetaan Malaysia (JUPEM), 2024 · Jadual keluasan 12 PBT dibekalkan kepada SUO"],
+        actions:[{label:"Lihat sempadan dalam 3D GeoPortal",url:"https://selangorurbanobservatory.github.io/3D-Geoportal/"}]
+      };
     }
 
     const topics=detectTopics(effective);
