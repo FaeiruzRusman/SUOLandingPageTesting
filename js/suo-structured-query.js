@@ -48,6 +48,19 @@ const answer=async query=>{
   if(v.scope==="district"){
     if(!v.entity)return missing("Nyatakan nama daerah.");
     const district=v.entity[0];
+    if(v.indicator==="population"){
+      try{
+        const response=await fetch("data/district-population-suo.json",{cache:"no-cache"});
+        if(!response.ok)throw Error("Population dataset HTTP "+response.status);
+        const dataset=await response.json();
+        const years=(dataset.records||[]).filter(r=>norm(r.district)===norm(district)).map(r=>r.year);
+        const year=v.year||Math.max(...years);
+        const row=(dataset.records||[]).find(r=>norm(r.district)===norm(district)&&r.year===year);
+        if(!row)return missing("Siri data tersedia bagi tahun 2020 hingga 2026 sahaja.");
+        const population=Math.round(row.thousand*1000);
+        return result("Penduduk Daerah "+district,"Jumlah penduduk <strong>Daerah "+esc(district)+"</strong> pada <strong>"+year+"</strong> dianggarkan <strong>"+new Intl.NumberFormat("ms-MY").format(population)+" orang</strong> (nilai sumber: "+row.thousand.toFixed(1)+" ribu orang).",null,["Dashboard Demografi & Sosioekonomi SUO · dataset penduduk daerah daripada DOSM · "+year+" · jantina/umur/etnik keseluruhan"],appAction);
+      }catch(err){console.warn("SUO district population:",err);return missing("Fail data penduduk daerah tidak dapat dimuatkan ketika ini.");}
+    }
     let f=null;
     if(v.indicator==="density"&&district==="Petaling")f=fact("SGR-018");
     if(v.indicator==="population"&&district==="Sabak Bernam")f=fact("SGR-020");
