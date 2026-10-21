@@ -156,7 +156,7 @@
           ],
           sources:["SUO 3D GeoPortal · Sempadan Daerah Negeri Selangor (GeoJSON)"],
           actions:[
-            {label:"Buka 3D GeoPortal",url:"https://faeiruzrusman.github.io/selangor-3d-map/"},
+            {label:"Buka 3D GeoPortal",url:"https://selangorurbanobservatory.github.io/3D-Geoportal/"},
             {label:"Kanvas Spatial SUO",url:"index.html#spatial"}
           ]
         };
