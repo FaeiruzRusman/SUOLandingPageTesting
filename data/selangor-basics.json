@@ -1,11 +1,11 @@
 {
   "meta": {
     "name": "Selangor Basic Facts",
-    "version": "1.2.0",
-    "updated": "2026-10-06",
+    "version": "1.3.0",
+    "updated": "2026-10-21",
     "language": "ms",
     "purpose": "Authoritative baseline figures and interpretation rules for SUO Knowledge Base and Mr. TPr SUO.",
-    "note": "Angka demografi perlu dibaca bersama tahun rujukan. Banci 2020 ialah baseline banci; angka 2025 ialah anggaran pertengahan tahun/preliminary DOSM."
+    "note": "Angka demografi perlu dibaca bersama tahun rujukan. Banci 2020 ialah baseline banci; angka 2025 ialah anggaran pertengahan tahun/preliminary DOSM. Keluasan negeri/PBT mengutamakan jadual JUPEM 2024 yang dibekalkan kepada SUO."
   },
   "figures": [
     {
@@ -38,18 +38,20 @@
     },
     {
       "id": "SGR-003",
-      "title": "Keluasan negeri",
-      "value": 7950.91,
+      "title": "Keluasan Negeri Selangor — JUPEM 2024",
+      "value": 8337.2073,
       "unit": "km²",
-      "as_of": "MyCensus 2020 reference",
-      "fact": "Keluasan Selangor dalam rujukan Penemuan Utama Banci 2020 DOSM ialah 7,950.91 km².",
+      "as_of": "2024",
+      "fact": "Keluasan Negeri Selangor menurut jadual JUPEM 2024 yang dibekalkan kepada SUO ialah 833,720.73 hektar (8,337.2073 km²), jumlah 12 PBT.",
       "keywords": [
-        "keluasan",
-        "area",
-        "km2"
+        "keluasan negeri selangor",
+        "keluasan selangor",
+        "luas negeri",
+        "JUPEM 2024",
+        "luas"
       ],
-      "source_id": "SRC-DOSM-CENSUS2020",
-      "caveat": "Keluasan boleh berbeza sedikit antara penerbitan mengikut sempadan/kaedah rujukan geospatial; paparkan tahun dan sumber bersama angka."
+      "source_id": "SRC-JUPEM-PBT2024-SUO",
+      "caveat": "Jadual JUPEM 2024 digunakan sebagai sumber keluasan utama SUO; angka DOSM 2020 disimpan sebagai rujukan berasingan."
     },
     {
       "id": "SGR-004",
@@ -319,10 +321,10 @@
     {
       "id": "PBT-AREA-01",
       "title": "Keluasan PBT MBSA — Majlis Bandaraya Shah Alam",
-      "value": 290.3,
+      "value": 301.446,
       "unit": "km²",
-      "as_of": "Semasa",
-      "fact": "Keluasan kawasan pentadbiran MBSA (Majlis Bandaraya Shah Alam) ialah 290.30 km² berdasarkan maklumat rasmi MBSA.",
+      "as_of": "2024",
+      "fact": "Keluasan MBSA menurut jadual JUPEM 2024 ialah 30,144.60 hektar (301.4460 km²).",
       "keywords": [
         "pbt",
         "mbsa",
@@ -334,15 +336,16 @@
         "keluasan pbt mbsa",
         "luas pbt mbsa"
       ],
-      "source_id": "SRC-MBSA-AREA"
+      "source_id": "SRC-JUPEM-PBT2024-SUO",
+      "caveat": "Nilai keluasan bersumberkan jadual JUPEM 2024 yang dibekalkan kepada SUO, bukan atribut web_area GeoJSON."
     },
     {
       "id": "PBT-AREA-02",
       "title": "Keluasan PBT MBPJ — Majlis Bandaraya Petaling Jaya",
-      "value": 97.2,
+      "value": 98.1073,
       "unit": "km²",
-      "as_of": "2014",
-      "fact": "Keluasan kawasan pentadbiran MBPJ (Majlis Bandaraya Petaling Jaya) ialah 97.20 km² berdasarkan rujukan rasmi Dewan Negeri Selangor 2014.",
+      "as_of": "2024",
+      "fact": "Keluasan MBPJ menurut jadual JUPEM 2024 ialah 9,810.73 hektar (98.1073 km²).",
       "keywords": [
         "pbt",
         "mbpj",
@@ -354,16 +357,16 @@
         "keluasan pbt mbpj",
         "luas pbt mbpj"
       ],
-      "source_id": "SRC-DEWAN-PBT-AREA-2014",
-      "caveat": "Angka ini menggunakan rujukan rasmi Dewan Negeri Selangor tahun 2014. Semak sumber PBT terkini jika sempadan pentadbiran telah berubah."
+      "source_id": "SRC-JUPEM-PBT2024-SUO",
+      "caveat": "Nilai keluasan bersumberkan jadual JUPEM 2024 yang dibekalkan kepada SUO, bukan atribut web_area GeoJSON."
     },
     {
       "id": "PBT-AREA-03",
       "title": "Keluasan PBT MBDK — Majlis Bandaraya Diraja Klang",
-      "value": 573,
+      "value": 747.6202,
       "unit": "km²",
-      "as_of": "2014",
-      "fact": "Keluasan kawasan pentadbiran MBDK (Majlis Bandaraya Diraja Klang) ialah 573.00 km² berdasarkan rujukan rasmi Dewan Negeri Selangor 2014.",
+      "as_of": "2024",
+      "fact": "Keluasan MBDK menurut jadual JUPEM 2024 ialah 74,762.02 hektar (747.6202 km²).",
       "keywords": [
         "pbt",
         "mbdk",
@@ -377,16 +380,16 @@
         "keluasan pbt mbdk",
         "luas pbt mbdk"
       ],
-      "source_id": "SRC-DEWAN-PBT-AREA-2014",
-      "caveat": "Angka ini menggunakan rujukan rasmi Dewan Negeri Selangor tahun 2014. Semak sumber PBT terkini jika sempadan pentadbiran telah berubah."
+      "source_id": "SRC-JUPEM-PBT2024-SUO",
+      "caveat": "Nilai keluasan bersumberkan jadual JUPEM 2024 yang dibekalkan kepada SUO, bukan atribut web_area GeoJSON."
     },
     {
       "id": "PBT-AREA-04",
       "title": "Keluasan PBT MPS — Majlis Perbandaran Selayang",
-      "value": 1293.2,
+      "value": 523.8578,
       "unit": "km²",
-      "as_of": "2014",
-      "fact": "Keluasan kawasan pentadbiran MPS (Majlis Perbandaran Selayang) ialah 1,293.20 km² berdasarkan rujukan rasmi Dewan Negeri Selangor 2014.",
+      "as_of": "2024",
+      "fact": "Keluasan MPS menurut jadual JUPEM 2024 ialah 52,385.78 hektar (523.8578 km²).",
       "keywords": [
         "pbt",
         "mps",
@@ -398,16 +401,16 @@
         "keluasan pbt mps",
         "luas pbt mps"
       ],
-      "source_id": "SRC-DEWAN-PBT-AREA-2014",
-      "caveat": "Angka ini menggunakan rujukan rasmi Dewan Negeri Selangor tahun 2014. Semak sumber PBT terkini jika sempadan pentadbiran telah berubah."
+      "source_id": "SRC-JUPEM-PBT2024-SUO",
+      "caveat": "Nilai keluasan bersumberkan jadual JUPEM 2024 yang dibekalkan kepada SUO, bukan atribut web_area GeoJSON."
     },
     {
       "id": "PBT-AREA-05",
       "title": "Keluasan PBT MBSJ — Majlis Bandaraya Subang Jaya",
-      "value": 161.8,
+      "value": 162.838,
       "unit": "km²",
-      "as_of": "2014",
-      "fact": "Keluasan kawasan pentadbiran MBSJ (Majlis Bandaraya Subang Jaya) ialah 161.80 km² berdasarkan rujukan rasmi Dewan Negeri Selangor 2014.",
+      "as_of": "2024",
+      "fact": "Keluasan MBSJ menurut jadual JUPEM 2024 ialah 16,283.80 hektar (162.8380 km²).",
       "keywords": [
         "pbt",
         "mbsj",
@@ -421,16 +424,16 @@
         "keluasan pbt mbsj",
         "luas pbt mbsj"
       ],
-      "source_id": "SRC-DEWAN-PBT-AREA-2014",
-      "caveat": "Angka ini menggunakan rujukan rasmi Dewan Negeri Selangor tahun 2014. Semak sumber PBT terkini jika sempadan pentadbiran telah berubah."
+      "source_id": "SRC-JUPEM-PBT2024-SUO",
+      "caveat": "Nilai keluasan bersumberkan jadual JUPEM 2024 yang dibekalkan kepada SUO, bukan atribut web_area GeoJSON."
     },
     {
       "id": "PBT-AREA-06",
       "title": "Keluasan PBT MPAJ — Majlis Perbandaran Ampang Jaya",
-      "value": 143.5,
+      "value": 139.0578,
       "unit": "km²",
-      "as_of": "2014",
-      "fact": "Keluasan kawasan pentadbiran MPAJ (Majlis Perbandaran Ampang Jaya) ialah 143.50 km² berdasarkan rujukan rasmi Dewan Negeri Selangor 2014.",
+      "as_of": "2024",
+      "fact": "Keluasan MPAJ menurut jadual JUPEM 2024 ialah 13,905.78 hektar (139.0578 km²).",
       "keywords": [
         "pbt",
         "mpaj",
@@ -442,16 +445,16 @@
         "keluasan pbt mpaj",
         "luas pbt mpaj"
       ],
-      "source_id": "SRC-DEWAN-PBT-AREA-2014",
-      "caveat": "Angka ini menggunakan rujukan rasmi Dewan Negeri Selangor tahun 2014. Semak sumber PBT terkini jika sempadan pentadbiran telah berubah."
+      "source_id": "SRC-JUPEM-PBT2024-SUO",
+      "caveat": "Nilai keluasan bersumberkan jadual JUPEM 2024 yang dibekalkan kepada SUO, bukan atribut web_area GeoJSON."
     },
     {
       "id": "PBT-AREA-07",
       "title": "Keluasan PBT MPKj — Majlis Perbandaran Kajang",
-      "value": 787.61,
+      "value": 806.0153,
       "unit": "km²",
-      "as_of": "2014",
-      "fact": "Keluasan kawasan pentadbiran MPKj (Majlis Perbandaran Kajang) ialah 787.61 km² berdasarkan rujukan rasmi Dewan Negeri Selangor 2014.",
+      "as_of": "2024",
+      "fact": "Keluasan MPKj menurut jadual JUPEM 2024 ialah 80,601.53 hektar (806.0153 km²).",
       "keywords": [
         "pbt",
         "mpkj",
@@ -463,16 +466,16 @@
         "keluasan pbt mpkj",
         "luas pbt mpkj"
       ],
-      "source_id": "SRC-DEWAN-PBT-AREA-2014",
-      "caveat": "Angka ini menggunakan rujukan rasmi Dewan Negeri Selangor tahun 2014. Semak sumber PBT terkini jika sempadan pentadbiran telah berubah."
+      "source_id": "SRC-JUPEM-PBT2024-SUO",
+      "caveat": "Nilai keluasan bersumberkan jadual JUPEM 2024 yang dibekalkan kepada SUO, bukan atribut web_area GeoJSON."
     },
     {
       "id": "PBT-AREA-08",
       "title": "Keluasan PBT MPSepang — Majlis Perbandaran Sepang",
-      "value": 599.66,
+      "value": 563.4459,
       "unit": "km²",
-      "as_of": "2014",
-      "fact": "Keluasan kawasan pentadbiran MPSepang (Majlis Perbandaran Sepang) ialah 599.66 km² berdasarkan rujukan rasmi Dewan Negeri Selangor 2014.",
+      "as_of": "2024",
+      "fact": "Keluasan MPSepang menurut jadual JUPEM 2024 ialah 56,344.59 hektar (563.4459 km²).",
       "keywords": [
         "pbt",
         "mpsepang",
@@ -485,16 +488,16 @@
         "keluasan pbt mpsepang",
         "luas pbt mpsepang"
       ],
-      "source_id": "SRC-DEWAN-PBT-AREA-2014",
-      "caveat": "Angka ini menggunakan rujukan rasmi Dewan Negeri Selangor tahun 2014. Semak sumber PBT terkini jika sempadan pentadbiran telah berubah."
+      "source_id": "SRC-JUPEM-PBT2024-SUO",
+      "caveat": "Nilai keluasan bersumberkan jadual JUPEM 2024 yang dibekalkan kepada SUO, bukan atribut web_area GeoJSON."
     },
     {
       "id": "PBT-AREA-09",
       "title": "Keluasan PBT MPKL — Majlis Perbandaran Kuala Langat",
-      "value": 857.7,
+      "value": 899.9813,
       "unit": "km²",
-      "as_of": "2014",
-      "fact": "Keluasan kawasan pentadbiran MPKL (Majlis Perbandaran Kuala Langat) ialah 857.70 km² berdasarkan rujukan rasmi Dewan Negeri Selangor 2014.",
+      "as_of": "2024",
+      "fact": "Keluasan MPKL menurut jadual JUPEM 2024 ialah 89,998.13 hektar (899.9813 km²).",
       "keywords": [
         "pbt",
         "mpkl",
@@ -508,16 +511,16 @@
         "keluasan pbt mpkl",
         "luas pbt mpkl"
       ],
-      "source_id": "SRC-DEWAN-PBT-AREA-2014",
-      "caveat": "Angka ini menggunakan rujukan rasmi Dewan Negeri Selangor tahun 2014. Semak sumber PBT terkini jika sempadan pentadbiran telah berubah."
+      "source_id": "SRC-JUPEM-PBT2024-SUO",
+      "caveat": "Nilai keluasan bersumberkan jadual JUPEM 2024 yang dibekalkan kepada SUO, bukan atribut web_area GeoJSON."
     },
     {
       "id": "PBT-AREA-10",
       "title": "Keluasan PBT MPKS — Majlis Perbandaran Kuala Selangor",
-      "value": 1194.5,
+      "value": 1264.8769,
       "unit": "km²",
-      "as_of": "2014",
-      "fact": "Keluasan kawasan pentadbiran MPKS (Majlis Perbandaran Kuala Selangor) ialah 1,194.50 km² berdasarkan rujukan rasmi Dewan Negeri Selangor 2014.",
+      "as_of": "2024",
+      "fact": "Keluasan MPKS menurut jadual JUPEM 2024 ialah 126,487.69 hektar (1,264.8769 km²).",
       "keywords": [
         "pbt",
         "mpks",
@@ -531,16 +534,16 @@
         "keluasan pbt mpks",
         "luas pbt mpks"
       ],
-      "source_id": "SRC-DEWAN-PBT-AREA-2014",
-      "caveat": "Angka ini menggunakan rujukan rasmi Dewan Negeri Selangor tahun 2014. Semak sumber PBT terkini jika sempadan pentadbiran telah berubah."
+      "source_id": "SRC-JUPEM-PBT2024-SUO",
+      "caveat": "Nilai keluasan bersumberkan jadual JUPEM 2024 yang dibekalkan kepada SUO, bukan atribut web_area GeoJSON."
     },
     {
       "id": "PBT-AREA-11",
       "title": "Keluasan PBT MPHS — Majlis Perbandaran Hulu Selangor",
-      "value": 1756.3,
+      "value": 1751.8557,
       "unit": "km²",
-      "as_of": "2014",
-      "fact": "Keluasan kawasan pentadbiran MPHS (Majlis Perbandaran Hulu Selangor) ialah 1,756.30 km² berdasarkan rujukan rasmi Dewan Negeri Selangor 2014.",
+      "as_of": "2024",
+      "fact": "Keluasan MPHS menurut jadual JUPEM 2024 ialah 175,185.57 hektar (1,751.8557 km²).",
       "keywords": [
         "pbt",
         "mphs",
@@ -555,16 +558,16 @@
         "keluasan pbt mphs",
         "luas pbt mphs"
       ],
-      "source_id": "SRC-DEWAN-PBT-AREA-2014",
-      "caveat": "Angka ini menggunakan rujukan rasmi Dewan Negeri Selangor tahun 2014. Semak sumber PBT terkini jika sempadan pentadbiran telah berubah."
+      "source_id": "SRC-JUPEM-PBT2024-SUO",
+      "caveat": "Nilai keluasan bersumberkan jadual JUPEM 2024 yang dibekalkan kepada SUO, bukan atribut web_area GeoJSON."
     },
     {
       "id": "PBT-AREA-12",
       "title": "Keluasan PBT MDSB — Majlis Daerah Sabak Bernam",
-      "value": 1017,
+      "value": 1078.1051,
       "unit": "km²",
-      "as_of": "2014",
-      "fact": "Keluasan kawasan pentadbiran MDSB (Majlis Daerah Sabak Bernam) ialah 1,017.00 km² berdasarkan rujukan rasmi Dewan Negeri Selangor 2014.",
+      "as_of": "2024",
+      "fact": "Keluasan MDSB menurut jadual JUPEM 2024 ialah 107,810.51 hektar (1,078.1051 km²).",
       "keywords": [
         "pbt",
         "mdsb",
@@ -576,8 +579,23 @@
         "keluasan pbt mdsb",
         "luas pbt mdsb"
       ],
-      "source_id": "SRC-DEWAN-PBT-AREA-2014",
-      "caveat": "Angka ini menggunakan rujukan rasmi Dewan Negeri Selangor tahun 2014. Semak sumber PBT terkini jika sempadan pentadbiran telah berubah."
+      "source_id": "SRC-JUPEM-PBT2024-SUO",
+      "caveat": "Nilai keluasan bersumberkan jadual JUPEM 2024 yang dibekalkan kepada SUO, bukan atribut web_area GeoJSON."
+    },
+    {
+      "id": "SGR-003-DOSM2020",
+      "title": "Keluasan negeri — rujukan Banci DOSM 2020 (sejarah)",
+      "value": 7950.91,
+      "unit": "km²",
+      "as_of": "MyCensus 2020 reference",
+      "fact": "Keluasan Selangor dalam rujukan Penemuan Utama Banci 2020 DOSM ialah 7,950.91 km².",
+      "keywords": [
+        "keluasan DOSM 2020",
+        "banci 2020",
+        "perbandingan keluasan"
+      ],
+      "source_id": "SRC-DOSM-CENSUS2020",
+      "caveat": "Angka DOSM Banci 2020 dikekalkan sebagai rujukan sejarah, bukan keluasan utama SUO berdasarkan JUPEM 2024."
     }
   ],
   "districts": [
@@ -777,6 +795,12 @@
       "title": "Jumlah dan Kepadatan Penduduk Mengikut PBT",
       "url": "https://dewan.selangor.gov.my/question/jumlah-dan-kepadatan-penduduk/",
       "accessed": "2026-10-06"
+    },
+    {
+      "id": "SRC-JUPEM-PBT2024-SUO",
+      "agency": "Jabatan Ukur dan Pemetaan Malaysia (JUPEM)",
+      "title": "Jadual keluasan 12 PBT Negeri Selangor, 2024 (hektar) — dibekalkan untuk SUO",
+      "accessed": "2026-10-21"
     }
   ]
 }
