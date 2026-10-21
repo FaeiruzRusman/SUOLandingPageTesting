@@ -31,7 +31,7 @@
   const PBT_BOUNDARY_URL="https://selangorurbanobservatory.github.io/3D-Geoportal/data/pentadbiran/sempadan_pbt_selangor_2024.geojson";
   let pbtBoundaryCache=null;
   const isAreaQuestion=q=>/\b(luas|keluasan|area)\b/.test(norm(q));
-  const isPbtAreaQuestion=q=>isAreaQuestion(q)&&/\b(pbt|pihak berkuasa tempatan|majlis|mbsa|mbpj|mbdk|mbsj|mps|mpaj|mpkj|mpsepang|mpkl|mpks|mphs|mdsb|mpk|mpsj|mdkl|mdks|mdhs|sabak bernam|shah alam|petaling jaya|subang jaya|ampang jaya|selayang|kajang|sepang|kuala langat|hulu selangor|kuala selangor|klang)\b/.test(norm(q));
+  const isPbtAreaQuestion=q=>isAreaQuestion(q)&&!hasDistrictScope(q)&&/\b(pbt|pihak berkuasa tempatan|majlis|mbsa|mbpj|mbdk|mbsj|mps|mpaj|mpkj|mpsepang|mpkl|mpks|mphs|mdsb|mpk|mpsj|mdkl|mdks|mdhs|sabak bernam|shah alam|petaling jaya|subang jaya|ampang jaya|selayang|kajang|sepang|kuala langat|hulu selangor|kuala selangor|klang)\b/.test(norm(q));
   let stateBoundaryCache=null;
 
   const isStateAreaQuery=q=>{
@@ -101,6 +101,40 @@
     {code:"MPHS",name:"Majlis Perbandaran Hulu Selangor",ha:175185.57,aliases:["mphs","mdhs","hulu selangor"]},
     {code:"MDSB",name:"Majlis Daerah Sabak Bernam",ha:107810.51,aliases:["mdsb","sabak bernam"]}
   ];
+  // Distinct district (daerah) jurisdiction from local-authority (PBT) boundaries.
+  // RSN 2035 (Pengubahan), section 1.2, PDF p.23 provides district areas sourced to PLANMalaysia Selangor 2023.
+  const DISTRICT_AREA_REFERENCE=[
+    {name:"Petaling",ha:49839.19,aliases:["petaling"]},
+    {name:"Klang",ha:62359.75,aliases:["klang"]},
+    {name:"Gombak",ha:62639.47,aliases:["gombak"]},
+    {name:"Hulu Langat",ha:83700.86,aliases:["hulu langat","ulu langat"]},
+    {name:"Sepang",ha:55147.36,aliases:["sepang"]},
+    {name:"Kuala Langat",ha:85091.82,aliases:["kuala langat"]},
+    {name:"Kuala Selangor",ha:118856.93,aliases:["kuala selangor"]},
+    {name:"Hulu Selangor",ha:175169.63,aliases:["hulu selangor","ulu selangor"]},
+    {name:"Sabak Bernam",ha:99311.08,aliases:["sabak bernam"]}
+  ];
+  const hasDistrictScope=q=>/\b(daerah|district|pejabat daerah)\b/.test(norm(q));
+  const matchDistrict=question=>{
+    const text=" "+norm(question)+" ";
+    return DISTRICT_AREA_REFERENCE.find(d=>d.aliases.some(alias=>text.includes(" "+alias+" ")))||null;
+  };
+  const answerDistrict=question=>{
+    const target=matchDistrict(question);
+    const wantsArea=isAreaQuestion(question);
+    if(!target) return {
+      title:"Sembilan Daerah Selangor",badge:"DAERAH / RSN 2035",
+      summary:"Negeri Selangor mempunyai <strong>9 daerah pentadbiran</strong>: "+DISTRICT_AREA_REFERENCE.map(d=>esc(d.name)).join(", ")+". Nyatakan daerah tertentu untuk melihat maklumat keluasan daerah.",
+      sources:["RS Negeri Selangor 2035 (Pengubahan), seksyen 1.2, halaman 1-5 (PDF halaman 23)"]
+    };
+    return {
+      title:"Daerah "+target.name,badge:"DAERAH / RSN 2035",
+      summary:"<strong>Daerah "+esc(target.name)+"</strong> ialah daerah pentadbiran Negeri Selangor, bukan Pihak Berkuasa Tempatan (PBT). "+(wantsArea?"Keluasan kawasan kajian daerah ini ialah <strong>"+areaFormat(target.ha)+" hektar</strong> ("+areaFormat(target.ha/100)+" km²), berdasarkan PLANMalaysia Selangor 2023 yang digunakan dalam RS Negeri Selangor 2035 (Pengubahan).":"Keluasan kawasan kajian bagi daerah ini menurut PLANMalaysia Selangor 2023 ialah <strong>"+areaFormat(target.ha)+" hektar</strong> ("+areaFormat(target.ha/100)+" km²)."),
+      insights:[{label:"Perbezaan",title:"Daerah ≠ PBT",text:"Keluasan ini ialah rujukan daerah dalam RSN, bukan angka keluasan PBT JUPEM 2024. Jangan campurkan kedua-duanya."}],
+      sources:["RS Negeri Selangor 2035 (Pengubahan), seksyen 1.2, halaman 1-5 (PDF halaman 23), sumber PLANMalaysia Selangor 2023"]
+    };
+  };
+
   const matchNamedPbt=question=>{
     const tokens=" "+norm(question)+" ";
     return PBT_AREA_REFERENCE.find(row=>[row.code,...row.aliases].some(alias=>tokens.includes(" "+norm(alias)+" ")))||null;
@@ -184,6 +218,12 @@
 
   const answer=async raw=>{
     const effective=isShortFollowup(raw)&&state.lastQuery ? state.lastQuery+" "+raw : raw;
+
+    // Explicit daerah always overrides similarly named PBT, including Sepang/Klang/Kuala Selangor.
+    if(hasDistrictScope(effective) && !/\b(pbt|majlis perbandaran|majlis bandaraya)\b/.test(norm(effective))){
+      state.lastQuery=effective;state.lastTopics=["landdev"];state.lastApps=[];
+      return answerDistrict(effective);
+    }
 
     // PBT area requests must resolve against 12 PBT polygons before state/knowledge lookup.
     if(isPbtAreaQuestion(effective)){
